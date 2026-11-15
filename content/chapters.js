@@ -1534,7 +1534,7 @@ window.CHAPTERS = {
       </ul>
       <h4>The period, the exile, and diversity</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica: Jewish Diaspora</a>; <a href="https://en.wikipedia.org/wiki/Second_Temple">Wikipedia: Second Temple</a>; Shaye J. D. Cohen, <em>From the Maccabees to the Mishnah</em> (the standard survey).</li>
+        <li><a href="https://www.britannica.com/topic/Jewish-Diaspora">Britannica: Jewish Diaspora</a>; Shaye J. D. Cohen, <em>From the Maccabees to the Mishnah</em> (the standard survey).</li>
       </ul>
       <h4>The sects and the Scrolls</h4>
       <ul>
@@ -1547,11 +1547,11 @@ window.CHAPTERS = {
       <h4>Messianism and Wisdom</h4>
       <ul>
         <li>The plural messianic hope (Davidic, the two messiahs of Qumran, the prophet, the Danielic/Enochic son of man) — <a href="https://www.livius.org/articles/religion/messiah/messiah-9-two-messiahs/">Livius: Qumran's dual Messianism</a>; and standard surveys of Second Temple messianism.</li>
-        <li>Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of Solomon — <a href="https://en.wikipedia.org/wiki/Personification_of_wisdom">Wikipedia: Personification of wisdom</a>.</li>
+        <li>Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of Solomon.</li>
       </ul>
       <h4>The literature</h4>
       <ul>
-        <li><a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My Jewish Learning: Apocrypha and Pseudepigrapha</a>; <a href="https://en.wikipedia.org/wiki/Jewish_apocrypha_and_pseudepigrapha">Wikipedia: Jewish apocrypha and pseudepigrapha</a>; on the canon, and Philo of Alexandria for the allegorical/cosmic readings.</li>
+        <li><a href="https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/">My Jewish Learning: Apocrypha and Pseudepigrapha</a>; on the canon, and Philo of Alexandria for the allegorical/cosmic readings.</li>
       </ul>
     </div>
   ` },
@@ -1695,7 +1695,6 @@ window.CHAPTERS = {
       </ul>
       <h4>Symbol and art</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Dharmacakra">Wikipedia: Dharmachakra</a>; <a href="https://en.wikipedia.org/wiki/Aniconism_in_Buddhism">Wikipedia: Aniconism in Buddhism</a>; on the stupa and Gandharan (Greco-Buddhist) art.</li>
         <li>The councils, the Sthavira–Mahāsāṅghika schism and its disputed causes — É. Lamotte, <em>History of Indian Buddhism: From the Origins to the Śaka Era</em>, trans. S. Webb-Boin (Louvain-la-Neuve: Institut Orientaliste, 1988) ; World History Encyclopedia, "Mahasanghika." <a href="https://www.worldhistory.org/Mahasanghika/">https://www.worldhistory.org/Mahasanghika/</a></li>
         <li>The third council, Moggaliputta Tissa, the <em>Kathāvatthu</em> and Mahinda's mission — <em>Dīpavaṃsa</em>, ch. 7 "The Third Council" (trans. H. Oldenberg, 1879), at Ancient Buddhist Texts. <a href="https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm">https://ancient-buddhist-texts.net/English-Texts/Chronicle-of-the-Island/07-Third-Council.htm</a> ; EBSCO Research Starters, "Third Buddhist Council." <a href="https://www.ebsco.com/research-starters/history/third-buddhist-council">https://www.ebsco.com/research-starters/history/third-buddhist-council</a></li>
       </ul>
@@ -1866,7 +1865,7 @@ window.CHAPTERS = {
       </ul>
       <h4>Religious Daoism and the Celestial Masters</h4>
       <ul>
-        <li><a href="https://plato.stanford.edu/entries/daoism-religion/">SEP: Religious Daoism</a>; <a href="https://en.wikipedia.org/wiki/Way_of_the_Celestial_Masters">Wikipedia: Way of the Celestial Masters</a>; <a href="https://en.wikipedia.org/wiki/Zhang_Daoling">Wikipedia: Zhang Daoling</a>.</li>
+        <li><a href="https://plato.stanford.edu/entries/daoism-religion/">SEP: Religious Daoism</a>.</li>
       </ul>
       <h4>The Yijing and symbolism</h4>
       <ul>
@@ -2000,11 +1999,11 @@ window.CHAPTERS = {
       </ul>
       <h4>State religion, priesthoods, and concepts</h4>
       <ul>
-        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>; <a href="https://en.wikipedia.org/wiki/College_of_Pontiffs">Wikipedia: College of Pontiffs</a>; <a href="https://en.wikipedia.org/wiki/Vestal_Virgin">Wikipedia: Vestal Virgin</a>.</li>
+        <li><a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion">Encyclopedia.com: Roman Religion</a>.</li>
       </ul>
       <h4>Divination and the pantheon</h4>
       <ul>
-        <li><a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>; <a href="https://en.wikipedia.org/wiki/Sibylline_Books">Wikipedia: Sibylline Books</a>; <a href="https://www.britannica.com/topic/Capitoline-Triad">Britannica: Capitoline Triad</a>.</li>
+        <li><a href="https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191">Oxford Classical Dictionary: Roman Divination</a>; <a href="https://www.britannica.com/topic/Capitoline-Triad">Britannica: Capitoline Triad</a>.</li>
       </ul>
       <h4>Household and folk religion</h4>
       <ul>
@@ -2012,12 +2011,12 @@ window.CHAPTERS = {
       </ul>
       <h4>The dead and the afterlife</h4>
       <ul>
-        <li>The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) — <a href="https://en.wikipedia.org/wiki/Lemuria_(festival)">Wikipedia: Lemuria (festival)</a>; <a href="https://www.worldhistory.org/article/34/roman-household-spirits-manes-panes-and-lares/">World History Encyclopedia: Roman Household Spirits</a>.</li>
+        <li>The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) — <a href="https://www.worldhistory.org/article/34/roman-household-spirits-manes-panes-and-lares/">World History Encyclopedia: Roman Household Spirits</a>.</li>
         <li>Roman afterlife views and tombstone inscriptions (the <em>non fui, fui, non sum, non curo</em> epitaph) — <a href="https://www.worldhistory.org/article/2679/views-of-the-afterlife-in-roman-tombstone-inscript/">World History Encyclopedia: Views of the Afterlife in Roman Tombstone Inscriptions</a>.</li>
       </ul>
       <h4>Foreign cults and the imperial cult</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Bacchanalia">Wikipedia: Bacchanalia</a> (and the <em>Senatus consultum de Bacchanalibus</em>); on Magna Mater, <a href="https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/">Brewminate: The Cult of Cybele in Ancient Rome</a>; <a href="https://en.wikipedia.org/wiki/Roman_imperial_cult">Wikipedia: Roman imperial cult</a>.</li>
+        <li>The <em>Senatus consultum de Bacchanalibus</em>; on Magna Mater, <a href="https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/">Brewminate: The Cult of Cybele in Ancient Rome</a>.</li>
       </ul>
     </div>
   ` },
@@ -2138,22 +2137,20 @@ window.CHAPTERS = {
       </ul>
       <h4>Celtic religion, druids, and the sources problem</h4>
       <ul>
-        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>; on human sacrifice, <a href="https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/">Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?</a>; <a href="https://en.wikipedia.org/wiki/Cernunnos">Wikipedia: Cernunnos</a>; <a href="https://en.wikipedia.org/wiki/Taranis">Wikipedia: Taranis</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Celtic-religion">Britannica: Celtic religion</a>; on human sacrifice, <a href="https://www.digitalmedievalist.com/opinionated-celtic-faqs/human-sacrifice/">Celtic Studies Resources: Did the Celts or Druids Perform Human Sacrifice?</a>.</li>
       </ul>
       <h4>The druidic orders and the Gallic sanctuaries</h4>
       <ul>
         <li>The three classes (druids, bards, vates), from Strabo/Posidonius — <a href="https://irishmyths.com/2022/05/27/bards-vs-vates-vs-druids/">Irish Myths: Bards vs. Vates vs. Druids</a>.</li>
-        <li>The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux) — <a href="https://en.wikipedia.org/wiki/Gournay-sur-Aronde">Wikipedia: Gournay-sur-Aronde</a>.</li>
+        <li>The war-sanctuaries of Gournay-sur-Aronde and Ribemont-sur-Ancre (Jean-Louis Brunaux).</li>
       </ul>
       <h4>Germanic religion and Tacitus</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Germanic_paganism">Wikipedia: Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology">Wikipedia: Sacred trees and groves in Germanic paganism</a>; <a href="https://en.wikipedia.org/wiki/Nerthus">Wikipedia: Nerthus</a>.</li>
-        <li>The Germanic seeress (Veleda, Aurinia/Albruna) — <a href="https://en.wikipedia.org/wiki/Seeress_(Germanic)">Wikipedia: Seeress (Germanic)</a>.</li>
         <li>The gods in the weekday names — <a href="https://theconversation.com/explainer-the-gods-behind-the-days-of-the-week-87170">The Conversation: the gods behind the days of the week</a>.</li>
       </ul>
       <h4>Sacred encoding — calendar, runes, ogham, and the bog</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Coligny_calendar">Wikipedia: Coligny calendar</a>; on the bog bodies and the Gundestrup cauldron, and on runes and ogham (with their later dating), standard reference overviews.</li>
+        <li>The Coligny calendar; on the bog bodies and the Gundestrup cauldron, and on runes and ogham (with their later dating), standard reference overviews.</li>
       </ul>
     </div>
   ` },
@@ -2270,12 +2267,12 @@ window.CHAPTERS = {
       </ul>
       <h4>The Sophists' skepticism and the healing cult</h4>
       <ul>
-        <li>Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment — <a href="https://iep.utm.edu/sophists/">IEP: The Sophists</a>; <a href="https://en.wikipedia.org/wiki/Sisyphus_fragment">Wikipedia: Sisyphus fragment</a>.</li>
+        <li>Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment — <a href="https://iep.utm.edu/sophists/">IEP: The Sophists</a>.</li>
         <li>Asclepius, Epidaurus, and dream-incubation (<em>enkoimesis</em>) with votive offerings and the <em>iamata</em> — <a href="https://olympia-museum.gr/enkoimesis-at-epidaurus/">Olympia Museum: Enkoimesis at Epidaurus</a>.</li>
       </ul>
       <h4>Socrates, Plato, and Aristotle</h4>
       <ul>
-        <li>Standard reference treatments of Socrates' trial, Plato's Forms/Demiurge/soul, and <a href="https://en.wikipedia.org/wiki/Unmoved_mover">Wikipedia: Unmoved mover (Aristotelian theology)</a>.</li>
+        <li>Standard reference treatments of Socrates' trial and Plato's Forms/Demiurge/soul.</li>
       </ul>
       <h4>Hellenistic schools</h4>
       <ul>
@@ -6295,10 +6292,8 @@ window.CHAPTERS = {
     <div class="sources">
       <h3>Sources</h3>
       <ul>
-        <li>Jainism overview: Mahavira and the 24 Tirthankaras, the śramaṇa context, the core doctrines (ahimsa, anekantavada, aparigraha), jiva/ajiva, karma, and moksha — "Mahavira," Wikipedia. <a href="https://en.wikipedia.org/wiki/Mahavira">https://en.wikipedia.org/wiki/Mahavira</a> ; "Jainism," Wikipedia. <a href="https://en.wikipedia.org/wiki/Jainism">https://en.wikipedia.org/wiki/Jainism</a></li>
         <li>Doctrine and philosophy: anekantavada (many-sidedness) and syadvada (conditional/seven-fold predication); the five vows; the two sects — "Jainism" (doctrines overview), PMF IAS. <a href="https://www.pmfias.com/jainism/">https://www.pmfias.com/jainism/</a> ; "Jainism, Founder, Symbol, Teachings, Beliefs," Vajiram &amp; Ravi. <a href="https://vajiramandravi.com/upsc-exam/jainism/">https://vajiramandravi.com/upsc-exam/jainism/</a></li>
-        <li>Ritual practice: samayika (temporary ascetic status), puja and the veneration of Tirthankaras as exemplars, pratikramana, the Namokara mantra — "Jainism: Ritual practices and religious institutions," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions">https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions</a> ; "Sāmāyika," Wikipedia. <a href="https://en.wikipedia.org/wiki/S%C4%81m%C4%81yika">https://en.wikipedia.org/wiki/S%C4%81m%C4%81yika</a></li>
-        <li>Sallekhana/santhara, the voluntary fast to death, its distinction from suicide, and its legal controversy — "Sallekhana," Wikipedia. <a href="https://en.wikipedia.org/wiki/Sallekhana">https://en.wikipedia.org/wiki/Sallekhana</a></li>
+        <li>Ritual practice: samayika (temporary ascetic status), puja and the veneration of Tirthankaras as exemplars, pratikramana, the Namokara mantra — "Jainism: Ritual practices and religious institutions," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions">https://www.britannica.com/topic/Jainism/Ritual-practices-and-religious-institutions</a></li>
         <li>The Jain emblem and its symbolism (the loka outline, the raised hand of ahimsa, the swastika of the four rebirths, the three jewels, the siddha crescent); Tirthankara iconography — "Jain Symbol," Jainworld. <a href="https://jainworld.com/education/jain-education-material/jain-symbol/">https://jainworld.com/education/jain-education-material/jain-symbol/</a> ; "Introduction to the Iconography of Jain Tirthankaras," Encyclopedia of Jainism. <a href="https://encyclopediaofjainism.com/introduction-to-the-iconography-of-jain-hrthankaras/">https://encyclopediaofjainism.com/introduction-to-the-iconography-of-jain-hrthankaras/</a></li>
         <li>Paryuṣaṇa and Daśa Lakṣaṇa; the <em>Kalpa Sūtra</em> and <em>Tattvārtha Sūtra</em> readings; Saṃvatsarī and <em>micchāmi dukkaḍaṃ</em> — JAINA (Federation of Jain Associations in North America), "Paryushan Parv &amp; Das Lakshan." <a href="https://www.jaina.org/page/ParyushanParv1">https://www.jaina.org/page/ParyushanParv1</a> ; Y. K. Malaiya (Colorado State University), "The Paryushana Parva." <a href="https://www.cs.colostate.edu/~malaiya/paryushan.html">https://www.cs.colostate.edu/~malaiya/paryushan.html</a> ; Jain eLibrary, <em>Paryushan and Das Lakshana Parva</em>. <a href="https://www.jainfoundation.in/JAINLIBRARY/books/Paryushan_and_Das_Lakshana_Parva_200016_data.pdf">https://www.jainfoundation.in/JAINLIBRARY/books/Paryushan_and_Das_Lakshana_Parva_200016_data.pdf</a></li>
       </ul>
