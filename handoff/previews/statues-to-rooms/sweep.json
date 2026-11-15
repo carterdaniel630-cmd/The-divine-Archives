@@ -1,0 +1,130 @@
+{
+ "ch15": {
+  "n": 200,
+  "over": 0,
+  "worst": {
+   "u": -1.5,
+   "v": 11.3,
+   "k": 3,
+   "p": 0,
+   "tris": 202573,
+   "calls": 60,
+   "level": 0
+  },
+  "worstC": {
+   "u": -3,
+   "v": 1.6,
+   "k": 0,
+   "p": 0,
+   "tris": 165306,
+   "calls": 66,
+   "level": 2
+  },
+  "nearView": {
+   "s": {
+    "x": 37,
+    "z": -82.9,
+    "yaw": -3.141592653589793,
+    "where": "Wing IV · The Axial Age|Classical Greece",
+    "room": "ch15",
+    "exhibits": 148,
+    "built": [
+     "02-bronze-age",
+     "04-axial-age"
+    ],
+    "calls": 49,
+    "tris": 197111,
+    "textures": 61,
+    "geometries": 162
+   },
+   "st": [
+    {
+     "id": "shiva",
+     "state": "idle",
+     "tris": 0,
+     "room": "ch83",
+     "shown": false,
+     "level": null
+    },
+    {
+     "id": "zeus",
+     "state": "ready",
+     "tris": 140697,
+     "nearTris": 93671,
+     "midTris": 26105,
+     "farTris": 8074,
+     "room": "ch15",
+     "shown": true,
+     "level": 0
+    }
+   ]
+  },
+  "guide": ""
+ },
+ "ch83": {
+  "n": 200,
+  "over": 0,
+  "worst": {
+   "u": 0,
+   "v": 12.6,
+   "k": 4,
+   "p": 0,
+   "tris": 166422,
+   "calls": 43,
+   "level": 0
+  },
+  "worstC": {
+   "u": 3,
+   "v": 1.6,
+   "k": 0,
+   "p": 0,
+   "tris": 137121,
+   "calls": 52,
+   "level": 2
+  },
+  "nearView": {
+   "s": {
+    "x": -63,
+    "z": -162.9,
+    "yaw": -3.141592653589793,
+    "where": "Wing IX · The Modern Age|Global Hinduism & the Guru Movements",
+    "room": "ch83",
+    "exhibits": 132,
+    "built": [
+     "07-high-medieval",
+     "09-modern"
+    ],
+    "calls": 40,
+    "tris": 166394,
+    "textures": 49,
+    "geometries": 162
+   },
+   "st": [
+    {
+     "id": "shiva",
+     "state": "ready",
+     "tris": 106936,
+     "nearTris": 94904,
+     "midTris": 25702,
+     "farTris": 8889,
+     "room": "ch83",
+     "shown": true,
+     "level": 0
+    },
+    {
+     "id": "zeus",
+     "state": "ready",
+     "tris": 140697,
+     "nearTris": 93671,
+     "midTris": 26105,
+     "farTris": 8074,
+     "room": "ch15",
+     "shown": false,
+     "level": 2
+    }
+   ]
+  },
+  "guide": ""
+ },
+ "errs": []
+}
