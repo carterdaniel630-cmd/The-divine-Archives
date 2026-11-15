@@ -305,21 +305,15 @@ modern Western esoteric tradition treated in the final chapters of this archive.
 
 *The mysteries and Mithraism*
 - [The Past: The mystery of Mithras](https://the-past.com/feature/the-mystery-of-mithras/);
-  on the seven grades and the tauroctony, standard reference overviews; on the evidence problem and the
-  origin debate, [Wikipedia: Parallelomania](https://en.wikipedia.org/wiki/Parallelomania).
+  on the seven grades and the tauroctony, standard reference overviews.
 
 *Isis and Cybele*
-- [Wikipedia: Mysteries of Isis](https://en.wikipedia.org/wiki/Mysteries_of_Isis) (and Apuleius, *The
-  Golden Ass* Book XI); on Cybele, Attis, and the taurobolium, [Encyclopedia.com: Cybele](https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele).
-
-*The "dying and rising god" and the parallels debate*
-- [Wikipedia: Dying-and-rising god](https://en.wikipedia.org/wiki/Dying-and-rising_god) (on the contested
-  Frazerian category).
+- Apuleius, *The
+  Golden Ass* Book XI; on Cybele, Attis, and the taurobolium, [Encyclopedia.com: Cybele](https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele).
 
 *Sol Invictus and the twilight of paganism*
-- Aurelian's Sol Invictus (274 CE) and the 25 December festival — [Britannica: Sol Invictus](https://www.britannica.com/topic/Sol-Invictus);
-  [Wikipedia: Sol Invictus](https://en.wikipedia.org/wiki/Sol_Invictus).
-- Julian's revival and the anti-pagan laws — [Wikipedia: Persecution of pagans under Theodosius I](https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I);
+- Aurelian's Sol Invictus (274 CE) and the 25 December festival — [Britannica: Sol Invictus](https://www.britannica.com/topic/Sol-Invictus).
+- Julian's revival and the anti-pagan laws —
   on the end of Eleusis (c. 396 CE), [World History Encyclopedia: Eleusis](https://www.worldhistory.org/Eleusis/).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (reference encyclopedias,

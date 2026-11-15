@@ -2399,7 +2399,7 @@ window.CHAPTERS = {
       </ul>
       <h4>The historical Jesus and the sources</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus">Wikipedia: Sources for the historicity of Jesus</a>; <a href="https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus">Britannica: Christianity — Jesus and the early church</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus">Britannica: Christianity — Jesus and the early church</a>.</li>
       </ul>
       <h4>Paul, canon formation, and diversity</h4>
       <ul>
@@ -2407,13 +2407,12 @@ window.CHAPTERS = {
       </ul>
       <h4>Women and the martyr cult</h4>
       <ul>
-        <li>Junia and Phoebe — <a href="https://en.wikipedia.org/wiki/Junia_(New_Testament_person)">Wikipedia: Junia (New Testament person)</a>; <a href="https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)">Wikipedia: Phoebe (biblical figure)</a>.</li>
-        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity">Wikipedia: Passion of Saints Perpetua and Felicity</a>; <a href="https://www.britannica.com/biography/Perpetua-Christian-martyr">Britannica: Perpetua</a>.</li>
-        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://en.wikipedia.org/wiki/Dies_natalis">Wikipedia: Dies natalis</a>; <a href="https://christianhistoryinstitute.org/study/module/polycarp">Christian History Institute: Polycarp's Martyrdom</a>.</li>
+        <li>The Passion of Perpetua and Felicity (203 CE) — <a href="https://www.britannica.com/biography/Perpetua-Christian-martyr">Britannica: Perpetua</a>.</li>
+        <li>The Martyrdom of Polycarp, relics, and the <em>dies natalis</em> — <a href="https://christianhistoryinstitute.org/study/module/polycarp">Christian History Institute: Polycarp's Martyrdom</a>.</li>
       </ul>
       <h4>Symbol and sacred encoding</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Ichthys">Wikipedia: Ichthys</a>; <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical Archaeology Society: The Staurogram</a>; on 666 and Nero, <a href="https://www.britannica.com/topic/number-of-the-beast">Britannica: Number of the beast</a>.</li>
+        <li><a href="https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/">Biblical Archaeology Society: The Staurogram</a>; on 666 and Nero, <a href="https://www.britannica.com/topic/number-of-the-beast">Britannica: Number of the beast</a>.</li>
       </ul>
     </div>
   ` },
@@ -2529,20 +2528,16 @@ window.CHAPTERS = {
       </ul>
       <h4>Gnostic systems, schools, and the Nag Hammadi discovery</h4>
       <ul>
-        <li><a href="https://iep.utm.edu/gnostic/">Internet Encyclopedia of Philosophy: Gnosticism</a>; <a href="https://en.wikipedia.org/wiki/Nag_Hammadi_library">Wikipedia: Nag Hammadi library</a>; on the category debate, the work of Michael Williams (<em>Rethinking "Gnosticism"</em>) and Karen King (<em>What Is Gnosticism?</em>).</li>
+        <li><a href="https://iep.utm.edu/gnostic/">Internet Encyclopedia of Philosophy: Gnosticism</a>; on the category debate, the work of Michael Williams (<em>Rethinking "Gnosticism"</em>) and Karen King (<em>What Is Gnosticism?</em>).</li>
       </ul>
       <h4>Texts</h4>
       <ul>
-        <li>On the Gospel of Thomas, <a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart Ehrman: The Gospel of Thomas — An Overview</a> and <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/bible-versions-and-translations/the-gospel-of-thomas-114-sayings-of-jesus/">Biblical Archaeology Society: The Gospel of Thomas's 114 Sayings</a>; <a href="https://en.wikipedia.org/wiki/Gospel_of_Philip">Wikipedia: Gospel of Philip</a>.</li>
+        <li>On the Gospel of Thomas, <a href="https://ehrmanblog.org/the-gospel-of-thomas-an-overview/">Bart Ehrman: The Gospel of Thomas — An Overview</a> and <a href="https://www.biblicalarchaeology.org/daily/biblical-topics/bible-versions-and-translations/the-gospel-of-thomas-114-sayings-of-jesus/">Biblical Archaeology Society: The Gospel of Thomas's 114 Sayings</a>.</li>
       </ul>
       <h4>Manichaeism and Hermeticism</h4>
       <ul>
         <li>Mani, the Light/Darkness dualism, the Elect and Hearers, and the spread from Rome to China — <a href="https://www.britannica.com/topic/Manichaeism">Britannica: Manichaeism</a>; on Augustine's years as a Hearer, standard treatments.</li>
-        <li>The Corpus Hermeticum and Hermes Trismegistus — <a href="https://www.thecollector.com/hermes-trismegistus-hermeticism/">TheCollector: Hermes Trismegistus &amp; the Founding of Hermeticism</a>; on the later Emerald Tablet, <a href="https://en.wikipedia.org/wiki/Emerald_Tablet">Wikipedia: Emerald Tablet</a>.</li>
-      </ul>
-      <h4>Sacred encoding — Abraxas and the numbered cosmos</h4>
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Abraxas">Wikipedia: Abraxas</a> (on the isopsephy of 365 and Basilides).</li>
+        <li>The Corpus Hermeticum and Hermes Trismegistus — <a href="https://www.thecollector.com/hermes-trismegistus-hermeticism/">TheCollector: Hermes Trismegistus &amp; the Founding of Hermeticism</a>.</li>
       </ul>
     </div>
   ` },
@@ -2669,20 +2664,16 @@ window.CHAPTERS = {
       </ul>
       <h4>The mysteries and Mithraism</h4>
       <ul>
-        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>; on the seven grades and the tauroctony, standard reference overviews; on the evidence problem and the origin debate, <a href="https://en.wikipedia.org/wiki/Parallelomania">Wikipedia: Parallelomania</a>.</li>
+        <li><a href="https://the-past.com/feature/the-mystery-of-mithras/">The Past: The mystery of Mithras</a>; on the seven grades and the tauroctony, standard reference overviews.</li>
       </ul>
       <h4>Isis and Cybele</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Mysteries_of_Isis">Wikipedia: Mysteries of Isis</a> (and Apuleius, <em>The Golden Ass</em> Book XI); on Cybele, Attis, and the taurobolium, <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele">Encyclopedia.com: Cybele</a>.</li>
-      </ul>
-      <h4>The "dying and rising god" and the parallels debate</h4>
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Dying-and-rising_god">Wikipedia: Dying-and-rising god</a> (on the contested Frazerian category).</li>
+        <li>Apuleius, <em>The Golden Ass</em> Book XI; on Cybele, Attis, and the taurobolium, <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/cybele">Encyclopedia.com: Cybele</a>.</li>
       </ul>
       <h4>Sol Invictus and the twilight of paganism</h4>
       <ul>
-        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>; <a href="https://en.wikipedia.org/wiki/Sol_Invictus">Wikipedia: Sol Invictus</a>.</li>
-        <li>Julian's revival and the anti-pagan laws — <a href="https://en.wikipedia.org/wiki/Persecution_of_pagans_under_Theodosius_I">Wikipedia: Persecution of pagans under Theodosius I</a>; on the end of Eleusis (c. 396 CE), <a href="https://www.worldhistory.org/Eleusis/">World History Encyclopedia: Eleusis</a>.</li>
+        <li>Aurelian's Sol Invictus (274 CE) and the 25 December festival — <a href="https://www.britannica.com/topic/Sol-Invictus">Britannica: Sol Invictus</a>.</li>
+        <li>Julian's revival and the anti-pagan laws — on the end of Eleusis (c. 396 CE), <a href="https://www.worldhistory.org/Eleusis/">World History Encyclopedia: Eleusis</a>.</li>
       </ul>
     </div>
   ` },
@@ -2814,16 +2805,15 @@ window.CHAPTERS = {
       </ul>
       <h4>The texts</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Oral_Torah">Wikipedia: Oral Torah</a>; <a href="https://www.britannica.com/topic/Mishna">Britannica: Mishna</a>; <a href="https://en.wikipedia.org/wiki/Judah_ha-Nasi">Wikipedia: Judah ha-Nasi</a>.</li>
+        <li><a href="https://www.britannica.com/topic/Mishna">Britannica: Mishna</a>.</li>
       </ul>
       <h4>The Oven of Akhnai and the synagogue mosaics</h4>
       <ul>
-        <li>The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — <a href="https://en.wikipedia.org/wiki/Not_in_Heaven">Wikipedia: Not in Heaven</a>; <a href="https://www.myjewishlearning.com/article/bava-metzia-59/">My Jewish Learning: Bava Metzia 59</a>.</li>
-        <li>The zodiac-and-Helios synagogue mosaics — <a href="https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">My Jewish Learning: Astrology in the Ancient Synagogue</a>; <a href="https://en.wikipedia.org/wiki/Beth_Alpha">Wikipedia: Beth Alpha</a>; the figurative frescoes of the <a href="https://en.wikipedia.org/wiki/Dura-Europos_synagogue">Dura-Europos synagogue</a>.</li>
+        <li>The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — <a href="https://www.myjewishlearning.com/article/bava-metzia-59/">My Jewish Learning: Bava Metzia 59</a>.</li>
+        <li>The zodiac-and-Helios synagogue mosaics — <a href="https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/">My Jewish Learning: Astrology in the Ancient Synagogue</a>.</li>
       </ul>
       <h4>Sacred encoding — letters, Sefer Yetzirah, and mysticism</h4>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Sefer_Yetzirah">Wikipedia: Sefer Yetzirah</a>; on Merkabah and Hekhalot mysticism and the "four who entered pardes," standard reference overviews.</li>
         <li>The Seder, Mishnah Pesaḥim 10 and the symposium question — Baruch M. Bokser, <em>The Origins of the Seder: The Passover Rite and Early Rabbinic Judaism</em> (Berkeley: University of California Press, 1984; repr. JTS Press, 2002). <a href="https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html">https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html</a> ; Schechter Institute, "The Origins of the Seder" (on Stein 1957 and the scholars who followed him). <a href="https://schechter.edu/the-origins-of-the-seder/">https://schechter.edu/the-origins-of-the-seder/</a> ; Mishnah Pesaḥim 10, at Sefaria. <a href="https://www.sefaria.org/Mishnah_Pesachim.10">https://www.sefaria.org/Mishnah_Pesachim.10</a></li>
         <li>The <em>Seder Rav Amram Gaon</em> — Jewish Virtual Library, "Amram Gaon." <a href="https://www.jewishvirtuallibrary.org/amram-gaon">https://www.jewishvirtuallibrary.org/amram-gaon</a></li>
         <li>The Karaites, Anan ben David and the origins debate — Daniel J. Lasker, <em>Karaism: An Introduction to the Oldest Surviving Alternative Judaism</em> (London: Littman Library, 2022), reviewed in <em>The Jerusalem Post</em>. <a href="https://www.jpost.com/judaism/article-707768">https://www.jpost.com/judaism/article-707768</a> ; TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites." <a href="https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites">https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites</a></li>
@@ -2961,12 +2951,12 @@ window.CHAPTERS = {
       </ul>
       <h4>Origins scholarship and sacred encoding</h4>
       <ul>
-        <li>On the revised (monastic, minority) origins, the work of Gregory Schopen and Jan Nattier (e.g. <em>A Few Good Men</em>); on Indra's Net, <a href="https://en.wikipedia.org/wiki/Indra's_net">Wikipedia: Indra's net</a> and the Avatamsaka Sutra.</li>
+        <li>On the revised (monastic, minority) origins, the work of Gregory Schopen and Jan Nattier (e.g. <em>A Few Good Men</em>); on Indra's Net, the Avatamsaka Sutra.</li>
       </ul>
       <h4>Guanyin and the cult of the book</h4>
       <ul>
         <li>The feminization of Avalokiteshvara into Guanyin and the Miaoshan legend — <a href="https://www.embodiedphilosophy.com/from-bodhisattva-to-goddess-guanyin-and-chinese-buddhism-2/">Embodied Philosophy: From Bodhisattva to Goddess</a>.</li>
-        <li>The Mahayana "cult of the book" (Schopen) and sutra-copying merit — <a href="https://en.wikipedia.org/wiki/Sutra_copying">Wikipedia: Sutra copying</a>.</li>
+        <li>The Mahayana "cult of the book" (Schopen) and sutra-copying merit.</li>
         <li>The Mogao caves (492 shrines; UNESCO 1987), the Library Cave and Stein (1907) — UNESCO World Heritage Centre, "Mogao Caves." <a href="https://whc.unesco.org/en/list/440/">https://whc.unesco.org/en/list/440/</a> ; Getty Conservation Institute Newsletter 14.2, on the Mogao conservation programme. <a href="https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf">https://www.getty.edu/conservation/publications_resources/newsletters/pdf/v14n2.pdf</a></li>
         <li>The <em>Diamond Sūtra</em> of 868 — Linda Hall Library, "The Diamond Sutra" (11 May 868; British Library). <a href="https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/">https://www.lindahall.org/about/news/scientist-of-the-day/the-diamond-sutra/</a> ; International Dunhuang Programme. <a href="https://idp.bl.uk/">https://idp.bl.uk/</a></li>
       </ul>
@@ -6545,8 +6535,7 @@ window.CHAPTERS = {
         <li>Manichaeism overview: Mani (c. 216–274 CE), the "Apostle of Light," the prophetic succession (Adam, Buddha, Zoroaster, Jesus), the Light/Darkness dualism and cosmology, the Elect and Hearers, and the spread and persecution — "Manichaeism," Encyclopædia Britannica. <a href="https://www.britannica.com/topic/Manichaeism">https://www.britannica.com/topic/Manichaeism</a> ; "Manichaeism," Encyclopedia.com. <a href="https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/manichaeism">https://www.encyclopedia.com/philosophy-and-religion/ancient-religions/ancient-religion/manichaeism</a></li>
         <li>The radical dualism, the trapped light-particles, salvation by gnosis and asceticism, the two-tier community, and the peak spread (Roman West to China; the Uyghur Khaganate) — "Manichaeism," Grokipedia. <a href="https://grokipedia.com/page/Manichaeism">https://grokipedia.com/page/Manichaeism</a></li>
         <li>Augustine as a Manichaean Hearer (c. 373–382) and later opponent; the problem of evil — Manichaeism overview (Augustine section), EncyclopedAI. <a href="https://encyclopedai.stavros.io/entries/manichaeism/">https://encyclopedai.stavros.io/entries/manichaeism/</a></li>
-        <li>Mani's self-authored scriptures (the seven treatises, the Shābuhragān) and the Āržang picture-book — "Manichaean scripture," Wikipedia. <a href="https://en.wikipedia.org/wiki/Manichaean_scripture">https://en.wikipedia.org/wiki/Manichaean_scripture</a></li>
-        <li>The Cologne Mani-Codex (the smallest ancient book, on Mani's early life) and the Coptic Kephalaia — "Cologne Mani-Codex," Wikipedia. <a href="https://en.wikipedia.org/wiki/Cologne_Mani-Codex">https://en.wikipedia.org/wiki/Cologne_Mani-Codex</a> ; "Coptic Manichean Texts," Encyclopaedia Iranica. <a href="https://www.iranicaonline.org/articles/coptic-manichean-texts/">https://www.iranicaonline.org/articles/coptic-manichean-texts/</a></li>
+        <li>The Cologne Mani-Codex (the smallest ancient book, on Mani's early life) and the Coptic Kephalaia — "Coptic Manichean Texts," Encyclopaedia Iranica. <a href="https://www.iranicaonline.org/articles/coptic-manichean-texts/">https://www.iranicaonline.org/articles/coptic-manichean-texts/</a></li>
       </ul>
     </div>
   ` },
@@ -7929,7 +7918,6 @@ window.CHAPTERS = {
         <li>Kāhins, sajʿ and jinn — D. J. Stewart, "Sajʿ in the Qurʾān: Prosody and Structure," <em>Journal of Arabic Literature</em> 21, no. 2 (1990): 101–139 ; A. El-Zein, <em>Islam, Arabs, and the Intelligent World of the Jinn</em> (Syracuse University Press, 2009), incl. chapters on divination and jinn inspiring poets. <a href="https://muse.jhu.edu/book/12956">https://muse.jhu.edu/book/12956</a></li>
         <li>The Qur'anic pagans debate (Hawting, Crone) — P. Crone, "The Religion of the Qurʾānic Pagans: God and the Lesser Deities." <a href="https://www.ias.edu/sites/default/files/hs/Crone_Articles/Crone_Quranic_Deities.pdf">https://www.ias.edu/sites/default/files/hs/Crone_Articles/Crone_Quranic_Deities.pdf</a> ; review of Crone, <em>The Qurʾānic Pagans and Related Matters</em>, <em>American Journal of Islam and Society</em>. <a href="https://www.ajis.org/index.php/ajiss/article/view/777">https://www.ajis.org/index.php/ajiss/article/view/777</a></li>
         <li>The "Satanic verses" story — S. Ahmed, <em>Before Orthodoxy: The Satanic Verses in Early Islam</em> (Harvard University Press, 2017). <a href="https://readingreligion.org/9780674047426/before-orthodoxy">https://readingreligion.org/9780674047426/before-orthodoxy</a></li>
-        <li>The moon-god claim and its rejection — "Allah as a lunar deity," Wikipedia (pointer: no stronger source on the 1990s polemic itself was confirmed; the derivation of the name from <em>al-ilāh</em> is covered by Al-Jallad and Sidky, "Late Antique Allāh", cited above). <a href="https://en.wikipedia.org/wiki/Allah_as_a_lunar_deity">https://en.wikipedia.org/wiki/Allah_as_a_lunar_deity</a></li>
         <li>Pre-Islamic pilgrimage and the Black Stone — F. E. Peters, <em>The Hajj: The Muslim Pilgrimage to Mecca and the Holy Places</em> (Princeton University Press, 1994), on the pre-Islamic origins of the rites and the Black Stone. <a href="https://press.princeton.edu/isbn/9780691026190">https://press.princeton.edu/isbn/9780691026190</a></li>
       </ul>
     </div>
