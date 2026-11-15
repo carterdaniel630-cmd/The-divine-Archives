@@ -434,9 +434,7 @@ the great medieval **Neo-Confucian** synthesis, all of which belong to later cha
   [Internet Encyclopedia of Philosophy: Zhuangzi](https://iep.utm.edu/zhuangzi-chuang-tzu-chinese-philosopher/).
 
 *Religious Daoism and the Celestial Masters*
-- [SEP: Religious Daoism](https://plato.stanford.edu/entries/daoism-religion/);
-  [Wikipedia: Way of the Celestial Masters](https://en.wikipedia.org/wiki/Way_of_the_Celestial_Masters);
-  [Wikipedia: Zhang Daoling](https://en.wikipedia.org/wiki/Zhang_Daoling).
+- [SEP: Religious Daoism](https://plato.stanford.edu/entries/daoism-religion/).
 
 *The Yijing and symbolism*
 - [Britannica: Yijing](https://www.britannica.com/topic/Yijing); on the trigrams, yin/yang,

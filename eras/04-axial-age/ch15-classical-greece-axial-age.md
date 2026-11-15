@@ -307,14 +307,12 @@ or the Good itself, he is speaking Greek.
 
 *The Sophists' skepticism and the healing cult*
 - Protagoras's agnosticism, Prodicus's naturalistic theory, and the Sisyphus fragment —
-  [IEP: The Sophists](https://iep.utm.edu/sophists/);
-  [Wikipedia: Sisyphus fragment](https://en.wikipedia.org/wiki/Sisyphus_fragment).
+  [IEP: The Sophists](https://iep.utm.edu/sophists/).
 - Asclepius, Epidaurus, and dream-incubation (*enkoimesis*) with votive offerings and
   the *iamata* — [Olympia Museum: Enkoimesis at Epidaurus](https://olympia-museum.gr/enkoimesis-at-epidaurus/).
 
 *Socrates, Plato, and Aristotle*
-- Standard reference treatments of Socrates' trial, Plato's Forms/Demiurge/soul, and
-  [Wikipedia: Unmoved mover (Aristotelian theology)](https://en.wikipedia.org/wiki/Unmoved_mover).
+- Standard reference treatments of Socrates' trial and Plato's Forms/Demiurge/soul.
 
 *Hellenistic schools*
 - [Internet Encyclopedia of Philosophy: Epicurus](https://iep.utm.edu/epicur/);
