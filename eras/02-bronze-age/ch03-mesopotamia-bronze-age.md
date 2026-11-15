@@ -376,15 +376,12 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
 - <em>Enuma Elish</em> (Babylonian creation epic) &mdash;
   [Britannica: Enuma Elish](https://www.britannica.com/topic/Enuma-Elish);
   [World History Encyclopedia: full text](https://www.worldhistory.org/article/225/enuma-elish---the-babylonian-epic-of-creation---fu/).
-- <em>The Descent of Inanna into the Underworld</em> —
-  [Wikipedia](https://en.wikipedia.org/wiki/Descent_of_Inanna_into_the_Underworld).
 - The Law Stele of Hammurabi (Louvre) —
   [Smarthistory: Law Code Stele of King Hammurabi](https://smarthistory.org/hammurabi-2/);
   [Louvre: The Code of Hammurabi](https://www.louvre.fr/en/the-code-of-hammurabi).
 
 *Enheduanna, demons, and the suffering-righteous literature*
 - Enheduanna and the <em>Exaltation of Inanna</em> —
-  [Wikipedia: Enheduanna](https://en.wikipedia.org/wiki/Enheduanna);
   [The Morgan Library: <em>She Who Wrote</em>](https://www.themorgan.org/blog/she-who-wrote-enheduanna-and-women-mesopotamia);
   [World History Encyclopedia: Hymn to Inanna](https://www.worldhistory.org/article/2109/hymn-to-inanna/).
 - Demons and exorcism (Lamashtu, Pazuzu, the <em>āšipu</em>, <em>Maqlû</em>) —
@@ -392,7 +389,6 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
   [Getty: Meet the Mesopotamian Demons](https://www.getty.edu/news/meet-the-mesopotamian-demons/);
   S. Konstantopoulos, "Demons and exorcism in ancient Mesopotamia," <em>Religion Compass</em> (2020).
 - <em>Ludlul bēl nēmeqi</em> (the "Babylonian Job") and the <em>Babylonian Theodicy</em> —
-  [Wikipedia: Ludlul bēl nēmeqi](https://en.wikipedia.org/wiki/Ludlul_b%C4%93l_n%C4%93meqi);
   [World History Encyclopedia: Ludlul-Bel-Nemeqi](https://www.worldhistory.org/article/226/ludlul-bel-nemeqi/).
 
 *Deities, cult, and divination*
@@ -406,16 +402,11 @@ astrology, and one of Mesopotamia&rsquo;s longest-lived exports.
   [Cambridge Core (PDF)](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E44F1731C922EF9FF43E0B5D2DF67AC1/S0003598X00067417a.pdf/human-sacrifice-and-intentional-corpse-preservation-in-the-royal-cemetery-of-ur.pdf).
 - [Penn Museum, Expedition: A Spectacular Discovery](https://www.penn.museum/sites/expedition/a-spectacular-discovery/).
 
-*On the Hammurabi &ldquo;code&rdquo; debate*
-- [Wikipedia: Code of Hammurabi](https://en.wikipedia.org/wiki/Code_of_Hammurabi) (summarizing Van De Mieroop, Yoffee, and others).
-
 *On Enuma Elish and Genesis*
 - [Bible Odyssey: The Enuma Elish and the Bible](https://www.bibleodyssey.org/articles/the-enuma-elish-and-the-bible/);
   [TheTorah.com: Enuma Elish](https://www.thetorah.com/article/enuma-elish-babylonias-creation-myth-and-the-enthronement-of-marduk).
 
 *Symbology and sacred encoding*
-- Divine numbers of the gods &mdash; [Wikipedia: Sin (mythology)](https://en.wikipedia.org/wiki/Sin_(mythology)); god-list traditions.
-- Nisaba and Nabu as patrons of writing &mdash; [Wikipedia: Nisaba](https://en.wikipedia.org/wiki/Nisaba).
 - Sargon II&rsquo;s Khorsabad wall built to the numerical value of his name (earliest
   documented name-numerology) &mdash; [Jewish Virtual Library: Gematria](https://www.jewishvirtuallibrary.org/gematria-2).
 - Celestial divination series <em>Enuma Anu Enlil</em> and planet&ndash;god
