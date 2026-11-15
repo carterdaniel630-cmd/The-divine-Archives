@@ -4,6 +4,7 @@
 Nothing built yet.
 
 ## Done
+- Scheduled task **Divine Archives — VR loop** created 2026-11-15 22:20 UTC, hourly at :11 (build loop runs at :41); first run 23:11 UTC; runs approve their own steps within the limits in its prompt and VR-LOOP.md.
 - Procedure written: `handoff/VR-LOOP.md`. Atlas asked for the spec set: `request-2026-11-15-atlas-vr-specs.md`.
 - Code map checked (`graphify query`, 2026-11-15): no WebXR code in `docs/museum/` or `docs/assets/` yet; the
   vendored three.js (`docs/assets/vendor/three/`) carries its XR support.
