@@ -710,3 +710,5 @@ Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-202
 - 2026-11-08 ~17:05 UTC: **PR #130 merged per item** on Carter's yes (`decisions-2026-11-08-carter-yes-130.md`): main b3188230 -> 593d7d17 (fast-forward), GitHub all green incl. Lighthouse. 168 museum-rendition stills on 50 chapters. Still for Carter: revered-figure stills a/b; D2.
 
 - 2026-11-15 ~02:50 UTC: **PR #141 merged per item** on Carter's "merge" (confirming his 11-15 "a", reversing 11-08 "b"): main dfe4d272 -> f92ab8d7; V57/V25/V13 stills now on chapter pages; GitHub 9/9 green incl. Lighthouse; review PASS.
+
+- 2026-11-15 ~04:05 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy, on Carter's "continue"): opened **PR #142** V44 line-4 (`loop/v44-line4`), **PR #143** figure credit lines (`loop/figure-credit-lines`), **PR #144** statues-to-rooms (`loop/statues-to-rooms`); GitHub checks running. Rök V36 back-link independent review running (this session wrote none of it). Lock released while waiting.
