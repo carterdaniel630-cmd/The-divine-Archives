@@ -1027,7 +1027,7 @@ window.VAULT = {
       study: { manifest: "", rights: "Photographs of the stele belong to the Egyptian Museum and their photographers.", external: [] }
     },
     {
-      id: "v44", slug: "pilate-stone", status: "published", pending: true,
+      id: "v44", slug: "pilate-stone", status: "published", pending: false,
       era: "04-axial-age", year: 30, chapters: ["ch13", "ch16", "ch10"],
       title: "The Pilate Stone", category: "texts",
       source: "vault/v44-pilate-stone.md",
