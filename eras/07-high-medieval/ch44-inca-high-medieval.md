@@ -63,13 +63,10 @@ The Inca are the third of the great temple religions of the pre-Columbian Americ
 
 ## Sources
 
-- Inca deities (Inti, Viracocha, Pachamama, Mama Killa, Illapa) and the divine Sapa Inca; the Coricancha; Inti Raymi — "Inca religion," Britannica; "Inti," Wikipedia. https://www.britannica.com/topic/Inca-religion
-- The three pachas (Hanan, Kay, Uku) — "Pacha (Inca mythology)," Wikipedia. https://en.wikipedia.org/wiki/Pacha_(Inca_mythology)
-- The Cusco ceque system (41 lines, ~328 huacas radiating from the Coricancha, tended by ayllus) — "Ceque system," Wikipedia; Bauer, *The Sacred Landscape of the Inca*. https://en.wikipedia.org/wiki/Ceque_system
-- The huacas as sacred places/objects and the holy Andean landscape — "Huaca," Wikipedia. https://en.wikipedia.org/wiki/Huaca
+- Inca deities (Inti, Viracocha, Pachamama, Mama Killa, Illapa) and the divine Sapa Inca; the Coricancha; Inti Raymi — "Inca religion," Britannica. https://www.britannica.com/topic/Inca-religion
+- The Cusco ceque system (41 lines, ~328 huacas radiating from the Coricancha, tended by ayllus) — Bauer, *The Sacred Landscape of the Inca*.
 - The royal mummies (mallqui), the panaca ancestor-corporations, and split inheritance — World History Encyclopedia, "Inca Mummies." https://www.worldhistory.org/article/699/inca-mummies/
-- The capacocha child sacrifice and the frozen Children of Llullaillaco — "Children of Llullaillaco," Wikipedia; PNAS, "Archaeological, radiological, and biological evidence… Inca child sacrifice." https://en.wikipedia.org/wiki/Children_of_Llullaillaco
+- The capacocha child sacrifice and the frozen Children of Llullaillaco — PNAS, "Archaeological, radiological, and biological evidence… Inca child sacrifice."
 - The quipu (khipu): knotted-cord record-keeping and the khipukamayuq — World History Encyclopedia, "Quipu." https://www.worldhistory.org/Quipu/
 - The oracle of Pachacamac — World History Encyclopedia, "Pachacamac." https://www.worldhistory.org/Pachacamac/
-- The colonial extirpation of idolatries and the Taki Onqoy movement — "Inca religion" / "Taki Unquy," reference overviews. https://en.wikipedia.org/wiki/Taki_Unquy
 - The Huarochirí Manuscript — Frank Salomon and George L. Urioste (trans.), *The Huarochirí Manuscript: A Testament of Ancient and Colonial Andean Religion* (Austin: University of Texas Press, 1991). https://www.fulcrum.org/concern/monographs/df65v810t ; F. Salomon, article on the manuscript (c. 1608), *Íconos* (FLACSO Ecuador). https://repositorio.flacsoandes.edu.ec/bitstream/10469/9520/1/REXTN-ED93-03-Salomon.pdf ; Wellcome Collection catalogue record (compiled c. 1598). https://wellcomecollection.org/works/g2ybjsjn

@@ -81,14 +81,10 @@ Scholasticism grew from the **patristic Christianity** of the earlier era (Chapt
 
 - Definition, method (lectio/quaestio/disputatio), dates, faith and reason — "Scholasticism," New World Encyclopedia; Britannica. https://www.britannica.com/topic/Scholasticism
 - Avicenna on essence/existence and the Necessary Being — "Ibn Sina's Metaphysics," Stanford Encyclopedia of Philosophy. https://plato.stanford.edu/entries/ibn-sina-metaphysics/
-- Al-Ghazali's *Incoherence of the Philosophers* and Averroes' *Incoherence of the Incoherence* — "The Incoherence of the Incoherence," Wikipedia; SEP, "al-Ghazali." https://en.wikipedia.org/wiki/The_Incoherence_of_the_Incoherence
+- Al-Ghazali's *Incoherence of the Philosophers* and Averroes' *Incoherence of the Incoherence* — SEP, "al-Ghazali."
 - Anselm (fides quaerens intellectum, ontological argument), Abelard's *Sic et Non*, Lombard's *Sentences*, and the problem of universals — Britannica, "Scholasticism."
-- Aquinas's Five Ways — "Five Ways (Aquinas)," Wikipedia. https://en.wikipedia.org/wiki/Five_Ways_(Aquinas)
 - Bonaventure and the Franciscan/Augustinian alternative — "Bonaventure," Internet Encyclopedia of Philosophy. https://iep.utm.edu/bonaventure/
-- Siger of Brabant, Latin Averroism, and the "double truth" caricature — "Siger of Brabant" and "Double truth," Wikipedia. https://en.wikipedia.org/wiki/Double_truth
 - Duns Scotus (haecceity, univocity) and William of Ockham (nominalism, Ockham's razor) — "William of Ockham," Internet Encyclopedia of Philosophy. https://iep.utm.edu/ockham/
 - Maimonides, *Guide for the Perplexed* (c. 1190), in dialogue with Avicenna and Averroes — "The Influence of Islamic Thought on Maimonides," Stanford Encyclopedia of Philosophy. https://plato.stanford.edu/entries/maimonides-islamic/
 - The Condemnations of 1277 (Tempier, 219 theses) and the Duhem thesis — "Condemnation of 1277," Stanford Encyclopedia of Philosophy. https://plato.stanford.edu/archives/win2003/entries/condemnation/
-- Ramon Llull's *Ars combinatoria* as a "thinking machine" and ancestor of symbolic logic — "Ars combinatoria," Wikipedia. https://en.wikipedia.org/wiki/Ars_combinatoria
-- The four senses of Scripture — "Medieval Exegesis," Wikipedia. https://en.wikipedia.org/wiki/Medieval_Exegesis
 - The Gothic cathedral as a "summa in stone" — Erwin Panofsky, *Gothic Architecture and Scholasticism*. https://www.goodreads.com/book/show/724250.Gothic_Architecture_and_Scholasticism

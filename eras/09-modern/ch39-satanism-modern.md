@@ -73,10 +73,6 @@ The two Satanisms have two entirely separate genealogies. The **imagined** one d
 
 ## Sources
 
-- The Satanic Panic and the FBI's Lanning report (1992) finding no evidence of Satanic ritual-abuse networks — "Satanic panic" / "Satanic ritual abuse," reference overviews. https://en.wikipedia.org/wiki/Satanic_panic
-- The Affair of the Poisons (1677–1682), La Voisin, and the alleged *messes noires* — "La Voisin," Wikipedia. https://en.wikipedia.org/wiki/La_Voisin
 - Romantic Satanism: Milton's Satan read as hero by Blake, Shelley, and Byron; Carducci's *Inno a Satana* (1865); Baudelaire and the Decadents; Huysmans's *Là-Bas* — "Inno a Satana," Britannica; HISTORY, "Satanism." https://www.britannica.com/topic/Inno-a-Satana · https://www.history.com/articles/satanism
-- The Church of Satan (1966), Anton LaVey, the *Satanic Bible* (1969), and the Nine Satanic Statements — "Church of Satan" and "Anton LaVey," Wikipedia; Church of Satan, "The Nine Satanic Statements." https://en.wikipedia.org/wiki/Church_of_Satan · https://churchofsatan.com/nine-satanic-statements/
-- The Temple of Set (1975), Michael Aquino, *The Book of Coming Forth by Night*, theistic Left-Hand Path — "Temple of Set," Wikipedia. https://en.wikipedia.org/wiki/Temple_of_Set
-- The Satanic Temple (2013): Seven Tenets, the Baphomet statue and Ten Commandments protests, After School Satan, the abortion-ritual/RFRA campaign, 2019 IRS recognition — "The Satanic Temple," Wikipedia; The Conversation, "How the Satanic Temple is using 'abortion rituals'…" https://en.wikipedia.org/wiki/The_Satanic_Temple · https://theconversation.com/how-the-satanic-temple-is-using-abortion-rituals-to-claim-religious-liberty-against-the-texas-heartbeat-bill-167755
-- Baphomet as Éliphas Lévi's 1856 creation (not an ancient demon); the Black Mass as largely literary — "Baphomet," Wikipedia. https://en.wikipedia.org/wiki/Baphomet
+- The Church of Satan (1966), Anton LaVey, the *Satanic Bible* (1969), and the Nine Satanic Statements — Church of Satan, "The Nine Satanic Statements." https://churchofsatan.com/nine-satanic-statements/
+- The Satanic Temple (2013): Seven Tenets, the Baphomet statue and Ten Commandments protests, After School Satan, the abortion-ritual/RFRA campaign, 2019 IRS recognition — The Conversation, "How the Satanic Temple is using 'abortion rituals'…" https://theconversation.com/how-the-satanic-temple-is-using-abortion-rituals-to-claim-religious-liberty-against-the-texas-heartbeat-bill-167755

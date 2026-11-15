@@ -64,13 +64,7 @@ The diaspora religions are the direct, living continuation of the **African Trad
 
 ## Sources
 
-- Haitian Vodou: the lwa, the Rada and Petwo nations, Bondye, Ginen, possession, and syncretism with Catholic saints — "Haitian Vodou," Wikipedia; Britannica, "Vodou." https://en.wikipedia.org/wiki/Haitian_Vodou
-- Bois Caïman (August 1791) and Vodou's role in the Haitian Revolution — "Bois Caïman," Wikipedia. https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman
-- The Haitian zombie, Wade Davis's *The Serpent and the Rainbow* (1985), tetrodotoxin, and the Clairvius Narcisse case (contested) — "The Serpent and the Rainbow (book)," Wikipedia. https://en.wikipedia.org/wiki/The_Serpent_and_the_Rainbow_(book)
-- Santería (Regla de Ocha / Lucumí): Olodumare, aché, the orichas, elekes, asiento initiation, diloggún, Ifá and the babalawo — "Santería," Wikipedia. https://en.wikipedia.org/wiki/Santer%C3%ADa
-- *Church of the Lukumi Babalu Aye v. City of Hialeah* (1993), animal sacrifice and free exercise — "Church of the Lukumi Babalu Aye v. City of Hialeah," Wikipedia. https://en.wikipedia.org/wiki/Church_of_the_Lukumi_Babalu_Aye_v._City_of_Hialeah
-- Candomblé (the nações, terreiro, axé, Exu) and Umbanda; Kongo-derived Palo Monte and the nganga — "Candomblé" and "Palo (religion)," Wikipedia. https://en.wikipedia.org/wiki/Candombl%C3%A9
-- Louisiana Voodoo and Marie Laveau (b. 1801), the "Voodoo Queen" of New Orleans — "Marie Laveau," Wikipedia / EBSCO. https://en.wikipedia.org/wiki/Marie_Laveau
-- Rastafari: Haile Selassie as Jah, Garvey, Leonard Howell and Pinnacle (1940), the Kebra Nagast, Babylon and Zion, the mansions (Nyahbinghi, Bobo Ashanti, Twelve Tribes), dreadlocks, ital, ganja, reggae — "Rastafari," Britannica; "Mansions of Rastafari," Wikipedia. https://www.britannica.com/topic/Rastafari
+- Haitian Vodou: the lwa, the Rada and Petwo nations, Bondye, Ginen, possession, and syncretism with Catholic saints — Britannica, "Vodou."
+- Louisiana Voodoo and Marie Laveau (b. 1801), the "Voodoo Queen" of New Orleans — "Marie Laveau," EBSCO.
+- Rastafari: Haile Selassie as Jah, Garvey, Leonard Howell and Pinnacle (1940), the Kebra Nagast, Babylon and Zion, the mansions (Nyahbinghi, Bobo Ashanti, Twelve Tribes), dreadlocks, ital, ganja, reggae — "Rastafari," Britannica. https://www.britannica.com/topic/Rastafari
 - Haile Selassie's state visit to Jamaica, 21 April 1966 — "Haile Selassie in Jamaica," reference overviews. https://africasacountry.com/2016/04/when-emperor-haile-selassie-went-to-jamaica-on-this-day-in-1966
-- The racist "voodoo" stereotype and the European-poppet origin of the "voodoo doll" — "Voodoo doll" / Louisiana Voodoo, reference overviews. https://en.wikipedia.org/wiki/Voodoo_doll

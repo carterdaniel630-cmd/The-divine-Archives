@@ -329,13 +329,10 @@ popes carry to this day.
 ## Sources
 
 *State religion, priesthoods, and concepts*
-- [Encyclopedia.com: Roman Religion](https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion);
-  [Wikipedia: College of Pontiffs](https://en.wikipedia.org/wiki/College_of_Pontiffs);
-  [Wikipedia: Vestal Virgin](https://en.wikipedia.org/wiki/Vestal_Virgin).
+- [Encyclopedia.com: Roman Religion](https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/roman-religion).
 
 *Divination and the pantheon*
 - [Oxford Classical Dictionary: Roman Divination](https://oxfordre.com/classics/view/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-7191);
-  [Wikipedia: Sibylline Books](https://en.wikipedia.org/wiki/Sibylline_Books);
   [Britannica: Capitoline Triad](https://www.britannica.com/topic/Capitoline-Triad).
 
 *Household and folk religion*
@@ -344,15 +341,13 @@ popes carry to this day.
 
 *The dead and the afterlife*
 - The Di Manes, the Parentalia and the Lemuria (black beans against the Lemures) —
-  [Wikipedia: Lemuria (festival)](https://en.wikipedia.org/wiki/Lemuria_(festival));
   [World History Encyclopedia: Roman Household Spirits](https://www.worldhistory.org/article/34/roman-household-spirits-manes-panes-and-lares/).
 - Roman afterlife views and tombstone inscriptions (the *non fui, fui, non sum, non curo*
   epitaph) — [World History Encyclopedia: Views of the Afterlife in Roman Tombstone Inscriptions](https://www.worldhistory.org/article/2679/views-of-the-afterlife-in-roman-tombstone-inscript/).
 
 *Foreign cults and the imperial cult*
-- [Wikipedia: Bacchanalia](https://en.wikipedia.org/wiki/Bacchanalia) (and the *Senatus consultum de Bacchanalibus*);
-  on Magna Mater, [Brewminate: The Cult of Cybele in Ancient Rome](https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/);
-  [Wikipedia: Roman imperial cult](https://en.wikipedia.org/wiki/Roman_imperial_cult).
+- The *Senatus consultum de Bacchanalibus*;
+  on Magna Mater, [Brewminate: The Cult of Cybele in Ancient Rome](https://brewminate.com/magna-mater-the-cult-of-cybele-in-ancient-rome/).
 
 *Note on sourcing:* Researched from standard reference scholarship (Oxford Classical
 Dictionary, Britannica, Encyclopedia.com) and specialist summaries rather than memory
