@@ -1,11 +1,15 @@
-# Handoff — updated 2026-11-15 (15:55 UTC)
+# Handoff — updated 2026-11-15 (16:35 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: Qumran Cave 4 wall fix merged (2026-11-15 ~15:45 UTC)
+## Latest: code-map (graph) workflow fix merged (2026-11-15 ~16:28 UTC)
+- **`main` = `0c807f9c`** (deploy run 43735696588 green; Knowledge graph run 43735696610 **green again** on `main`): **PR #150** fast-forwarded `ef7e4d30` → `0c807f9c` **per item** on Carter's "yes" (`decisions-2026-11-15-carter-yes-150.md`). Tools only (`tools/graphify-label.js`); nothing visitors see changed.
+- **Open:** #151 Wikipedia strip part 3 (review PASS; re-synced `73073027`, waits on GitHub incl. Lighthouse), #142–#145, #139.
+
+## Earlier: Qumran Cave 4 wall fix merged (2026-11-15 ~15:45 UTC)
 - **`main` = `ef7e4d30`** (deploy run 43731562748 green): **PR #148** fast-forwarded `49357b31` → `ef7e4d30` **per item** on Carter's "yes" (`decisions-2026-11-15-carter-a-147-yes-148.md`). Cave 4 walls in the Qumran walk: atlas's five faults + review F1/F2. Pending tag on the walk unchanged.
 - **Open:** #150 graph workflow fix (needs review; graph job on `main` still fails until it lands, deploy unaffected), #142–#145, #139.
 
