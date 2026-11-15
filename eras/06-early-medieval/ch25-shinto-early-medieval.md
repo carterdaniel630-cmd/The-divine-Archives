@@ -79,13 +79,9 @@ Shinto is the Japanese member of this era's great pattern: an **indigenous, natu
 ## Sources
 
 - Kojiki (712, Ō no Yasumaro) and Nihon Shoki (720): dating, compilation, imperial legitimation — "Kojiki: Japan's Oldest Book," World History Encyclopedia. https://www.worldhistory.org/Kojiki/
-- Japanese creation myth; Izanagi/Izanami, Amaterasu/Tsukuyomi/Susanoo, misogi, Ninigi, Jimmu — "Japanese creation myth," Wikipedia. https://en.wikipedia.org/wiki/Japanese_creation_myth
 - Amaterasu as imperial ancestor; the cave; the descent — "Amaterasu," EBSCO Research Starters. https://www.ebsco.com/research-starters/political-science/amaterasu-mythology
 - Shinbutsu-shūgō and jingū-ji (from the 8th c.) — "Shinbutsu shugo," New World Encyclopedia. https://www.newworldencyclopedia.org/entry/Shinbutsu_shugo
-- Honji suijaku (Heian systematization); Ryōbu (Shingon) and Sannō (Tendai) Shintō — "Honji suijaku," Wikipedia. https://en.wikipedia.org/wiki/Honji_suijaku
 - Ise Jingū and the shikinen sengū (20-year rebuild, ~1,300 years) — Ise City Tourism Association, "Shikinen Sengu." https://en.ise-kanko.jp/shikinen-sengu-63/
 - Izumo Taisha, Ōkuninushi, and the sacred land of Izumo — JNTO, "The Sacred Land of Izumo." https://www.japan.travel/en/japans-local-treasures/sacred-land-izumo/
-- Three Sacred Treasures (mirror Yata no Kagami, sword Kusanagi, jewel Yasakani no Magatama); never shown; virtues — "Imperial Regalia of Japan," Wikipedia. https://en.wikipedia.org/wiki/Imperial_Regalia_of_Japan
 - Torii, shimenawa, shide, purification (harae/misogi/temizuya) — "Shinto Symbols," Tsunagu Japan. https://www.tsunagujapan.com/shinto-symbols-meaning-and-history/
 - Kotodama and the Great Purification norito — Shugyokai, "Musubi, Shimenawa, and Shide." https://shugyokai.org/shugyo/keiko/misogi/norito/musubi-shimenawa-and-shide-how-a-rope-and-a-paper-stripe-shape-the-sacred-in-japan/
-- Kuroda Toshio: "Shinto" as an independent religion as a largely modern shaping; the ongoing debate — "Toshio Kuroda," Wikipedia. https://en.wikipedia.org/wiki/Toshio_Kuroda_(Shinto_professor)
