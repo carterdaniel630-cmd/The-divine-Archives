@@ -1,1 +1,1 @@
-2026-11-15T23:49:41Z build loop (Carter live): ch19 wording fix per his 'a'
+RELEASED 2026-11-15T23:52:08Z: ch19 wording fix built as #162. Treat as no lock; the next run may overwrite it.
