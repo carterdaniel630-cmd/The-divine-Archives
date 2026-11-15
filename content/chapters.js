@@ -136,23 +136,23 @@ window.CHAPTERS = {
       </ul>
       <h4>Primary texts</h4>
       <ul>
-        <li><em>The Epic of Gilgamesh</em>, Tablet XI — Andrew George, trans., *The Epic of</li>
-        <li><em>Atrahasis</em> — Old Babylonian flood epic (18th c. BCE). Overview:</li>
-        <li><em>Eridu Genesis</em> / Ziusudra (Sumerian) —</li>
+        <li><em>The Epic of Gilgamesh</em>, Tablet XI — Andrew George, trans., <em>The Epic of Gilgamesh</em> (Penguin Classics).</li>
+        <li><em>Atrahasis</em> — Old Babylonian flood epic (18th c. BCE). Overview: <a href="https://cojs.org/atrahasis_epic-_the_flood_story-_18th_century_bce/">Center for Online Judaic Studies</a>.</li>
+        <li><em>Eridu Genesis</em> / Ziusudra (Sumerian) — <a href="https://www.livius.org/articles/misc/great-flood/flood2/">Livius: The Great Flood, Sumerian version</a>; <a href="https://en.wikipedia.org/wiki/Eridu_Genesis">Wikipedia: Eridu Genesis</a>.</li>
         <li>Genesis 6–9 (Hebrew Bible).</li>
-        <li>Ovid, <em>Metamorphoses</em> Bk. I (Deucalion); Plato, <em>Timaeus</em>. See</li>
-        <li><em>Shatapatha Brahmana</em> (Manu and the fish);</li>
-        <li>Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) —</li>
-        <li><em>Popol Vuh</em> (the wooden people destroyed by flood) —</li>
+        <li>Ovid, <em>Metamorphoses</em> Bk. I (Deucalion); Plato, <em>Timaeus</em>. See <a href="https://en.wikipedia.org/wiki/Ancient_Greek_flood_myths">Wikipedia: Ancient Greek flood myths</a>.</li>
+        <li><em>Shatapatha Brahmana</em> (Manu and the fish); <a href="https://www.britannica.com/topic/Manu">Britannica: Manu</a>.</li>
+        <li>Qur'an, Surah Hud 11:25–49 and Surah Nuh 71 (Nuh, the drowned son, Mount Judi) — <a href="https://quran.com/en/hud/42">Quran.com: Surah Hud</a>.</li>
+        <li><em>Popol Vuh</em> (the wooden people destroyed by flood) — <a href="https://mayan.org/myths/flood-myth/">Mayan.org: The Maya Flood Myth</a>.</li>
       </ul>
       <h4>The Ark Tablet and Hellenistic transmission</h4>
       <ul>
-        <li>Irving Finkel, <em>The Ark Before Noah: Decoding the Story of the Flood</em> (2014);</li>
-        <li>Berossus, <em>Babyloniaca</em> (c. 281 BCE), and the Xisuthros flood —</li>
+        <li>Irving Finkel, <em>The Ark Before Noah: Decoding the Story of the Flood</em> (2014); the round-coracle ark and the "two by two" line — <a href="https://www.biblicalarchaeology.org/daily/news/the-animals-went-in-two-by-two-according-to-babylonian-ark-tablet/">Biblical Archaeology Society: The Animals Went in Two by Two</a>; <a href="https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe">Jewish Chronicle: The tablet that altered the story of Noah's ark</a> ("Finkel first came across the tablet in 1985"; "only managed to convince Simmonds to leave it with him in 2009"); <a href="https://historyofinformation.com/detail.php?id=4060">historyofinformation.com: Discovery of the "Ark Tablet"</a> (a later summary: "In 2009 … received"); 2014 reports with no year — the Associated Press story, "Finkel got hold of it a few years ago", as reprinted by the <a href="https://csmonitor.com/Science/2014/0125/Noah-s-Ark-Was-it-really-round">Christian Science Monitor, 25 January 2014</a> and <a href="https://www.timesofisrael.com/british-museum-prototype-for-noahs-ark-was-round/">Times of Israel</a>; <a href="https://www.pbs.org/newshour/world/new-evidence-suggests-noahs-ark-may-have-been-round">PBS NewsHour, 24 January 2014</a>; <a href="https://archaeology.org/news/2014/01/27/140127-ark-cuneiform-translation/">Archaeology magazine, 27 January 2014</a>; <a href="https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark">Wikipedia: Finkel's replica of the Babylonian ark</a> (first encountered the tablet in 1985, could not translate the whole of it until 2009; Alleppey, Kerala, 2014; gives "one-third scale" and a continuously running petrol pump; the documentary itself, below, says a fifth and "a collection of pumps", so the page follows the documentary and names the disagreement); PBS NOVA, <em>Secrets of Noah's Ark</em> (aired 7 October 2015), programme text at <a href="https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html">PBS NOVA: Secrets of Noah's Ark</a> ("about 40 feet in diameter, just a fifth the size of the ark described in the tablet"; at launch "a heck of a lot of water coming in"; "They plug the gaps and put a collection of pumps to work"; closing line: the team "never managed to duplicate Babylonian bitumen, but the structure of the ark is sound"); The Telegraph (India), "The Ark that Finkel built" (the Kerala build and its launch; it gives the size as "bigger than one-fifth of the original", so the page gives the scale as approximate). The paper's own URL could not be opened in the 2026-11-02 check; the text was read from a copy and is cited via the Wikipedia page; <a href="https://www.channel4.com/press/news/real-noahs-ark">Channel 4 press: The Real Noah's Ark</a> (the 2014 documentary).</li>
+        <li>Berossus, <em>Babyloniaca</em> (c. 281 BCE), and the Xisuthros flood — <a href="https://www.livius.org/articles/misc/great-flood/flood3_t-berossus/">Livius: The Great Flood — Berossus</a>; <a href="https://en.wikipedia.org/wiki/Babyloniaca_(Berossus)">Wikipedia: Babyloniaca (Berossus)</a>.</li>
       </ul>
       <h4>Discovery and history of scholarship</h4>
       <ul>
-        <li>George Smith, <em>The Chaldean Account of the Deluge</em> (1872) and *The Chaldean</li>
+        <li>George Smith, <em>The Chaldean Account of the Deluge</em> (1872) and <em>The Chaldean Account of Genesis</em> — <a href="https://www.gutenberg.org/files/60559/60559-h/60559-h.htm">Project Gutenberg</a>; <a href="https://www.britannica.com/biography/George-Smith-British-Assyriologist">Britannica: George Smith</a>; <a href="https://www.lindahall.org/about/news/scientist-of-the-day/george-smith/">Linda Hall Library: Scientist of the Day</a>.</li>
       </ul>
       <h4>Comparison and interpretation</h4>
       <ul>
@@ -162,8 +162,8 @@ window.CHAPTERS = {
       </ul>
       <h4>Archaeology and geology</h4>
       <ul>
-        <li>Leonard Woolley's Ur flood layer and the cross-site correlation problem —</li>
-        <li>Black Sea deluge hypothesis (Ryan &amp; Pitman 1997) and its disputed status —</li>
+        <li>Leonard Woolley's Ur flood layer and the cross-site correlation problem — <a href="https://ncse.ngo/flood-mesopotamian-archaeological-evidence">NCSE: The Flood — Mesopotamian Archaeological Evidence</a>; <a href="https://www.penn.museum/sites/expedition/reflections-on-the-mesopotamian-flood/">Penn Museum, Expedition: Reflections on the Mesopotamian Flood</a>.</li>
+        <li>Black Sea deluge hypothesis (Ryan &amp; Pitman 1997) and its disputed status — <a href="https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis">Wikipedia: Black Sea deluge hypothesis</a>; <a href="https://www.science.org/content/article/black-sea-flood-theory-put-test">Science: Black Sea Flood Theory Put to Test</a>.</li>
       </ul>
     </div>
   ` },
@@ -1270,7 +1270,7 @@ window.CHAPTERS = {
       <h4>Practice, oracles, and the afterlife</h4>
       <ul>
         <li><a href="https://www.worldhistory.org/Greek_Religion/">World History Encyclopedia: Ancient Greek Religion</a>; Walter Burkert, <em>Greek Religion</em> (the standard scholarly handbook).</li>
-        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia: Eleusinian Mysteries</a>; on Orphism and the gold tablets, F. Graf &amp;amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
+        <li><a href="https://en.wikipedia.org/wiki/Eleusinian_Mysteries">Wikipedia: Eleusinian Mysteries</a>; on Orphism and the gold tablets, F. Graf &amp; S. I. Johnston, <em>Ritual Texts for the Afterlife</em>.</li>
         <li>Household religion (Hestia, Zeus Ktesios/Herkeios, Hekate) — <a href="https://www.angelsathens.gr/en/blog/ancient-greece/ancient-greek-religion-everyday-cult/">Angels of Athens: Ancient Greek Religion — everyday cult</a>; Oxford Reference, "Worship, household."</li>
         <li>Hero-cult and the curse tablets (katadesmoi/defixiones) — <a href="https://en.wikipedia.org/wiki/Curse_tablet">Wikipedia: Curse tablet</a>; the tomb-cult / hero-cult debate in early Greek society (standard treatments).</li>
       </ul>
