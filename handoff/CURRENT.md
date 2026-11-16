@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (00:00 UTC)
+# Handoff — updated 2026-11-16 (14:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #164 Rosetta cartouche merged; #165 and #167 stacked, waiting on GitHub (2026-11-16 ~11:30 UTC)
+## Latest: #165 Vault tidy and #167 ch39 sources merged (2026-11-16 ~14:44 UTC)
+`main` = `39a947b8` (deploy run 291 green): #165 (`a3d020d9`) then #167 (`39a947b8`) fast-forwarded per item on Carter's yes (`decisions-2026-11-16-carter-yes-164-165-167.md`). 39 Vault pages lose an empty hidden list; chapter 39 gains ten checked sources for four claims left unsourced by the Wikipedia strip (chapter text unchanged). Next: #168 (ch40 sources) delta review of F5, re-sync, then Carter's per-item yes.
+
+## Earlier: #164 Rosetta cartouche merged; #165 and #167 stacked, waiting on GitHub (2026-11-16 ~11:30 UTC)
 `main` = `8d263149` (#164, Carter's yes `decisions-2026-11-16-carter-yes-164-165-167.md`; deploy green). Next: #165 (`loop/vault-empty-list-tidy` `a3d020d9`) then #167 (`loop/resourcing-ch39` `39a947b8`, stacked on #165) fast-forward once GitHub is green incl. Lighthouse on each head.
 
 ## Earlier: #160 Wikipedia strip part 11 (Pilgrimage + museum) merged (2026-11-15 ~23:47 UTC)
