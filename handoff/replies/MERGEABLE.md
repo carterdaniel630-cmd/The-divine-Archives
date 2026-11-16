@@ -98,8 +98,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   distance (SHY.AIR 4 m). Sources `sources/museum-fauna-pilot.md`. Local: react-check pass (ch02/ch03 960, ch05,
   390, 360; corridor crashes the headless browser in this sandbox on #170's head too), ground-check all pass, full
   build, verify, tests 51/51, review-checks 9/9; phone baseline ch02 63→65 calls, corridor 80→85 (budget 100).
-  **Still missing:** independent review (a run that wrote none of it; re-read the Amarna paper), GitHub checks incl.
-  Lighthouse, re-sync with #169/#170 onto `main`, Carter's per-item yes (after #169 and #170).
+  **GitHub 8/8 green incl. Lighthouse on `aadc971c`** (21:59 UTC; guard skipped as usual).
+  **Still missing:** independent review (a run that wrote none of it; re-read the Amarna paper), re-sync with #169/#170 onto `main`, Carter's per-item yes (after #169 and #170).
 - **#170 VR pilot — the ground reacts to you (ch02, ch03, Bronze Age corridor)** `loop/vr-react` `fbc0d6f4` (stacked
   on #169 `5067bc74`; PR base `loop/vr-ground`; built 2026-11-16 ~13:14–15:50 UTC by VR-loop session
   ..01HFWzTkbhbPYXxCEMorQQ2J, which may not review it). **VR, per item** (new build). Creatures keep their distance
