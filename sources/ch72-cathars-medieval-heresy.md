@@ -30,3 +30,9 @@ Per the project sourcing standard. Nearly all evidence comes from the persecutor
 
 ## Flags for Carter
 - None. No stronger source was found that disagrees with the chapter's text.
+
+## Re-sourcing log — 2026-11-16 (Wikipedia strip flag 76)
+The "Otto Rahn" Wikipedia pointer (kept only for his SS membership) was removed from the page's Sources list by the 2026-11-15 strip (PR #154), which left the body's "later joined the SS" without a source. This day's replacement:
+- Flag 76, Otto Rahn's SS membership — J. Strube, "Nazism and the Occult," in C. Partridge (ed.), *The Occult World* (Routledge, 2016), 336–347, open access via the University of Tübingen (DOI 10.15496/publikation-83244; record checked on relbib.de: Routledge, 2016, pp. 336–347). Read in the ResearchGate copy of the chapter; the Tübingen PDF itself could not be opened from this session (robots block). Page 340 says that, "becoming a co-worker of Wiligut, he officially joined the SS"; that he wrote *Kreuzzug gegen den Gral* "before his contact with the SS"; that his theories "remained private" and "exerted no influence on SS ideology"; and that he left the SS before his death. The years in those sentences did not come through in the copy read, so the page entry gives no dates. The chapter's sentence gives none either.
+- **Not used:** "Otto Rahn," Zukunft braucht Erinnerung (editorial team, 2022, updated 2026) — a history-education portal with a literature list (Goodrick-Clarke, Sünner, Wegener, Graddon), but it dates his SS admission to "12. März 1935" while also saying it came "knapp ein Jahr später" than work that began in May 1935, so it was not cited. Popular sites (Military History Now, War History Online, All That's Interesting) not used.
+- No sentence of the chapter was changed. Strube also says Rahn left the SS "most likely because of his homosexual leanings" and calls his death suicide; the chapter discusses neither, and nothing was added about them.
