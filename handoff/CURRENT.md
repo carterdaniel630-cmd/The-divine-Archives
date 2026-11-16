@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (14:50 UTC)
+# Handoff — updated 2026-11-16 (16:05 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #165 Vault tidy and #167 ch39 sources merged (2026-11-16 ~14:44 UTC)
+## Latest: #168 ch40 sources merged (2026-11-16 ~15:53 UTC)
+`main` = `9d35e620` (deploy run 292 green): #168 fast-forwarded per item on Carter's "a" (`decisions-2026-11-16-carter-a-168.md`). Chapter 40 gains nine checked sources for Bois Caïman and the zombie/tetrodotoxin story (chapter text unchanged). Next: PR #171 (ch72, Otto Rahn's SS membership sourced) needs an independent review, green checks and Carter's per-item yes.
+
+## Earlier: #165 Vault tidy and #167 ch39 sources merged (2026-11-16 ~14:44 UTC)
 `main` = `39a947b8` (deploy run 291 green): #165 (`a3d020d9`) then #167 (`39a947b8`) fast-forwarded per item on Carter's yes (`decisions-2026-11-16-carter-yes-164-165-167.md`). 39 Vault pages lose an empty hidden list; chapter 39 gains ten checked sources for four claims left unsourced by the Wikipedia strip (chapter text unchanged). Next: #168 (ch40 sources) delta review of F5, re-sync, then Carter's per-item yes.
 
 ## Earlier: #164 Rosetta cartouche merged; #165 and #167 stacked, waiting on GitHub (2026-11-16 ~11:30 UTC)
