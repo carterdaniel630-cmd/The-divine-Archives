@@ -215,3 +215,10 @@ body.mu-in-sky .mu-tag { bottom: 6.2rem; }
 .mu-guide .mu-rit-guide .mu-rit-src a { display:inline; width:auto; padding:0; border:0; font-size:inherit; color:var(--gold-bright); text-decoration:underline; text-underline-offset:2px; }
 .mu-guide .mu-rit-guide { list-style:decimal; }
 @media (max-width:760px) { .mu-ritual .mu-insp-panel { max-height:52vh; } }
+
+/* ---- VR headset (museum/xr.js): one honest status line; the page's own controls are put away during a session ---- */
+.mu-xr-note { position: fixed; top: 3.4rem; left: 50%; transform: translateX(-50%); z-index: 21; margin: 0; max-width: calc(100vw - 2rem);
+  background: rgba(20,14,8,.92); color: var(--parchment); border: 1px solid var(--line); border-radius: 3px; padding: .45rem .8rem; font-size: .85rem; text-align: center; }
+.mu-xr-note[hidden] { display: none; }
+.museum-page.is-xr .mu-bar, .museum-page.is-xr .mu-tag, .museum-page.is-xr .mu-reticle,
+.museum-page.is-xr .mu-guide, .museum-page.is-xr .mu-card-wrap, .museum-page.is-xr .mu-intro { display: none; }
