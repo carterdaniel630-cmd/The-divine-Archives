@@ -125,6 +125,8 @@ Every output goes through the reviewer (`reviews/REVIEWER.md`) before it reaches
   over 20%.
 - No images of the Báb; tjurunga never shown; restricted sites exterior only; Kaaba courtyard without figures.
 - Benin Bronzes scan: on hold. Email sign-up hidden until Carter sets up Kit. Analytics token is Carter's to do.
+- Excavation in full screen on a sideways phone (Carter, 2026-11-16): the whole dig fits the screen height, so a
+  square is about 36px; the game's zoom button gives 46px squares in a scrollable box. Keep it that way.
 
 ## Blockers (founder-only)
 - Analytics token (`docs/site-config.js`); GitHub default branch is not `main`; repo description; Kit account;
