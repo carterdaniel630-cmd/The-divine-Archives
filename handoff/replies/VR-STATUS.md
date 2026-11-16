@@ -41,5 +41,10 @@ it, DG-6 radiance tiers, WebGPU tier, Pilgrimage VR, all-rooms waves.
 
 ## Needs Carter
 1. Curtain: ANSWERED 2026-11-16 — Egypt stays open in VR (`decisions-2026-11-16-carter-egypt-vr-open.md`).
-2. **Movement felt off** (Carter, 2026-11-16): which part — arc, turning, height, the dip to dark? Asked live;
-   fix it before G3 once known.
+2. **Height felt too low** (Carter, 2026-11-16 ~02:10 UTC: standing, "too low"; arc/turn/dip not flagged).
+   The museum's scale is real (eye 1.62 m flat; doors 3.3 m, rooms 5.4 m), and standing VR uses the headset's own
+   floor (`local-floor`), so the likely causes are (i) the Quest's floor level set too high, or (ii) the session
+   fell back to the declared seated mode (eye fixed at 1.2 m; its announcement is not built yet, so he could not
+   tell). Asked Carter to compare with another VR app / re-set the Quest floor. **Next piece before G3:** say which
+   mode is on (standing/seated, eye height) on exiting VR and in-scene, and the spec's seated/standing switch
+   (Comfort §d.15) so a wrong fallback can be corrected in the headset.
