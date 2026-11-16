@@ -21,23 +21,18 @@ Quest 2). Owner-witness of entry + movement; not yet the pilot §5 per-room cert
 ## In progress
 - (none)
 
-## Next (in order; spec wins over VR-LOOP.md Groundwork where they differ)
-1. **G3 Frame budget** — `vr-perf-overlay.js` + headset budget report per `vr-performance-budget.md` §1, §2, §7
-   (Quest 2: 72 fps, p95 ≤ 13.9 ms; per-room draws/tris/texture MB/lights) for Rotunda, Wing II atrium, ch02, ch03.
-2. **G4 Curtain** — answered for ch02 (`decisions-2026-11-15-carter-ch02-vr-curtain.md`: whole room curtained until
-   his preview walk) but Carter then merged G1+G2 with "no curtain" (2026-11-16). Build only after he says which stands.
-3. **Controllers + select → plaque** (arch §4, §8 steps 8–9) and the plaque-class in-scene text pipeline
-   (interaction §4; arch §3.4 / §2.5 scope note).
-4. **Audio migration** (arch §3.5, §8 step 10; `vr-audio-brief.md`).
-5. **Performance scope items** (arch §8 step 12 a–e: light cut, relic LOD/impostors, portal adjacency, atlases,
-   shader warm-up).
-6. **Pilot spaces** per `vr-pilot-spec.md` §2–§5 (Wing II atrium, arrival/orientation, honest-evidence markers and
-   plaques verbatim, portals with masked transit), several pieces; then the §5 acceptance audit.
-   Movement leftovers (fold into 3 and 6): settings stele with smooth movement/turn opt-in and seated/standing
-   switch, landing chime, incense-smoke fade, hand pinch, room-scale walking through walls.
-7. Living-room contract doc (arch §8 step 11).
-Out of scope for this loop: Keeper's Study (never), Keeper's Table except the performative copy if the spec reaches
-it, DG-6 radiance tiers, WebGPU tier, Pilgrimage VR, all-rooms waves.
+## Next (in order; Carter's live rulings 2026-11-16 first)
+1. **Height check** — show the mode (standing/seated) and eye height in the headset and on exit; the
+   standing/seated switch (Comfort §d.15). Fixes or explains "too low".
+2. **Ground at your feet, pilot rooms** (`decisions-2026-11-16-carter-ground-at-your-feet.md`): ch02 + ch03 (+ their
+   corridor) landscape raised to floor level, glass removed, water shallow underfoot; flat and VR alike; phone
+   budget held.
+3. **React to you** — plants part, water ripples, creatures move away as the visitor walks (never toward: §e.22).
+4. **More creatures** — era- and place-true, sourced, for ch02 and ch03.
+5. **Day and weather** — wind, light and weather over time, from what `world.js`/`style.js` already carry.
+6. **G3 Frame budget** — Quest 2 72 fps gate per pilot room (now with the living ground in it).
+7. Controllers + select → plaques; audio; performance scope; pilot spaces; living-room contract (as before).
+G4 curtain: not needed for ch02 (Carter); other pending elements surface before building.
 
 ## Needs Carter
 1. Curtain: ANSWERED 2026-11-16 — Egypt stays open in VR (`decisions-2026-11-16-carter-egypt-vr-open.md`).
@@ -50,4 +45,5 @@ it, DG-6 radiance tiers, WebGPU tier, Pilgrimage VR, all-rooms waves.
    0.7–1.0 m below the glass, water ~0.9 m below; plants sway, water ripples, fauna move). In a headset the depth is
    real, so the visitor stands on a glass deck above a diorama. Checked with the stand-in headset: the pits keep
    animating in VR (world clock advances; ch02 pit built and shown), so "not alive" is about how much life there is
-   and how it reads, not a frozen loop. **Design change to the museum's floors: needs Carter's choice** (asked live).
+   and how it reads, not a frozen loop. **ANSWERED:** ground at your feet, flat and VR alike; more creatures, react
+   to you, day and weather (`decisions-2026-11-16-carter-ground-at-your-feet.md`). Each piece still merges per item.
