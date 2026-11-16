@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (20:50 UTC)
+# Handoff — updated 2026-11-16 (21:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #172 ch37 sources and #171 ch72 source merged (2026-11-16 ~19:12 and ~20:44 UTC)
+## Latest: #173 ch37 SPR 1986 sentence merged (2026-11-16 ~21:48 UTC)
+`main` = `2ceda1ec` (deploy run 296 green), per item on Carter's a + re-clear yes. Chapter 37 now says that in 1986 a senior SPR member, Vernon Harrison, published a critique of Hodgson's handwriting evidence in the Society's journal (not that the Society itself "formally distanced" itself). ch37 stays cleared (re-cleared for this sentence only). Next: Pilate Stone orientation fix; re-sourcing.
+
+## Earlier: #172 ch37 sources and #171 ch72 source merged (2026-11-16 ~19:12 and ~20:44 UTC)
 `main` = `0232f129` (deploy runs 294 and 295 green), both per item on Carter's a,a (`decisions-2026-11-16-carter-a-a-a-172-171-ch37.md`). Chapter 37 (Theosophy) gains three checked sources for the root-races idea and the 1885 Hodgson report; chapter 72 (Cathars) now cites a scholarly source for Otto Rahn joining the SS. Chapter texts otherwise unchanged. Next: the ch37 SPR 1986 sentence fix (built, needs review and checks), then the VR ground re-sync.
 
 ## Earlier: #166 VR height check merged (2026-11-16 ~18:48 UTC)
