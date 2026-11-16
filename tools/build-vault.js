@@ -216,7 +216,7 @@ function head(title, desc, url, rel, type, extra, ogKey) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
 ${SEO.fontTags()}  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=19" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=20" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -300,7 +300,7 @@ function itemPage(item) {
     const list = (art.events || art.stops || art.parts || art.spells || []).concat(art.cards || [], plates).map((x) =>
       `<li><strong>${esc(x.y || x.t)}</strong>${x.s ? " (" + esc(x.s) + ")" : ""}${x.y ? " " + esc(x.t) : ""}: ${esc(x.d)}</li>`).join("");
     relicTop = `<section class="relic relic-${art.type}" data-vault-relic="${esc(item.id)}" data-relic-kind="${art.type}">\n` +
-      `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">${bits.join("")}<ul>${list}</ul></div>\n</section>\n`;
+      `<h2 class="relic-title">${esc(art.title)}</h2><p class="relic-sub">${esc(art.sub)}</p>\n<div class="relic-static">${bits.join("")}${list ? "<ul>" + list + "</ul>" : ""}</div>\n</section>\n`;
   } else if (art && art.type === "scroll") {
     const txt = (w) => (typeof w === "string" ? w : w[0]);
     const cols = art.columns.map((c) => {

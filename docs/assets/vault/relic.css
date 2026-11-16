@@ -690,15 +690,18 @@
 .gate-plaque.on .gate-plaque-r, .gate-plaque:hover .gate-plaque-r { fill: #2a54b0; }
 
 /* ---------------------------------------------------------------- cartouche (Rosetta Stone) */
-.ct-stage { max-width: 34rem; margin: 0 auto; padding: 1.6rem 1rem 1.2rem; text-align: center; border-radius: 6px;
+.ct-stage { max-width: 34rem; margin: 0 auto; padding: 1.6rem 1rem 1.2rem; text-align: center; border-radius: 6px; container-type: inline-size;
   background: radial-gradient(ellipse at 40% 25%, rgba(255,255,255,.06), transparent 60%), linear-gradient(180deg, #3b3a3d, #232226); box-shadow: 0 16px 34px rgba(0,0,0,.55), inset 0 0 30px rgba(0,0,0,.5); }
-.ct-greek { margin: 0; font-family: "Noto Serif", Georgia, serif; font-size: 1.9rem; letter-spacing: .18em; color: #d9d2c4; }
+.ct-greek { margin: 0; font-family: "Noto Serif", Georgia, serif; font-size: 1.9rem; font-size: min(1.9rem, 10.5cqi); letter-spacing: .18em; color: #d9d2c4; }
 .ct-gl { transition: color .25s, text-shadow .25s; }
 .ct-gl.on { color: #ffd37a; text-shadow: 0 0 10px rgba(255,200,100,.8); }
 .ct-arrow { margin: .3rem 0; color: var(--ink-faint); }
-.ct-ring { display: inline-flex; gap: .15rem; align-items: center; padding: .5rem 1.4rem; border: 3px solid #cfc6b4; border-radius: 999px; position: relative; }
-.ct-ring::after { content: ""; position: absolute; right: -12px; top: 18%; bottom: 18%; width: 6px; background: #cfc6b4; border-radius: 2px; }
-.ct-sign { font: inherit; font-family: "Vault Hieroglyphs", "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 2.4rem; line-height: 1.2; background: none; border: 0; color: #e8e0cf; cursor: pointer; padding: .1rem .15rem; border-radius: 4px; transition: color .25s, text-shadow .25s; }
+/* The ring scales with the stage (em units off a container-sized base), so the seven signs never push past a 320-360 px phone;
+   min-width keeps every sign a 24 px tap target. */
+.ct-ring { display: inline-flex; gap: .15em; align-items: center; padding: .5em 1.4em; padding-inline: min(1.4em, calc(6cqi - 8px)); border: 3px solid #cfc6b4; border-radius: 999px; position: relative;
+  font-size: 1rem; font-size: min(1rem, calc(5cqi - 1px)); }
+.ct-ring::after { content: ""; position: absolute; right: -.75em; top: 18%; bottom: 18%; width: .375em; background: #cfc6b4; border-radius: 2px; }
+.ct-sign { font: inherit; font-family: "Vault Hieroglyphs", "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", serif; font-size: 2.4em; line-height: 1.2; background: none; border: 0; color: #e8e0cf; cursor: pointer; padding: .0417em .0625em; min-width: 24px; border-radius: 4px; transition: color .25s, text-shadow .25s; }
 .ct-sign:hover, .ct-sign:focus-visible, .ct-sign.on { color: #ffd37a; text-shadow: 0 0 12px rgba(255,200,100,.85); outline: none; }
 .ct-sounds { display: flex; justify-content: center; gap: 1.35rem; margin: .5rem 0 0; font-family: var(--font-display); font-size: .85rem; letter-spacing: .1em; color: var(--ink-dim); }
 
