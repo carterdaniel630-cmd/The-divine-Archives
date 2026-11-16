@@ -5,7 +5,10 @@
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #160 Wikipedia strip part 11 (Pilgrimage + museum) merged (2026-11-15 ~23:47 UTC)
+## Latest: #164 Rosetta cartouche merged; #165 and #167 stacked, waiting on GitHub (2026-11-16 ~11:30 UTC)
+`main` = `8d263149` (#164, Carter's yes `decisions-2026-11-16-carter-yes-164-165-167.md`; deploy green). Next: #165 (`loop/vault-empty-list-tidy` `a3d020d9`) then #167 (`loop/resourcing-ch39` `39a947b8`, stacked on #165) fast-forward once GitHub is green incl. Lighthouse on each head.
+
+## Earlier: #160 Wikipedia strip part 11 (Pilgrimage + museum) merged (2026-11-15 ~23:47 UTC)
 - **`main` = `c01026a4`** (deploy run 284 green): **PR #160** fast-forwarded from `63cd573e` **per item** on Carter's strip yes (list removal only). Chichen Itza, Delphi and Newgrange Pilgrimage panels and the museum's English panel lose their Wikipedia citations; El Castillo kept on the one panel it alone sources (flag 158). Review PASS 0 (`replies/2026-11-15-wikipedia-strip-12-independent-review.md`). **The site-page strip is done.**
 - **Open:** #161 (VR pilot, VR loop), #144, #139. Next: re-sourcing flags 116–167.
 
