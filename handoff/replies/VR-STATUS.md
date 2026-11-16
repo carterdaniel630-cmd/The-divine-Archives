@@ -40,7 +40,6 @@ Out of scope for this loop: Keeper's Study (never), Keeper's Table except the pe
 it, DG-6 radiance tiers, WebGPU tier, Pilgrimage VR, all-rooms waves.
 
 ## Needs Carter
-1. **Curtain:** your 20:15 ET ruling curtains Egypt in VR until you walk it; at 01:43 UTC you merged the VR door
-   live with "no curtain". (a) Egypt stays open in VR — your headset walk now counts as its walkthrough / (b) build
-   the curtain next, as ruled. Until answered the loop builds G3 (frame budget), which doesn't depend on it.
-2. **Your Quest 2 walk:** "it worked" (2026-11-16). Anything that felt off (arc, turning, dip, height) still welcome.
+1. Curtain: ANSWERED 2026-11-16 — Egypt stays open in VR (`decisions-2026-11-16-carter-egypt-vr-open.md`).
+2. **Movement felt off** (Carter, 2026-11-16): which part — arc, turning, height, the dip to dark? Asked live;
+   fix it before G3 once known.
