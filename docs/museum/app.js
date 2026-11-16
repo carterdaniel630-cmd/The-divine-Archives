@@ -24,8 +24,8 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=5";
-import { makeFauna } from "./fauna.js?v=4";
+import { createWorld } from "./world.js?v=6";
+import { makeFauna } from "./fauna.js?v=5";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
@@ -353,7 +353,7 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
 function rect(z, x0, x1, z0, z1, h, hole, floorKind) {
   const F = floorKind ? (z.floorBy[floorKind] = z.floorBy[floorKind] || []) : z.floor;   // a period floor (style.js) or the museum's own
   if (!hole) F.push(flat(x0, x1, z0, z1, 0, false));
-  else {                                  // a floor round a glass-covered pit (world.js fills it)
+  else {                                  // a floor round a pit (world.js fills it: under glass, or ground at your feet)
     F.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
   }
   z.ceil.push(flat(x0, x1, z0, z1, h, true, 3));
@@ -1752,6 +1752,13 @@ window.__MU = {
   xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
+  // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
+  // the water level, and where its creatures stand (ground-check.js)
+  ground: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.pit) return null; const h = A.hole; let lo = 9, hi = -9, n = 0;
+    for (let x = h.x0 + 0.05; x < h.x1; x += 0.2) for (let z = h.z0 + 0.05; z < h.z1; z += 0.2) { const y = A.groundH(x, z); lo = Math.min(lo, y); hi = Math.max(hi, y); n++; }
+    let glass = false, plants = 0; A.pit.traverse((o) => { if (o.name === "pit-glass") glass = true; if (o.isInstancedMesh && o.parent === A.pit) plants += o.count; });
+    const fauna = []; if (A.fauna) A.fauna.group.children.forEach((o) => { if (o.isInstancedMesh) { const m = new THREE.Matrix4(), v = new THREE.Vector3(); for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m); v.setFromMatrixPosition(m); fauna.push([+v.x.toFixed(2), +v.y.toFixed(3), +v.z.toFixed(2), +A.groundH(v.x, v.z).toFixed(3)]); } } else fauna.push([+o.position.x.toFixed(2), +o.position.y.toFixed(3), +o.position.z.toFixed(2), +A.groundH(o.position.x, o.position.z).toFixed(3)]); });
+    return { feet: !!A.feet, glass, lo: +lo.toFixed(3), hi: +hi.toFixed(3), samples: n, waterY: A.waterY, plants, fauna, hole: [h.x0, h.x1, h.z0, h.z1] }; },
   statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),

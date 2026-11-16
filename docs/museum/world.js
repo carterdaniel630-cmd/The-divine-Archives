@@ -11,6 +11,10 @@
      (a brook, a lotus pond, the Nile's reeds, a shore with waves, dunes,
      a forest floor, snow, red earth, a cave, lava, a starry abyss...),
      which you walk over as if it were under glass in a museum floor.
+     Areas marked `feet` (the VR pilot's: ch02, ch03 and their corridor) have
+     no glass: their ground is raised to the floor, so the visitor walks on
+     the earth with the water just below (Carter, 2026-11-16, "ground at your
+     feet"; handoff/decisions-2026-11-16-carter-ground-at-your-feet.md).
    These are atmosphere, not reconstructions. The table ENV below is the one
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
@@ -28,7 +32,7 @@ export const ENV = {
   spine: { sky: "time", ground: "river", fauna: ["trout", "swallows"] },
   // corridors, one per Age
   "cor:01-prehistory": { sky: "night", ground: "brook", fauna: ["trout"] },
-  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"] },
+  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"], feet: true },
   "cor:03-early-iron-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:04-axial-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:05-late-antiquity": { sky: "dusk", ground: "brook", fauna: ["trout"] },
@@ -41,8 +45,8 @@ export const ENV = {
   ch42: { sky: "dawn", ground: "field", fauna: ["swallows", "mice"] },              // the Neolithic: the first fields
   ch61: { sky: "starry", ground: "redearth", fauna: ["lizards"] },                  // the Dreaming: desert country under the night sky
   // Bronze Age
-  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia"] },
-  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "tilapia"] },
+  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia"], feet: true },
+  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "tilapia"], feet: true },
   ch04: { sky: "haze", ground: "river", fauna: ["tilapia", "kingfisher"] },
   ch05: { sky: "dawn", ground: "river", fauna: ["tilapia", "swallows"] },           // Ushas, the dawn
   ch57: { sky: "thunder", ground: "steppe", fauna: ["lizards"] },                   // the Storm-god of Hatti
@@ -599,6 +603,18 @@ function edge(s, t, A, m) {                // 0 in the middle of the pit, 1 with
 }
 export function biomeOf(k) { const b = BIOME[k] || BIOME.meadow; return b.like ? Object.assign({}, BIOME[b.like], b) : b; }
 
+// Ground at your feet (ENV `feet`): the biome's heights, made for a pit under glass, are carried up to the floor.
+// Water (or ice) sits WATER below the floor; everything under it keeps its depth, so beds, fish and waders are as
+// before; land above it rises at K of its slope and is held TOP below the floor, so nothing pokes through and there
+// is never a step up or a drop of more than a few centimetres (Comfort §a.6: no pits, no drops). Dry biomes are
+// lifted so their highest point sits at TOP. Plants, fauna and the water shader all read the raised heights.
+export const FEET = { WATER: -0.06, TOP: -0.012, K: 0.5, D: 0.6 };
+export function feetMap(B, top) {
+  const wy = B.water ? B.water.y : B.ice != null ? B.ice : null;
+  if (wy == null) return (y) => Math.min(FEET.TOP, y - top + FEET.TOP);
+  return (y) => y < wy ? FEET.WATER + (y - wy) : Math.min(FEET.TOP, FEET.WATER + (y - wy) * FEET.K);
+}
+
 // ---------------------------------------------------------------- shared materials
 const PLANT_U = { uTime: { value: 0 } };
 function plantMat(kind, A) { return pitMat({ side: THREE.DoubleSide, sway: SWAY[kind] || 0 }, A.LU); }
@@ -638,14 +654,20 @@ function buildSky(A, q) {
 }
 function buildPit(A, q, faunaFn) {
   sharedMats();
-  const B = biomeOf(A.env.ground), h = A.hole, g = new THREE.Group(), R = rng(A.seedN), D = 1.35, z0 = A.seed;
-  A.lit = skyOf(A.env.sky).lit || 0.8; A.biome = B; A.waterY = B.water ? B.water.y : (B.ice != null ? B.ice : null); A.anim = []; A.LU = lightOf(A);
+  const B = biomeOf(A.env.ground), h = A.hole, g = new THREE.Group(), R = rng(A.seedN), feet = !!A.env.feet && !B.void, D = feet ? FEET.D : 1.35, z0 = A.seed;
+  // the biome's own heights (raw), and where they are drawn: the same, or raised to the floor for `feet`
+  const RAW = (x, z) => { const [s, t] = A.toL(x, z); return B.h ? B.h(s, t, A) + (B.flat ? 0 : 0.03 * (fbm2(s * 2.6, t * 2.6, 91, 3) - 0.5)) : -1.2; };
+  let up = (y) => y;
+  if (feet) { let top = -9; if (!B.water && B.ice == null) for (let x = h.x0; x <= h.x1; x += 0.25) for (let z = h.z0; z <= h.z1; z += 0.25) top = Math.max(top, RAW(x, z)); up = feetMap(B, top); }
+  A.feet = feet; A.up = up;
+  const rawW = B.water ? B.water.y : (B.ice != null ? B.ice : null);
+  A.lit = skyOf(A.env.sky).lit || 0.8; A.biome = B; A.waterY = rawW == null ? null : up(rawW); A.anim = []; A.LU = lightOf(A);
   // walls of the pit
   const W = [], wq = (ax, az, bx, bz) => { const len = Math.hypot(bx - ax, bz - az), gq = new THREE.PlaneGeometry(len, D); gq.translate(0, -D / 2, 0); gq.rotateY(Math.atan2(-(bz - az), bx - ax)); gq.translate((ax + bx) / 2, 0, (az + bz) / 2); W.push(gq); };
   wq(h.x1, h.z0, h.x0, h.z0); wq(h.x0, h.z1, h.x1, h.z1); wq(h.x0, h.z0, h.x0, h.z1); wq(h.x1, h.z1, h.x1, h.z0);
   const walls = new THREE.Mesh(colorize(mergeG(W), (x, y) => { const k = 0.18 + 0.1 * smooth(-1.3, 0, y) + 0.05 * fbm2(x * 3, y * 3 + z0, 5, 2); return [k * 1.1, k, k * 0.88]; }), pitMat({}, A.LU)); g.add(walls);
   // ground
-  const HF = (x, z) => { const [s, t] = A.toL(x, z); return B.h ? B.h(s, t, A) + (B.flat ? 0 : 0.03 * (fbm2(s * 2.6, t * 2.6, 91, 3) - 0.5)) : -1.2; };
+  const HF = feet ? (x, z) => up(RAW(x, z)) : RAW;
   A.groundH = HF;
   if (B.void) {
     const vm = voidMaterial(q); A.anim.push(vm);
@@ -656,9 +678,9 @@ function buildPit(A, q, faunaFn) {
     const gg = new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0, nx, nz); gg.rotateX(-Math.PI / 2); gg.translate((h.x0 + h.x1) / 2, 0, (h.z0 + h.z1) / 2);
     const P = gg.attributes.position, uv = gg.attributes.uv, col = new Float32Array(P.count * 3), wy = B.wet != null ? B.wet : -9;
     for (let i = 0; i < P.count; i++) {
-      const x = P.getX(i), z = P.getZ(i), y = HF(x, z); P.setY(i, y); uv.setXY(i, x / 1.6, z / 1.6);
+      const x = P.getX(i), z = P.getZ(i), yr = RAW(x, z); P.setY(i, up(yr)); uv.setXY(i, x / 1.6, z / 1.6);
       const [ls, lt] = A.toL(x, z), wd = Math.min(ls, A.L - ls, lt + A.W / 2, A.W / 2 - lt), ao = 0.45 + 0.55 * smooth(0, 0.9, wd);
-      const c = B.tint(y, wy), n = (0.85 + 0.3 * fbm2(x * 1.3, z * 1.3, 77, 3)) * ao;
+      const c = B.tint(yr, wy), n = (0.85 + 0.3 * fbm2(x * 1.3, z * 1.3, 77, 3)) * ao;
       col.set([c[0] * n, c[1] * n, c[2] * n], i * 3);
     }
     gg.setAttribute("color", new THREE.BufferAttribute(col, 3)); gg.computeVertexNormals();
@@ -672,24 +694,24 @@ function buildPit(A, q, faunaFn) {
     wm.uniforms.uLamp.value.set(A.lamp[0], A.lamp[1], A.lamp[2]);
     const flow = B.water.flow || [0, 0], fw = A.axis === "x" ? flow : [flow[1], flow[0]]; wm.uniforms.uFlow.value.set(fw[0], fw[1]);
     const seg = B.water.shore ? 48 : 1;
-    const wp = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02, seg, seg), wm); wp.rotation.x = -Math.PI / 2; wp.position.set((h.x0 + h.x1) / 2, B.water.y, (h.z0 + h.z1) / 2); wp.renderOrder = 1; g.add(wp);
+    const wp = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02, seg, seg), wm); wp.rotation.x = -Math.PI / 2; wp.position.set((h.x0 + h.x1) / 2, A.waterY, (h.z0 + h.z1) / 2); wp.renderOrder = 1; g.add(wp);
     if (B.water.shore) { const dir = A.axis === "x" ? [1, 0] : [0, 1]; const [sx, sz] = A.toW(0, 0); wm.uniforms.uShore.value.set(dir[0], dir[1], 0, 1); A.shore = { dir, o: dir[0] * sx + dir[1] * sz };
       // the shoreline: where the sand meets the still water level
       let s0 = 0; for (let s = 0; s < A.L; s += 0.02) { if (B.h(s, 0, A) > B.water.y) { s0 = s; break; } } wm.uniforms.uShore.value.z = A.shore.o + s0; }
   }
-  if (B.ice != null) { const ice = new THREE.MeshBasicMaterial({ color: A.LU.uAmb.value.clone().multiplyScalar(1.5).lerp(C("#dff0ff"), 0.35), transparent: true, opacity: 0.8, map: iceTex() }); const ip = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02), ice); ip.rotation.x = -Math.PI / 2; ip.position.set((h.x0 + h.x1) / 2, B.ice, (h.z0 + h.z1) / 2); g.add(ip); A.waterY = B.ice; }
+  if (B.ice != null) { const ice = new THREE.MeshBasicMaterial({ color: A.LU.uAmb.value.clone().multiplyScalar(1.5).lerp(C("#dff0ff"), 0.35), transparent: true, opacity: 0.8, map: iceTex() }); const ip = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02), ice); ip.rotation.x = -Math.PI / 2; ip.position.set((h.x0 + h.x1) / 2, up(B.ice), (h.z0 + h.z1) / 2); g.add(ip); A.waterY = up(B.ice); }
   // scattered plants and stones
-  const area = A.L * A.W, wy = A.waterY != null ? A.waterY : -99, M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), Sc = new THREE.Vector3(), E = new THREE.Euler(), cc = new THREE.Color();
+  const area = A.L * A.W, wy = rawW != null ? rawW : -99, M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), Sc = new THREE.Vector3(), E = new THREE.Euler(), cc = new THREE.Color();
   const want = (B.scatter || []).map(([kind, dens]) => dens * area * (q > 1 ? 1 : 0.55) * geoOf(kind).attributes.position.count / 3);
   const budget = (q > 1 ? 70000 : 28000) * (A.kind === "room" ? 1 : 0.6), total = want.reduce((a, b) => a + b, 0), scale = Math.min(1, budget / Math.max(1, total));
   (B.scatter || []).forEach(([kind, dens, where]) => {
     const n = Math.round(dens * area * (q > 1 ? 1 : 0.55) * scale); if (!n) return;
     const im = new THREE.InstancedMesh(geoOf(kind), plantMat(kind, A), n); let k = 0;
     for (let tries = 0; tries < n * 12 && k < n; tries++) {
-      const s = 0.12 + R() * (A.L - 0.24), t = (R() - 0.5) * (A.W - 0.24), [x, z] = A.toW(s, t), y = HF(x, z);
-      let ok = true, yy = y;
+      const s = 0.12 + R() * (A.L - 0.24), t = (R() - 0.5) * (A.W - 0.24), [x, z] = A.toW(s, t), y = RAW(x, z);
+      let ok = true, yy = up(y);
       if (where === "bank") ok = y > wy + 0.02;
-      else if (where === "water") { ok = y < wy - 0.06; yy = wy + 0.003; }
+      else if (where === "water") { ok = y < wy - 0.06; yy = up(wy) + 0.003; }
       else if (where === "shore") ok = Math.abs(y - wy) < 0.07 || (y > wy && y < wy + 0.12 && R() < 0.4);
       else if (where === "wet") ok = y > wy - 0.08 && y < wy + 0.04;
       else if (where === "dry") ok = y > wy + 0.05;
@@ -707,16 +729,19 @@ function buildPit(A, q, faunaFn) {
   if (B.extras) EXTRAS[B.extras](A, g, R);
   if (B.embers) { const e = embers(A, R); g.add(e); A.embers = e; }
   if (B.water && B.water.drips) A.drips = true;
-  // the glass over it all, on a bronze grid
-  const glass = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0), GLASS); glass.rotation.x = -Math.PI / 2; glass.position.set((h.x0 + h.x1) / 2, 0.002, (h.z0 + h.z1) / 2); glass.renderOrder = 3; g.add(glass);
+  // the glass over it all, on a bronze grid; none where the ground is at your feet (the room's kerb is its edge)
+  if (!feet) addGlass(h, g);
+  if (faunaFn) { const F = faunaFn(A, q); if (F) { g.add(F.group); A.fauna = F; } }
+  return g;
+}
+function addGlass(h, g) {
+  const glass = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0), GLASS); glass.name = "pit-glass"; glass.rotation.x = -Math.PI / 2; glass.position.set((h.x0 + h.x1) / 2, 0.002, (h.z0 + h.z1) / 2); glass.renderOrder = 3; g.add(glass);
   const L = [], strip = (x0, z0, x1, z1, w, y) => { const b = new THREE.BoxGeometry(Math.max(w, Math.abs(x1 - x0)), 0.014, Math.max(w, Math.abs(z1 - z0))); b.translate((x0 + x1) / 2, y || 0.004, (z0 + z1) / 2); L.push(b); };
   strip(h.x0, h.z0, h.x1, h.z0, 0.1); strip(h.x0, h.z1, h.x1, h.z1, 0.1); strip(h.x0, h.z0, h.x0, h.z1, 0.1); strip(h.x1, h.z0, h.x1, h.z1, 0.1);
   const gx = Math.max(1, Math.round((h.x1 - h.x0) / 1.8)), gz = Math.max(1, Math.round((h.z1 - h.z0) / 1.8));
   for (let i = 1; i < gx; i++) { const x = h.x0 + (h.x1 - h.x0) * i / gx; strip(x, h.z0, x, h.z1, 0.02); }
   for (let i = 1; i < gz; i++) { const z = h.z0 + (h.z1 - h.z0) * i / gz; strip(h.x0, z, h.x1, z, 0.02); }
   g.add(new THREE.Mesh(mergeG(L), BRONZE));
-  if (faunaFn) { const F = faunaFn(A, q); if (F) { g.add(F.group); A.fauna = F; } }
-  return g;
 }
 
 // special furniture for a few grounds
