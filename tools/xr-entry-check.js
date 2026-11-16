@@ -9,6 +9,7 @@
 //  3. the declared seated fallback when the device has no local-floor (eye height 1.2 m);
 //  4. a refused session stays flat with one honest line;
 //  5. the per-tier constants: Quest 2 (and unknown headsets) 1.0 foveation / 0.8 scale, Quest 3 0.75 / 1.0.
+// SHOTS=<dir> also saves the headset's two-eye view while aiming (open floor, then a wall).
 // A stand-in device proves the museum's side of the contract only. Certification is on a real Quest 2 (the floor
 // device), which a build session cannot wear.
 const { chromium } = require("playwright");
@@ -24,8 +25,12 @@ function fakeXR(opts) {
   try { delete window.XRWebGLBinding; } catch (e) { /* not there */ }
   Object.defineProperty(window, "XRWebGLBinding", { value: undefined, configurable: true, writable: true });
   const persp = (fov, aspect, n, f) => { const t = 1 / Math.tan(fov / 2); return new Float32Array([t / aspect, 0, 0, 0, 0, t, 0, 0, 0, 0, (f + n) / (n - f), -1, 0, 0, (2 * f * n) / (n - f), 0]); };
-  const mat = (x, y, z, yaw) => { const c = Math.cos(yaw), s = Math.sin(yaw); return new Float32Array([c, 0, -s, 0, 0, 1, 0, 0, s, 0, c, 0, x, y, z, 1]); };
-  window.__fx = { frames: 0, sessions: 0, head: { x: 0.4, z: -0.3, yaw: 0.5 }, requests: [] };
+  const mat = (x, y, z, yaw, pitch) => { const c = Math.cos(yaw), s = Math.sin(yaw), cp = Math.cos(pitch || 0), sp = Math.sin(pitch || 0); return new Float32Array([c, 0, -s, 0, s * sp, cp, c * sp, 0, s * cp, -sp, c * cp, 0, x, y, z, 1]); };
+  window.__fx = { frames: 0, sessions: 0, head: { x: 0.4, z: -0.3, yaw: 0.5 }, requests: [],
+    // one right-hand controller, in the play space: position, yaw, pitch (down is negative); its thumbstick on axes 2–3
+    ctrl: { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 },
+    source: { handedness: "right", targetRayMode: "tracked-pointer", targetRaySpace: { id: "ray" }, gripSpace: { id: "grip" }, profiles: ["generic-trigger-squeeze-thumbstick"], gamepad: { axes: [0, 0, 0, 0], buttons: [] } } };
+  window.__fx.press = (type) => { const e = new Event(type); e.inputSource = window.__fx.source; e.frame = window.__fx.lastFrame; window.__fx.session.dispatchEvent(e); };
   class FakeLayer {
     constructor(session, gl, init) { this.gl = gl; this.framebuffer = null; this.framebufferWidth = gl.drawingBufferWidth; this.framebufferHeight = gl.drawingBufferHeight; this.ignoreDepthValues = true; window.__fx.layerScale = init && init.framebufferScaleFactor; }
     getViewport(view) { const w = this.framebufferWidth / 2; return { x: view.eye === "left" ? 0 : w, y: 0, width: w, height: this.framebufferHeight }; }
@@ -43,7 +48,10 @@ function fakeXR(opts) {
         const h = window.__fx.head, y = this.floor ? 1.6 : 0;
         const pose = { transform: { matrix: mat(h.x, y, h.z, h.yaw) }, views: ["left", "right"].map((eye, i) => ({ eye, projectionMatrix: persp(1.6, 0.9, 0.05, 140), transform: { matrix: mat(h.x + (i ? 0.032 : -0.032), y, h.z, h.yaw) } })) };
         window.__fx.frames++;
-        cb(t, { session: this, getViewerPose: () => pose, getPose: () => null });
+        const k = window.__fx.ctrl, cpose = { transform: { matrix: mat(k.x, this.floor ? k.y : k.y - 1.6, k.z, k.yaw, k.pitch) }, emulatedPosition: false };
+        const frame = { session: this, getViewerPose: () => pose, getPose: (space) => (space && (space.id === "ray" || space.id === "grip") && o.controller ? cpose : null) };
+        window.__fx.lastFrame = frame;
+        cb(t, frame);
       });
     }
     cancelAnimationFrame(id) { window.cancelAnimationFrame(id); }
@@ -58,7 +66,9 @@ function fakeXR(opts) {
     if (req.includes("local-floor") && o.noFloor) throw new DOMException("no local-floor", "NotSupportedError");
     window.__fx.sessions++;
     const features = o.noFloor ? ["viewer", "local"] : ["viewer", "local", "local-floor"];
-    return (window.__fx.session = new FakeSession(features, !o.noFloor));
+    const ses = (window.__fx.session = new FakeSession(features, !o.noFloor));
+    if (o.controller) setTimeout(() => { ses.inputSources = [window.__fx.source]; const e = new Event("inputsourceschange"); e.added = [window.__fx.source]; e.removed = []; e.session = ses; ses.dispatchEvent(e); }, 300);
+    return ses;
   };
   Object.defineProperty(navigator, "xr", { value: xr, configurable: true });
 }
@@ -180,6 +190,89 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     check(x.tier === "q3" && x.foveation === 0.75 && x.scale === 1, `Quest 3: foveation ${x.foveation}, scale ${x.scale}`);
     await page.evaluate(() => window.__MU.xrExit());
     await page.waitForFunction(() => !window.__MU.xr().presenting, null, { timeout: 10000 });
+    check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+    await ctx.close();
+  }
+
+  console.log("6. moving in the headset: teleport, snap turn, vignette (simulated Quest 2, one right controller)");
+  {
+    const { ctx, page, errors } = await open(b, { width: 400, height: 300, ua: Q2, xr: { controller: true } });
+    const frames = (n) => page.evaluate((n) => new Promise((ok) => { const f0 = window.__fx.frames; const w = () => (window.__fx.frames - f0 >= n ? ok() : setTimeout(w, 30)); w(); }), n);
+    const enterAt = async (x, z, yaw) => {
+      await page.evaluate(([x, z, yaw]) => { window.__MU.place(x, z, yaw, 0); window.__fx.head = { x: 0, z: 0, yaw: 0 }; window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; window.__fx.source.gamepad.axes = [0, 0, 0, 0]; }, [x, z, yaw]);
+      await page.evaluate(() => document.exitPointerLock && document.exitPointerLock()); await page.click("#mu-vr-btn", { force: true });
+      await page.waitForFunction(() => window.__MU.xr().presenting && window.__MU.xrMove().controllers === 1, null, { timeout: 30000 });
+      await frames(3);
+    };
+    const exit = async () => { await page.evaluate(() => window.__MU.xrExit()); await page.waitForFunction(() => !window.__MU.xr().presenting, null, { timeout: 15000 }); await page.waitForTimeout(200); };
+    // find, at the visitor's saved start, one heading whose aim lands on open floor and one that meets a wall
+    const st = await page.evaluate(() => window.__MU.state());
+    const probe = await page.evaluate(([x, z]) => {
+      const out = { ok: null, bad: null };
+      for (let k = 0; k < 24; k++) { const yaw = k * Math.PI / 12, d = 3.2; const tx = x - Math.sin(yaw) * d, tz = z - Math.cos(yaw) * d;
+        const can = window.__MU.xrCanStand(tx, tz, x, z); if (can && out.ok == null) out.ok = yaw; if (!can && out.bad == null) out.bad = yaw; }
+      return out; }, [st.x, st.z]);
+    check(probe.ok != null && probe.bad != null, `test setup: an open heading (${probe.ok}) and a walled one (${probe.bad}) from the start spot`);
+
+    // a valid teleport
+    await enterAt(st.x, st.z, probe.ok);
+    const before = await page.evaluate(() => window.__MU.state());
+    await page.evaluate(() => window.__fx.press("selectstart"));
+    await page.waitForFunction(() => window.__MU.xrMove().aiming, null, { timeout: 20000 });
+    await frames(2);
+    const aimed = await page.evaluate(() => window.__MU.xrMove());
+    if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-aim-open.png"), timeout: 120000 });
+    const dist = Math.hypot(aimed.marker[0] - before.x, aimed.marker[1] - before.z);
+    check(aimed.valid && dist > 1 && dist <= 8.01, `holding the trigger shows the arc; marker ${dist.toFixed(2)} m ahead, on open floor (≤ 8 m)`);
+    await page.evaluate(() => { window.__fx.press("selectend"); window.__fx.press("select"); });
+    await page.waitForFunction(() => window.__MU.xrMove().teleports === 1 && window.__MU.xrMove().fade === 0, null, { timeout: 20000 });
+    await frames(2);
+    const after = await page.evaluate(() => ({ s: window.__MU.state(), m: window.__MU.xrMove() }));
+    check(Math.hypot(after.s.x - aimed.marker[0], after.s.z - aimed.marker[1]) < 0.05, `release: the visitor's head lands on the marker (${after.s.x.toFixed(2)}, ${after.s.z.toFixed(2)})`);
+    check(after.m.fadePeak >= 0.45 && after.m.fadePeak <= 0.9 + 1e-6 && after.m.vignettePeak === 0, `dip-to-dark on arrival (peak ${after.m.fadePeak}, never pure black); no vignette on a teleport`);
+
+    // a tap is not a teleport
+    await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); });
+    await frames(6);
+    const tap = await page.evaluate(() => window.__MU.xrMove());
+    check(tap.teleports === 1 && tap.taps === 1 && !tap.aiming, "a short press does not teleport");
+
+    // snap turn: right stick, 30°, around the head, once per flick, 250 ms apart, with the vignette
+    const s0 = await page.evaluate(() => window.__MU.state());
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 1, 0]; });
+    await page.waitForFunction(() => window.__MU.xrMove().snaps === 1, null, { timeout: 20000 });
+    await frames(8);
+    const s1 = await page.evaluate(() => ({ s: window.__MU.state(), m: window.__MU.xrMove() }));
+    let dy = s1.s.yaw - s0.yaw; while (dy > Math.PI) dy -= 2 * Math.PI; while (dy < -Math.PI) dy += 2 * Math.PI;
+    check(s1.m.snaps === 1, "holding the stick over gives one snap, not a spin");
+    check(Math.abs(dy + Math.PI / 6) < 0.01, `snap right turns 30° right (${(dy * 180 / Math.PI).toFixed(1)}°)`);
+    check(Math.hypot(s1.s.x - s0.x, s1.s.z - s0.z) < 0.01, "the turn is about the head: the visitor does not slide");
+    check(s1.m.vignettePeak >= 0.4 && s1.m.vignettePeak <= 0.6, `comfort vignette on the snap (peak ${s1.m.vignettePeak})`);
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 0, 0]; });
+    await frames(4);
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, -1, 0]; });
+    await page.waitForFunction(() => window.__MU.xrMove().snaps === 2, null, { timeout: 20000 });
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 0, 0]; });
+    await page.waitForFunction(() => window.__MU.xrMove().vignette === 0, null, { timeout: 20000 });
+    check(true, "release and flick again: a second snap; the vignette clears");
+    await exit();
+    const gone = await page.evaluate(() => window.__MU.xr());
+    check(gone.cameraChildren === 1 && gone.cameraParent === "Scene", `after exit the comfort overlays are gone from the view (camera children ${gone.cameraChildren})`);
+
+    // aiming at a wall: crimson, NO WAY, and the release cancels
+    await enterAt(st.x, st.z, probe.bad);
+    const b0 = await page.evaluate(() => window.__MU.state()), m0 = await page.evaluate(() => window.__MU.xrMove());
+    await page.evaluate(() => { window.__fx.ctrl.pitch = 0.15; window.__fx.press("selectstart"); });
+    await page.waitForFunction(() => window.__MU.xrMove().aiming, null, { timeout: 20000 });
+    await frames(2);
+    const bad = await page.evaluate(() => window.__MU.xrMove());
+    if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-aim-wall.png"), timeout: 120000 });
+    await page.evaluate(() => window.__fx.press("selectend"));
+    await frames(6);
+    const b1 = await page.evaluate(() => ({ s: window.__MU.state(), m: window.__MU.xrMove() }));
+    check(Math.hypot(bad.marker[0] - b0.x, bad.marker[1] - b0.z) > 3.2 && !bad.valid && b1.m.teleports === m0.teleports && b1.m.cancelled === m0.cancelled + 1 && Math.hypot(b1.s.x - b0.x, b1.s.z - b0.z) < 0.01, `aiming through a wall is refused (NO WAY) and the release cancels silently${JSON.stringify({ bad, b0: [b0.x, b0.z], b1: [b1.s.x, b1.s.z], m: b1.m })}`);
+    await exit();
+    check(await drawsFlat(page), "flat render loop draws after the movement checks");
     check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
     await ctx.close();
   }
