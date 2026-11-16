@@ -3,6 +3,8 @@
 **As of:** 2026-11-16 ~01:50 UTC. **#163 and #161 MERGED to `main`** (`28852e84`, `4cb77979`, 01:43 UTC) by Carter's
 account, merge message: Carter's yes 2026-11-16 "just merge it", **no curtain**. Deploy run 286 started 01:43 UTC.
 The VR door and movement are on the live site; nothing in VR is curtained yet.
+**First real-headset report — Carter, live, 2026-11-16 ~02:00 UTC: "it worked in the headset"** (live site, his
+Quest 2). Owner-witness of entry + movement; not yet the pilot §5 per-room certification (fps gate, plaques, etc.).
 
 ## Done
 - **LIVE 2026-11-16 01:43 UTC:** #161 + #163 merged (Carter: "just merge it", no curtain).
@@ -41,4 +43,4 @@ it, DG-6 radiance tiers, WebGPU tier, Pilgrimage VR, all-rooms waves.
 1. **Curtain:** your 20:15 ET ruling curtains Egypt in VR until you walk it; at 01:43 UTC you merged the VR door
    live with "no curtain". (a) Egypt stays open in VR — your headset walk now counts as its walkthrough / (b) build
    the curtain next, as ruled. Until answered the loop builds G3 (frame budget), which doesn't depend on it.
-2. **Your Quest 2 walk** of the live museum: tell the session what felt wrong (arc, turning, the dip, anything).
+2. **Your Quest 2 walk:** "it worked" (2026-11-16). Anything that felt off (arc, turning, dip, height) still welcome.
