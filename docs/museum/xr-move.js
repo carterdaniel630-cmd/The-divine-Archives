@@ -29,8 +29,9 @@ function canvasTexture(w, h, draw) {
 
 // renderer, scene, camera: the museum's own; rig: xr.js's rig; floorY: museum floor height;
 // canStand(x, z, fromX, fromZ): may the visitor stand at (x, z), reached from (fromX, fromZ) without passing a wall?
-// onMoved(): called after a teleport or a turn.
-export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved }) {
+// onMoved(): called after a teleport or a turn. onTap(ctrl): a short trigger press (under HOLD), with that hand's
+// target-ray space, for whatever the hand points at (the posture plaque, xr-height.js).
+export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap }) {
   const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0 };
 
   // ---- controllers: target-ray and grip spaces live in the rig, so they move with it
@@ -43,7 +44,7 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     ctrl.addEventListener("selectstart", () => { if (!aim && !fade) h.held = 0; });
     ctrl.addEventListener("selectend", () => {
       if (aim === h) stopAim(true);
-      else if (h.held != null) dbg.taps++;
+      else if (h.held != null) { dbg.taps++; if (onTap) onTap(h.ctrl); }
       h.held = null;
     });
     return h;
@@ -151,7 +152,8 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     // the dip-to-dark of a teleport
     if (fade) {
       fade.t += dt;
-      if (!fade.moved && fade.t >= MOVE.FADE_OUT) {
+      if (!fade.moved && fade.t >= MOVE.FADE_OUT && fade.cb) { fade.moved = true; fade.cb(); }
+      else if (!fade.moved && fade.t >= MOVE.FADE_OUT) {
         const hp = headPos();
         rig.position.x += fade.to.x - hp.x; rig.position.z += fade.to.z - hp.z; rig.updateMatrixWorld(true);
         fade.moved = true; dbg.teleports++;
@@ -175,5 +177,9 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     vig.material.opacity = vigT; vig.visible = vigT > 0.001; dbg.vignette = +vigT.toFixed(3); dbg.vignettePeak = Math.max(dbg.vignettePeak, dbg.vignette);
   }
 
-  return { update, attach, detach, debug: dbg, get busy() { return !!(aim || fade); } };
+  // the same dip-to-dark, with cb run at its darkest moment instead of a teleport (a posture change moves the whole
+  // world up or down at once, so the visitor never sees it slide); refused while aiming or already dipping
+  function dip(cb) { if (aim || fade) { return false; } fade = { t: 0, moved: false, cb }; return true; }
+
+  return { update, attach, detach, dip, debug: dbg, get busy() { return !!(aim || fade); }, get controllers() { return hands.filter((h) => h.source).map((h) => h.ctrl); } };
 }
