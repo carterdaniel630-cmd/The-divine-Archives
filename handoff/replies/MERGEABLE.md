@@ -82,15 +82,17 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   #166 `902e96dc`; PR base `loop/vr-height`; built 2026-11-16 ~10:02–10:50 UTC by a VR-loop run that may not review
   it). **VR, per item** (new build). Local checks pass (build no-op, 9/0/0, 18/18, 51/51, xr-entry-check, new
   ground-check at 960/390/360, phone baseline lighter). GitHub **7/7 green incl. Lighthouse** on `5067bc74`
-  (11:05 UTC; `guard` skipped, PR base is not `main`). **Missing:** independent review; #166 first; Carter's
-  per-item yes. "React to you" is now built (#170): **#169 should go live together with #170.**
-  Reply `vr/2026-11-16-1002-ground-at-your-feet.md`.
+  (11:05 UTC; `guard` skipped, PR base is not `main`). **Independent review PASS, 0 open** (2026-11-16 ~16:20 UTC,
+  a VR-loop run that wrote none of it; `review-log` `6503e9df`, `reviews/loop/2026-11-16-vr-ground-169-independent-review.md`;
+  local re-run green). **Missing:** #166 first; Carter's per-item yes. **#169 should go live together with #170.**
+  Replies `vr/2026-11-16-1002-ground-at-your-feet.md`, `vr/2026-11-16-1620-review-169.md`.
 - **#170 VR pilot — the ground reacts to you (ch02, ch03, Bronze Age corridor)** `loop/vr-react` `fbc0d6f4` (stacked
   on #169 `5067bc74`; PR base `loop/vr-ground`; built 2026-11-16 ~13:14–15:50 UTC by VR-loop session
   ..01HFWzTkbhbPYXxCEMorQQ2J, which may not review it). **VR, per item** (new build). Creatures keep their distance
   (Comfort §e.22), plants part, water rings where you walk; other rooms unchanged. Local checks pass (build no-op,
   9/0/0, 18/18, 51/51, xr-entry-check, ground-check, new react-check all pass; phone baseline within noise, ch02
-  63 → 64 calls of 100). **Missing:** GitHub green incl. Lighthouse; independent review; #166 and #169 first;
+  63 → 64 calls of 100). GitHub **7/7 green incl. Lighthouse** on `fbc0d6f4` (16:05 UTC; `guard` skipped, PR base
+  is not `main`). **Missing:** independent review; #166 and #169 first;
   Carter's per-item yes. Merges clean onto `main` `39a947b8`. Reply `vr/2026-11-16-1550-react-to-you.md`.
 - ~~**#163 VR pilot G2 — movement in the headset**~~ **MERGED 2026-11-16 01:43 UTC by Carter ("just merge it", no curtain) → `main` `4cb77979`.** Earlier: `loop/vr-comfort` `fdf3451e` (stacked on #161 `d9dc9c8f`; built 2026-11-15 ~23:50 UTC by ..01HFWzTkBr97DH9bJRZ5VnYJ, which may not review it). **VR, per item.** Local checks pass (build no-op, 9/0/0, verify 18/18, tests 51/51, `xr-entry-check` 48/48, baseline unchanged). GitHub 6/6 green incl. Lighthouse on `fdf3451e` (00:14 UTC; `guard` skipped because the PR's base is `loop/vr-entry`, not `main`: it ran green on #161). **Missing:** independent review; #161 first; Carter's per-item yes. Hold with #161 until G4. Reply `vr/2026-11-15-2335-g2-comfort.md`.
 - ~~**#161 VR pilot G1 — the "Enter VR" door**~~ **MERGED 2026-11-16 01:43 UTC by Carter ("just merge it", no curtain) → `main` `4cb77979`.** Earlier: `loop/vr-entry` `d9dc9c8f` (on `main` `fa81753b`; built 2026-11-15 ~23:20 UTC by VR-loop session ..01HFWzTkBr97DH9bJRZ5VnYJ, which may not review it). **VR, per item** (new build; never by class). Local checks pass (build no-op, 9/0/0, verify 18/18, tests 51/51, `xr-entry-check` 34/34, museum baseline unchanged). GitHub 7/7 green incl. Lighthouse on `d9dc9c8f` (23:41 UTC). **Missing:** independent review by another session; Carter's per-item yes. **Recommend holding until G4 (curtain, OQ-4) so pending rooms are never shown in a headset.** Reply `vr/2026-11-15-run-2311-g1-entry.md`.

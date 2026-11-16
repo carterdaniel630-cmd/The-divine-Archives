@@ -1,11 +1,16 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-16 ~15:50 UTC. **PR #170 (the ground reacts to you) built and open**, stacked on #169 (ground at
-your feet), stacked on #166 (height check). **#166 is ready for Carter's yes** (review PASS, GitHub 7/7 green incl.
-Lighthouse). #169 is GitHub-green and needs an independent review. The VR door and movement (#161, #163) have been live
-since 01:43 UTC.
+**As of:** 2026-11-16 ~16:25 UTC. **#169 (ground at your feet) passed independent review** (0 open, all checks green):
+it now needs only #166 first and Carter's yes, and should go live with #170. **#170 (react to you) is GitHub 7/7 green
+incl. Lighthouse** and needs its independent review. **#166 is ready for Carter's yes.** The VR door and movement
+(#161, #163) have been live since 01:43 UTC.
 
 ## Done
+- **Review of #169 — PASS, 0 open** (16:20 UTC, a run that wrote none of it): `review-log` `6503e9df`,
+  `reviews/loop/2026-11-16-vr-ground-169-independent-review.md`. Local re-run green; phone budget lighter than #166.
+  Note for "More creatures": low flyers and insects in `fauna.js` aim at pit-under-glass heights; re-base them on the
+  raised ground before adding any to a pilot room. Reply `vr/2026-11-16-1620-review-169.md`.
+- **#170 GitHub 7/7 green incl. Lighthouse** on `fbc0d6f4` (16:05 UTC).
 - **React to you — PR #170** `loop/vr-react` `fbc0d6f4` (on #169): in ch02, ch03 and the Bronze Age corridor the
   creatures keep their distance (turn away and walk off inside 2.5 m, never toward you; no fish leap within 3 m),
   plants within 0.85 m lean away (fading in after a teleport), and walking through the water leaves rings. Flat and
@@ -23,16 +28,16 @@ since 01:43 UTC.
 - Spec set is staged in `handoff/vr-*.md` (atlas, 2026-11-15), not `handoff/vr/`; Next was re-planned from it.
 
 ## In progress
-- #170: GitHub checks running (next run reads them, Lighthouse included).
 - Stack base: #166/#169/#170 were cut from `main` before #164/#165/#167 merged (`main` now `39a947b8`); #170 merges
   clean onto it. Re-sync (merge only) at merge time.
 
 ## Next (in order; Carter's live rulings 2026-11-16 first)
-1. **Independent reviews of #169 and #170** (any VR run that wrote none of them; the 15:50 run wrote #170, the 10:02
-   run wrote #169), filed on `review-log`; and read #170's GitHub checks.
+1. **Independent review of #170** (any VR run that wrote none of it; the 13:14–15:50 run wrote it), filed on
+   `review-log`. (#169 reviewed PASS 16:20.)
 2. **More creatures**: era- and place-true, sourced, for ch02 and ch03 (ch03's marsh has only the heron; its tilapia
    never find deep enough water). Each species with a logged source, as `fauna.js` already is; they inherit "React to
-   you" (`SHY`). Stacked on #170.
+   you" (`SHY`). Stacked on #170. Re-base `fauna.js` low-flyer and insect heights on the raised ground first if
+   any flyer or insect is added (review-169 note).
 3. **Day and weather**: wind, light and weather over time, from what `world.js`/`style.js` already carry (light and
    shafts first, rain last if ever, per `order-2026-11-15-vr-buildout.md` 5).
 4. **G3 Frame budget**: Quest 2 72 fps gate per pilot room (with the living ground in it).
