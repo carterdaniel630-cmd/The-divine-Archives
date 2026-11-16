@@ -57,5 +57,4 @@ Oceania (ch63) and Creation & the First Order (ch46). Compare the Kojiki (V61), 
 
 *Studies*
 
-- "Kumulipo", https://en.wikipedia.org/wiki/Kumulipo
 - *Ka Wai Ola*, "Kumulipo is Born in the Night, a Man", https://kawaiola.news/columns/ka-naauao-o-na-kupuna/kumulipo-is-born-in-the-night-a-man/

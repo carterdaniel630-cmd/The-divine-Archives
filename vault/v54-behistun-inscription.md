@@ -47,12 +47,10 @@ Zoroaster (ch06) and Sacred Kingship (ch49), with Mesopotamia (ch03) for the Bab
 
 *The monument and text*
 
-- "Behistun Inscription", https://en.wikipedia.org/wiki/Behistun_Inscription
 - Livius, "Behistun: the Persian text", https://www.livius.org/sources/content/behistun-persian-text/behistun-t-01/
 - Encyclopaedia Iranica, "BISOTUN iii. Darius's Inscriptions", https://www.iranicaonline.org/articles/bisotun-iii/
 - World History Encyclopedia, "Behistun Inscription", https://www.worldhistory.org/Behistun_Inscription/
 
 *Decipherment*
 
-- "Decipherment of cuneiform", https://en.wikipedia.org/wiki/Decipherment_of_cuneiform
 - H. C. Rawlinson, *The Persian Cuneiform Inscription at Behistun, Decyphered and Translated* (London, 1846–47)

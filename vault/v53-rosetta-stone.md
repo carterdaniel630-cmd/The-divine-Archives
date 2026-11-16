@@ -54,15 +54,11 @@ Egypt (ch02) and Sacred Kingship (ch49). Compare the Behistun Inscription (V54),
 *The stone*
 
 - British Museum, "The Rosetta Stone: everything you need to know", https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone
-- "Rosetta Stone", https://en.wikipedia.org/wiki/Rosetta_Stone
-- "Rosetta Stone decree", https://en.wikipedia.org/wiki/Rosetta_Stone_decree
 - World History Encyclopedia, "Rosetta Stone", https://www.worldhistory.org/Rosetta_Stone/
 
 *The decipherment*
 
 - British Museum, "Eureka! Finding the key to ancient Egypt", https://www.britishmuseum.org/blog/eureka-finding-key-ancient-egypt
-- "Lettre à M. Dacier", https://en.wikipedia.org/wiki/Lettre_%C3%A0_M._Dacier
-- "Philae obelisk", https://en.wikipedia.org/wiki/Philae_obelisk
 - Royal College of Physicians, "Thomas Young and the decipherment of hieroglyphics", https://history.rcp.ac.uk/blog/thomas-young-and-decipherment-hieroglyphics
 
 *Restitution*

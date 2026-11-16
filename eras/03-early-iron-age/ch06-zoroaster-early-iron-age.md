@@ -368,16 +368,13 @@ touched.
   [Britannica: daena](https://www.britannica.com/topic/daena);
   [World History Encyclopedia: Chinvat Bridge](https://www.worldhistory.org/Chinvat_Bridge/).
 - The twelve-thousand-year timeline and the three Saoshyants —
-  [Wikipedia: Bundahishn](https://en.wikipedia.org/wiki/Bundahishn);
   [Encyclopaedia Iranica: eschatology (Frashokereti and the Saoshyants)](https://www.iranicaonline.org/articles/eschatology-i/).
   On the debated influence on Judaism/Christianity/Islam, see the balanced
   discussions in the Iranica eschatology article and A. Akbar, "The Zoroastrian
   Provenance of Some Islamic Eschatological Doctrines" (2020).
 
 *Practice and symbol*
-- Fire temples and the sacred fire; the **dakhma**; the **Faravahar**
-  ([Wikipedia: Faravahar](https://en.wikipedia.org/wiki/Faravahar), noting the
-  fravashi vs. khvarenah debate) and **khvarenah**
+- Fire temples and the sacred fire; the **dakhma**; the **Faravahar** and **khvarenah**
   ([Britannica: hvarenah](https://www.britannica.com/topic/hvarenah)); the
   **sudreh** and **kusti** (72 threads = 72 Yasna chapters) and the **Navjote**
   initiation.

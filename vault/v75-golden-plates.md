@@ -54,9 +54,6 @@ New Religious Movements (ch35). Compare the Book of the Law (V73), another ninet
 *The plates and the witnesses*
 
 - The Church of Jesus Christ of Latter-day Saints, "Gold Plates", https://www.churchofjesuschrist.org/study/history/topics/gold-plates?lang=eng
-- "Golden plates", https://en.wikipedia.org/wiki/Golden_plates
-- "Book of Mormon witnesses", https://en.wikipedia.org/wiki/Book_of_Mormon_witnesses
-- "Anthon Transcript", https://en.wikipedia.org/wiki/Anthon_Transcript
 - The Joseph Smith Papers, https://www.josephsmithpapers.org/
 
 *The manuscripts*

@@ -44,7 +44,6 @@ Pre-exilic Israel (ch07), Canaanite and Phoenician religion (ch58), the Mesha St
 
 ## Sources
 
-- "Tel Dan stele", https://en.wikipedia.org/wiki/Tel_Dan_stele
 - "The Dan Debate", *Bible and Interpretation*, https://bibleinterp.arizona.edu/articles/teldan257923
 - "The Tel Dan Inscription: The First Historical Evidence of King David from the Bible", Biblical Archaeology Society, https://www.biblicalarchaeology.org/daily/biblical-artifacts/the-tel-dan-inscription-the-first-historical-evidence-of-the-king-david-bible-story/
 - A. Biran and J. Naveh, "An Aramaic Stele Fragment from Tel Dan", *Israel Exploration Journal* 43 (1993); "The Tel Dan Inscription: A New Fragment", *IEJ* 45 (1995)

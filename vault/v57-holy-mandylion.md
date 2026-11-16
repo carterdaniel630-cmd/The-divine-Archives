@@ -58,11 +58,7 @@ Eastern Orthodoxy & Byzantium (ch60) and Patristic Christianity (ch22). Compare 
 
 *The legend and the image*
 
-- "Image of Edessa", https://en.wikipedia.org/wiki/Image_of_Edessa
-- "Abgar V", https://en.wikipedia.org/wiki/Abgar_V
-- "Doctrine of Addai", https://en.wikipedia.org/wiki/Doctrine_of_Addai
 - NASSCAL e-Clavis, "Doctrine of Addai", https://www.nasscal.com/e-clavis-christian-apocrypha/doctrine-of-addai/
-- "Acheiropoieta", https://en.wikipedia.org/wiki/Acheiropoieta
 
 *Interpretations*
 

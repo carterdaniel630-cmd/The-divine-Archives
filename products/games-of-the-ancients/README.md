@@ -18,3 +18,10 @@ The first commit on this folder adds the six files **byte for byte as sold** (st
 Orders: `handoff/pack-six-rebuild-swap-order.md`, `handoff/games-visual-upgrade-order-2026-11-04.md`.
 Defect list: G-1 to G-5 in `handoff/replies/2026-11-07-audit-health-report.md`.
 Rules, facts and honesty marks must stay exactly as sold; changes are presentation only unless an order says otherwise.
+
+## Production rebuild (order `handoff/games-visual-upgrade-order-2026-11-04.md`)
+- **Royal Game of Ur, part 1 (2026-11-09):** pieces travel the road square by square (from the waiting pile, home to
+  the panel, and a captured piece is carried back); five story lines from the record rise during play and stay below the
+  board, with their sources in the History panel (`sources/games-ur-production.md`). Added as a separate style and script
+  block at the end of the file: the game script, rules, AI and text of record are byte-for-byte unchanged. Still a single
+  file with no network requests. Not yet the full rebuild (the era's world around the board is the next part).

@@ -1,7 +1,13 @@
 {
  "type": "source",
- "count": 2015,
+ "count": 2021,
  "entities": [
+  {
+   "id": "source:3dgo-app/94d72cec62",
+   "type": "source",
+   "label": "https://3dgo.app/models/thingiverse/3689465",
+   "from": "sources/rotunda-tray1.md"
+  },
   {
    "id": "source:abc-net-au/ace7d215b0",
    "type": "source",
@@ -616,6 +622,12 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:archaeology-org/7ad7ff72a9",
+   "type": "source",
+   "label": "https://archaeology.org/wp-content/uploads/2020/04/FULLTEXT01.pdf",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:archaeology-org/98e4cd559b",
    "type": "source",
    "label": "https://archaeology.org/news/2020/12/16/201217-egypt-great-pyramid/",
@@ -641,12 +653,6 @@
     "chapter:ch01"
    ],
    "from": "sources/ch01-the-flood.md"
-  },
-  {
-   "id": "source:archaeology-org/e1f7d293cc",
-   "type": "source",
-   "label": "https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:archaeology-org/f47c1c222d",
@@ -1142,6 +1148,12 @@
     "site:delphi"
    ],
    "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:bbc-com/4a11627550",
+   "type": "source",
+   "label": "https://www.bbc.com/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:beinecke-library-yale-edu/157431f830",
@@ -3078,6 +3090,12 @@
    "from": "sources/v53-rosetta-stone.md"
   },
   {
+   "id": "source:britishmuseum-org/ad0fc32819",
+   "type": "source",
+   "label": "https://www.britishmuseum.org/collection/object/W_1850-1228-4_1",
+   "from": "sources/games-ur-production.md"
+  },
+  {
    "id": "source:britishmuseum-org/c1596b3d9f",
    "type": "source",
    "label": "https://www.britishmuseum.org/blog/eureka-finding-key-ancient-egypt",
@@ -4056,6 +4074,12 @@
    "from": "sources/ch52-jainism.md"
   },
   {
+   "id": "source:csclub-uwaterloo-ca/d75b741ef1",
+   "type": "source",
+   "label": "https://csclub.uwaterloo.ca/~pbarfuss/On_the_Rules_for_the_Royal_Game_of_Ur.pdf",
+   "from": "sources/games-ur-production.md"
+  },
+  {
    "id": "source:csmc-uni-hamburg-de/0b4c4fa3eb",
    "type": "source",
    "label": "https://www.csmc.uni-hamburg.de/publications/aom/mom/39-en.html",
@@ -4688,6 +4712,12 @@
    "from": "sources/pilgrimage-great-pyramid.md"
   },
   {
+   "id": "source:doaj-org/7d95bad580",
+   "type": "source",
+   "label": "https://doaj.org/article/a6d392620fa84bd88301e4114bdb749a",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:doaks-org/4fd406f590",
    "type": "source",
    "label": "https://doaks.org/research/publications/books/twin-tollans-chicha-c-n-itza-tula-and-the",
@@ -4785,6 +4815,12 @@
     "chapter:ch66"
    ],
    "from": "sources/ch66-san-rock-art.md"
+  },
+  {
+   "id": "source:doi-org/ab18d732d5",
+   "type": "source",
+   "label": "https://doi.org/10.33063/diva-401040",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:doi-org/be409d6a40",
@@ -6624,6 +6660,12 @@
     "relic:v14"
    ],
    "from": "sources/v14-holy-grail.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/6ed72f19a5",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Royal_Game_of_Ur",
+   "from": "sources/games-ur-production.md"
   },
   {
    "id": "source:en-wikipedia-org/6edb7393e1",
@@ -17983,12 +18025,6 @@
     "relic:v72"
    ],
    "from": "sources/v72-book-of-shadows.md"
-  },
-  {
-   "id": "source:www-bbc-com-pages-dev/eedaa5823b",
-   "type": "source",
-   "label": "https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",

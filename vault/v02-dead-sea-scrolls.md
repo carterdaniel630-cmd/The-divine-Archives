@@ -109,8 +109,6 @@ The scrolls are the direct background to the archive's chapters on **Second Temp
 - Orion Center for the Study of the Dead Sea Scrolls, Hebrew University, "The Dead Sea Scrolls Digital Library", https://orion.huji.ac.il/resources/DSS_online.shtml
 
 *Great Isaiah Scroll and the biblical scrolls*
-- "Isaiah Scroll" (dimensions, columns, radiocarbon and palaeographic dates, with references), https://en.wikipedia.org/wiki/Isaiah_Scroll
-- "List of manuscripts from Qumran Cave 1", https://en.wikipedia.org/wiki/List_of_manuscripts_from_Qumran_Cave_1
 - E. Tov, *Textual Criticism of the Hebrew Bible*, 3rd ed. (Fortress, 2012): pluriformity, 4QJerᵇ, 4QSamᵃ, palaeo-Hebrew Tetragrammaton, scribal marks
 
 *The Qumran debate*

@@ -64,7 +64,6 @@ The Aztec (ch43), the Maya (ch29), Creation & the First Order (ch46) and Sacrifi
 
 - Vatican Apostolic Library, DigiVatLib, *Borg.mess.1*, https://digi.vatlib.it/view/MSS_Borg.mess.1
 - Smarthistory, "Codex Borgia", https://smarthistory.org/codex-borgia/
-- "Codex Borgia", https://en.wikipedia.org/wiki/Codex_Borgia
 
 *Studies*
 

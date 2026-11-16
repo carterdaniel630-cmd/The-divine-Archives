@@ -58,7 +58,6 @@ The Aztec (ch43), with The Maya (ch29) for Mesoamerican writing. Compare the Cod
 - INAH, *Códice Boturini* (digital edition), https://www.codiceboturini.inah.gob.mx/approaches_text.php?textID=7
 - INAH Mediateca, "Códice Boturini", https://mediateca.inah.gob.mx/islandora_74/islandora/object/codice:605
 - Secretaría de Cultura, "El Códice Boturini", https://www.gob.mx/cultura/articulos/el-codice-boturini-del-peregrinaje-de-los-aztecas-a-la-fundacion-de-mexico-tenochtitlan?idiom=es
-- "Codex Boturini", https://en.wikipedia.org/wiki/Codex_Boturini
 - Mexicolore, "The last page of the Codex Boturini", https://www.mexicolore.co.uk/aztecs/writing/codex-corner-the-last-page-of-the-codex-boturini
 
 *Reading it*

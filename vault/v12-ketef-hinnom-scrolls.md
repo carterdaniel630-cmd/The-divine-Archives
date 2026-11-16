@@ -55,8 +55,6 @@ Pre-exilic Israel (ch07), the Dead Sea Scrolls (V02), the Ark of the Covenant (V
 
 ## Sources
 
-- "Ketef Hinnom scrolls", https://en.wikipedia.org/wiki/Ketef_Hinnom_scrolls
 - G. Barkay, A. G. Vaughn, M. J. Lundberg, B. Zuckerman, "The Amulets from Ketef Hinnom: A New Edition and Evaluation", *Bulletin of the American Schools of Oriental Research* 334 (2004)
 - "The Ketef Hinnom Amulets: Wearing the Priestly Blessing for Protection", TheTorah.com, https://www.thetorah.com/article/the-ketef-hinnom-amulets-wearing-the-priestly-blessing-for-protection
-- "Priestly Blessing", https://en.wikipedia.org/wiki/Priestly_Blessing
 - Numbers 6:24–26, Hebrew as in the Masoretic Text (Biblia Hebraica Stuttgartensia)

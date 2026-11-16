@@ -52,7 +52,6 @@ Islam (ch21), with Theosophy & the Occult Revival (ch37) for the Western magical
 
 *The text*
 
-- "Picatrix", https://en.wikipedia.org/wiki/Picatrix
 - Bibliotheca Philosophica Virtualis, "Picatrix", https://www.bphv.eu/en/content/picatrix
 - D. Attrell and D. Porreca (trans.), *Picatrix: A Medieval Treatise on Astral Magic* (Penn State University Press, 2019)
 - D. Pingree (ed.), *Picatrix: The Latin Version of the Ghāyat al-Ḥakīm* (Warburg Institute, 1986)
@@ -61,4 +60,3 @@ Islam (ch21), with Theosophy & the Occult Revival (ch37) for the Western magical
 
 - M. Fierro, "Bāṭinism in al-Andalus: Maslama b. Qāsim al-Qurṭubī (d. 353/964), author of the *Rutbat al-Ḥakīm* and the *Ghāyat al-Ḥakīm (Picatrix)*", *Studia Islamica* 84 (1996)
 - G. de Callataÿ and S. Moureau, "Again on Maslama Ibn Qāsim al-Qurṭubī, the Ikhwān al-Ṣafāʾ and Ibn Khaldūn", *Al-Qanṭara* 37 (2016)
-- "Maslama al-Majriti", https://en.wikipedia.org/wiki/Maslama_al-Majriti

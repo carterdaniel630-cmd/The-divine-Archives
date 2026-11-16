@@ -97,14 +97,9 @@ The Shroud belongs with the archive's chapters on **patristic and Byzantine Chri
 
 *Holding institution*
 - Archdiocese of Turin, official Shroud site (history, the 1532 fire and the 2002 restoration), https://sindone.org/en/home-english/the-shroud/the-fire/
-- "Conservation-restoration of the Shroud of Turin", https://en.wikipedia.org/wiki/Conservation-restoration_of_the_Shroud_of_Turin
 
 *History*
-- "History of the Shroud of Turin", https://en.wikipedia.org/wiki/History_of_the_Shroud_of_Turin
-- "Geoffroi de Charny", https://en.wikipedia.org/wiki/Geoffroi_de_Charny
 - D. Crispino, "The Report of the Poor Clare Nuns, Chambéry, 1534", *Shroud Spectrum International*, https://www.shroud.com/pdfs/ssi02part6.pdf
-- "Secondo Pia", https://en.wikipedia.org/wiki/Secondo_Pia
-- "Pray Codex", https://en.wikipedia.org/wiki/Pray_Codex
 
 *Radiocarbon dating and its critics*
 - P. E. Damon et al., "Radiocarbon dating of the Shroud of Turin", *Nature* 337 (1989), https://www.nature.com/articles/337611a0
@@ -115,7 +110,6 @@ The Shroud belongs with the archive's chapters on **patristic and Byzantine Chri
 - L. De Caro et al., "X-ray Dating of a Turin Shroud's Linen Sample", *Heritage* (2022), https://www.dsctm.cnr.it/images/Highlights/Sindone/DeCaro_Heritage_2022.pdf
 
 *Image, blood and forensic studies*
-- "Shroud of Turin Research Project", https://en.wikipedia.org/wiki/Shroud_of_Turin_Research_Project
 - J. H. Heller and A. D. Adler, "A Chemical Investigation of the Shroud of Turin" (1981), https://www.shroud.com/pdfs/Chemical%20Investigation%20%20Heller%20Adler%201981%20OCR.pdf
 - McCrone Research Institute, "Shroud of Turin Research", https://mccroneinstitute.org/research/shroud-of-turin-research-at-mccrone/
 - M. Borrini and L. Garlaschelli, "A BPA Approach to the Shroud of Turin", *Journal of Forensic Sciences* (2018), https://pubmed.ncbi.nlm.nih.gov/29989172/

@@ -46,13 +46,8 @@ Theosophy & the Occult Revival (ch37). Compare the Book of Shadows (V72), which 
 
 *The book*
 
-- "The Book of the Law", https://en.wikipedia.org/wiki/The_Book_of_the_Law
 - Hermetic Library, "Liber Legis — The Book of the Law", https://hermetic.com/legis/index
 - A. Crowley, *The Equinox of the Gods* (London, 1936)
-
-*The stele*
-
-- "Stele of Ankh-ef-en-Khonsu", https://en.wikipedia.org/wiki/Stele_of_Ankh-ef-en-Khonsu
 
 *Studies*
 

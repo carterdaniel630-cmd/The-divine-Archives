@@ -52,7 +52,6 @@ Norse Paganism (ch23) and Native North American (ch62), whose lands are the sett
 
 - MNopedia (Minnesota Historical Society), "Kensington Runestone", https://www.mnhs.org/mnopedia/search/index/thing/kensington-runestone
 - MinnPost, "The Kensington Runestone: Minnesota's most brilliant and durable hoax?" (2020), https://www.minnpost.com/mnopedia/2020/05/the-kensington-runestone-minnesotas-most-brilliant-and-durable-hoax/
-- "Kensington Runestone", https://en.wikipedia.org/wiki/Kensington_Runestone
 - *American Heritage*, "The Case of the Kensington Rune Stone" (April 1959), https://www.americanheritage.com/case-kensington-rune-stone
 
 *The debate*

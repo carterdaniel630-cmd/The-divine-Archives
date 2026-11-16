@@ -62,7 +62,6 @@ Mesopotamia (ch03), Zoroaster (ch06), Second Temple Judaism (ch10) and Sacred Ki
 *The cylinder*
 
 - British Museum, *The Cyrus Cylinder* (collection record and translation), https://www.britishmuseum.org/collection/object/W_1880-0617-1941
-- "Cyrus Cylinder", https://en.wikipedia.org/wiki/Cyrus_Cylinder
 - The Metropolitan Museum of Art, *The Cyrus Cylinder and Ancient Persia* (2013), https://www.metmuseum.org/exhibitions/listings/2013/cyrus-cylinder
 - I. Finkel (ed.), *The Cyrus Cylinder: The King of Persia's Proclamation from Ancient Babylon* (I. B. Tauris, 2013)
 

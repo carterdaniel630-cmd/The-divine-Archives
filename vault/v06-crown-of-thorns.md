@@ -69,12 +69,8 @@ The crown belongs with the archive's chapter on **scholasticism and the high-med
 - John 19:2 (with Mark 15:17, Matthew 27:29), Greek text as in the Nestle–Aland / SBL Greek New Testament
 
 *History and the object*
-- "Crown of thorns", https://en.wikipedia.org/wiki/Crown_of_thorns
 - "Notre Dame: how Christ's Crown of Thorns has survived crusades, political upheaval and a fire (but only just)", *The Conversation* (2019), https://theconversation.com/notre-dame-how-christs-crown-of-thorns-has-survived-crusades-political-upheaval-and-a-fire-but-only-just-115731
 - "The Crown of Thorns returns to Notre Dame after the 'modern miracle' of its rescue from the fire", *The Conversation* (2024), https://theconversation.com/the-crown-of-thorns-returns-to-notre-dame-after-the-modern-miracle-of-its-rescue-from-the-fire-245095
-- "Baldwin II, Latin Emperor", https://en.wikipedia.org/wiki/Baldwin_II,_Latin_Emperor
-- "Sainte-Chapelle", https://en.wikipedia.org/wiki/Sainte-Chapelle
-- "Notre-Dame fire", https://en.wikipedia.org/wiki/Notre-Dame_fire
 - "Jesus' crown of thorns returns to Notre-Dame Cathedral", *The Catholic Virginian* (2024), https://catholicvirginian.org/news/global/jesus-crown-of-thorns-returns-to-notre-dame-cathedral/
 
 *Holy Thorns*

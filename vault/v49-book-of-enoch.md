@@ -65,7 +65,6 @@ Second Temple Judaism (ch10), The End of Days (ch50) and Eastern Orthodoxy & Byz
 
 *The book and its manuscripts*
 
-- "Book of Enoch", https://en.wikipedia.org/wiki/Book_of_Enoch
 - Larry Hurtado, "1 Enoch: An Update on Manuscripts and Cautionary Notes on Usage" (2019), https://larryhurtado.wordpress.com/2019/10/06/1-enoch-an-update-on-manuscripts-and-cautionary-notes-on-usage/
 - Online Critical Pseudepigrapha, "1 (Ethiopic Apocalypse of) Enoch", https://pseudepigrapha.org/docs/intro/1En
 - Biblical Archaeology Society, "Dead Sea Scrolls Spotlight: The Book of Enoch", https://library.biblicalarchaeology.org/sidebar/dead-sea-scrolls-spotlight-the-book-of-enoch/

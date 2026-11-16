@@ -45,10 +45,8 @@ Patristic Christianity (ch22), Byzantium (ch60), the Reformation (ch31), and the
 
 ## Sources
 
-- "True Cross", https://en.wikipedia.org/wiki/True_Cross
 - Egeria, *Itinerarium* (Pilgrimage) 37, trans. J. Wilkinson, *Egeria's Travels* (3rd ed., 1999)
 - Ambrose of Milan, *De obitu Theodosii* (395)
 - "Legends and History of the True Cross", *Catholic World Report* (2025), https://www.catholicworldreport.com/2025/08/17/legends-and-history-of-the-true-cross/
 - J. Calvin, *Treatise on Relics* (1543), https://ccel.org/ccel/calvin/treatise_relics.v.html
 - "Taking the Measure of Relics of the True Cross" (Rohault de Fleury), https://www.ncregister.com/news/taking-the-measure-of-relics-of-the-true-cross
-- "Judas Cyriacus", https://en.wikipedia.org/wiki/Judas_Cyriacus

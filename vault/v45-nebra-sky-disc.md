@@ -65,7 +65,6 @@ The Neolithic (ch42), Celtic & Germanic (ch14) and Creation & the First Order (c
 
 *The disc*
 
-- "Nebra sky disc", https://en.wikipedia.org/wiki/Nebra_sky_disc
 - *Scientific Reports*, "Archaeometallurgical investigation of the Nebra Sky Disc" (2024), https://www.nature.com/articles/s41598-024-80545-5
 - *Astronomy*, "The Nebra Sky Disk: Is the world's oldest star map really a map at all?", https://www.astronomy.com/science/the-nebra-sky-disk-is-the-worlds-oldest-star-map-really-a-map-at-all/
 

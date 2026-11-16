@@ -64,7 +64,6 @@ This chapter runs beneath the whole book. Its descent-and-return is the twin of 
 
 ## Sources
 
-- Inanna's Descent (Sumerian, oldest recorded katabasis) and the Descent of Ishtar (Akkadian): the seven gates, the stripping, death on the hook, the substitute Dumuzi, and the "land of no return" — "Descent of Inanna into the Underworld," Wikipedia. https://en.wikipedia.org/wiki/Descent_of_Inanna_into_the_Underworld ; "Ereshkigal," Wikipedia. https://en.wikipedia.org/wiki/Ereshkigal
 - Katabasis and nekyia in Greek and Roman literature: Odysseus, Heracles, Orpheus, Aeneas, Persephone, Charon — "Descent into the Underworld," Encyclopedia.com. https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/descent-underworld
 - The Egyptian Duat, the Book of the Dead ("Coming Forth by Day"), the Weighing of the Heart against the feather of Maat, the negative confession, and Ammit the Devourer — Egyptian Book of the Dead overview (Weighing of the Heart, negative confession). https://fiveable.me/world-literature-i/unit-12/death-afterlife/study-guide/ZAkeFU1InN4187SH
 - Comparative afterlife judgment: the Tibetan Bardo Thödol and the bardo state; Chinese Diyu as a bureaucratic underworld; Norse Hel as largely un-judged; the threshold-as-process pattern — "To Die a Norse Death" (Medium/Seer of Odin). https://medium.com/seer-of-odin/to-die-a-norse-death-ancient-afterlife-beliefs-for-modern-souls-4cdb30d7fda1 ; "Norse Ghosts & the Afterlife," World History Encyclopedia. https://www.worldhistory.org/article/1290/norse-ghosts--the-afterlife/

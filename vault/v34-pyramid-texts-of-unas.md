@@ -54,13 +54,6 @@ Egypt (ch02), Sacred Kingship (ch49), Journeys to the Underworld (ch47), and The
 
 ## Sources
 
-*The pyramid and its texts*
-
-- "Pyramid of Unas", https://en.wikipedia.org/wiki/Pyramid_of_Unas
-- "Pyramid Texts", https://en.wikipedia.org/wiki/Pyramid_Texts
-- "Pyramid of Pepi I", https://en.wikipedia.org/wiki/Pyramid_of_Pepi_I
-- "Gaston Maspero", https://en.wikipedia.org/wiki/Gaston_Maspero
-
 *Translations*
 
 - R. O. Faulkner, *The Ancient Egyptian Pyramid Texts* (Oxford, 1969)

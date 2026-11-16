@@ -55,7 +55,6 @@ Buddhism (ch11), Mahayana Buddhism (ch20), Zen & Pure Land Buddhism (ch54), and 
 *The scroll*
 
 - British Library / International Dunhuang Programme, "Buddhist texts: the Diamond Sutra", https://idp.bl.uk/discover/learning/buddhism-on-the-silk-roads/articles/buddhism-on-the-ground/buddhist-texts-the-diamond-sutra/
-- "Diamond Sutra", https://en.wikipedia.org/wiki/Diamond_Sutra
 - History of Information, "The Diamond Sutra, the Earliest Surviving Dated Complete Printed Book", https://www.historyofinformation.com/detail.php?id=207
 - Smithsonian Magazine, "Five Things to Know About the Diamond Sutra, the World's Oldest Dated Printed Book", https://www.smithsonianmag.com/smart-news/Five-things-to-know-about-diamond-sutra-worlds-oldest-dated-printed-book-180959052/
 - Cabinet (University of Oxford), "The world's earliest dated printed book: The Diamond Sutra, 868 CE", https://www.cabinet.ox.ac.uk/worlds-earliest-dated-printed-book-diamond-sutra-868-ce

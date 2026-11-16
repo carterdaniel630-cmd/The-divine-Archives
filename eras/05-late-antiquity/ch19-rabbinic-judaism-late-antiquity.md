@@ -298,19 +298,13 @@ homeland endured.
   and the scholarship on "rabbinization" ([Diversity and Rabbinization, Open Book Publishers](https://books.openbookpublishers.com/10.11647/obp.0219/introduction.xhtml)).
 
 *The texts*
-- [Wikipedia: Oral Torah](https://en.wikipedia.org/wiki/Oral_Torah); [Britannica: Mishna](https://www.britannica.com/topic/Mishna);
-  [Wikipedia: Judah ha-Nasi](https://en.wikipedia.org/wiki/Judah_ha-Nasi).
+- [Britannica: Mishna](https://www.britannica.com/topic/Mishna).
 
 *The Oven of Akhnai and the synagogue mosaics*
-- The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — [Wikipedia: Not in Heaven](https://en.wikipedia.org/wiki/Not_in_Heaven);
-  [My Jewish Learning: Bava Metzia 59](https://www.myjewishlearning.com/article/bava-metzia-59/).
-- The zodiac-and-Helios synagogue mosaics — [My Jewish Learning: Astrology in the Ancient Synagogue](https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/);
-  [Wikipedia: Beth Alpha](https://en.wikipedia.org/wiki/Beth_Alpha); the figurative frescoes of the
-  [Dura-Europos synagogue](https://en.wikipedia.org/wiki/Dura-Europos_synagogue).
+- The Oven of Akhnai (Bava Metzia 59b), "It is not in heaven" — [My Jewish Learning: Bava Metzia 59](https://www.myjewishlearning.com/article/bava-metzia-59/).
+- The zodiac-and-Helios synagogue mosaics — [My Jewish Learning: Astrology in the Ancient Synagogue](https://www.myjewishlearning.com/article/astrology-in-the-ancient-synagogue/).
 
 *Sacred encoding — letters, Sefer Yetzirah, and mysticism*
-- [Wikipedia: Sefer Yetzirah](https://en.wikipedia.org/wiki/Sefer_Yetzirah); on Merkabah and Hekhalot
-  mysticism and the "four who entered pardes," standard reference overviews.
 - The Seder, Mishnah Pesaḥim 10 and the symposium question — Baruch M. Bokser, *The Origins of the Seder: The Passover Rite and Early Rabbinic Judaism* (Berkeley: University of California Press, 1984; repr. JTS Press, 2002). https://www.degruyterbrill.com/document/doi/10.1525/9780520317376/html ; Schechter Institute, "The Origins of the Seder" (on Stein 1957 and the scholars who followed him). https://schechter.edu/the-origins-of-the-seder/ ; Mishnah Pesaḥim 10, at Sefaria. https://www.sefaria.org/Mishnah_Pesachim.10
 - The *Seder Rav Amram Gaon* — Jewish Virtual Library, "Amram Gaon." https://www.jewishvirtuallibrary.org/amram-gaon
 - The Karaites, Anan ben David and the origins debate — Daniel J. Lasker, *Karaism: An Introduction to the Oldest Surviving Alternative Judaism* (London: Littman Library, 2022), reviewed in *The Jerusalem Post*. https://www.jpost.com/judaism/article-707768 ; TheTorah.com, "Biblical Exegesis as a Source of Jewish Pluralism: The Case of the Karaites." https://www.thetorah.com/article/biblical-exegesis-as-a-source-of-jewish-pluralism-the-case-of-the-karaites

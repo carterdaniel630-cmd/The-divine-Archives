@@ -46,7 +46,6 @@ Celtic & Germanic (ch14) and Patristic Christianity (ch22), for the conversion. 
 
 *The stones*
 
-- "Pictish stone", https://en.wikipedia.org/wiki/Pictish_stone
 - J. R. Allen and J. Anderson, *The Early Christian Monuments of Scotland* (Society of Antiquaries of Scotland, 1903)
 - Historic Environment Scotland, "Aberlemno Sculptured Stones", https://www.historicenvironment.scot/visit-a-place/places/aberlemno-sculptured-stones/
 
