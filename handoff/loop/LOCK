@@ -1,1 +1,1 @@
-RELEASED 2026-11-15T23:52:08Z: ch19 wording fix built as #162. Treat as no lock; the next run may overwrite it.
+2026-11-16T00:42:20Z build-loop run working
