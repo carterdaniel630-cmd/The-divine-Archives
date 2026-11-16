@@ -136,3 +136,4 @@
 2026-11-16 20:44 UTC reviewer loop pr171 resourcing-ch72 delta passed (0 findings; wrote none of it)
 2026-11-16 21:00 UTC reviewer loop ch37-spr-1986 need Carter (0 findings; wording pass; re-clear needed; wrote none of it)
 2026-11-16 21:50 UTC reviewer loop #173 passed
+2026-11-16 22:10 UTC reviewer loop #175 fixable (2 findings)
