@@ -57,8 +57,6 @@ Early Christianity (ch16), Patristic Christianity (ch22) and Celtic & Germanic (
 *The manuscript*
 
 - British Library, *Lindisfarne Gospels*, https://www.bl.uk/collection-items/lindisfarne-gospels
-- "Lindisfarne Gospels", https://en.wikipedia.org/wiki/Lindisfarne_Gospels
-- "Eadfrith of Lindisfarne", https://en.wikipedia.org/wiki/Eadfrith_of_Lindisfarne
 - The Conversation, "The Lindisfarne Gospels: the story of how a medieval masterpiece was made", https://theconversation.com/the-lindisfarne-gospels-the-story-of-how-a-medieval-masterpiece-was-made-191712
 
 *The gloss*

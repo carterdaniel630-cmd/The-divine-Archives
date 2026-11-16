@@ -90,7 +90,6 @@ The Reformation grew directly out of the medieval **Catholic** church it broke f
 
 - Luther's Ninety-Five Theses (1517), indulgences, Tetzel, and the door — "Ninety-five Theses," Britannica. https://www.britannica.com/event/Ninety-five-Theses
 - The Diet of Worms (1521), "Here I stand," and the Edict of Worms — "Diet of Worms," Britannica; World History Encyclopedia. https://www.britannica.com/event/Diet-of-Worms-Germany-1521
-- The Marburg Colloquy (1529) and the Luther–Zwingli split over the Eucharist — "Marburg Colloquy," Wikipedia. https://en.wikipedia.org/wiki/Marburg_Colloquy
 - The German Peasants' War (1524–25) and Luther's condemnation of the peasants — "Peasants' War," Britannica; World History Encyclopedia. https://www.britannica.com/event/Peasants-War
 - The solas, the vernacular Bible, the priesthood of all believers — "Protestantism," Britannica. https://www.britannica.com/topic/Protestantism
 - Calvin, Geneva, predestination, the *Institutes*, and the burning of Servetus (1553) — "Reformation," Britannica; Christian History, "The Servetus Affair." https://www.britannica.com/event/Reformation
@@ -98,5 +97,4 @@ The Reformation grew directly out of the medieval **Catholic** church it broke f
 - The Radical Reformation and the Anabaptists (Schleitheim 1527, Menno Simons, Münster, church–state separation) — "Anabaptists," Britannica. https://www.britannica.com/topic/Anabaptists
 - The Counter-Reformation and the Council of Trent (1545–1563); the Jesuits — "Counter-Reformation," Britannica. https://www.britannica.com/event/Counter-Reformation
 - The Peace of Augsburg (1555), the Thirty Years' War, and the Peace of Westphalia (1648) — "Thirty Years' War," Britannica. https://www.britannica.com/event/Thirty-Years-War
-- Reformation iconoclasm (the Beeldenstorm) and the turn to the word — "Reformation iconoclasm," Wikipedia. https://en.wikipedia.org/wiki/Reformation_iconoclasm
-- The forerunners: John Wycliffe (the "morning star") and the Lollards; Jan Hus, condemned by the Council of Constance and burned in 1415; the Waldensians — "John Wycliffe," World History Encyclopedia; "Jan Hus," Wikipedia. https://en.wikipedia.org/wiki/Jan_Hus
+- The forerunners: John Wycliffe (the "morning star") and the Lollards; Jan Hus, condemned by the Council of Constance and burned in 1415; the Waldensians — "John Wycliffe," World History Encyclopedia.

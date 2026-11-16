@@ -10,6 +10,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 
 - "Pilate stone", https://en.wikipedia.org/wiki/Pilate_stone
 - Vici.org, "Caesarea Maritima: Pilate Stone", https://vici.org/vici/21598/?lang=en
+- *Corpus Inscriptionum Iudaeae/Palaestinae* II 1277, record in the *Judaism and Rome* database, https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288 (opened again 2026-11-14): 82 cm high, 65 cm wide, 20 cm deep; line 4 keeps only one letter, E. Readings recorded there: G. Alföldy (1999) *[ref]eci[t]*, "restored"; J. E. Taylor (2006) the start of *dedicavit*. This is the source for the page's line 4 and its note (wording fix 2026-11-14; the page earlier printed `[…FE]CIT D[E…]`, which marked letters as surviving that the stone does not show).
 - Ministry Magazine, "Pontius Pilate and the Caesarea Inscription" (1975), https://www.ministrymagazine.org/archive/1975/04/pontius-pilate-and-the-caesarea-inscription
 
 *Interpretation*

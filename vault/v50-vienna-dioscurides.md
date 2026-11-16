@@ -52,7 +52,6 @@ Eastern Orthodoxy & Byzantium (ch60), with Classical Greece (ch15) and Rome (ch1
 
 *The manuscript*
 
-- "Vienna Dioscurides", https://en.wikipedia.org/wiki/Vienna_Dioscurides
 - UNESCO Memory of the World, *Vienna Dioscurides* (nomination), https://media.unesco.org/sites/default/files/webform/mow001/austria_vienna_dioscurides.pdf
 - Smarthistory, "The Vienna Dioscurides", https://smarthistory.org/the-vienna-dioscurides/
 - Wellcome Collection, *Dioscorides: Codex Vindobonensis medicus Graecus 1*, https://wellcomecollection.org/works/rkqk3s2s

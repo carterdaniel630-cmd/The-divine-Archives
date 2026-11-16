@@ -56,8 +56,6 @@ Satanism (ch39), and Theosophy & the Occult Revival (ch37) for Lévi and Crowley
 
 *The book*
 
-- "The Satanic Bible", https://en.wikipedia.org/wiki/The_Satanic_Bible
-- "Might Is Right", https://en.wikipedia.org/wiki/Might_Is_Right
 - Church of Satan, "Anton LaVey and the Right of Might", https://churchofsatan.com/anton-lavey-and-the-right-of-might/
 
 *Studies*

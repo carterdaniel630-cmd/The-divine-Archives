@@ -69,11 +69,6 @@ The witch trials belong to the anxious, violent world of the **Reformation** (Ch
 
 - Scope, chronology (c. 1450–1750), ~100,000 accused and 40,000–60,000 executed, concentration in the Holy Roman Empire — "The European Witch-Hunts, 1450–1750," Brewminate. https://brewminate.com/the-european-witch-hunts-1450-1750/
 - The "cumulative concept" of the witch; maleficium plus demonology; the *Canon Episcopi* reversal; multipolar causes (Brian Levack) — EBSCO Research Starters, "Witch-hunts and witch trials." https://www.ebsco.com/research-starters/history/witch-hunts-and-witch-trials
-- The *Malleus Maleficarum* (1486, Heinrich Kramer) and the 1484 bull *Summis desiderantes*; best-seller yet not officially authorized — "Malleus Maleficarum," Wikipedia. https://en.wikipedia.org/wiki/Malleus_Maleficarum
-- The Bamberg witch trials (1626–31), Prince-Bishop Fuchs von Dornheim, and the letter of Johannes Junius (1628) — "Bamberg witch trials" and "Johannes Junius," Wikipedia. https://en.wikipedia.org/wiki/Bamberg_witch_trials · https://en.wikipedia.org/wiki/Johannes_Junius
-- The North Berwick trials (1590–91), James VI, and *Daemonologie* (1597) — "North Berwick witch trials," Wikipedia. https://en.wikipedia.org/wiki/North_Berwick_witch_trials
-- The benandanti and the Inquisition's reinterpretation of them (Carlo Ginzburg, *The Night Battles*) — "The Night Battles," Wikipedia. https://en.wikipedia.org/wiki/The_Night_Battles
 - Wolfgang Behringer on the Little Ice Age and witch-hunting — "Climatic Change and Witch-hunting: the Impact of the Little Ice Age on Mentalities," *Climatic Change* (1999). https://link.springer.com/article/10.1023/A:1005554519604
 - Gender (~75–80% women overall, with male-majority regions: Iceland, Finland, Estonia) — witch-hunt gender scholarship. https://www.gendercide.org/case_witchhunts.html
 - Salem (1692); the end of the trials; Friedrich Spee's *Cautio Criminalis* (1631) — History.com, "Witches: Real Origins, Hunts & Trials." https://www.history.com/articles/history-of-witches
-- The debunked Murray "witch-cult" thesis and the mythical "nine million" toll — general historiography, "Witch trials in the early modern period." https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period

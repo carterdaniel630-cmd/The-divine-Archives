@@ -58,7 +58,6 @@ Egypt (ch02), Pre-exilic Israel (ch07), Canaanite & Phoenician (ch58) and Sacred
 
 *The stele*
 
-- "Merneptah Stele", https://en.wikipedia.org/wiki/Merneptah_Stele
 - Egypt Museum, "Victory Stele of Merneptah", https://egypt-museum.com/victory-stele-of-merneptah/
 - BiblePlaces.com, "Artifact of the Month: The Merneptah Stela" (2014), https://www.bibleplaces.com/blog/2014/01/artifact-of-month-merneptah-stela/
 - History of Information, "The Merneptah Stele", https://www.historyofinformation.com/detail.php?id=1561

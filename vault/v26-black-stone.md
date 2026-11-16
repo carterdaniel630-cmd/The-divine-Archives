@@ -56,8 +56,6 @@ Islam (ch21), Sufism (ch27), the sacred-stone traditions of the ancient Near Eas
 
 ## Sources
 
-- "Black Stone", https://en.wikipedia.org/wiki/Black_Stone
-- "Qarmatians", https://en.wikipedia.org/wiki/Qarmatians and "Sack of Mecca", https://en.wikipedia.org/wiki/Sack_of_Mecca
 - Madain Project, "Black Stone (Hajar al-Aswad)", https://madainproject.com/black_stone_(hajar_al_aswad)
 - Sahih al-Bukhari, Book of Hajj (the saying of ʿUmar to the Black Stone)
 - Ibn Ishaq, *Sirat Rasul Allah*, trans. A. Guillaume, *The Life of Muhammad* (Oxford, 1955): the rebuilding of the Kaaba

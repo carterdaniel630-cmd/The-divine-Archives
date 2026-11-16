@@ -54,7 +54,6 @@ Rabbinic Judaism (ch19), since the bowls come from the same time and place as th
 
 *The bowls*
 
-- "Incantation bowl", https://en.wikipedia.org/wiki/Incantation_bowl
 - J. A. Montgomery, *Aramaic Incantation Texts from Nippur* (University of Pennsylvania Museum, 1913), https://archive.org/details/aramaicincantati00mont
 - Penn Museum, "Incantation bowls", https://www.penn.museum/collections/
 

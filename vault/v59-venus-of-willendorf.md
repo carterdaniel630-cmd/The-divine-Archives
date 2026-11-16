@@ -49,7 +49,6 @@ Palaeolithic Prehistory (ch41) and The Great Goddess (ch48), which discusses the
 *The figure*
 
 - Natural History Museum Vienna, "Venus of Willendorf", https://www.nhm-wien.ac.at/en/venus_of_willendorf
-- "Venus of Willendorf", https://en.wikipedia.org/wiki/Venus_of_Willendorf
 - Smarthistory, "Nude woman (Venus of Willendorf)", https://smarthistory.org/venus-of-willendorf/
 
 *Studies*

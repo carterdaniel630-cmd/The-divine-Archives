@@ -55,8 +55,6 @@ Tibetan & Vajrayana Buddhism (ch53), with Buddhism (ch11) and Tantra (ch24). Com
 
 *The text and its tradition*
 
-- "Bardo Thodol", https://en.wikipedia.org/wiki/Bardo_Thodol
-- "Karma Lingpa", https://en.wikipedia.org/wiki/Karma_Lingpa
 - Rigpa Wiki, "Tibetan Book of the Dead", https://www.rigpawiki.org/index.php?title=Tibetan_Book_of_the_Dead
 - World History Encyclopedia, "Tibetan Book of the Dead", https://www.worldhistory.org/Tibetan_Book_of_the_Dead/
 - G. Dorje (trans.), G. Coleman and T. Jinpa (eds.), *The Tibetan Book of the Dead: First Complete Translation* (Penguin, 2005)
@@ -65,4 +63,3 @@ Tibetan & Vajrayana Buddhism (ch53), with Buddhism (ch11) and Tantra (ch24). Com
 
 - W. Y. Evans-Wentz (ed.), Lama Kazi Dawa Samdup (trans.), *The Tibetan Book of the Dead* (Oxford University Press, 1927)
 - D. S. Lopez, *The Tibetan Book of the Dead: A Biography* (Princeton University Press, 2011)
-- "Walter Evans-Wentz", https://en.wikipedia.org/wiki/Walter_Evans-Wentz

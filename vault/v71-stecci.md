@@ -56,8 +56,6 @@ Eastern Orthodoxy & Byzantium (ch60), and Gnosticism (ch17) and Manichaeism (ch5
 
 - UNESCO, "Stećci Medieval Tombstone Graveyards", https://whc.unesco.org/en/list/1504/
 - Stećci World Heritage, "About", https://www.stecciwh.org/about/
-- "Stećak", https://en.wikipedia.org/wiki/Ste%C4%87ak
-- "Stećak necropolis Radimlja", https://en.wikipedia.org/wiki/Ste%C4%87ak_necropolis_Radimlja
 
 *Studies*
 

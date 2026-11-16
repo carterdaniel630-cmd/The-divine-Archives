@@ -361,7 +361,6 @@ distantly, **Islam**, **Gnosticism**, and the esoteric traditions of **Kabbalah*
 
 *The period, the exile, and diversity*
 - [Britannica: Jewish Diaspora](https://www.britannica.com/topic/Jewish-Diaspora);
-  [Wikipedia: Second Temple](https://en.wikipedia.org/wiki/Second_Temple);
   Shaye J. D. Cohen, *From the Maccabees to the Mishnah* (the standard survey).
 
 *The sects and the Scrolls*
@@ -380,11 +379,10 @@ distantly, **Islam**, **Gnosticism**, and the esoteric traditions of **Kabbalah*
   Danielic/Enochic son of man) — [Livius: Qumran's dual Messianism](https://www.livius.org/articles/religion/messiah/messiah-9-two-messiahs/);
   and standard surveys of Second Temple messianism.
 - Personified Wisdom (Hokhmah/Sophia) in Proverbs 8, Ben Sira 24, and the Wisdom of
-  Solomon — [Wikipedia: Personification of wisdom](https://en.wikipedia.org/wiki/Personification_of_wisdom).
+  Solomon.
 
 *The literature*
 - [My Jewish Learning: Apocrypha and Pseudepigrapha](https://www.myjewishlearning.com/article/apocrypha-and-pseudepigrapha/);
-  [Wikipedia: Jewish apocrypha and pseudepigrapha](https://en.wikipedia.org/wiki/Jewish_apocrypha_and_pseudepigrapha);
   on the canon, and Philo of Alexandria for the allegorical/cosmic readings.
 
 *Note on sourcing:* Researched from standard scholarship (Cohen; the Dead Sea Scrolls

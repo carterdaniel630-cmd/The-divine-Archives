@@ -80,10 +80,8 @@ Spiritualism is a modern, scientific-age form of one of the most ancient human p
 - The Fox sisters, the 1848 Hydesville rappings, and the birth of Spiritualism — "Margaret Fox and Catherine Fox," Britannica. https://www.britannica.com/biography/Margaret-Fox-and-Catherine-Fox
 - Margaret Fox's 1888 confession (toe- and knuckle-cracking) and later recantation — History.com, "How a Hoax by Two Sisters Helped Spark the Spiritualism Craze." https://www.history.com/articles/ghost-hoax-spiritualism-fox-sisters
 - Swedenborg and Mesmer as precursors; Andrew Jackson Davis, the "Poughkeepsie Seer," and *The Principles of Nature* (1847) — "Andrew Jackson Davis," EBSCO Research Starters; "Spiritualism," New World Encyclopedia. https://www.ebsco.com/research-starters/history/andrew-jackson-davis/
-- Daniel Dunglas Home, physical mediumship and the Ashley House levitation — "Daniel Dunglas Home," Wikipedia; SPR Psi Encyclopedia. https://en.wikipedia.org/wiki/Daniel_Dunglas_Home
-- Leonora Piper and William James's "white crow" — "Leonora Piper," Wikipedia. https://en.wikipedia.org/wiki/Leonora_Piper
+- Daniel Dunglas Home, physical mediumship and the Ashley House levitation — SPR Psi Encyclopedia.
 - The Society for Psychical Research (1882): Sidgwick, Myers (coiner of "telepathy"), Gurney — SPR, "Our History." https://www.spr.ac.uk/about/our-history/
-- William Mumler and the 1869 spirit-photography fraud trial (P. T. Barnum's faked Lincoln photo) — "William H. Mumler," Wikipedia; History.com. https://en.wikipedia.org/wiki/William_H._Mumler
-- Houdini, the Doyle feud, and the *Scientific American* committee's exposure of "Margery" (Mina Crandon), 1924 — "Mina Crandon," Wikipedia; Scientific American, "Scientific American vs. the Supernatural." https://en.wikipedia.org/wiki/Mina_Crandon
-- The ideomotor effect and the Ouija board; the "spiritual telegraph"; grief after war and Oliver Lodge's *Raymond* — Smithsonian, "The Fox Sisters and the Rap on Spiritualism"; "Spiritualism," Wikipedia. https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/
-- Allan Kardec, *The Spirits' Book* (1857), Spiritism's reincarnationism, and its mass following in Brazil (Chico Xavier) — "Spiritism" and "Allan Kardec," Wikipedia. https://en.wikipedia.org/wiki/Spiritism
+- William Mumler and the 1869 spirit-photography fraud trial (P. T. Barnum's faked Lincoln photo) — History.com.
+- Houdini, the Doyle feud, and the *Scientific American* committee's exposure of "Margery" (Mina Crandon), 1924 — Scientific American, "Scientific American vs. the Supernatural."
+- The ideomotor effect and the Ouija board; the "spiritual telegraph"; grief after war and Oliver Lodge's *Raymond* — Smithsonian, "The Fox Sisters and the Rap on Spiritualism." https://www.smithsonianmag.com/history/the-fox-sisters-and-the-rap-on-spiritualism-99663697/

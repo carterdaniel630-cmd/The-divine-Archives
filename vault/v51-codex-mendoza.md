@@ -54,7 +54,6 @@ The Aztec (ch43). Compare the Codex Borgia (V41), a pre-conquest divinatory book
 
 - Bodleian Library, *MS. Arch. Selden. A. 1* (Digital Bodleian), https://digital.bodleian.ox.ac.uk/objects/2fea788e-2aa2-4f08-b6d9-648c00486220/
 - Bodleian Library, catalogue record, https://marco.ox.ac.uk/ark:29072/x0gf06g2714c
-- "Codex Mendoza", https://en.wikipedia.org/wiki/Codex_Mendoza
 - Smarthistory, "Frontispiece of the Codex Mendoza", https://smarthistory.org/frontispiece-of-the-codex-mendoza/
 
 *Studies*

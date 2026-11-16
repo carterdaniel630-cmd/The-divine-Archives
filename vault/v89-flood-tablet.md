@@ -64,7 +64,6 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Ark Tablet (V90), an older 
 *The tablet*
 
 - British Museum, collection record for the Flood Tablet (K.3375), https://www.britishmuseum.org/collection/object/W_K-3375
-- "Gilgamesh flood myth" (the tablet, its contents, and the parallels with *Atrahasis*), https://en.wikipedia.org/wiki/Gilgamesh_flood_myth
 
 *The text*
 
@@ -75,7 +74,6 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Ark Tablet (V90), an older 
 
 - George Smith, "The Chaldean Account of the Deluge", *Transactions of the Society of Biblical Archaeology* 2 (1873), text at https://www.sacred-texts.com/ane/chad/chad.htm
 - George Smith, *Assyrian Discoveries* (1875), his own account of the 1873 expedition and DT 42
-- "George Smith (Assyriologist)" (apprenticeship, the 1853 excavation by Rassam, the 1872 paper, his death at Aleppo), https://en.wikipedia.org/wiki/George_Smith_(Assyriologist)
 - "George Smith", *Encyclopaedia Britannica*, https://www.britannica.com/biography/George-Smith-British-Assyriologist
 - I. Finkel, *The Ark Before Noah: Decoding the Story of the Flood* (Hodder & Stoughton, 2014), on DT 42 as a fragment of *Atrahasis*
 

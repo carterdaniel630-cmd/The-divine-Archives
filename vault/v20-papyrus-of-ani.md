@@ -51,9 +51,7 @@ Egypt (ch02), the Underworld theme (ch47), the Weighing of Souls in later tradit
 
 ## Sources
 
-- "Papyrus of Ani", https://en.wikipedia.org/wiki/Papyrus_of_Ani
 - British Museum, Papyrus of Ani (EA 10470), https://www.britishmuseum.org/collection/object/Y_EA10470-3
 - "Negative Confession (Spell 125 Book of the Dead)", Ancient Egypt Online, https://ancientegyptonline.co.uk/negativeconfession/
 - E. A. W. Budge, *The Book of the Dead: The Papyrus of Ani* (British Museum, 1895)
 - R. O. Faulkner (trans.), *The Egyptian Book of the Dead: The Book of Going Forth by Day* (Chronicle, 1994/2008)
-- "Book of the Dead", https://en.wikipedia.org/wiki/Book_of_the_Dead

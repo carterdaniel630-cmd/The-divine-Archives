@@ -74,10 +74,11 @@ write('graph.json', JSON.stringify(graph, null, 2) + '\n');
 
 const esc = (s) => JSON.stringify(s).slice(1, -1);
 
-// graph.html: node data, then the legend entries.
+// graph.html: node data, then the legend entries. Above 5,000 nodes graphify draws one node per
+// community instead (the "aggregated" view), and those nodes also carry the name as their hover
+// "title", so that field is renamed too.
 let html = read('graph.html');
-html = html.replace(/("community_name": )"Community (\d+)"/g, (m, pre, id) => (names.has(+id) ? `${pre}"${esc(names.get(+id))}"` : m));
-html = html.replace(/("label": )"Community (\d+)"/g, (m, pre, id) => (names.has(+id) ? `${pre}"${esc(names.get(+id))}"` : m));
+html = html.replace(/("(?:community_name|label|title)": )"Community (\d+)"/g, (m, pre, id) => (names.has(+id) ? `${pre}"${esc(names.get(+id))}"` : m));
 write('graph.html', html);
 
 // GRAPH_REPORT.md: headings and hub list keep the number, so older references still match.

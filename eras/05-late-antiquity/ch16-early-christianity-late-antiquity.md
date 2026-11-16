@@ -299,8 +299,7 @@ mysticisms that flow from it down to the present.
 ## Sources
 
 *The historical Jesus and the sources*
-- [Wikipedia: Sources for the historicity of Jesus](https://en.wikipedia.org/wiki/Sources_for_the_historicity_of_Jesus);
-  [Britannica: Christianity — Jesus and the early church](https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus).
+- [Britannica: Christianity — Jesus and the early church](https://www.britannica.com/topic/Christianity/The-relation-of-the-early-church-to-the-career-and-intentions-of-Jesus).
 
 *Paul, canon formation, and diversity*
 - On Marcion and the canon, [Yale Bible Study: Formation of the New Testament Canon](https://yalebiblestudy.org/courses/formation-of-the-biblical-canon/lessons/new-testament-study-guide/)
@@ -308,15 +307,11 @@ mysticisms that flow from it down to the present.
   on early Christian diversity, the standard treatments (e.g. Bart Ehrman, *Lost Christianities*).
 
 *Women and the martyr cult*
-- Junia and Phoebe — [Wikipedia: Junia (New Testament person)](https://en.wikipedia.org/wiki/Junia_(New_Testament_person));
-  [Wikipedia: Phoebe (biblical figure)](https://en.wikipedia.org/wiki/Phoebe_(biblical_figure)).
-- The Passion of Perpetua and Felicity (203 CE) — [Wikipedia: Passion of Saints Perpetua and Felicity](https://en.wikipedia.org/wiki/Passion_of_Saints_Perpetua_and_Felicity);
-  [Britannica: Perpetua](https://www.britannica.com/biography/Perpetua-Christian-martyr).
-- The Martyrdom of Polycarp, relics, and the *dies natalis* — [Wikipedia: Dies natalis](https://en.wikipedia.org/wiki/Dies_natalis);
-  [Christian History Institute: Polycarp's Martyrdom](https://christianhistoryinstitute.org/study/module/polycarp).
+- The Passion of Perpetua and Felicity (203 CE) — [Britannica: Perpetua](https://www.britannica.com/biography/Perpetua-Christian-martyr).
+- The Martyrdom of Polycarp, relics, and the *dies natalis* — [Christian History Institute: Polycarp's Martyrdom](https://christianhistoryinstitute.org/study/module/polycarp).
 
 *Symbol and sacred encoding*
-- [Wikipedia: Ichthys](https://en.wikipedia.org/wiki/Ichthys); [Biblical Archaeology Society: The Staurogram](https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/);
+- [Biblical Archaeology Society: The Staurogram](https://www.biblicalarchaeology.org/daily/biblical-topics/crucifixion/the-staurogram/);
   on 666 and Nero, [Britannica: Number of the beast](https://www.britannica.com/topic/number-of-the-beast).
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica, Wikipedia's

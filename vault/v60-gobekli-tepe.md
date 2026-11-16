@@ -56,7 +56,6 @@ Neolithic Prehistory (ch42) and Palaeolithic Prehistory (ch41). Compare the Lion
 
 - UNESCO, "Göbekli Tepe", https://whc.unesco.org/en/list/1572/
 - German Archaeological Institute, "Göbekli Tepe", https://www.dainst.org/en/projects/goebekli-tepe
-- "Göbekli Tepe", https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe
 - K. Schmidt, *Göbekli Tepe: A Stone Age Sanctuary in South-Eastern Anatolia* (ex oriente, 2012)
 
 *Revisions and debates*

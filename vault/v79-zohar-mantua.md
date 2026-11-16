@@ -53,7 +53,6 @@ Kabbalah (ch26), with Rabbinic Judaism (ch19) and Theosophy & the Occult Revival
 
 *The printings*
 
-- "Zohar", https://en.wikipedia.org/wiki/Zohar
 - Beit Hazohar, J. Baumgarten, "Printing and editing the Sefer ha-Zohar", https://beithazohar.com/en/print-and-edit-the-sefer-ha-zohar-jean-baumgarten/
 - Beit Hazohar, "The Mantua Zohar edition and its impact on Jewish identity", https://beithazohar.com/en/the-edition-of-the-zohar-of-mantua-a-great-identity-drawing/
 - S. Campanini, "The Zohar among the Christians in the Renaissance", *Materia giudaica* (2020), http://aisg.cise.unipi.it/Materia-giudaica-2020/041_Campanini%20pp%20511-524.pdf

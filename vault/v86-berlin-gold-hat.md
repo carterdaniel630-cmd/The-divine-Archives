@@ -51,11 +51,9 @@ The Neolithic (ch42) for the European sky-watching tradition it continues, Celti
 *The hat*
 
 - Staatliche Museen zu Berlin, Neues Museum, "Prehistory and early history", https://www.smb.museum/en/exhibitions/detail/prehistory-and-early-history/
-- "Berlin Gold Hat", https://en.wikipedia.org/wiki/Berlin_Gold_Hat
 - The Berliner, "Berlin Gold Hat: Bronze Age calendar of the gods", https://www.the-berliner.com/berlin/object-lesson-berlin-gold-hat-bronze-age-calendar-neues-museum/
 
 *The four hats and the calendar theory*
 
-- "Golden hat", https://en.wikipedia.org/wiki/Golden_hat
 - World History Encyclopedia, "Four Gold Hats: A Bronze Age Mystery", https://etc.worldhistory.org/culture/four-gold-hats-a-bronze-age-mystery/
 - W. Menghin, "Der Berliner Goldhut und die goldenen Kalendarien der alteuropäischen Bronzezeit", *Acta Praehistorica et Archaeologica* 32 (2000)

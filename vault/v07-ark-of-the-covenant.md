@@ -93,13 +93,10 @@ The Ark belongs with the archive's chapters on **pre-exilic Israel** (ch07), **S
 - 2 Maccabees 2:4–8, https://bible.usccb.org/bible/2maccabees/2
 - Babylonian Talmud, Yoma 53b–54a
 - Josephus, *Jewish War* 5.219 (the empty innermost room); Tacitus, *Histories* 5.9 (Pompey finds the sanctuary empty)
-- "Ark of the Covenant", https://en.wikipedia.org/wiki/Ark_of_the_Covenant
 
 *Ethiopia*
-- "Church of Our Lady Mary of Zion", https://en.wikipedia.org/wiki/Church_of_Our_Lady_Mary_of_Zion
 - "Is the Ark of the Covenant in Ethiopia?", *Tablet Magazine*, https://www.tabletmag.com/sections/history/articles/ark-covenant-ethiopia
 
 *Archaeology*
 - "Biblical site tied to Ark of the Covenant unearthed at convent in central Israel", *The Times of Israel*, https://www.timesofisrael.com/biblical-site-tied-to-ark-of-the-covenant-unearthed-at-convent-in-central-israel/
-- "Kiriath-Jearim", https://en.wikipedia.org/wiki/Kiriath-Jearim
 - "The Real Ark of the Covenant May Have Housed Pagan Gods", *Haaretz* (2017), https://www.haaretz.com/archaeology/2017-08-30/ty-article-magazine/the-real-ark-of-the-covenant-may-have-housed-pagan-gods/0000017f-dc09-d3a5-af7f-feafc7660000

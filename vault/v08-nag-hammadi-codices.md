@@ -66,10 +66,8 @@ Gnosticism (ch17), Pistis Sophia (ch45), Early Christianity (ch16), Manichaeism 
 
 ## Sources
 
-- "Nag Hammadi library", https://en.wikipedia.org/wiki/Nag_Hammadi_library
 - R. Pearse, "The Nag Hammadi discovery of manuscripts", https://tertullian.org/rpearse/manuscripts/nag_hammadi.htm
-- "Gospel of Thomas", https://en.wikipedia.org/wiki/Gospel_of_Thomas and NASSCAL e-Clavis, https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/
+- NASSCAL e-Clavis, https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/
 - T. O. Lambdin, translation of the Gospel of Thomas, The Nag Hammadi Library, http://www.gnosis.org/naghamm/gthlamb.html
-- "The Thunder, Perfect Mind", https://en.wikipedia.org/wiki/The_Thunder,_Perfect_Mind
 - J. M. Robinson (ed.), *The Nag Hammadi Library in English*, 4th rev. ed. (Brill, 1996); M. Meyer (ed.), *The Nag Hammadi Scriptures* (HarperOne, 2007)
 - *The Facsimile Edition of the Nag Hammadi Codices* (Brill, 1972–1977)

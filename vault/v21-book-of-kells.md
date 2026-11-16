@@ -45,6 +45,5 @@ Celtic and Germanic religion (ch14, for the spiral and interlace inheritance), P
 
 - Trinity College Dublin Library, "The Book of Kells", https://www.tcd.ie/library/research-collections/book-of-kells.php
 - "Book of Kells", World History Encyclopedia, https://www.worldhistory.org/Book_of_Kells/
-- "Book of Kells", https://en.wikipedia.org/wiki/Book_of_Kells
 - B. Meehan, *The Book of Kells* (Thames & Hudson, 2012)
 - *Annals of Ulster*, s.a. 1007 (the theft of the "great Gospel of Colum Cille")

@@ -54,9 +54,7 @@ Early Greece (ch08), where Minoan Crete is discussed. Compare the Voynich Manusc
 
 *The disc*
 
-- "Phaistos Disc", https://en.wikipedia.org/wiki/Phaistos_Disc
 - National Geographic, "This ancient script has remained unsolved for over a century", https://www.nationalgeographic.com/history/article/phaistos-clay-disk-minoans-mystery
-- "Luigi Pernier", https://en.wikipedia.org/wiki/Luigi_Pernier
 
 *Authenticity*
 

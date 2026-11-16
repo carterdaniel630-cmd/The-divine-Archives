@@ -53,11 +53,8 @@ Mandaeism (ch56), with Gnosticism (ch17) for its dualism of light and darkness. 
 
 - E. S. Drower, *Diwan Abatur, or Progress through the Purgatories* (Studi e Testi 151; Biblioteca Apostolica Vaticana, 1950)
 - Review of Drower, *Diwan Abatur*, *Journal of the Royal Asiatic Society*, https://www.cambridge.org/core/services/aop-cambridge-core/content/view/79DA40880D0932375382B5F0B3C09337/S0035869X00104307a.pdf
-- "Scroll of Abatur", https://en.wikipedia.org/wiki/Scroll_of_Abatur
 - Mandaepedia, "Scroll of Abatur", https://mandaepedia.miraheze.org/wiki/Scroll_of_Abatur
 
 *Cosmology*
 
-- "Abatur", https://en.wikipedia.org/wiki/Abatur
-- "Hitfun", https://en.wikipedia.org/wiki/Hitfun
 - J. J. Buckley, *The Mandaeans: Ancient Texts and Modern People* (Oxford University Press, 2002)
