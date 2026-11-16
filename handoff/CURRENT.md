@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (18:55 UTC)
+# Handoff — updated 2026-11-16 (20:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #166 VR height check merged (2026-11-16 ~18:48 UTC)
+## Latest: #172 ch37 sources and #171 ch72 source merged (2026-11-16 ~19:12 and ~20:44 UTC)
+`main` = `0232f129` (deploy runs 294 and 295 green), both per item on Carter's a,a (`decisions-2026-11-16-carter-a-a-a-172-171-ch37.md`). Chapter 37 (Theosophy) gains three checked sources for the root-races idea and the 1885 Hodgson report; chapter 72 (Cathars) now cites a scholarly source for Otto Rahn joining the SS. Chapter texts otherwise unchanged. Next: the ch37 SPR 1986 sentence fix (built, needs review and checks), then the VR ground re-sync.
+
+## Earlier: #166 VR height check merged (2026-11-16 ~18:48 UTC)
 `main` = `c5d100a8` (deploy run 293 green): #166 fast-forwarded per item on Carter's yes (`carter-yes-2026-11-16-pr166.md`). In a VR headset the museum now asks standing or seated and sets eye height; the choice stays on the visitor's device. Flat screens and phones unchanged. Next: #169/#170 (VR ground) re-sync onto the new `main`; #171 waits on Carter's yes; #172 needs its two fixes.
 
 ## Earlier: #168 ch40 sources merged (2026-11-16 ~15:53 UTC)
