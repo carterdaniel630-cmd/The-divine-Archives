@@ -90,6 +90,15 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   a VR-loop run that wrote none of it; `review-log` `6503e9df`, `reviews/loop/2026-11-16-vr-ground-169-independent-review.md`;
   local re-run green). **Missing:** #166 first; Carter's per-item yes. **#169 should go live together with #170.**
   Replies `vr/2026-11-16-1002-ground-at-your-feet.md`, `vr/2026-11-16-1620-review-169.md`.
+- **#174 VR pilot — more creatures (ch02, ch03)** `loop/vr-creatures` `aadc971c` (stacked on #170 `fbc0d6f4`; PR base
+  `loop/vr-react`; built 2026-11-16 19:12–21:40 UTC by a VR-loop run). **VR, per item** (new build). ch03: tilapia
+  (not native) → bunni (Tigris-Euphrates endemic), a ≤ 0.29 m channel so its fish swim, pied kingfishers, dragonflies;
+  ch02: pied kingfishers, plain-tiger butterflies; low flyers and insects re-based on the raised ground and keep their
+  distance (SHY.AIR 4 m). Sources `sources/museum-fauna-pilot.md`. Local: react-check pass (ch02/ch03 960, ch05,
+  390, 360; corridor crashes the headless browser in this sandbox on #170's head too), ground-check all pass, full
+  build, verify, tests 51/51, review-checks 9/9; phone baseline ch02 63→65 calls, corridor 80→85 (budget 100).
+  **Still missing:** independent review (a run that wrote none of it; re-read the Amarna paper), GitHub checks incl.
+  Lighthouse, re-sync with #169/#170 onto `main`, Carter's per-item yes (after #169 and #170).
 - **#170 VR pilot — the ground reacts to you (ch02, ch03, Bronze Age corridor)** `loop/vr-react` `fbc0d6f4` (stacked
   on #169 `5067bc74`; PR base `loop/vr-ground`; built 2026-11-16 ~13:14–15:50 UTC by VR-loop session
   ..01HFWzTkbhbPYXxCEMorQQ2J, which may not review it). **VR, per item** (new build). Creatures keep their distance
