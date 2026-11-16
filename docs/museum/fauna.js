@@ -15,7 +15,7 @@
    history exhibits. They always move; the motion switch only affects the view.
    ========================================================================== */
 import * as THREE from "three";
-import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=6";
+import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=7";
 
 const TAU = Math.PI * 2;
 const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -174,21 +174,31 @@ function fishSchool(A, kind, q, ctx) {
       fish.forEach((f, i) => {
         if (f.jump >= 0) {                                              // a leap: out, arc, back in with a splash
           f.jump += dt / 1.0; const u = f.jump;
-          f.x += Math.sin(f.h) * f.v * 3 * dt; f.z += Math.cos(f.h) * f.v * 3 * dt;
+          // a leap already in the air when the visitor arrives (a teleport) bends away from them, never toward
+          let fwd = 1; if (fromMe(A, f.x, f.z) < SHY.LEAP) { const a = Math.atan2(f.x - A.me.x, f.z - A.me.z); f.h += clamp(angWrap(a - f.h), -6 * dt, 6 * dt); fwd = Math.abs(angWrap(a - f.h)) < 1.05 ? 1 : 0; }
+          f.x += Math.sin(f.h) * f.v * 3 * dt * fwd; f.z += Math.cos(f.h) * f.v * 3 * dt * fwd;
           f.y = W + Math.sin(Math.min(1, u) * Math.PI) * f.jh;
           place(f, i, -Math.cos(Math.min(1, u) * Math.PI) * 0.9, Math.sin(u * 9) * 0.3);
           if (u >= 1) { f.jump = -1; f.y = W - 0.1; ctx.splash(A, f.x, f.z, 1); }
           return;
         }
-        if (!f.tgt || Math.hypot(f.tgt[0] - f.x, f.tgt[1] - f.z) < 0.15) { const s = spots[Math.floor(Math.random() * spots.length)]; f.tgt = [s[0], s[1]]; }
-        const want = Math.atan2(f.tgt[0] - f.x, f.tgt[1] - f.z), d = angWrap(want - f.h);
-        f.h += clamp(d, -1.4 * dt, 1.4 * dt);
-        const nx = f.x + Math.sin(f.h) * f.v * dt, nz = f.z + Math.cos(f.h) * f.v * dt;
-        if (ok(nx, nz)) { f.x = nx; f.z = nz; } else { f.h += 2 * dt; f.tgt = null; }
+        if (fromMe(A, f.x, f.z) < SHY.FISH) {                          // React to you: turn away from the visitor's feet, then swim off
+          const a = Math.atan2(f.x - A.me.x, f.z - A.me.z); f.h += clamp(angWrap(a - f.h), -4 * dt, 4 * dt); f.tgt = null;
+          if (Math.abs(angWrap(a - f.h)) < 1.1) { const nx = f.x + Math.sin(f.h) * f.v * 3 * dt, nz = f.z + Math.cos(f.h) * f.v * 3 * dt; if (ok(nx, nz)) { f.x = nx; f.z = nz; } }
+        } else {
+          if (!f.tgt || Math.hypot(f.tgt[0] - f.x, f.tgt[1] - f.z) < 0.15) { const s = notNearMe(A, () => spots[Math.floor(Math.random() * spots.length)]) || spots[0]; f.tgt = [s[0], s[1]]; }
+          const want = Math.atan2(f.tgt[0] - f.x, f.tgt[1] - f.z), d = angWrap(want - f.h);
+          f.h += clamp(d, -1.4 * dt, 1.4 * dt);
+          const nx = f.x + Math.sin(f.h) * f.v * dt, nz = f.z + Math.cos(f.h) * f.v * dt;
+          if (fromMe(A, nx, nz) < SHY.FISH && fromMe(A, nx, nz) < fromMe(A, f.x, f.z)) { f.tgt = null; }   // never swim in toward the visitor
+          else if (ok(nx, nz)) { f.x = nx; f.z = nz; } else { f.h += 2 * dt; f.tgt = null; }
+        }
         f.y = lerp(f.y, Math.max(A.groundH(f.x, f.z) + 0.06, W - 0.08 - 0.12 * (0.5 + 0.5 * Math.sin(t * 0.3 + i))), dt);
         place(f, i, Math.sin(t * 0.7 + i) * 0.08, 0);
       });
-      if (F.jump && nextJump <= 0) { nextJump = 5 + Math.random() * 9; const f = fish[Math.floor(Math.random() * n)]; if (f.jump < 0) { f.jump = 0; f.jh = 0.25 + Math.random() * 0.3; f.y = W; ctx.splash(A, f.x, f.z, 0.8); } }
+      // no leap within SHY.LEAP of the visitor, at take-off or where it lands (a leap carries the fish ~3 v forward)
+      const clear = (f) => fromMe(A, f.x, f.z) >= SHY.LEAP && fromMe(A, f.x + Math.sin(f.h) * f.v * 3, f.z + Math.cos(f.h) * f.v * 3) >= SHY.LEAP;
+      if (F.jump && nextJump <= 0) { nextJump = 5 + Math.random() * 9; const f = fish[Math.floor(Math.random() * n)]; if (f.jump < 0 && clear(f)) { f.jump = 0; f.jh = 0.25 + Math.random() * 0.3; f.y = W; ctx.splash(A, f.x, f.z, 0.8); } }
       im.instanceMatrix.needsUpdate = true;
     }
   };
@@ -404,6 +414,47 @@ function stepTo(c, tx, tz, speed, dt, turn) {
   const sp = speed * (Math.abs(d) > 1.2 ? 0.3 : 1); c.x += Math.sin(c.h) * sp * dt; c.z += Math.cos(c.h) * sp * dt; return false;
 }
 
+// ---------------------------------------------------------------- React to you (ENV `feet`: ch02, ch03, their corridor)
+// Where the ground is at the visitor's feet, the creatures keep their distance: inside SHY.R of the visitor a land
+// animal or wader turns AWAY and walks off at a calm pace (never a dash at, past or toward them), a fish swims away
+// below, and no fish leaps within SHY.LEAP. Nothing a creature chooses for itself (a wander target, a stalk, a lizard's
+// escape) takes it inside SHY.R. Comfort §e.22: nothing startles within 2 m. A.me is set by world.js each frame.
+export const SHY = { R: 2.5, CLEAR: 3.2, LEAP: 3, FISH: 1.6, TURN: 0.5 };
+const meOn = (A) => !!(A.me && A.me.on);
+const fromMe = (A, x, z) => meOn(A) ? Math.hypot(x - A.me.x, z - A.me.z) : 99;
+// a point d metres further from the visitor, within ±1.05 rad of straight away, where ok() allows; null if none.
+// With shyStep's ±SHY.TURN heading, the walk is always under 90° off straight away, so the distance only grows.
+function awayPoint(A, c, d, ok) {
+  const a0 = Math.atan2(c.x - A.me.x, c.z - A.me.z), r0 = fromMe(A, c.x, c.z);
+  for (const da of [0, 0.4, -0.4, 0.8, -0.8, 1.05, -1.05]) for (const k of [1, 0.6, 0.35]) {
+    const a = a0 + da, tx = c.x + Math.sin(a) * d * k, tz = c.z + Math.cos(a) * d * k;
+    if (ok(tx, tz) && fromMe(A, tx, tz) > r0 + 0.1) return [tx, tz];
+  }
+  return null;
+}
+// a step that only ever opens the distance: turn on the spot until facing within SHY.TURN rad of the target (which
+// awayPoint keeps within 1.05 rad of straight away: 1.05 + 0.5 < π/2), then walk
+function shyStep(c, tx, tz, speed, dt, turn) {
+  const want = Math.atan2(tx - c.x, tz - c.z), d = angWrap(want - c.h); c.h += clamp(d, -turn * dt, turn * dt);
+  if (Math.abs(angWrap(want - c.h)) > SHY.TURN) return false;
+  const dist = Math.hypot(tx - c.x, tz - c.z); if (dist < 0.05) return true;
+  const sp = Math.min(speed * dt, dist); c.x += Math.sin(c.h) * sp; c.z += Math.cos(c.h) * sp; return false;
+}
+// shared by the walkers: returns true while the creature is busy keeping its distance (its own behaviour waits)
+function keepAway(A, c, ok, speed, turn, dt) {
+  const r = fromMe(A, c.x, c.z);
+  if (!c.shy && r >= SHY.R) return false;
+  if (!c.shy || !c.shyTo || fromMe(A, c.shyTo[0], c.shyTo[1]) < SHY.R) c.shyTo = awayPoint(A, c, Math.max(0.6, SHY.CLEAR - r + 0.4), ok);
+  c.shy = true; c.cornered = !c.shyTo;
+  if (!c.shyTo) { const a = Math.atan2(c.x - A.me.x, c.z - A.me.z); c.h += clamp(angWrap(a - c.h), -turn * dt, turn * dt); }   // cornered: face away, keep still
+  else if (shyStep(c, c.shyTo[0], c.shyTo[1], speed, dt, turn) || fromMe(A, c.x, c.z) >= SHY.CLEAR) c.shyTo = null;
+  if (fromMe(A, c.x, c.z) >= SHY.CLEAR || !meOn(A)) { c.shy = false; c.shyTo = null; c.cornered = false; return false; }
+  return true;
+}
+const shyState = (c) => c.shy ? (c.cornered ? 2 : 1) : 0;   // 0 at ease, 1 walking off, 2 cornered (for tools/react-check.js)
+// a wander target that is not near the visitor
+function notNearMe(A, pickFn) { for (let i = 0; i < 12; i++) { const p = pickFn(); if (!p || fromMe(A, p[0], p[1]) >= SHY.CLEAR) return p; } return null; }
+
 // ---------------------------------------------------------------- lizards: basking, bobbing, darting
 function lizardParts(rig, c) {
   const P = [], pat = (z, a, x, y) => { const back = Math.sin(a) > 0.2; const spot = fbm2(z * 120, a * 3, 9, 2) > 0.62; const base = back ? c.back : c.belly; return (spot && back ? c.spot : base).map((v) => v * (0.9 + 0.1 * Math.sin(z * 900) * Math.sin(a * 20))); };
@@ -439,8 +490,8 @@ WALKERS.lizards = (A, q, ctx) => {
     mesh.scale.setScalar(L.scale);
     const B = rig.bones;
     const pose = (dt, time) => {
-      const moving = L.st === "dart" || L.st === "walk";
-      if (moving) L.ph += dt * (L.st === "dart" ? 26 : 10);
+      const moving = L.st === "dart" || L.st === "walk" || L.st === "shy";
+      if (moving) L.ph += dt * (L.st === "dart" ? 26 : L.st === "shy" ? 16 : 10);
       const w = moving ? Math.sin(L.ph) : 0;
       B.spine.rotation.y = w * 0.25; B.chest.rotation.y = -w * 0.18; B.hips.rotation.y = -w * 0.12;
       B.tail0.rotation.y = -w * 0.3 + Math.sin(time * 0.6) * 0.05; B.tail1.rotation.y = -w * 0.25; B.tail2.rotation.y = w * 0.2;
@@ -453,15 +504,18 @@ WALKERS.lizards = (A, q, ctx) => {
       obj: mesh, liz: L,
       update(dt, time) {
         L.t -= dt;
-        if (L.st === "bask" && L.t <= 0) { L.st = Math.random() < 0.6 ? "walk" : "dart"; const p2 = randLand(A, R, 0.3); L.tgt = p2; L.t = 5; }
+        // React to you: walk off from the visitor (not a dart), then bask again
+        if (L.alive && keepAway(A, L, (x, z) => landAt(A, x, z, 0.3), 0.5, 6, dt)) { L.st = "shy"; L.tgt = null; }
+        else if (L.st === "shy") { L.st = "bask"; L.t = 2 + Math.random() * 3; }
+        if (L.st === "bask" && L.t <= 0) { L.st = Math.random() < 0.6 ? "walk" : "dart"; const p2 = notNearMe(A, () => randLand(A, R, 0.3)); L.tgt = p2; L.t = 5; if (!p2) { L.st = "bask"; L.t = 2; } }
         if ((L.st === "walk" || L.st === "dart") && L.tgt) { if (stepTo(L, L.tgt[0], L.tgt[1], L.st === "dart" ? 0.9 : 0.12, dt, 6) || L.t < 0) { L.st = "bask"; L.t = 3 + Math.random() * 6; } }
         if (L.st === "flee" && L.tgt) { if (stepTo(L, L.tgt[0], L.tgt[1], 1.3, dt, 9)) { L.st = "bask"; L.t = 4; } }
-        if (!landAt(A, L.x, L.z, 0.2)) { const p2 = randLand(A, R, 0.3); if (p2) L.tgt = p2; }
-        mesh.visible = L.alive;
+        if (!landAt(A, L.x, L.z, 0.2) && L.st !== "shy") { const p2 = notNearMe(A, () => randLand(A, R, 0.3)); if (p2) L.tgt = p2; }
+        mesh.visible = L.alive; mesh.userData.shy = shyState(L);
         mesh.position.set(L.x, A.groundH(L.x, L.z) + 0.002, L.z); mesh.rotation.y = L.h;
         pose(dt, time);
       },
-      flee(fx, fz) { const a = Math.atan2(L.x - fx, L.z - fz); const tx = L.x + Math.sin(a) * 1.2, tz = L.z + Math.cos(a) * 1.2; L.tgt = landAt(A, tx, tz, 0.3) ? [tx, tz] : randLand(A, R, 0.3); L.st = "flee"; }
+      flee(fx, fz) { const a = Math.atan2(L.x - fx, L.z - fz); const tx = L.x + Math.sin(a) * 1.2, tz = L.z + Math.cos(a) * 1.2; L.tgt = landAt(A, tx, tz, 0.3) && fromMe(A, tx, tz) >= SHY.CLEAR ? [tx, tz] : notNearMe(A, () => randLand(A, R, 0.3)); L.st = L.tgt ? "flee" : "bask"; }
     });
   }
   (ctx.prey || (ctx.prey = new Map())).set(A, out);
@@ -533,7 +587,7 @@ WALKERS.cats = (A, q, ctx) => {
       B.hips.position.y = rest.hips.y - 0.07 * k;
     };
     const pose = (dt, time) => {
-      const st = C.st;
+      const st = C.st === "shy" ? "walk" : C.st;
       if (st === "walk" || st === "stalk") C.ph += dt * (st === "stalk" ? 3.2 : 7.5);
       legs(C.ph, st === "walk" ? 0.42 : st === "stalk" ? 0.3 : 0, st === "walk" ? 0.7 : 0.45);
       C.low = lerp(C.low, st === "stalk" ? 0.75 : st === "wiggle" ? 0.95 : st === "sit" || st === "wash" ? 0 : 0, dt * 4);
@@ -562,27 +616,33 @@ WALKERS.cats = (A, q, ctx) => {
       obj: mesh, force(st) { C.st = st; C.t = 99; C.low = st === "stalk" ? 0.75 : st === "wiggle" ? 0.95 : 0; C.ph = 1; C.prey = { liz: { x: C.x, z: C.z + 1, st: "bask" }, flee() {} }; C.tgt = [C.x, C.z + 5]; },
       update(dt, time) {
         C.t -= dt;
-        const prey = (ctx.prey && ctx.prey.get(A) || []).filter((l) => l.liz.alive && l.liz.st === "bask");
-        if (C.st === "walk") {
-          if (!C.tgt || stepTo(C, C.tgt[0], C.tgt[1], 0.35, dt, 2.5)) C.tgt = randLand(A, R, 0.45);
+        // React to you: a cat never stalks or pounces near the visitor, and walks off when they come close
+        const shy = C.st !== "pounce" && keepAway(A, C, (x, z) => landAt(A, x, z, 0.45), 0.4, 2.5, dt);
+        if (shy) { C.st = "shy"; C.tgt = null; C.prey = null; }
+        else if (C.st === "shy") { C.st = Math.random() < 0.5 ? "sit" : "walk"; C.t = 3 + Math.random() * 4; }
+        const prey = (ctx.prey && ctx.prey.get(A) || []).filter((l) => l.liz.alive && l.liz.st === "bask" && fromMe(A, l.liz.x, l.liz.z) >= SHY.CLEAR + 1);
+        if (C.st === "shy") { /* keeping its distance */ }
+        else if (C.st === "walk") {
+          if (!C.tgt || stepTo(C, C.tgt[0], C.tgt[1], 0.35, dt, 2.5)) C.tgt = notNearMe(A, () => randLand(A, R, 0.45));
           if (C.t <= 0) { const l = prey[Math.floor(Math.random() * prey.length)]; if (l && Math.random() < 0.7) { C.prey = l; C.st = "stalk"; C.t = 14; } else { C.st = Math.random() < 0.5 ? "sit" : "wash"; C.t = 4 + Math.random() * 6; } }
         } else if (C.st === "stalk") {
           const L = C.prey.liz, d = Math.hypot(L.x - C.x, L.z - C.z);
           stepTo(C, L.x, L.z, 0.1, dt, 2);
           if (d < 0.55) { C.st = "wiggle"; C.t = 1 + Math.random(); }
-          if (C.t <= 0 || L.st !== "bask") { C.st = "walk"; C.t = 5; }
+          if (C.t <= 0 || L.st !== "bask" || fromMe(A, L.x, L.z) < SHY.CLEAR || fromMe(A, C.x, C.z) < SHY.CLEAR) { C.st = "walk"; C.t = 5; }
         } else if (C.st === "wiggle") {
           const L = C.prey.liz; C.h += clamp(angWrap(Math.atan2(L.x - C.x, L.z - C.z) - C.h), -dt, dt);
-          if (C.t <= 0) { C.st = "pounce"; C.jump = 0; C.jx = L.x; C.jz = L.z; C.fx = C.x; C.fz = C.z; if (Math.random() < 0.7) C.prey.flee(C.x, C.z); }
+          if (fromMe(A, C.x, C.z) < SHY.CLEAR || fromMe(A, L.x, L.z) < SHY.CLEAR) { C.st = "walk"; C.t = 5; }
+          else if (C.t <= 0) { C.st = "pounce"; C.jump = 0; C.jx = L.x; C.jz = L.z; C.fx = C.x; C.fz = C.z; if (Math.random() < 0.7) C.prey.flee(C.x, C.z); }
         } else if (C.st === "pounce") {
           C.jump += dt / 0.45; const u = Math.min(1, C.jump);
           C.x = lerp(C.fx, C.jx, u); C.z = lerp(C.fz, C.jz, u);
           if (u >= 1) { const L = C.prey.liz; if (L.st !== "flee" && Math.hypot(L.x - C.x, L.z - C.z) < 0.15) { L.alive = false; setTimeout(() => { const p2 = randLand(A, R, 0.3); if (p2) { L.x = p2[0]; L.z = p2[1]; } L.alive = true; L.st = "bask"; L.t = 5; }, 12000); }
             C.st = "sit"; C.t = 3 + Math.random() * 3; }
-        } else if (C.t <= 0) { C.st = "walk"; C.t = 5 + Math.random() * 6; C.tgt = randLand(A, R, 0.45); }
-        if (!landAt(A, C.x, C.z, 0.3) && C.st !== "pounce") { C.tgt = randLand(A, R, 0.45); C.st = "walk"; }
+        } else if (C.t <= 0) { C.st = "walk"; C.t = 5 + Math.random() * 6; C.tgt = notNearMe(A, () => randLand(A, R, 0.45)); }
+        if (!landAt(A, C.x, C.z, 0.3) && C.st !== "pounce" && C.st !== "shy") { C.tgt = notNearMe(A, () => randLand(A, R, 0.45)); C.st = "walk"; }
         const hop = C.st === "pounce" ? Math.sin(Math.min(1, C.jump) * Math.PI) * 0.16 : 0;
-        mesh.position.set(C.x, A.groundH(C.x, C.z) + hop, C.z); mesh.rotation.y = C.h;
+        mesh.position.set(C.x, A.groundH(C.x, C.z) + hop, C.z); mesh.rotation.y = C.h; mesh.userData.shy = shyState(C);
         pose(dt, time);
       }
     });
@@ -630,6 +690,9 @@ function wader(kind) {
     const sc = c.h / 0.7; mesh.scale.setScalar(sc * 0.8);
     // where to wade: shallow water or the bank beside it
     const good = (x, z) => { const [s, t] = A.toL(x, z); if (s < 0.4 || s > A.L - 0.4 || Math.abs(t) > A.W / 2 - 0.4) return false; const g = A.groundH(x, z); return A.waterY == null ? true : g > A.waterY - 0.22 && g < A.waterY + 0.12; };
+    // walking off from the visitor it may leave its usual band and wade anywhere its legs reach (the pilot's beds are
+    // ≤ 0.30 m deep), so a heron on a narrow margin is not left cornered next to them
+    const roam = (x, z) => { const [s, t] = A.toL(x, z); if (s < 0.4 || s > A.L - 0.4 || Math.abs(t) > A.W / 2 - 0.4) return false; return A.waterY == null || A.groundH(x, z) > A.waterY - 0.6 * c.h; };
     const pick = () => { for (let i = 0; i < 300; i++) { const [x, z] = A.toW(Math.random() * A.L, (Math.random() - 0.5) * A.W); if (good(x, z)) return [x, z]; } return null; };
     const p = pick(); if (!p) return [];
     const W = { x: p[0], z: p[1], h: R() * TAU, st: "stand", t: 2, ph: 0, strike: -1, tgt: null };
@@ -637,16 +700,19 @@ function wader(kind) {
       obj: mesh,
       update(dt, time) {
         W.t -= dt;
-        if (W.st === "stand" && W.t <= 0) { const r = Math.random(); if (r < 0.45) { W.st = "walk"; W.tgt = pick(); W.t = 8; } else if (r < 0.8) { W.st = "strike"; W.strike = 0; } else { W.st = "preen"; W.t = 3; } }
+        // React to you: a wader stops what it is doing and walks slowly off, high-stepping, then stands again
+        if (keepAway(A, W, roam, 0.3, 1.6, dt)) { if (W.st !== "shy") { W.st = "shy"; W.strike = -1; W.splashed = false; } W.ph += dt * 4.2; }
+        else if (W.st === "shy") { W.st = "stand"; W.t = 2 + Math.random() * 3; }
+        if (W.st === "stand" && W.t <= 0) { const r = Math.random(); if (r < 0.45) { W.st = "walk"; W.tgt = notNearMe(A, pick); W.t = 8; } else if (r < 0.8) { W.st = "strike"; W.strike = 0; } else { W.st = "preen"; W.t = 3; } }
         if (W.st === "walk") { W.ph += dt * 3.2; if (!W.tgt || stepTo(W, W.tgt[0], W.tgt[1], 0.12, dt, 1.2) || W.t <= 0) { W.st = "stand"; W.t = 2 + Math.random() * 4; } }
         if (W.st === "preen" && W.t <= 0) { W.st = "stand"; W.t = 2; }
         // legs: a slow, high-stepping walk
-        const lift = W.st === "walk" ? 1 : 0;
+        const lift = W.st === "walk" || W.st === "shy" ? 1 : 0;
         [["L", 0], ["R", Math.PI]].forEach(([n, o]) => { const a = W.ph + o; B[n + "t"].rotation.x = -Math.sin(a) * 0.35 * lift; B[n + "s"].rotation.x = Math.max(0, Math.cos(a)) * 0.9 * lift; B[n + "f"].rotation.x = -Math.max(0, Math.cos(a)) * 0.5 * lift; });
         B.body.rotation.x = 0.08 + Math.sin(W.ph * 2) * 0.02 * lift;
         // the neck: resting S-curve, head-bob while walking, a lightning strike at the water, preening
         let n0 = 0.2, n1 = -0.5, n2 = 0.35, hd = 0;
-        if (W.st === "walk") { n1 = -0.5 + Math.sin(W.ph * 2) * 0.1; }
+        if (W.st === "walk" || W.st === "shy") { n1 = -0.5 + Math.sin(W.ph * 2) * 0.1; }
         if (W.st === "strike") {
           W.strike += dt; const u = W.strike;
           const k = u < 1.2 ? u / 1.2 * 0.6 : u < 1.35 ? 0.6 + (u - 1.2) / 0.15 * 0.4 : u < 1.8 ? 1 : Math.max(0, 1 - (u - 1.8) / 0.8);   // aim slowly, strike fast, hold, recover
@@ -656,7 +722,7 @@ function wader(kind) {
         }
         if (W.st === "preen") { n0 = -0.2; n1 = 0.9; n2 = 0.8; hd = 0.6 + Math.sin(time * 5) * 0.2; B.neck0.rotation.y = 1.4; } else B.neck0.rotation.y = 0;
         B.neck0.rotation.x = n0; B.neck1.rotation.x = n1; B.neck2.rotation.x = n2; B.head.rotation.x = hd;
-        mesh.position.set(W.x, A.groundH(W.x, W.z), W.z); mesh.rotation.y = W.h;
+        mesh.position.set(W.x, A.groundH(W.x, W.z), W.z); mesh.rotation.y = W.h; mesh.userData.shy = shyState(W);
       }
     }];
   };

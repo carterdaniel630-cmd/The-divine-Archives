@@ -15,6 +15,10 @@
      no glass: their ground is raised to the floor, so the visitor walks on
      the earth with the water just below (Carter, 2026-11-16, "ground at your
      feet"; handoff/decisions-2026-11-16-carter-ground-at-your-feet.md).
+     There the ground also reacts to the visitor ("React to you", same
+     ruling): plants within PART.R lean away from them, walking through the
+     water leaves rings at their feet, and the creatures keep their distance
+     (fauna.js, SHY). Flat screen and headset alike.
    These are atmosphere, not reconstructions. The table ENV below is the one
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
@@ -304,7 +308,7 @@ function waterMaterial(o) {
   const u = {
     uTime: { value: 0 }, uFlow: { value: new THREE.Vector2(o.flow ? o.flow[0] : 0, o.flow ? o.flow[1] : 0) }, uCalm: { value: o.calm || 0 },
     uDeep: { value: C(o.deep || "#0e3a3a") }, uShallow: { value: C(o.shallow || "#3a8a80") }, uSky: { value: C(o.sky || "#9cc0d8") },
-    uLamp: { value: new THREE.Vector3() }, uSplash: { value: [0, 1, 2, 3].map(() => new THREE.Vector4(0, 0, 0, 99)) },
+    uLamp: { value: new THREE.Vector3() }, uSplash: { value: [0, 1, 2, 3, 4, 5].map(() => new THREE.Vector4(0, 0, 0, 99)) },
     uShore: { value: new THREE.Vector4(0, 0, 0, 0) }, uAlpha: { value: o.alpha || 0.62 }, uMurk: { value: o.murk || 0 }
   };
   return new THREE.ShaderMaterial({
@@ -317,14 +321,14 @@ void main(){
   if (uShore.w > 0.) { float s = dot(w.xz, uShore.xy); w.y += uShore.w * (.5 + .5 * sin(uTime * .8 - s * 1.6)) * .09 + sin(uTime * .21) * .025 * uShore.w; }
   vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
     fragmentShader: `
-uniform float uTime, uCalm, uAlpha, uMurk; uniform vec2 uFlow; uniform vec3 uDeep, uShallow, uSky, uLamp; uniform vec4 uSplash[4]; uniform vec4 uShore;
+uniform float uTime, uCalm, uAlpha, uMurk; uniform vec2 uFlow; uniform vec3 uDeep, uShallow, uSky, uLamp; uniform vec4 uSplash[6]; uniform vec4 uShore;
 varying vec3 vW;
 ${GLSL_NOISE}
 float hgt(vec2 p){
   vec2 f = uFlow * uTime;
   float h = fbm(p * 1.6 - f * 1.3) * .6 + fbm(p * 3.1 - f * 2.1 + 4.) * .25;
   h *= (1. - uCalm * .8);
-  for (int i = 0; i < 4; i++) { float age = uSplash[i].w; if (age < 4.) { float r = length(p - uSplash[i].xy); h += sin(r * 38. - age * 9.) * exp(-age * 1.3) * exp(-r * 2.5) * .35 * uSplash[i].z; } }
+  for (int i = 0; i < 6; i++) { float age = uSplash[i].w; if (age < 4.) { float r = length(p - uSplash[i].xy); h += sin(r * 38. - age * 9.) * exp(-age * 1.3) * exp(-r * 2.5) * .35 * uSplash[i].z; } }
   return h;
 }
 void main(){
@@ -432,12 +436,24 @@ function groundTex(kind) {
 // Pit materials are lit by their own sky, not the museum's lamps: unlit base, then an ambient from the sky,
 // a sun (or moon) from the sky's direction and a touch of warm lamplight from above. Normals come from
 // screen derivatives (faceted, cheap). Ground adds caustics below the water line and, for ash, glowing cracks.
+// Plants part (ENV `feet` only): a stem within PART.R of the visitor leans away from them, most at the top, as if
+// brushed aside. uMe = (x, z, strength, 0) is set by the world each frame; the strength fades in over a moment after
+// a teleport, so nothing at your feet snaps (Comfort §e.22). The lean is turned into the instance's own frame.
+export const PART = { R: 0.85, IN: 0.25, LEAN: 0.5, FADE: 1.6 };
+const PART_GLSL = `
+      #ifdef USE_INSTANCING
+      { vec2 dme = io.xz - uMe.xy; float dl = length(dme);
+        float push = (1. - smoothstep(${PART.IN.toFixed(2)}, ${PART.R.toFixed(2)}, dl)) * uMe.z;
+        if (push > 0.) { vec3 pd = transpose(mat3(instanceMatrix)) * vec3(dme.x, 0., dme.y) / max(dl, .001); pd.y = 0.; pd = normalize(pd + vec3(1e-5));
+          float hy = max(transformed.y, 0.); vec2 bend = pd.xz * push * min(hy * hy * 1.6, ${PART.LEAN.toFixed(2)});
+          transformed.xz += bend; transformed.y -= dot(bend, bend) * .9; } }
+      #endif`;
 function pitMat(o, LU) {
   const m = new THREE.MeshBasicMaterial({ map: o.map || null, vertexColors: true, side: o.side || THREE.FrontSide });
   const amp = o.sway || 0;
   m.onBeforeCompile = (sh) => {
-    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime }, o.uniforms || {});
-    sh.vertexShader = "uniform float uTime; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
+    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime, uMe: PLANT_U.uMe }, o.uniforms || {});
+    sh.vertexShader = "uniform float uTime; uniform vec4 uMe; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
       #ifdef USE_INSTANCING
       vec3 io = (instanceMatrix * vec4(0., 0., 0., 1.)).xyz;
       #else
@@ -445,6 +461,7 @@ function pitMat(o, LU) {
       #endif
       float sw = sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1);
       transformed.x += sw * ${amp.toFixed(3)} * transformed.y * transformed.y * 2.; transformed.z += sw * ${(amp * 0.5).toFixed(3)} * transformed.y * transformed.y;
+      ${o.part ? PART_GLSL : ""}
       ${o.vert || ""}`).replace("#include <skinning_vertex>", `#include <skinning_vertex>
       vec4 wpp = vec4(transformed, 1.);
       #ifdef USE_INSTANCING
@@ -466,7 +483,7 @@ function pitMat(o, LU) {
       if (uLava > 0.) { float cr = fbm(vWp.xz * 1.7); float crack = smoothstep(.018, .0, abs(cr - .5)) + .35 * smoothstep(.05, .0, abs(cr - .5)); float pulse = .7 + .3 * sin(uTime * 1.1 + vWp.x * 2.);
         outgoingLight = mix(outgoingLight, vec3(.95, .22, .04) * 1.4 * pulse, clamp(crack, 0., 1.) * uLava); }`);
   };
-  m.customProgramCacheKey = () => "pit" + amp + (o.key || "");
+  m.customProgramCacheKey = () => "pit" + amp + (o.part ? "p" : "") + (o.key || "");
   return m;
 }
 export { pitMat, colorize, mergeG, blade, rot, rockGeo, PLANT_U };
@@ -608,6 +625,7 @@ export function biomeOf(k) { const b = BIOME[k] || BIOME.meadow; return b.like ?
 // before; land above it rises at K of its slope and is held TOP below the floor, so nothing pokes through and there
 // is never a step up or a drop of more than a few centimetres (Comfort §a.6: no pits, no drops). Dry biomes are
 // lifted so their highest point sits at TOP. Plants, fauna and the water shader all read the raised heights.
+export const RIPPLE = { STEP: 0.42, K: 0.5 };
 export const FEET = { WATER: -0.06, TOP: -0.012, K: 0.5, D: 0.6 };
 export function feetMap(B, top) {
   const wy = B.water ? B.water.y : B.ice != null ? B.ice : null;
@@ -616,8 +634,8 @@ export function feetMap(B, top) {
 }
 
 // ---------------------------------------------------------------- shared materials
-const PLANT_U = { uTime: { value: 0 } };
-function plantMat(kind, A) { return pitMat({ side: THREE.DoubleSide, sway: SWAY[kind] || 0 }, A.LU); }
+const PLANT_U = { uTime: { value: 0 }, uMe: { value: new THREE.Vector4(0, 0, 0, 0) } };
+function plantMat(kind, A) { return pitMat({ side: THREE.DoubleSide, sway: SWAY[kind] || 0, part: !!(A.feet && SWAY[kind]) }, A.LU); }
 let STONE = null, BRONZE = null, GLASS = null, ICE = null;
 function sharedMats() {
   if (STONE) return;
@@ -834,7 +852,7 @@ export function createWorld(opt) {
     A.env = ENV[A.id] || ENV["cor:04-axial-age"];
     localFrame(A);
     A.skyG = buildSky(A, q); A.skyG.visible = false; opt.scene.add(A.skyG);
-    A.pit = null; A.flash = 0; A.boltT = 0; A.nextBolt = 4 + Math.random() * 8; A.splash = [0, 1, 2, 3].map(() => [0, 0, 0, 99]); A.si = 0;
+    A.pit = null; A.flash = 0; A.boltT = 0; A.nextBolt = 4 + Math.random() * 8; A.splash = [0, 1, 2, 3, 4, 5].map(() => [0, 0, 0, 99]); A.si = 0; A.me = { x: 0, z: 0, on: false }; A.rip = null; A.ri = 0;
     areas.push(A);
     return A;
   }
@@ -845,11 +863,34 @@ export function createWorld(opt) {
   }
   const isShared = (geo) => { for (const g2 of GEO.values()) if (g2 === geo) return true; return false; };
   function splash(A, x, z, strength) { const s = A.splash[A.si++ % 4]; s[0] = x; s[1] = z; s[2] = strength || 1; s[3] = 0; events.push({ type: "splash", area: A, x, z, strength: strength || 1 }); }
+  // React to you (ENV `feet`): where the visitor stands, for the plants (uMe), the water (rings where they walk)
+  // and the creatures (A.me, read by fauna.js). A jump of more than a metre in one frame is a teleport: the plants'
+  // lean then fades back in rather than snapping.
+  let meX = null, meZ = null, meK = 0;
+  function feel(dt, pos, reduce) {
+    const jump = meX == null || Math.hypot(pos.x - meX, pos.z - meZ) > 1;
+    meK = jump ? 0 : Math.min(1, meK + dt * PART.FADE); meX = pos.x; meZ = pos.z;
+    let onFeet = false;
+    for (const A of areas) {
+      const b = A.bounds, on = !!(A.pit && A.feet && pos.x >= b.x0 && pos.x <= b.x1 && pos.z >= b.z0 && pos.z <= b.z1);
+      A.me.x = pos.x; A.me.z = pos.z; A.me.on = on; onFeet = onFeet || on;
+      if (!on || !A.waterMat || reduce) { A.rip = null; continue; }
+      const h = A.hole, over = pos.x > h.x0 && pos.x < h.x1 && pos.z > h.z0 && pos.z < h.z1 && A.groundH(pos.x, pos.z) < A.waterY;
+      if (!over) { A.rip = null; continue; }
+      // a ring every RIPPLE.STEP metres walked through the water (and one where a teleport lands), in the two
+      // slots kept for the visitor so fish and herons keep theirs
+      if (!A.rip || Math.hypot(pos.x - A.rip[0], pos.z - A.rip[1]) > RIPPLE.STEP) {
+        A.rip = [pos.x, pos.z]; const s = A.splash[4 + (A.ri++ % 2)]; s[0] = pos.x; s[1] = pos.z; s[2] = RIPPLE.K; s[3] = 0;
+      }
+    }
+    PLANT_U.uMe.value.set(pos.x, pos.z, onFeet ? meK : 0, 0);
+  }
   function update(dt, pos, inRoom, reduce) {
     if (!reduce) time += dt;
     builtThisFrame = 0; flashNow = 0;
     let animating = false;
     PLANT_U.uTime.value = time;
+    feel(dt, pos, reduce);
     for (const A of areas) {
       const d = dist(A.bounds, pos), inside = d === 0;
       const near = A.kind === "room" ? d < 7 : A.kind === "corridor" ? d < 14 : d < 30;
@@ -894,5 +935,5 @@ export function createWorld(opt) {
     return best;
   }
   function forceBolt(id) { const A = areas.find((x) => x.id === id); if (A) A.nextBolt = 0; }
-  return { addArea, update, areaAt, splash, events, areas, forceBolt, get flash() { return flashNow; }, get time() { return time; } };
+  return { addArea, update, areaAt, splash, events, areas, forceBolt, plantsMe: () => PLANT_U.uMe.value.toArray(), get flash() { return flashNow; }, get time() { return time; } };
 }
