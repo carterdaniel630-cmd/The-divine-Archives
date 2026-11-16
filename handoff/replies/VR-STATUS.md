@@ -1,14 +1,18 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-16 ~10:10 UTC. **PR #166 (height check) reviewed: PASS, 0 open findings** (this run, which wrote
-none of it). Waiting for Lighthouse (still running at 10:05) and then Carter's per-item yes. The VR door and movement (#161, #163) are live since 01:43 UTC. Carter's
-first headset report (~02:00 UTC): "it worked in the headset" (owner-witness of entry and movement, not yet the pilot
-§5 per-room certification).
+**As of:** 2026-11-16 ~10:50 UTC. **PR #169 (ground at your feet) built and open**, stacked on #166. **#166 (height
+check) is ready for Carter's yes**: review PASS, GitHub 7/7 green incl. Lighthouse. The VR door and movement (#161,
+#163) have been live since 01:43 UTC.
 
 ## Done
-- **#166 independent review PASS, 0 open** (`vr/2026-11-16-1000-review-166.md`; review-log
-  `reviews/loop/2026-11-16-vr-height-166-independent-review.md`). Local checks re-run green; baseline on `main` and
-  #166 identical; 360/390 px clean. GitHub 6/7 green, Lighthouse running.
+- **Ground at your feet — PR #169** `loop/vr-ground` `5067bc74` (on #166): ch02, ch03 and the Bronze Age corridor
+  have no glass; the land is at the floor, water 6 cm below, beds ≤ 0.30 m; flat and VR alike; other rooms
+  unchanged. Local checks pass, new `tools/ground-check.js` passes, phone baseline lighter (ch02 69 → 65 calls).
+  **VR, per item.** Hold until "React to you" (creatures now at floor level). Reply
+  `vr/2026-11-16-1002-ground-at-your-feet.md`.
+- **#166 qualified except Carter's yes:** independent review PASS, 0 open (`vr/2026-11-16-1000-review-166.md`;
+  review-log `reviews/loop/2026-11-16-vr-height-166-independent-review.md`); GitHub 7/7 green incl. Lighthouse
+  (10:03 UTC); local checks re-run green; baseline on `main` and #166 identical; 360/390 px clean.
 - **Height check — PR #166** `loop/vr-height` `902e96dc` (on `main` `56d7c9d6`): a posture plaque in the headset
   (STANDING/SEATED, eye height measured or set, a hint if a standing eye height measures under 1.4 m, point-and-tap
   switch inside a dip to dark, choice kept on this device). Leaving VR, the page says the posture and eye height the
@@ -26,28 +30,28 @@ first headset report (~02:00 UTC): "it worked in the headset" (owner-witness of 
   ring, NO WAY through walls), snap turn 30°, comfort vignette; flat museum unchanged; 48/48 XR checks. Per item, VR.
 
 ## In progress
-- (none)
+- #169: GitHub checks running (next run reads them; Lighthouse included).
 
 ## Next (in order; Carter's live rulings 2026-11-16 first)
-1. **Ground at your feet, pilot rooms** (`decisions-2026-11-16-carter-ground-at-your-feet.md`): ch02 + ch03 (+ their
-   corridor) landscape raised to floor level, glass removed, water shallow underfoot; flat and VR alike; phone
-   budget held. Branch `loop/vr-ground` from `origin/main`. Builds without Carter; merges per item.
-   - Alongside: read #166's Lighthouse result. Green → #166 is ready for Carter's yes: notify him (one line).
-     Red/cancelled → re-run it and say so here.
-2. **React to you** — plants part, water ripples, creatures move away as the visitor walks (never toward: §e.22).
-3. **More creatures** — era- and place-true, sourced, for ch02 and ch03.
-4. **Day and weather** — wind, light and weather over time, from what `world.js`/`style.js` already carry.
-5. **G3 Frame budget** — Quest 2 72 fps gate per pilot room (now with the living ground in it).
-6. Controllers + select → plaques (incl. §15 seated re-anchoring of every plaque); audio; performance scope; pilot
-   spaces; living-room contract (as before).
+1. **React to you** (on #169's branch, stacked): creatures move away from the visitor and never toward them
+   (§e.22: nothing startles within 2 m; no fish leap within 2 m); plants part; the water ripples where the visitor
+   walks. Flat and VR alike.
+   - Alongside: read #169's GitHub checks.
+2. **More creatures**: era- and place-true, sourced, for ch02 and ch03 (ch03's marsh has only the heron; its
+   tilapia never find deep enough water, as before #169).
+3. **Day and weather**: wind, light and weather over time, from what `world.js`/`style.js` already carry.
+4. **G3 Frame budget**: Quest 2 72 fps gate per pilot room (with the living ground in it).
+5. Controllers + select → plaques (incl. §15 seated re-anchoring of every plaque); audio; performance scope;
+   pilot spaces; living-room contract (as before).
 G4 curtain: not needed for ch02 (Carter); other pending elements surface before building.
+- Independent review of #169 by a run that wrote none of it (this run wrote it).
 
 ## Needs Carter
 1. Curtain: ANSWERED 2026-11-16 — Egypt stays open in VR (`decisions-2026-11-16-carter-egypt-vr-open.md`).
 2. **Height felt too low** (standing). Cause still unknown. **#166 now shows it:** once #166 is live, his next headset
    visit shows STANDING/SEATED and his eye height on a plaque in front of him, and the page repeats it after he leaves.
-   Review done (PASS). **Needs Carter: his per-item yes to merge #166 once Lighthouse is green, then one headset visit
-   to read the number.**
+   **Ready: #166 passed review and every GitHub check.** **Needs Carter: his yes to merge #166, then one headset
+   visit to read the number.**
 3. **Floor feedback (Carter, live, 2026-11-16 ~02:20 UTC):** "the floor ecosystems are not alive and operating
    autonomously and it should feel as your walking on the ground not just above it. the floor feels like it sits
    above the scenery in the ground." Facts: each room's floor is glass over a living pit (`world.js` BIOME: ground
