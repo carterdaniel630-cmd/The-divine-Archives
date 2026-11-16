@@ -3,6 +3,7 @@
 
    The creatures that live in each room's world (world.js): fish that school
    and leap from the water, birds and bats in the air under the skylight,
+   kingfishers low over the water,
    butterflies, dragonflies and fireflies over the ground under the glass,
    and, on that ground, cats stalking lizards on the Nile's bank, herons and
    ibises wading, crabs on the shore, frogs on lotus pads, turtles, ravens on
@@ -15,7 +16,7 @@
    history exhibits. They always move; the motion switch only affects the view.
    ========================================================================== */
 import * as THREE from "three";
-import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=7";
+import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=8";
 
 const TAU = Math.PI * 2;
 const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -101,6 +102,9 @@ const FISH = {
   trout: { len: [0.24, 0.36], speed: 0.3, jump: 1, color: (z, a, x, y, R) => { const spot = fbm2(z * 40 + R, a * 6, 5, 2) > 0.66 && y > -0.01; const stripe = Math.abs(y + 0.005) < 0.018; let c = y > 0.02 ? [0.34, 0.38, 0.24] : y > -0.03 ? [0.7, 0.72, 0.62] : [0.92, 0.9, 0.84]; if (stripe) c = [0.86, 0.5, 0.5]; return spot ? [0.08, 0.08, 0.06] : c; }, fins: [0.56, 0.5, 0.38] },
   tilapia: { len: [0.2, 0.3], speed: 0.22, jump: 1, deep: 1.35, color: (z, a, x, y) => { const bar = Math.sin(z * 50) > 0.55 && y > -0.02; const c = y > 0.02 ? [0.36, 0.4, 0.36] : y > -0.03 ? [0.58, 0.62, 0.58] : [0.82, 0.84, 0.8]; return bar ? c.map((v) => v * 0.6) : c; }, fins: [0.5, 0.38, 0.36] },
   bream: { len: [0.22, 0.34], speed: 0.26, jump: 1, deep: 1.5, color: (z, a, x, y) => { const c = y > 0.03 ? [0.42, 0.44, 0.4] : [0.82, 0.8, 0.72]; return c.map((v) => v * (0.9 + 0.1 * Math.sin(z * 90))); }, fins: [0.6, 0.5, 0.4] },
+  // the bunni, Mesopotamichthys sharpeyi: a cyprinid endemic to the Tigris-Euphrates basin (ch03's marsh; see
+  // sources/museum-fauna-pilot.md). A generic cyprinid rendering: its shape and colours are not from a source.
+  bunni: { len: [0.24, 0.36], speed: 0.24, jump: 0, deep: 1.3, color: (z, a, x, y) => { const c = y > 0.03 ? [0.4, 0.42, 0.34] : y > -0.02 ? [0.74, 0.72, 0.6] : [0.86, 0.84, 0.76]; return c.map((v) => v * (0.92 + 0.08 * Math.sin(z * 80))); }, fins: [0.58, 0.5, 0.4] },
   axolotls: { len: [0.18, 0.24], speed: 0.06, jump: 0, color: () => [0.95, 0.72, 0.74], fins: [0.95, 0.7, 0.72], axolotl: true }
 };
 // a fin with rays: an outline, coloured with the rays darker, and a clear-ish margin
@@ -158,7 +162,7 @@ function fishSchool(A, kind, q, ctx) {
   const F = FISH[kind], n = kind === "koi" ? (q > 1 ? 9 : 5) : kind === "axolotls" ? 4 : (A.kind === "room" ? (q > 1 ? 10 : 6) : 5), R = rng(A.seedN + kind.length);
   const mat = creatureMat({ key: "fish", spec: 0.35, shine: 70, side: THREE.DoubleSide, uniforms: { uSwim: { value: kind === "koi" ? 4 : 9 } }, head: "uniform float uSwim;",
     vert: "float bw = smoothstep(.35, -.55, position.z); float ph = io.x * 3.1 + io.z * 1.7; transformed.x += sin(position.z * 7. - uTime * uSwim + ph) * .07 * bw;" }, A.LU);
-  const im = new THREE.InstancedMesh(fishGeo(kind), mat, n); im.frustumCulled = false;
+  const im = new THREE.InstancedMesh(fishGeo(kind), mat, n); im.frustumCulled = false; im.userData.kind = "fish";
   const W = A.waterY, ok = (x, z) => { const [s, t] = A.toL(x, z); return s > 0.2 && s < A.L - 0.2 && Math.abs(t) < A.W / 2 - 0.2 && A.groundH(x, z) < W - 0.14; };
   // find water to swim in
   const spots = []; for (let i = 0; i < 400 && spots.length < 60; i++) { const [x, z] = A.toW(R() * A.L, (R() - 0.5) * A.W); if (ok(x, z)) spots.push([x, z]); }
@@ -211,6 +215,8 @@ const FLYER = {
   doves: { n: 4, size: 0.26, speed: 1.8, flap: 9, amp: 0.7, agile: 1.6, col: { back: [0.66, 0.66, 0.72], belly: [0.82, 0.76, 0.78], face: [0.6, 0.6, 0.66], throat: [0.5, 0.62, 0.55], tip: [0.3, 0.3, 0.34] } },
   macaws: { n: 2, size: 0.42, speed: 2, flap: 7, amp: 0.6, agile: 1.2, col: { back: [0.85, 0.1, 0.08], belly: [0.88, 0.14, 0.1], face: [0.9, 0.12, 0.1], wing: [0.95, 0.75, 0.1], tip: [0.08, 0.3, 0.85], tail: [0.85, 0.12, 0.1] }, longTail: true },
   kingfisher: { n: 1, size: 0.16, speed: 2.6, flap: 22, amp: 0.8, agile: 2.5, col: { back: [0.05, 0.5, 0.75], belly: [0.9, 0.5, 0.15], face: [0.05, 0.4, 0.7] }, low: true },
+  // the pied kingfisher, Ceryle rudis: resident on the Nile and in the Mesopotamian marshes (ch02, ch03; sources/museum-fauna-pilot.md)
+  pkingfisher: { n: 2, size: 0.22, speed: 2.4, flap: 18, amp: 0.8, agile: 2.5, col: { back: [0.2, 0.2, 0.21], belly: [0.95, 0.95, 0.93], face: [0.12, 0.12, 0.13], throat: [0.95, 0.95, 0.93], wing: [0.17, 0.17, 0.18], tip: [0.08, 0.08, 0.08] }, low: true },
   ravens: { n: 2, size: 0.4, speed: 1.7, flap: 6, amp: 0.7, agile: 1.2, col: { back: [0.05, 0.05, 0.07], belly: [0.06, 0.06, 0.08], face: [0.05, 0.05, 0.06] } },
   bats: { n: 7, size: 0.2, speed: 2.6, flap: 14, amp: 1, agile: 5, bat: true, col: { back: [0.1, 0.08, 0.07], belly: [0.16, 0.12, 0.1], face: [0.12, 0.1, 0.08] } },
 };
@@ -274,10 +280,14 @@ function flock(A, kind, q, ctx) {
   // bats and most birds fly in the room's air under the skylight; the kingfisher and the crane keep low over the ground under the glass
   const box = low ? { x0: A.hole.x0 + 0.3, x1: A.hole.x1 - 0.3, z0: A.hole.z0 + 0.3, z1: A.hole.z1 - 0.3, y0: (A.waterY || -0.9) + 0.18, y1: -0.12 } : { x0: sky.x0 + 0.4, x1: sky.x1 - 0.4, z0: sky.z0 + 0.4, z1: sky.z1 - 0.4, y0: sky.y - 1.9, y1: sky.y - 0.45 };
   if (kind === "crane") { box.y0 = -0.5; }
+  // ground at your feet (ENV `feet`): there is no pit to keep low in, so the low flyers keep over the raised ground,
+  // from just above the water to below a standing visitor's eyes (review of #169)
+  if (low && A.feet) { box.y0 = (A.waterY != null ? A.waterY : A.groundH((box.x0 + box.x1) / 2, (box.z0 + box.z1) / 2)) + 0.3; box.y1 = 1.1; }
   const mat = creatureMat({ key: "fly", side: THREE.DoubleSide, uniforms: { uFlap: { value: F.flap }, uAmp: { value: F.amp } }, head: "uniform float uFlap, uAmp; attribute float aWing;",
     vert: `float ph2 = io.x * 5.3 + io.z * 2.1; float fa = sin(uTime * uFlap + ph2) * uAmp * (.6 + .4 * sin(uTime * .5 + ph2)); if (aWing > 0.) { float sx = sign(transformed.x); float r0 = abs(transformed.x); transformed.y += r0 * sin(fa) * .9; transformed.x = sx * r0 * cos(fa * .8); }` }, A.LU);
-  const im = new THREE.InstancedMesh(flyerGeo(kind), mat, n); im.frustumCulled = false;
-  const pick = () => [lerp(box.x0, box.x1, Math.random()), lerp(box.y0, box.y1, Math.random()), lerp(box.z0, box.z1, Math.random())];
+  const im = new THREE.InstancedMesh(flyerGeo(kind), mat, n); im.frustumCulled = false; im.userData.kind = "air";
+  const pick0 = () => [lerp(box.x0, box.x1, Math.random()), lerp(box.y0, box.y1, Math.random()), lerp(box.z0, box.z1, Math.random())];
+  const pick = () => { if (!A.feet) return pick0(); for (let i = 0; i < 12; i++) { const p = pick0(); if (fromMe(A, p[0], p[2]) >= SHY.AIR + 1) return p; } return pick0(); };
   const birds = []; for (let i = 0; i < n; i++) { const p = pick(); birds.push({ p: V3(p[0], p[1], p[2]), h: R() * TAU, pitch: 0, bank: 0, v: F.speed * (0.8 + R() * 0.4), tgt: V3(...pick()), rest: 0 }); }
   const M = new THREE.Matrix4(), Q = new THREE.Quaternion(), E = new THREE.Euler(0, 0, 0, "YXZ"), S = new THREE.Vector3(1, 1, 1);
   return {
@@ -290,7 +300,9 @@ function flock(A, kind, q, ctx) {
         b.h += turn; b.bank = lerp(b.bank, -turn / dt * 0.25, dt * 4);
         if (F.bat) { b.h += Math.sin(t * 7 + i * 3) * dt * 2.5; }                       // the jinking flight of bats
         b.pitch = lerp(b.pitch, clamp(-dy * 0.8, -0.5, 0.5), dt * 2);
-        b.p.x += Math.sin(b.h) * b.v * dt; b.p.z += Math.cos(b.h) * b.v * dt; b.p.y += clamp(dy, -1, 1) * b.v * 0.35 * dt;
+        if (A.feet) airShy(A, b, b.v, dt, (nx, nz) => nx > box.x0 && nx < box.x1 && nz > box.z0 && nz < box.z1, () => b.tgt.set(...pick()));
+        else { b.p.x += Math.sin(b.h) * b.v * dt; b.p.z += Math.cos(b.h) * b.v * dt; }
+        b.p.y += clamp(dy, -1, 1) * b.v * 0.35 * dt;
         b.p.x = clamp(b.p.x, box.x0, box.x1); b.p.z = clamp(b.p.z, box.z0, box.z1); b.p.y = clamp(b.p.y, box.y0, box.y1);
         E.set(b.pitch, b.h, clamp(b.bank, -0.9, 0.9)); Q.setFromEuler(E); M.compose(b.p, Q, S); im.setMatrixAt(i, M);
       });
@@ -315,19 +327,27 @@ function insects(A, kind, q) {
   const geo = mergeA(L, ["aWing"]);
   const mat = creatureMat({ key: "bug" + kind, spec: 0.3, shine: 60, side: THREE.DoubleSide, uniforms: { uFlap: { value: bf ? 11 : 40 }, uAmp: { value: bf ? 1.1 : 0.4 } }, head: "uniform float uFlap, uAmp; attribute float aWing;",
     vert: `float ph2 = io.x * 9.3 + io.z * 4.1; float fa = sin(uTime * uFlap + ph2) * uAmp; if (aWing > 0.) { float sx = sign(transformed.x); float r0 = abs(transformed.x); transformed.y += r0 * sin(fa); transformed.x = sx * r0 * cos(fa); }` }, A.LU);
-  const im = new THREE.InstancedMesh(geo, mat, n); im.frustumCulled = false;
-  const cc = new THREE.Color(), cols = [[0.95, 0.55, 0.1], [0.98, 0.9, 0.3], [0.3, 0.5, 0.95], [0.95, 0.95, 0.92], [0.85, 0.3, 0.2]];
-  const bugs = []; for (let i = 0; i < n; i++) { const [x, z] = A.toW(0.5 + R() * (A.L - 1), (R() - 0.5) * (A.W - 1)); bugs.push({ p: V3(x, -0.5, z), h: R() * TAU, v: bf ? 0.35 : 0.9, tgt: null, hover: 0 }); if (bf) { cc.setRGB(...cols[i % cols.length]); im.setColorAt(i, cc); } }
+  const im = new THREE.InstancedMesh(geo, mat, n); im.frustumCulled = false; im.userData.kind = "air";
+  // on the Nile (ch02) the butterflies are all the plain tiger, Danaus chrysippus, the species painted in Nebamun's
+  // marsh scene (sources/museum-fauna-pilot.md): its tawny orange only, the black and white wingtips not drawn
+  const cc = new THREE.Color(), cols = bf && A.env.ground === "nile" ? [[0.92, 0.52, 0.14], [0.88, 0.47, 0.12], [0.95, 0.58, 0.2]] : [[0.95, 0.55, 0.1], [0.98, 0.9, 0.3], [0.3, 0.5, 0.95], [0.95, 0.95, 0.92], [0.85, 0.3, 0.2]];
+  const bugs = []; for (let i = 0; i < n; i++) { const [x, z] = A.toW(0.5 + R() * (A.L - 1), (R() - 0.5) * (A.W - 1)); bugs.push({ p: V3(x, A.feet ? Math.max(A.groundH(x, z), A.waterY != null ? A.waterY : -9) + 0.3 : -0.5, z), h: R() * TAU, v: bf ? 0.35 : 0.9, tgt: null, hover: 0 }); if (bf) { cc.setRGB(...cols[i % cols.length]); im.setColorAt(i, cc); } }
   const M = new THREE.Matrix4(), Q = new THREE.Quaternion(), E = new THREE.Euler(0, 0, 0, "YXZ"), S = new THREE.Vector3(bf ? 2.2 : 1.6, bf ? 2.2 : 1.6, bf ? 2.2 : 1.6);
   return {
     obj: im,
     update(dt, t) {
       bugs.forEach((b, i) => {
-        if (!b.tgt || b.p.distanceTo(b.tgt) < 0.08) { const [x, z] = A.toW(0.4 + Math.random() * (A.L - 0.8), (Math.random() - 0.5) * (A.W - 0.8)); const g = Math.max(A.groundH(x, z), A.waterY != null ? A.waterY : -9); b.tgt = V3(x, Math.min(-0.12, g + 0.12 + Math.random() * 0.35), z); b.hover = bf ? 0 : Math.random() * 1.5; }
-        if (b.hover > 0) { b.hover -= dt; }
+        if (!b.tgt || b.p.distanceTo(b.tgt) < 0.08) {
+          let x, z; for (let k = 0; k < 12; k++) { [x, z] = A.toW(0.4 + Math.random() * (A.L - 0.8), (Math.random() - 0.5) * (A.W - 0.8)); if (!A.feet || fromMe(A, x, z) >= SHY.AIR + 1) break; }
+          // under glass they keep below it; at your feet they fly at knee to waist height over the raised ground
+          const g = Math.max(A.groundH(x, z), A.waterY != null ? A.waterY : -9); b.tgt = V3(x, A.feet ? g + 0.25 + Math.random() * 0.7 : Math.min(-0.12, g + 0.12 + Math.random() * 0.35), z); b.hover = bf ? 0 : Math.random() * 1.5;
+        }
+        if (b.hover > 0) { b.hover -= dt; if (A.feet && fromMe(A, b.p.x, b.p.z) < SHY.AIR) b.hover = 0; }
         else {
           const want = Math.atan2(b.tgt.x - b.p.x, b.tgt.z - b.p.z); b.h += clamp(angWrap(want - b.h), -4 * dt, 4 * dt);
-          b.p.x += Math.sin(b.h) * b.v * dt; b.p.z += Math.cos(b.h) * b.v * dt; b.p.y += clamp(b.tgt.y - b.p.y, -1, 1) * dt * 1.5;
+          if (A.feet) airShy(A, b, b.v, dt, (nx, nz) => { const [s, t] = A.toL(nx, nz); return s > 0.2 && s < A.L - 0.2 && Math.abs(t) < A.W / 2 - 0.2; }, () => { b.tgt = null; });
+          else { b.p.x += Math.sin(b.h) * b.v * dt; b.p.z += Math.cos(b.h) * b.v * dt; }
+          b.p.y += clamp(b.tgt ? b.tgt.y - b.p.y : 0, -1, 1) * dt * 1.5;
           if (bf) b.p.y += Math.sin(t * 9 + i) * dt * 0.25;                          // the bobbing flight of butterflies
         }
         E.set(0, b.h, 0); Q.setFromEuler(E); M.compose(b.p, Q, S); im.setMatrixAt(i, M);
@@ -419,7 +439,7 @@ function stepTo(c, tx, tz, speed, dt, turn) {
 // animal or wader turns AWAY and walks off at a calm pace (never a dash at, past or toward them), a fish swims away
 // below, and no fish leaps within SHY.LEAP. Nothing a creature chooses for itself (a wander target, a stalk, a lizard's
 // escape) takes it inside SHY.R. Comfort §e.22: nothing startles within 2 m. A.me is set by world.js each frame.
-export const SHY = { R: 2.5, CLEAR: 3.2, LEAP: 3, FISH: 1.6, TURN: 0.5 };
+export const SHY = { R: 2.5, CLEAR: 3.2, LEAP: 3, FISH: 1.6, TURN: 0.5, AIR: 4 };
 const meOn = (A) => !!(A.me && A.me.on);
 const fromMe = (A, x, z) => meOn(A) ? Math.hypot(x - A.me.x, z - A.me.z) : 99;
 // a point d metres further from the visitor, within ±1.05 rad of straight away, where ok() allows; null if none.
@@ -450,6 +470,23 @@ function keepAway(A, c, ok, speed, turn, dt) {
   else if (shyStep(c, c.shyTo[0], c.shyTo[1], speed, dt, turn) || fromMe(A, c.x, c.z) >= SHY.CLEAR) c.shyTo = null;
   if (fromMe(A, c.x, c.z) >= SHY.CLEAR || !meOn(A)) { c.shy = false; c.shyTo = null; c.cornered = false; return false; }
   return true;
+}
+// birds and insects in the air (flock, insects): inside SHY.AIR of the visitor (measured on the ground, whatever the
+// height) a flyer turns away fast and only moves forward when the step opens the distance (a kingfisher or a
+// dragonfly hovers while it turns), and drops a target that would take it in. Outside SHY.AIR it flies as before.
+// SHY.AIR is wider than SHY.R because a flyer is fast and turns wide. b: { p (Vector3), h }; ok(x, z): inside its box.
+function airShy(A, b, v, dt, ok, retarget) {
+  const r = fromMe(A, b.p.x, b.p.z);
+  if (r < SHY.AIR) {
+    // straight away, or as near it as the room allows (up to a right angle off, where a step still opens the
+    // distance): along a wall rather than into it. With nowhere open (a corner) it hovers, facing away.
+    const a0 = Math.atan2(b.p.x - A.me.x, b.p.z - A.me.z), look = 0.35;
+    let a = a0; for (const da of [0, 0.4, -0.4, 0.8, -0.8, 1.2, -1.2, 1.5707, -1.5707]) { const ax = b.p.x + Math.sin(a0 + da) * look, az = b.p.z + Math.cos(a0 + da) * look; if (ok(ax, az) && fromMe(A, ax, az) > r) { a = a0 + da; break; } }
+    b.h += clamp(angWrap(a - b.h), -6 * dt, 6 * dt); retarget();
+  }
+  const nx = b.p.x + Math.sin(b.h) * v * dt, nz = b.p.z + Math.cos(b.h) * v * dt;
+  if (r < SHY.AIR && fromMe(A, nx, nz) < r) return;
+  if (ok(nx, nz)) { b.p.x = nx; b.p.z = nz; } else if (r >= SHY.AIR) { b.h += 2 * dt; }
 }
 const shyState = (c) => c.shy ? (c.cornered ? 2 : 1) : 0;   // 0 at ease, 1 walking off, 2 cornered (for tools/react-check.js)
 // a wander target that is not near the visitor

@@ -24,8 +24,8 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=7";
-import { makeFauna } from "./fauna.js?v=6";
+import { createWorld } from "./world.js?v=8";
+import { makeFauna } from "./fauna.js?v=7";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
@@ -1763,7 +1763,7 @@ window.__MU = {
   // strength), the visitor's two ripple slots, a point over its water, and its creatures (fish or not, y)
   react: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.pit) return null; const h = A.hole; let wet = null;
     if (A.waterY != null) { let lo = A.waterY - 0.02; for (let x = h.x0 + 0.3; x < h.x1 - 0.3; x += 0.1) for (let z = h.z0 + 0.3; z < h.z1 - 0.3; z += 0.1) { const s = A.toL(x, z)[0]; if (s < 1.6 || s > A.L - 1.6) continue; const y = A.groundH(x, z); if (y < lo) { lo = y; wet = [+x.toFixed(2), +z.toFixed(2)]; } } }
-    const fauna = []; if (A.fauna) A.fauna.group.children.forEach((o) => { if (o.isInstancedMesh) { const m = new THREE.Matrix4(), v = new THREE.Vector3(); for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m); v.setFromMatrixPosition(m); fauna.push({ fish: true, x: v.x, y: v.y, z: v.z }); } } else if (o.visible) fauna.push({ fish: false, x: o.position.x, y: o.position.y, z: o.position.z, shy: o.userData.shy || 0 }); });
+    const fauna = []; if (A.fauna) A.fauna.group.children.forEach((o) => { if (o.isInstancedMesh) { const m = new THREE.Matrix4(), v = new THREE.Vector3(); for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m); v.setFromMatrixPosition(m); fauna.push({ fish: o.userData.kind !== "air", air: o.userData.kind === "air", x: v.x, y: v.y, z: v.z }); } } else if (o.visible) fauna.push({ fish: false, air: false, x: o.position.x, y: o.position.y, z: o.position.z, shy: o.userData.shy || 0 }); });
     return { feet: !!A.feet, me: Object.assign({}, A.me), plantsMe: S.world.plantsMe(), rip: A.splash.slice(4).map((s) => s.slice()), waterY: A.waterY, wet, axis: A.axis, hole: [h.x0, h.x1, h.z0, h.z1], bounds: A.bounds, fauna }; },
   // run the world (creatures, plants, water) for `secs` of world time at 1/60 s steps without drawing, sampling
   // react(id) every `every` s: the headless browser draws a pilot room at well under 1 fps, too slow to watch live

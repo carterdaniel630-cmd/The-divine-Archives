@@ -49,8 +49,11 @@ export const ENV = {
   ch42: { sky: "dawn", ground: "field", fauna: ["swallows", "mice"] },              // the Neolithic: the first fields
   ch61: { sky: "starry", ground: "redearth", fauna: ["lizards"] },                  // the Dreaming: desert country under the night sky
   // Bronze Age
-  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia"], feet: true },
-  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "tilapia"], feet: true },
+  // ch02 and ch03 (the VR pilot): each creature is logged with its source in sources/museum-fauna-pilot.md ("More
+  // creatures", Carter 2026-11-16). ch03 had tilapia: not native to Mesopotamia (first Iraqi records 2007-2015), so
+  // it has the bunni, a barbel endemic to the Tigris-Euphrates, instead.
+  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia", "pkingfisher", "butterflies"], feet: true },
+  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "bunni", "pkingfisher", "dragonflies"], feet: true },
   ch04: { sky: "haze", ground: "river", fauna: ["tilapia", "kingfisher"] },
   ch05: { sky: "dawn", ground: "river", fauna: ["tilapia", "swallows"] },           // Ushas, the dawn
   ch57: { sky: "thunder", ground: "steppe", fauna: ["lizards"] },                   // the Storm-god of Hatti
@@ -578,7 +581,8 @@ const BIOME = {
     tint: (h, w) => h < w ? [0.7, 0.62, 0.5] : [0.62, 0.66, 0.4], scatter: [["reed", 0.9, "shore"], ["tuft", 1.2, "bank"], ["pebble", 0.5, "any"], ["rock", 0.05, "bank"]] },
   nile: { tex: "mud", h: (s, t, A) => -0.7 + 0.08 * fbm2(s * 0.4, t * 0.4, 4) - 0.45 * chan(s, t, A, 0.4), wet: -0.88, water: { y: -0.9, flow: [0.6, 0], deep: "#233a22", shallow: "#6a8a54", murk: 0.2 },
     tint: (h, w) => h < w ? [0.66, 0.58, 0.44] : [0.82, 0.72, 0.52], scatter: [["papyrus", 1.3, "shore"], ["reed", 0.6, "shore"], ["drytuft", 0.6, "bank"], ["lotusPad", 0.4, "water"]] },
-  marsh: { tex: "mud", h: (s, t) => -1.0 + 0.3 * smooth(0.5, 0.8, fbm2(s * 0.45, t * 0.45, 6)), wet: -0.88, water: { y: -0.9, flow: [0.15, 0.1], calm: 0.6, deep: "#1e3228", shallow: "#627a58", murk: 0.25 },
+  // open water threads the reed beds in a shallow channel (≤ 0.30 m deep at your feet) where the marsh's fish can swim
+  marsh: { tex: "mud", h: (s, t, A) => -1.0 + 0.3 * smooth(0.5, 0.8, fbm2(s * 0.45, t * 0.45, 6)) - 0.18 * chan(s, t, A, 0.3), wet: -0.88, water: { y: -0.9, flow: [0.15, 0.1], calm: 0.6, deep: "#1e3228", shallow: "#627a58", murk: 0.25 },
     tint: () => [0.62, 0.62, 0.46], scatter: [["reed", 3.5, "shore"], ["papyrus", 0.4, "shore"]] },
   lake: { tex: "pebble", h: (s, t, A) => -1.1 + 0.55 * smooth(A.L * 0.62, A.L * 0.95, s) + 0.05 * fbm2(s, t, 8), wet: -0.88, water: { y: -0.88, flow: [0.1, 0.05], calm: 0.5, deep: "#0f3446", shallow: "#4a8aa0" },
     tint: (h, w) => h < w ? [0.72, 0.7, 0.62] : [0.86, 0.8, 0.64], scatter: [["reed", 1.2, "shore"], ["pebble", 1.4, "any"], ["tuft", 0.6, "bank"]] },
