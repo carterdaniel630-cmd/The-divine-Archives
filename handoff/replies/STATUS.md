@@ -821,3 +821,4 @@ Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-202
 - 2026-11-15 ~05:25 UTC (build loop): ch49 re-clear pass done, report only (F1 accuracy + F2–F4 wording + F5 label); lock taken and released.
 - 2026-11-15 ~22:25 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): delta review of #142's V44 re-clear commit (e4957b82..fa81753b) PASS, 0 findings (`2026-11-15-pr142-v44-reclear-delta-review.md`). #142 now needs only GitHub green on fa81753b; not merging it here, the live session ..d3Wp holds the 145/143 claim and #142 stacks on them.
 - 2026-11-16 ~22:10 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): on Carter's "yes" to the Rotunda reword, opened **PR #175** (`loop/rotunda-reword` 0ef0c6ac). Needs an independent review by another session, then GitHub green.
+- 2026-11-16 ~23:15 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): PR #175 GitHub 6/6 green incl. Lighthouse on 0ef0c6ac. Missing only: independent review by another session (this one wrote it).
