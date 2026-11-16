@@ -13,7 +13,10 @@
 //  5. walking through the water leaves rings: each step past RIPPLE_STEP starts a fresh ring at the visitor's feet,
 //     in the visitor's own slots (4 and 5), so fish and herons keep theirs (0 to 3);
 //  6. a room outside the pilot (ch05) does not react: the visitor is not "on" its ground and the plants' lean is 0;
-//  7. 0 script errors at 960, 390 and 360 px.
+//  7. birds and insects in the air (ch02's kingfishers and butterflies, ch03's kingfishers and dragonflies; "More
+//     creatures"): none inside AIR_R of the visitor (on the ground plan, any height) ever comes closer, and after
+//     SETTLE s none is within CLOSE; and each pilot room has the creatures its ENV lists (by kind: land, fish, air);
+//  8. 0 script errors at 960, 390 and 360 px.
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = process.argv[2] || "docs", PORT = 8794;
@@ -22,7 +25,9 @@ const srv = http.createServer((q, s) => { let p = decodeURIComponent(q.url.split
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); return s.end(); } s.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream" }); s.end(d); }); });
 
 const PILOT = [["ch02", "ch02"], ["ch03", "ch03"], ["cor:02-bronze-age", "@02-bronze-age"]];
-const TRIALS = 4, SHY_R = 2.5, CLOSE = 2, FISH_R = 1.6, LEAP_R = 3, SETTLE = 9, TOL = 0.012, RIPPLE_STEP = 0.42;
+const TRIALS = 4, AIR_R = 4, SHY_R = 2.5, CLOSE = 2, FISH_R = 1.6, LEAP_R = 3, SETTLE = 9, TOL = 0.012, RIPPLE_STEP = 0.42;
+// what each pilot room must hold, by kind (world.js ENV; sources/museum-fauna-pilot.md)
+const HOLDS = { ch02: { land: 4, fish: 1, air: 2 }, ch03: { land: 1, fish: 1, air: 2 } };
 const fails = [], notes = [];
 const check = (ok, what) => { console.log(`  ${ok ? "ok  " : "FAIL"} ${what}`); if (!ok) fails.push(what); };
 
@@ -50,14 +55,19 @@ const check = (ok, what) => { console.log(`  ${ok ? "ok  " : "FAIL"} ${what}`); 
       const r0 = await page.evaluate((i) => window.__MU.react(i), id);
       if (!r0) { check(false, `${id}: its ground was built`); await page.close(); continue; }
       check(r0.feet, `${id}: a ground at your feet`);
+      if (HOLDS[id] && w > 800) { const kinds = (k) => r0.fauna.filter((f) => k === "air" ? f.air : k === "fish" ? f.fish && !f.air : !f.fish && !f.air).length, H = HOLDS[id];
+        const got = { land: kinds("land"), fish: kinds("fish"), air: kinds("air") };
+        check(got.land >= H.land && got.fish >= H.fish && got.air >= H.air, `${id}: holds its creatures (land ${got.land} ≥ ${H.land} walkers, fish ${got.fish}, air ${got.air}; groups of each listed kind present)`);
+        const B0 = r0.bounds, overGround = r0.fauna.filter((f) => f.air).every((f) => f.y > -0.1 && f.y < 1.6);
+        check(overGround, `${id}: the birds and insects fly over the raised ground, below eye height (y ${r0.fauna.filter((f) => f.air).map((f) => f.y.toFixed(2)).join(", ")})`); }
       // set the visitor down 1.2 m from each land creature in turn (up to TRIALS; with none, from fish), inside the room,
       // and run the world for SETTLE s of world time while they stand still, sampling every 0.1 s. reactSim steps the
       // same world.update the frame loop calls, without drawing: SwiftShader draws a pilot room at < 1 fps.
       const B = r0.bounds, inB = (x, z) => x > B.x0 + 0.3 && x < B.x1 - 0.3 && z > B.z0 + 0.3 && z < B.z1 - 0.3;
-      const land = r0.fauna.filter((f) => !f.fish), nTrials = TRIALS;   // cycles through the creatures when there are fewer than TRIALS
-      let closer = [], fishIn = [], leaps = [], tooCloseN = 0, corneredN = 0, nearN = 0, knows = true, nearest = 99, seqL = null, trials = 0;
+      const land = r0.fauna.filter((f) => !f.fish && !f.air), airs = r0.fauna.filter((f) => f.air), nTrials = TRIALS + (airs.length ? 2 : 0);   // two more beside a bird or insect   // cycles through the creatures when there are fewer than TRIALS
+      let airIn = [], airClose = 0, closer = [], fishIn = [], leaps = [], tooCloseN = 0, corneredN = 0, nearN = 0, knows = true, nearest = 99, seqL = null, trials = 0;
       for (let tr = 0; tr < nTrials; tr++) {
-        const now = await page.evaluate((i) => window.__MU.react(i), id), pool = land.length ? now.fauna.filter((f) => !f.fish) : now.fauna.filter((f) => f.fish);
+        const now = await page.evaluate((i) => window.__MU.react(i), id), pool = tr >= TRIALS ? now.fauna.filter((f) => f.air) : land.length ? now.fauna.filter((f) => !f.fish && !f.air) : now.fauna.filter((f) => f.fish && !f.air);
         const f = pool[tr % pool.length]; if (!f) break;
         let spot = null; for (let a = 0; a < 6.28 && !spot; a += 0.5) { const x = f.x + Math.sin(a) * 1.2, z = f.z + Math.cos(a) * 1.2; if (inB(x, z)) spot = [x, z]; }
         if (!spot) continue;
@@ -69,6 +79,7 @@ const check = (ok, what) => { console.log(`  ${ok ? "ok  " : "FAIL"} ${what}`); 
           const A = seq[k - 1].fauna, Bf = seq[k].fauna; if (A.length !== Bf.length) continue;
           for (let j = 0; j < A.length; j++) {
             const d0 = dist(A[j]), d1 = dist(Bf[j]);
+            if (A[j].air) { if (d0 < AIR_R && d1 < d0 - TOL) airIn.push(`#${tr} ${j}@${seq[k].t.toFixed(1)}s ${d0.toFixed(2)}→${d1.toFixed(2)}`); continue; }
             if (!A[j].fish && d0 < SHY_R && d1 < d0 - TOL) closer.push(`#${tr} ${j}@${seq[k].t.toFixed(1)}s ${d0.toFixed(2)}→${d1.toFixed(2)}`);
             if (A[j].fish && d0 < FISH_R && d1 < d0 - TOL) fishIn.push(`#${tr} ${j}@${seq[k].t.toFixed(1)}s ${d0.toFixed(2)}→${d1.toFixed(2)}`);
             // a leap may not START within LEAP_R; one already in the air when the visitor arrives may only bend away
@@ -77,8 +88,9 @@ const check = (ok, what) => { console.log(`  ${ok ? "ok  " : "FAIL"} ${what}`); 
             if (Bf[j].fish && d0 < LEAP_R && out0 && out1 && d1 < d0 - TOL) leaps.push(`#${tr} ${j}@${seq[k].t.toFixed(1)}s in the air, ${d0.toFixed(2)}→${d1.toFixed(2)} m`);
           }
         }
-        nearN += seq[0].fauna.filter((f) => !f.fish && dist(f) < SHY_R).length;
-        const end = seq[seq.length - 1].fauna.filter((f) => !f.fish), tc = end.filter((f) => dist(f) < CLOSE), cn = tc.filter((f) => f.shy === 2);
+        nearN += seq[0].fauna.filter((f) => !f.fish && !f.air && dist(f) < SHY_R).length;
+        airClose += seq[seq.length - 1].fauna.filter((f) => f.air && dist(f) < CLOSE).length;
+        const end = seq[seq.length - 1].fauna.filter((f) => !f.fish && !f.air), tc = end.filter((f) => dist(f) < CLOSE), cn = tc.filter((f) => f.shy === 2);
         tooCloseN += tc.length; corneredN += cn.length; if (end.length) nearest = Math.min(nearest, ...end.map(dist));
       }
       if (!trials) { check(false, `${id}: found a place 1.2 m from a creature`); await page.close(); continue; }
@@ -87,6 +99,8 @@ const check = (ok, what) => { console.log(`  ${ok ? "ok  " : "FAIL"} ${what}`); 
       check(closer.length === 0, `${id}: no land creature or wader came closer inside ${SHY_R} m${closer.length ? ": " + closer.slice(0, 3).join("; ") : ""}`);
       if (corneredN) notes.push(`${id} @${w}px: ${corneredN} time(s) a creature had nowhere further to go (water, wall or the room's edge behind it) within ${CLOSE} m, and stood still facing away`);
       check(tooCloseN - corneredN === 0, `${id}: after ${SETTLE} s no creature within ${CLOSE} m (nearest ${nearest < 99 ? nearest.toFixed(2) : "-"} m${corneredN ? `; ${corneredN} cornered, see notes` : ""})`);
+      check(airIn.length === 0, `${id}: no bird or insect inside ${AIR_R} m came closer${airIn.length ? ": " + airIn.slice(0, 3).join("; ") : ""}`);
+      check(airClose === 0, `${id}: after ${SETTLE} s no bird or insect within ${CLOSE} m (${airClose})`);
       check(fishIn.length === 0, `${id}: no fish swam in toward the visitor inside ${FISH_R} m${fishIn.length ? ": " + fishIn.slice(0, 3).join("; ") : ""}`);
       check(leaps.length === 0, `${id}: no leap starts within ${LEAP_R} m, and none in the air comes closer${leaps.length ? ": " + leaps.slice(0, 3).join("; ") : ""}`);
       const pm = seqL[seqL.length - 1].plantsMe, lastMe = seqL[seqL.length - 1].me;
