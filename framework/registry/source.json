@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2021,
+ "count": 2022,
  "entities": [
   {
    "id": "source:3dgo-app/94d72cec62",
@@ -15693,6 +15693,12 @@
     "relic:v57"
    ],
    "from": "sources/v57-holy-mandylion.md"
+  },
+  {
+   "id": "source:sketchfab-com/7aec9759f5",
+   "type": "source",
+   "label": "https://sketchfab.com/models/d4876aa609304682945145debedfc77e",
+   "from": "sources/museum-statues-in-rooms.md"
   },
   {
    "id": "source:slub-dresden-de/102bf679f6",
