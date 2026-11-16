@@ -314,7 +314,7 @@ homeland endured.
 - The name "Karaite" and the earlier "Ananites" — Jewish Encyclopedia (1906), "Karaites and Karaism" (an older reference work; on the name only). https://jewishencyclopedia.com/articles/9211-karaites-and-karaism
 
 *Note on sourcing:* Researched from standard reference and scholarly sources (Britannica, My Jewish
-Learning, Wikipedia's sourced overviews, and the mainstream scholarship of Neusner, Schwartz, and the
+Learning, and the mainstream scholarship of Neusner, Schwartz, and the
 "rabbinization" studies they summarize) rather than memory alone, per the project standard. The chapter
 tells the tradition's own powerful **Yavneh** story while flagging clearly that it is a later legend,
 distinguishes the traditional claim of a **Sinai-given Oral Torah** from the historical **development**
