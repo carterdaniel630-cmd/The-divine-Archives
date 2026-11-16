@@ -126,3 +126,4 @@
 2026-11-16 10:05 UTC reviewer loop pr166 vr-height independent passed (0 open findings; wrote none of it)
 2026-11-16 10:07 UTC reviewer loop pr167 resourcing-ch39 independent passed (0 open findings; wrote none of it)
 2026-11-16 10:40 UTC reviewer loop pr168 resourcing-ch40 fixable (4 open findings)
+2026-11-16 11:00 UTC reviewer loop pr168 resourcing-ch40 delta fixable (F1-F4 confirmed; 1 open finding F5; wrote none of it)
