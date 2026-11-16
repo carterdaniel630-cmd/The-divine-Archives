@@ -30,7 +30,8 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=1";
+import { createXRMove } from "./xr-move.js?v=2";
+import { createXRHeight } from "./xr-height.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 
@@ -1563,7 +1564,7 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) { S.xrMove.update(dt); xrFollow(); }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); xrFollow(); }
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
@@ -1644,26 +1645,35 @@ function initXR() {
   const btn = $("mu-vr-btn"); if (!btn) return;
   S.xr = createXR({
     renderer, camera, scene, floorY: 0,
-    onStart: () => {
+    onStart: ({ seated }) => {
       unlock(); clearHover(); S.keys.clear(); S.auto = null;
       if (!$("mu-card-wrap").hidden) closeCard();
       if (S.insp && S.insp.active) S.insp.close();
       if (!$("mu-guide").hidden) toggleGuide(false);
       document.body.classList.add("is-xr");
       S.xrMove.attach();
+      S.xrHeight.attach({ floor: !seated });
       S.snd.wake(); S.dirty = true;
     },
     onEnd: (at) => {
       document.body.classList.remove("is-xr");
       S.xrMove.detach();
+      const said = S.xrHeight.detach();
       if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
       S.pitch = 0; S.keys.clear(); S.auto = null;
       resize(); manageZones(); locate(); savePos();
+      if (said) xrNote(said);   // the posture and eye height the visitor had in the headset (Carter: "too low")
       S.dirty = true;
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); } });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) });
+  S.xrHeight = createXRHeight({
+    camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
+    clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+    dip: (cb) => S.xrMove.dip(cb),
+    load: () => store.get("mu-vr-posture"), save: (v) => store.set("mu-vr-posture", v)
+  });
   let was = false;
   const paint = async () => {
     await probeXR();
@@ -1738,6 +1748,9 @@ window.__MU = {
   xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
   xrExit: () => S.xr && S.xr.exit(),
   xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
+  xrHeight: () => S.xrHeight ? Object.assign({}, S.xrHeight.debug, { posture: S.xrHeight.posture, plaqueShown: S.xrHeight.plaque.visible, rigY: S.xr.rig.position.y, rig: [S.xr.rig.position.x, S.xr.rig.position.y, S.xr.rig.position.z, S.xr.rig.rotation.y], plaquePos: S.xrHeight.plaque.position.toArray() }) : null,
+  xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+  xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),

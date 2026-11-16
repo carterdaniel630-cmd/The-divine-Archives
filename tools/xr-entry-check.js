@@ -8,7 +8,9 @@
 //     through the session; each exit puts the camera back and the visitor down where their head was;
 //  3. the declared seated fallback when the device has no local-floor (eye height 1.2 m);
 //  4. a refused session stays flat with one honest line;
-//  5. the per-tier constants: Quest 2 (and unknown headsets) 1.0 foveation / 0.8 scale, Quest 3 0.75 / 1.0.
+//  5. the per-tier constants: Quest 2 (and unknown headsets) 1.0 foveation / 0.8 scale, Quest 3 0.75 / 1.0;
+//  6. moving (teleport, snap turn, vignette);
+//  7. standing or seated (xr-height.js): the posture plaque, measured or set eye height, the switch, the note on leaving.
 // SHOTS=<dir> also saves the headset's two-eye view while aiming (open floor, then a wall).
 // A stand-in device proves the museum's side of the contract only. Certification is on a real Quest 2 (the floor
 // device), which a build session cannot wear.
@@ -45,7 +47,7 @@ function fakeXR(opts) {
     requestAnimationFrame(cb) {
       return window.requestAnimationFrame((t) => {
         if (this.ended) return;
-        const h = window.__fx.head, y = this.floor ? 1.6 : 0;
+        const h = window.__fx.head, y = this.floor ? (window.__fx.headY || 1.6) : 0;
         const pose = { transform: { matrix: mat(h.x, y, h.z, h.yaw) }, views: ["left", "right"].map((eye, i) => ({ eye, projectionMatrix: persp(1.6, 0.9, 0.05, 140), transform: { matrix: mat(h.x + (i ? 0.032 : -0.032), y, h.z, h.yaw) } })) };
         window.__fx.frames++;
         const k = window.__fx.ctrl, cpose = { transform: { matrix: mat(k.x, this.floor ? k.y : k.y - 1.6, k.z, k.yaw, k.pitch) }, emulatedPosition: false };
@@ -275,6 +277,139 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     check(await drawsFlat(page), "flat render loop draws after the movement checks");
     check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
     await ctx.close();
+  }
+
+  console.log("7. standing or seated: the posture plaque, the eye height, the switch (simulated Quest 2)");
+  {
+    const posture = async (xr, label) => {
+      const { ctx, page, errors } = await open(b, { width: 400, height: 300, ua: Q2, xr });
+      const frames = (n) => page.evaluate((n) => new Promise((ok) => { const f0 = window.__fx.frames; const w = () => (window.__fx.frames - f0 >= n ? ok() : setTimeout(w, 30)); w(); }), n);
+      const H = () => page.evaluate(() => window.__MU.xrHeight());
+      const enter = async () => {
+        await page.evaluate(() => { window.__fx.head = { x: 0, z: 0, yaw: 0 }; window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; });
+        await page.evaluate(() => document.exitPointerLock && document.exitPointerLock()); await page.click("#mu-vr-btn", { force: true });
+        await page.waitForFunction(() => window.__MU.xr().presenting && window.__MU.xrMove().controllers === 1 && window.__MU.xrHeight().plaqueShown, null, { timeout: 30000 });
+        await frames(3);
+      };
+      const exit = async () => { await page.evaluate(() => window.__MU.xrExit()); await page.waitForFunction(() => !window.__MU.xr().presenting, null, { timeout: 15000 }); await page.waitForTimeout(200); };
+      // point the controller (in the play space) at the plaque's centre
+      const pointAtPlaque = () => page.evaluate(() => {
+        const h = window.__MU.xrHeight(), [rx, ry, rz, th] = h.rig, [px, py, pz] = h.plaquePos, k = window.__fx.ctrl, fy = window.__fx.session.floor ? 0 : 1.6;
+        const c = Math.cos(th), s = Math.sin(th), wx = rx + k.x * c + k.z * s, wy = ry + k.y - fy, wz = rz - k.x * s + k.z * c;
+        let dx = px - wx, dy = py - wy, dz = pz - wz; const L = Math.hypot(dx, dy, dz); dx /= L; dy /= L; dz /= L;
+        const lx = dx * c - dz * s, lz = dx * s + dz * c;
+        k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
+      });
+      const tap = async () => { await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); };
+      return { ctx, page, errors, frames, H, enter, exit, pointAtPlaque, tap };
+    };
+    const headDist = (h) => Math.hypot(h.plaquePos[0] - h.rig[0], h.plaquePos[2] - h.rig[2]);
+    const noteNow = (page) => page.evaluate(() => { const n = document.getElementById("mu-xr-note"); return n && !n.hidden ? n.textContent : null; });
+
+    // a. standing, with the headset's floor
+    {
+      const t = await posture({ controller: true });
+      const { page, errors, frames, H, enter, exit, pointAtPlaque, tap } = t;
+      await enter();
+      let h = await H();
+      check(h.posture === "standing" && h.floor && Math.abs(h.eye - 1.6) < 0.02 && Math.abs(h.rigY) < 1e-6, `standing: eyes where the headset says (${h.eye} m), nothing added (rig ${h.rigY})`);
+      check(h.title === "STANDING" && h.lines[0] === "Eyes 1.60 m above the floor" && /tap: sit$/.test(h.lines[h.lines.length - 1]), `plaque reads: ${h.title} / ${h.lines.join(" / ")}`);
+      check(h.plaqueY >= 1.35 && h.plaqueY <= 1.55 && h.dist >= 0.8 && h.dist <= 2.5, `plaque centre ${h.plaqueY} m high (standing band 1.35–1.55), ${h.dist} m away (reading 0.8–2.5)`);
+      check(h.bodyDeg >= 1.3 && h.titleDeg >= 1.8 && !h.overflow, `text size at 2 m: body ${h.bodyDeg}°, title ${h.titleDeg}° (≥ 1.3° / ≥ 1.8°), every line fits`);
+      const hp = await page.evaluate(() => window.__MU.xrClear(window.__MU.xrHeight().rig[0], window.__MU.xrHeight().rig[2], window.__MU.xrHeight().plaquePos[0], window.__MU.xrHeight().plaquePos[2]));
+      check(hp && headDist(h) > 0.7, "no wall between the visitor and the plaque");
+      await pointAtPlaque(); await frames(3);
+      h = await H();
+      check(h.hover, "pointing at the plaque lights its border");
+      if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-posture-standing.png"), timeout: 120000 });
+      await tap();
+      await page.waitForFunction(() => window.__MU.xrHeight().changes === 1 && window.__MU.xrMove().fade === 0, null, { timeout: 20000 });
+      await frames(2);
+      h = await H(); let m = await page.evaluate(() => window.__MU.xrMove()), eye = await page.evaluate(() => window.__MU.xr().eyeY);
+      check(h.posture === "seated" && Math.abs(eye - 1.2) < 0.02 && h.title === "SEATED" && h.lines[0] === "Eyes set at 1.20 m", `tap: seated, eyes set at 1.2 m (${eye.toFixed(2)}); plaque reads ${h.title} / ${h.lines.join(" / ")}`);
+      check(h.plaqueY >= 0.9 && h.plaqueY <= 1.1, `the plaque re-anchors to the seated band (${h.plaqueY} m)`);
+      check(m.fadePeak >= 0.45 && m.fadePeak <= 0.9 + 1e-6 && m.teleports === 0 && m.vignettePeak === 0, `the change happens inside a dip to dark (peak ${m.fadePeak}), not a teleport`);
+      if (process.env.SHOTS) { await pointAtPlaque(); await frames(3); await page.screenshot({ path: path.join(process.env.SHOTS, "xr-posture-seated.png"), timeout: 120000 }); }
+      await pointAtPlaque(); await frames(2); await tap();
+      await page.waitForFunction(() => window.__MU.xrHeight().changes === 2 && window.__MU.xrMove().fade === 0, null, { timeout: 20000 });
+      await frames(2);
+      h = await H(); eye = await page.evaluate(() => window.__MU.xr().eyeY);
+      check(h.posture === "standing" && Math.abs(eye - 1.6) < 0.02 && Math.abs(h.rigY) < 1e-6, `tap again: standing, eyes back to the headset's ${eye.toFixed(2)} m`);
+      // a tap pointing away from the plaque changes nothing
+      await page.evaluate(() => { window.__fx.ctrl.yaw += Math.PI; }); await frames(2); await tap(); await frames(20);
+      h = await H();
+      check(h.changes === 2 && !h.hover, "a tap pointing elsewhere changes nothing");
+      // the headset's floor set too high: the visitor's eyes measure low; the plaque and the page say so
+      await page.evaluate(() => { window.__fx.headY = 1.15; }); await page.waitForTimeout(1600); await frames(3);
+      h = await H();
+      check(Math.abs(h.eye - 1.15) < 0.02 && h.lines.includes("Low? Reset the headset's floor"), `eyes measured low (${h.eye} m): plaque adds "${h.lines[1]}"`);
+      await exit();
+      const note = await noteNow(page);
+      check(/^In VR you were standing, eyes 1\.15 m above the museum floor \(measured by the headset\)\. That is lower than most standing eyes/.test(note || ""), `after leaving, the page says: "${note}"`);
+      const kept = await page.evaluate(() => localStorage.getItem("mu-vr-posture"));
+      check(kept === "standing", `the choice is kept on this device (${kept})`);
+      // seated, leave, come back: remembered
+      await page.evaluate(() => { window.__fx.headY = 1.6; localStorage.setItem("mu-vr-posture", "seated"); });
+      await enter();
+      h = await H(); eye = await page.evaluate(() => window.__MU.xr().eyeY);
+      check(h.posture === "seated" && Math.abs(eye - 1.2) < 0.02, `a remembered seated choice comes back on the next entry (eyes ${eye.toFixed(2)} m)`);
+      await exit();
+      const note2 = await noteNow(page);
+      check(note2 === "In VR you were seated, eyes set at 1.20 m.", `after leaving: "${note2}"`);
+      const cam = await page.evaluate(() => window.__MU.xr());
+      check(cam.cameraParent === "Scene" && cam.cameraChildren === 1, "after exit the camera is back in the scene, nothing left on it");
+      const shown = await page.evaluate(() => window.__MU.xrHeight().plaqueShown);
+      check(!shown, "the plaque is put away with the session");
+      check(await drawsFlat(page), "flat render loop draws after the posture checks");
+      check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+      await t.ctx.close();
+    }
+    // b. a headset that gives no floor: declared seated; standing is a set height, said so
+    {
+      const t = await posture({ controller: true, noFloor: true });
+      const { page, errors, frames, H, enter, exit, pointAtPlaque, tap } = t;
+      await enter();
+      let h = await H(), eye = await page.evaluate(() => window.__MU.xr().eyeY);
+      check(h.posture === "seated" && !h.floor && Math.abs(eye - 1.2) < 0.02 && h.lines.includes("The headset gave no floor height"), `no floor: seated, eyes 1.2 m; plaque: ${h.title} / ${h.lines.join(" / ")}`);
+      await pointAtPlaque(); await frames(3); await tap();
+      await page.waitForFunction(() => window.__MU.xrHeight().changes === 1 && window.__MU.xrMove().fade === 0, null, { timeout: 20000 });
+      await frames(2);
+      h = await H(); eye = await page.evaluate(() => window.__MU.xr().eyeY);
+      check(h.posture === "standing" && Math.abs(eye - 1.62) < 0.02 && h.lines[0] === "Eyes set at 1.62 m", `tap: standing at the museum's set eye height (${eye.toFixed(2)} m), said as set, not measured`);
+      await exit();
+      const note = await noteNow(page);
+      check(note === "In VR you were standing, eyes set at 1.62 m (the headset gave no floor height).", `after leaving: "${note}"`);
+      check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+      await t.ctx.close();
+    }
+    // c. entering face to a wall: the plaque goes where no wall stands between
+    {
+      const t = await posture({ controller: true });
+      const { page, errors, enter, exit, H } = t;
+      const st = await page.evaluate(() => window.__MU.state());
+      // walk out from the start spot along some heading until a wall is about 1 m ahead, and stand there facing it
+      const spot = await page.evaluate(([x, z]) => {
+        for (let k = 0; k < 24; k++) {
+          const y = k * Math.PI / 12, sx = -Math.sin(y), sz = -Math.cos(y);
+          let r = 0.2; while (r < 8 && window.__MU.xrClear(x, z, x + sx * r, z + sz * r)) r += 0.1;
+          if (r >= 8 || r < 1.6) continue;
+          const px = x + sx * (r - 1.0), pz = z + sz * (r - 1.0);
+          if (window.__MU.xrCanStand(px, pz, x, z)) return [px, pz, y];
+        }
+        return null;
+      }, [st.x, st.z]);
+      if (spot == null) check(false, "test setup: a spot about 1 m from a wall, facing it");
+      else {
+        await page.evaluate(([x, z, y]) => window.__MU.place(x, z, y, 0), spot);
+        await enter();
+        const h = await H();
+        const ok = await page.evaluate(() => { const h = window.__MU.xrHeight(); const c = window.__MU.xrClear(h.rig[0], h.rig[2], h.plaquePos[0], h.plaquePos[2]); return c; });
+        check(ok, `facing a wall on entry: the plaque stands clear of it (${h.dist} m away, at [${h.placed}])`);
+        await exit();
+      }
+      check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+      await t.ctx.close();
+    }
   }
 
   await b.close(); srv.close();
