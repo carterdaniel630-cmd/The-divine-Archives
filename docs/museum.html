@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/archive.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
-  <link rel="stylesheet" href="museum/museum.css?v=10" />
+  <link rel="stylesheet" href="museum/museum.css?v=11" />
   <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.min.js" } }</script>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Divine Archives" />
@@ -33,12 +33,14 @@
   <p class="mu-where" id="mu-where" aria-live="polite"></p>
   <nav class="mu-tools" aria-label="Museum tools">
     <button type="button" id="mu-guide-btn" aria-controls="mu-guide" aria-expanded="false"><span class="mu-l">Room guide</span><span class="mu-s">Guide</span></button>
+    <button type="button" id="mu-vr-btn" hidden><span class="mu-l">Enter VR</span><span class="mu-s">VR</span></button>
     <button type="button" id="mu-dir-btn">Directory</button>
     <button type="button" id="mu-help-btn">Help</button>
     <button type="button" id="mu-sound-btn" aria-pressed="true"><span class="mu-l">Sound on</span><span class="mu-s">Sound</span></button>
     <button type="button" id="mu-motion-btn" aria-pressed="false" aria-label="Reduce view motion"><span class="mu-l">View motion on</span><span class="mu-s">View motion on</span></button>
   </nav>
 </header>
+<p class="mu-xr-note" id="mu-xr-note" role="status" hidden></p>
 
 <div class="mu-intro" id="mu-intro" hidden>
   <div class="mu-intro-card" role="dialog" aria-modal="true" aria-labelledby="mu-intro-h">
@@ -95,7 +97,7 @@
 </main>
 
 <script src="assets/pilgrimage-data.js?v=4"></script>
-<script type="module" src="museum/app.js?v=47"></script>
+<script type="module" src="museum/app.js?v=50"></script>
 <script src="assets/framework/archive-ledger.js?v=2" defer></script>
 <script src="assets/fps-overlay.js" defer></script>
 <script src="site-config.js" defer></script>

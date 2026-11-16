@@ -29,6 +29,8 @@ import { makeFauna } from "./fauna.js?v=4";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
+import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
+import { createXRMove } from "./xr-move.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 
@@ -67,7 +69,7 @@ const S = {
 let renderer, scene, camera, lantern, pool = [], lampPoints, flashLight;
 function initRenderer() {
   const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance" });
+  const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance", xrCompatible: true });   // xrCompatible: ready for a VR session (xr.js) without a context reset
   if (!ctx) throw new Error("WebGL2 is not available");
   renderer = new THREE.WebGLRenderer({ canvas, context: ctx, antialias: !touch });
   // phones draw at 1 pixel per CSS pixel: about half the fill work of 1.5 (advisory briefs 10-15/10-16, Item 9)
@@ -1535,12 +1537,13 @@ function enter3d() {
 
 // ---------------------------------------------------------------- the golden portal to the Pilgrimage
 const pLocal = new THREE.Vector3();
-function portalTick(dt) {
+function portalTick(dt, xr) {
   const P = S.portalFx, d = P.pos.distanceTo(pLocal.set(S.pos.x, 0, S.pos.z));
   if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(dt)) S.dirty = true; }
   // inside the opening: within its width, and within a hand's breadth of its plane
   pLocal.set(S.pos.x - P.pos.x, 0, S.pos.z - P.pos.z).applyQuaternion(P.inv);
-  if (!P.fired && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
+  // not from a VR headset: the Pilgrimage has no VR yet (a later phase), and leaving the page would drop the session
+  if (!P.fired && !xr && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
   if (P.fired && Math.abs(pLocal.z) > 1.2) P.fired = false;
 }
 function stepThroughPortal(href) {
@@ -1554,13 +1557,14 @@ function stepThroughPortal(href) {
 // ---------------------------------------------------------------- loop
 let last = performance.now(), idleT = 0, locT = 0, zoneT = 0;
 function tick(now) {
-  requestAnimationFrame(tick);
   if (S.paused || document.hidden) { last = now; return; }
+  const xr = renderer.xr.isPresenting;   // in a VR headset (xr.js): the head moves the view, and every frame is drawn
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
-  if (S.insp && S.insp.active) { S.insp.render(dt); return; }
-  if ($("mu-card-wrap").hidden) step(dt);
+  if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
+  if (xr) { S.xrMove.update(dt); xrFollow(); }
+  else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
@@ -1570,15 +1574,19 @@ function tick(now) {
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
-  if (S.portalFx) portalTick(dt);
+  if (S.portalFx) portalTick(dt, xr);
   if (S.secret && S.secret.update(dt, S.pos)) S.dirty = true;
   const styled = S.style.update(dt) && S.styledHere;
   if (idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
+  if (xr) S.dirty = true;                // a headset needs a fresh frame every time; a skipped one reads as a freeze
   if (!S.dirty) return;
   S.dirty = false;
-  camera.position.copy(S.pos);
-  camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
+  if (!xr) {
+    camera.position.copy(S.pos);
+    camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
+  }
   updateLights();
+  if (xr) { renderer.render(scene, camera); return; }   // no hover tag or reticle in the headset (they are page elements)
   // hover (centre of view when looking with the mouse)
   const ex = (S.locked || !touch) && $("mu-card-wrap").hidden ? pick(0, 0) : null;
   const near = ex && ex.center.distanceTo(S.pos) < 6 ? ex : null;
@@ -1593,6 +1601,79 @@ function tick(now) {
     if (S.sky && $("mu-card-wrap").hidden) S.sky.highlight(sky && sky.data.what === "cons" ? sky.data.id : null);
   }
   renderer.render(scene, camera);
+}
+
+// ---------------------------------------------------------------- VR (xr.js; handoff/vr-architecture.md)
+// The "Enter VR" button exists only where the browser offers an immersive VR session; everywhere else the museum is
+// exactly the flat museum. Leaving VR puts the visitor down where they stood in the headset.
+const xrTmp = new THREE.Vector3(), xrDir = new THREE.Vector3();
+function xrFollow() {
+  // the world (rooms shown, sound, the room name) follows the visitor's head
+  camera.getWorldPosition(xrTmp); S.pos.x = xrTmp.x; S.pos.z = xrTmp.z;
+  camera.getWorldDirection(xrDir); if (Math.hypot(xrDir.x, xrDir.z) > 0.1) S.yaw = Math.atan2(-xrDir.x, -xrDir.z);
+}
+// may a visitor in the headset stand at (x, z), reached from (fx, fz)? The same rules as walking: not inside a wall's
+// reach, and no wall between (a teleport never passes through a wall into a closed room)
+function xrCanStand(x, z, fx, fz) {
+  const p = new THREE.Vector3(x, EYE, z); collide(p);
+  if (Math.hypot(p.x - x, p.z - z) > 0.01) return false;
+  return !wallBetween(fx, fz, x, z);
+}
+function wallBetween(ax, az, bx, bz) {
+  const x0 = Math.floor(Math.min(ax, bx) / CELL) - 1, x1 = Math.floor(Math.max(ax, bx) / CELL) + 1;
+  const z0 = Math.floor(Math.min(az, bz) / CELL) - 1, z1 = Math.floor(Math.max(az, bz) / CELL) + 1;
+  const rx = bx - ax, rz = bz - az, seen = new Set();
+  for (let i = x0; i <= x1; i++) for (let j = z0; j <= z1; j++) {
+    const list = GRID.get(i + "," + j); if (!list) continue;
+    for (const g of list) {
+      if (seen.has(g)) continue; seen.add(g);
+      const sx = g[2] - g[0], sz = g[3] - g[1], den = rx * sz - rz * sx;
+      if (Math.abs(den) < 1e-9) continue;
+      const qx = g[0] - ax, qz = g[1] - az, t = (qx * sz - qz * sx) / den, u = (qx * rz - qz * rx) / den;
+      if (t >= 0 && t <= 1 && u >= 0 && u <= 1) return true;
+    }
+  }
+  return false;
+}
+function xrNote(text) {
+  const n = $("mu-xr-note"); if (!n) return;
+  n.textContent = text; n.hidden = false;
+  clearTimeout(xrNote.t); xrNote.t = setTimeout(() => { n.hidden = true; }, 9000);
+}
+function initXR() {
+  const btn = $("mu-vr-btn"); if (!btn) return;
+  S.xr = createXR({
+    renderer, camera, scene, floorY: 0,
+    onStart: () => {
+      unlock(); clearHover(); S.keys.clear(); S.auto = null;
+      if (!$("mu-card-wrap").hidden) closeCard();
+      if (S.insp && S.insp.active) S.insp.close();
+      if (!$("mu-guide").hidden) toggleGuide(false);
+      document.body.classList.add("is-xr");
+      S.xrMove.attach();
+      S.snd.wake(); S.dirty = true;
+    },
+    onEnd: (at) => {
+      document.body.classList.remove("is-xr");
+      S.xrMove.detach();
+      if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
+      S.pitch = 0; S.keys.clear(); S.auto = null;
+      resize(); manageZones(); locate(); savePos();
+      S.dirty = true;
+    },
+    onMessage: xrNote
+  });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); } });
+  let was = false;
+  const paint = async () => {
+    await probeXR();
+    btn.hidden = !XRProbe.vrSupported;
+    if (was && !XRProbe.vrSupported) xrNote("This device does not offer a VR session; the museum remains open in 3D.");
+    was = XRProbe.vrSupported;
+  };
+  paint();
+  if (navigator.xr && navigator.xr.addEventListener) navigator.xr.addEventListener("devicechange", paint);
+  btn.addEventListener("click", () => { S.xr.enter({ x: S.pos.x, z: S.pos.z, yaw: S.yaw }); });
 }
 
 // ---------------------------------------------------------------- start
@@ -1640,7 +1721,9 @@ async function start() {
   manageZones(); locate();
   S.started = true;
   $("mu-bar").hidden = false;
-  requestAnimationFrame(tick);
+  initXR();
+  // three.js drives the loop (it must, for a VR session); an error in one frame is reported but does not stop the next
+  renderer.setAnimationLoop((t) => { try { tick(t); } catch (e) { setTimeout(() => { throw e; }); } });
   status.textContent = "";
   $("mu-enter").disabled = false;
   $("mu-enter").addEventListener("click", () => { $("mu-intro").hidden = true; store.set("mu-seen", "1"); renderer.domElement.focus(); if (!touch) lock(); S.dirty = true; });
@@ -1652,6 +1735,10 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
+  xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
+  xrExit: () => S.xr && S.xr.exit(),
+  xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
+  xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
