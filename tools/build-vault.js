@@ -216,7 +216,7 @@ function head(title, desc, url, rel, type, extra, ogKey) {
   <link rel="icon" href="${FAVICON}" />
   <link rel="stylesheet" href="${rel}assets/archive.css" />
 ${SEO.fontTags()}  <link rel="stylesheet" href="${rel}assets/vault/vault.css?v=4" />
-  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=19" />
+  <link rel="stylesheet" href="${rel}assets/vault/relic.css?v=20" />
   <link rel="canonical" href="${url}" />
   <meta property="og:type" content="${type}" />
   <meta property="og:site_name" content="The Divine Archives" />
