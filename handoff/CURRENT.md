@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (16:05 UTC)
+# Handoff — updated 2026-11-16 (18:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #168 ch40 sources merged (2026-11-16 ~15:53 UTC)
+## Latest: #166 VR height check merged (2026-11-16 ~18:48 UTC)
+`main` = `c5d100a8` (deploy run 293 green): #166 fast-forwarded per item on Carter's yes (`carter-yes-2026-11-16-pr166.md`). In a VR headset the museum now asks standing or seated and sets eye height; the choice stays on the visitor's device. Flat screens and phones unchanged. Next: #169/#170 (VR ground) re-sync onto the new `main`; #171 waits on Carter's yes; #172 needs its two fixes.
+
+## Earlier: #168 ch40 sources merged (2026-11-16 ~15:53 UTC)
 `main` = `9d35e620` (deploy run 292 green): #168 fast-forwarded per item on Carter's "a" (`decisions-2026-11-16-carter-a-168.md`). Chapter 40 gains nine checked sources for Bois Caïman and the zombie/tetrodotoxin story (chapter text unchanged). Next: PR #171 (ch72, Otto Rahn's SS membership sourced) needs an independent review, green checks and Carter's per-item yes.
 
 ## Earlier: #165 Vault tidy and #167 ch39 sources merged (2026-11-16 ~14:44 UTC)
