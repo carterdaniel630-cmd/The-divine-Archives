@@ -1,6 +1,6 @@
 # Independent review — PR #167, ch39 (Satanism) re-sourcing
 
-**Reviewer:** build loop run ..01HFWzTm4D3B2MfgKyqNedSi (scheduled), 2026-11-16 ~10:20 UTC. Wrote none of #167 (builder ..01HFWzTn8GtwQWhrWh4oYaff).
+**Reviewer:** build loop run ..01HFWzTm4D3B2MfgKyqNedSi (scheduled), 2026-11-16 ~10:07 UTC (commit time; an earlier "~10:20" was a mis-estimate). Wrote none of #167 (builder ..01HFWzTn8GtwQWhrWh4oYaff).
 **Candidate:** `loop/resourcing-ch39` **`b689f0fc`** on `main` `56d7c9d6`. Diff `origin/main...b689f0fc`: 6 files (ch39 markdown Sources list, `content/chapters.js` ch39 `<li>` lines, `docs/chapters/ch39.html` same lines + `dateModified`, `content/dates.json` ch39, `docs/sitemap.xml` two lastmods, `sources/ch39-satanism.md` appended log).
 **Verdict: PASS — 0 open findings.** Merge stays **per item** (Satanism chapter: religiously sensitive).
 
