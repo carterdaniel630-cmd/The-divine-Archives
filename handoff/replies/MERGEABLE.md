@@ -95,6 +95,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 > **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **#182 VR pilot — light rig per tier in a headset session (2026-11-17 ~06:25 UTC)** `loop/vr-light-rig` `118abdcc` on
+  `main` `5570e888`. **VR, per item** (new build). `docs/museum/app.js` + `docs/museum.html` (cache key v=56). In a VR
+  session only, lights go 8 → 5 (Quest 2) / 6 (Quest 3); flat museum unchanged. Missing: independent review (by a run that
+  wrote none of it), GitHub green incl. Lighthouse, Carter's per-item yes. If the living-ground stack merges first: re-sync
+  (museum.html cache key line only). Reply `vr/2026-11-17-0625-light-rig.md`.
 - **#181 VR pilot — G3 frame-budget harness + first measurement (2026-11-17 ~05:50 UTC)** `loop/vr-frame-budget`
   `66d6969b` on `main` `5570e888` (fast-forwards). **VR, per item** (new build). Tools and a report only, no `docs/`
   change: `tools/vr-frame-budget.js`, `tools/xr-standin.js` (stand-in headset moved out of `xr-entry-check.js` unchanged),
