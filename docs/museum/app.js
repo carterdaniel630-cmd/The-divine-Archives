@@ -24,7 +24,7 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=8";
+import { createWorld } from "./world.js?v=9";
 import { makeFauna } from "./fauna.js?v=7";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
@@ -1770,6 +1770,11 @@ window.__MU = {
   reactSim: (id, secs, every) => { const out = [], dt = 1 / 60, n = Math.round(secs / dt), k = Math.max(1, Math.round((every || 0.1) / dt));
     for (let i = 1; i <= n; i++) { S.world.update(dt, S.pos, S.inRoom, false); if (i % k === 0) out.push(Object.assign({ t: +(i * dt).toFixed(2) }, window.__MU.react(id))); }
     S.world.events.length = 0; return out; },
+  // Day and weather (world.js DAY): a `day` area's hour now (w 0..1 between its own sky and day.to, the sun's
+  // height, light, wind gust, horizon colour), its ground's light as drawn, and a jump of world time (day-check.js)
+  day: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.dayNow) return null;
+    return Object.assign({}, A.dayNow, { pit: !!A.pit, amb: A.pit ? A.LU.uAmb.value.toArray() : null, sunLight: A.pit ? A.LU.uSun.value.toArray() : null, sunDir: A.skyMat.uniforms.uSunDir.value.toArray(), groundSunDir: A.pit ? A.LU.uSunDir.value.toArray() : null, gustU: A.pit ? A.LU.uGust.value : null, water: A.waterMat ? A.waterMat.uniforms.uSky.value.toArray() : null }); },
+  daySkip: (secs) => { S.world.skip(secs); S.world.update(0, S.pos, S.inRoom, false); S.dirty = true; },
   statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),

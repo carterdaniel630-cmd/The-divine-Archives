@@ -16,7 +16,7 @@
    history exhibits. They always move; the motion switch only affects the view.
    ========================================================================== */
 import * as THREE from "three";
-import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=8";
+import { colorize, mergeG, rng, fbm2, smooth, PLANT_U } from "./world.js?v=9";
 
 const TAU = Math.PI * 2;
 const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
