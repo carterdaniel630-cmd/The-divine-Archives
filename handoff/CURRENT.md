@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-16 (21:55 UTC)
+# Handoff — updated 2026-11-17 (00:35 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #173 ch37 SPR 1986 sentence merged (2026-11-16 ~21:48 UTC)
+## Latest: #176 Pilate Stone stands upright (2026-11-17 ~00:33 UTC)
+`main` = `cf718704` (deploy run 298 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-16-carter-pilate-stone-yes.md`). The museum's 3D Pilate Stone now stands upright at CIIP II 1277's measurements, 82 cm high × 65 cm wide × 20 cm deep; letters unchanged. (#175 Rotunda reword went live just before, `8226a332`, deploy 297.) Owed by atlas: re-check the Game-Asset Pack One listing disclosure for the Pilate Stone. Next: #177 (ch38 sources) re-sync onto `cf718704`, delta check, Lighthouse, Carter's yes; re-sourcing ch32.
+
+## Earlier: #173 ch37 SPR 1986 sentence merged (2026-11-16 ~21:48 UTC)
 `main` = `8226a332` (deploy run 296 green), per item on Carter's a + re-clear yes. Chapter 37 now says that in 1986 a senior SPR member, Vernon Harrison, published a critique of Hodgson's handwriting evidence in the Society's journal (not that the Society itself "formally distanced" itself). ch37 stays cleared (re-cleared for this sentence only). Next: Pilate Stone orientation fix; re-sourcing.
 
 ## Earlier: #172 ch37 sources and #171 ch72 source merged (2026-11-16 ~19:12 and ~20:44 UTC)
