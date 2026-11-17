@@ -19,6 +19,9 @@
      ruling): plants within PART.R lean away from them, walking through the
      water leaves rings at their feet, and the creatures keep their distance
      (fauna.js, SHY). Flat screen and headset alike.
+   Areas marked `day` (the same three) are not held at one hour: their light
+     drifts slowly between the room's own sky and a second hour, and the
+     wind comes in gusts ("Day and weather", same ruling; DAY below).
    These are atmosphere, not reconstructions. The table ENV below is the one
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
@@ -36,7 +39,7 @@ export const ENV = {
   spine: { sky: "time", ground: "river", fauna: ["trout", "swallows"] },
   // corridors, one per Age
   "cor:01-prehistory": { sky: "night", ground: "brook", fauna: ["trout"] },
-  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"], feet: true },
+  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"], feet: true, day: { to: "clear", el: 68 } },
   "cor:03-early-iron-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:04-axial-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:05-late-antiquity": { sky: "dusk", ground: "brook", fauna: ["trout"] },
@@ -52,8 +55,8 @@ export const ENV = {
   // ch02 and ch03 (the VR pilot): each creature is logged with its source in sources/museum-fauna-pilot.md ("More
   // creatures", Carter 2026-11-16). ch03 had tilapia: not native to Mesopotamia (first Iraqi records 2007-2015), so
   // it has the bunni, a barbel endemic to the Tigris-Euphrates, instead.
-  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia", "pkingfisher", "butterflies"], feet: true },
-  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "bunni", "pkingfisher", "dragonflies"], feet: true },
+  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia", "pkingfisher", "butterflies"], feet: true, day: { to: "clear", el: 72 } },
+  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "bunni", "pkingfisher", "dragonflies"], feet: true, day: { to: "dusk", el: 20 } },
   ch04: { sky: "haze", ground: "river", fauna: ["tilapia", "kingfisher"] },
   ch05: { sky: "dawn", ground: "river", fauna: ["tilapia", "swallows"] },           // Ushas, the dawn
   ch57: { sky: "thunder", ground: "steppe", fauna: ["lizards"] },                   // the Storm-god of Hatti
@@ -162,6 +165,30 @@ const SKY = {
   time:     { lit: 0.8, zen: "#2f6fc4", hor: "#b8d8f0", cloud: "#ffffff", shade: "#a8b4c4", cover: 0.35, dens: 0.6, speed: 0.5, sun: 0.9, sunCol: "#fff2d8", cycle: 1 }
 };
 export function skyOf(key) { return SKY[key] || SKY.clear; }
+
+// ---------------------------------------------------------------- the hour drifts (ENV `day`)
+// "Day and weather" (Carter 2026-11-16, decisions-2026-11-16-carter-ground-at-your-feet.md 2; order-2026-11-15-vr-
+// buildout.md 5: light first, rain last if ever; vr-expert-walkthrough-2026-11-15.md: fixed hours per open space and
+// a slow drift between two of them). The museum's light is baked, so nothing baked moves. What follows the hour is
+// only what is already drawn live from the sky: the skylight's colours, cloud and sun; the sun's height (el, degrees;
+// the room's own hour keeps the sun where it always was, EL0); and the light the ground, water, plants and creatures
+// take from that sky. No lamp is added, no draw call, no texture. The drift there and back takes PERIOD seconds,
+// eased at both ends: it is never seen to move, only found changed (Comfort: no flash, no pulse). Wind comes in
+// slow gusts that bend the plants between 1 - GUST and 1 + GUST of their calm sway. The cloud speed is left alone
+// (changing it would jump the clouds). Rain is not built.
+export const DAY = { PERIOD: 480, GUST: 0.55, EL0: Math.atan2(0.8, Math.hypot(0.35, 0.45)) * 180 / Math.PI };
+const SUN_AZ = Math.atan2(-0.45, 0.35), DAY_C = ["zen", "hor", "cloud", "shade", "sunCol"], DAY_F = ["lit", "cover", "dens", "sun", "haze", "birds", "rays", "stars", "moon"];
+export function dayW(t) { return 0.5 - 0.5 * Math.cos(t / DAY.PERIOD * Math.PI * 2); }          // 0 at the room's own hour, 1 at day.to
+export function dayGust(t, seed) { return 1 + DAY.GUST * (0.6 * Math.sin(t * 0.23 + seed * 5.1) + 0.4 * Math.sin(t * 0.61 + seed * 2.3)); }
+// the sky at drift w between preset P0 and P1 (colours as THREE.Color, numbers mixed; missing numbers are 0)
+function dayMix(P0, P1, w) {
+  const o = {};
+  DAY_C.forEach((k) => { o[k] = C(P0[k] || "#ffffff").lerp(C(P1[k] || "#ffffff"), w); });
+  DAY_F.forEach((k) => { o[k] = (P0[k] || 0) * (1 - w) + (P1[k] || 0) * w; });
+  if (!P0.lit || !P1.lit) o.lit = (P0.lit || 0.8) * (1 - w) + (P1.lit || 0.8) * w;
+  return o;
+}
+function sunAt(el, v) { const e = el * Math.PI / 180, c = Math.cos(e); return v.set(c * Math.cos(SUN_AZ), Math.sin(e), c * Math.sin(SUN_AZ)); }
 
 // ---------------------------------------------------------------- shared GLSL
 const GLSL_NOISE = `
@@ -456,13 +483,13 @@ function pitMat(o, LU) {
   const amp = o.sway || 0;
   m.onBeforeCompile = (sh) => {
     Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime, uMe: PLANT_U.uMe }, o.uniforms || {});
-    sh.vertexShader = "uniform float uTime; uniform vec4 uMe; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
+    sh.vertexShader = "uniform float uTime, uGust; uniform vec4 uMe; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
       #ifdef USE_INSTANCING
       vec3 io = (instanceMatrix * vec4(0., 0., 0., 1.)).xyz;
       #else
       vec3 io = vec3(0.);
       #endif
-      float sw = sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1);
+      float sw = (sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1)) * uGust;
       transformed.x += sw * ${amp.toFixed(3)} * transformed.y * transformed.y * 2.; transformed.z += sw * ${(amp * 0.5).toFixed(3)} * transformed.y * transformed.y;
       ${o.part ? PART_GLSL : ""}
       ${o.vert || ""}`).replace("#include <skinning_vertex>", `#include <skinning_vertex>
@@ -490,13 +517,17 @@ function pitMat(o, LU) {
   return m;
 }
 export { pitMat, colorize, mergeG, blade, rot, rockGeo, PLANT_U };
-function lightOf(A) {
-  const P = skyOf(A.env.sky), lit = P.lit || 0.8;
-  const amb = C(P.hor).lerp(C(P.zen), 0.5).multiplyScalar(0.35 + 0.75 * lit);
-  const sun = C(P.sunCol || "#ffffff").multiplyScalar((P.sun || 0) * 0.55 * lit);
+// the light a sky preset (or a mix of two, dayMix) throws on the ground, water, plants and creatures under it
+function skyLight(P, amb, sun) {
+  const lit = P.lit || 0.8;
+  amb.set(P.hor).lerp(C(P.zen), 0.5).multiplyScalar(0.35 + 0.75 * lit);
+  sun.set(P.sunCol || "#ffffff").multiplyScalar((P.sun || 0) * 0.55 * lit);
   if (P.moon) sun.add(C("#9ab0e0").multiplyScalar(P.moon * 0.18));
+}
+function lightOf(A) {
+  const amb = new THREE.Color(), sun = new THREE.Color(); skyLight(skyOf(A.env.sky), amb, sun);
   return { uAmb: { value: amb }, uSun: { value: sun }, uSunDir: { value: new THREE.Vector3(0.35, 0.8, -0.45).normalize() }, uLamp: { value: new THREE.Color(0.2, 0.14, 0.08) },
-    uWater: { value: A.waterY == null ? -99 : A.waterY }, uLava: { value: A.biome.lava || 0 } };
+    uWater: { value: A.waterY == null ? -99 : A.waterY }, uLava: { value: A.biome.lava || 0 }, uGust: { value: 1 } };
 }
 
 // ---------------------------------------------------------------- plants, stones and other scattered things
@@ -712,6 +743,7 @@ function buildPit(A, q, faunaFn) {
   // water
   if (B.water) {
     const wm = waterMaterial(Object.assign({ sky: skyOf(A.env.sky).hor }, B.water)); A.waterMat = wm;
+    A.waterBase = { uDeep: wm.uniforms.uDeep.value.clone(), uShallow: wm.uniforms.uShallow.value.clone() };
     ["uDeep", "uShallow", "uSky"].forEach((k) => wm.uniforms[k].value.multiplyScalar(A.lit));
     wm.uniforms.uLamp.value.set(A.lamp[0], A.lamp[1], A.lamp[2]);
     const flow = B.water.flow || [0, 0], fw = A.axis === "x" ? flow : [flow[1], flow[0]]; wm.uniforms.uFlow.value.set(fw[0], fw[1]);
@@ -889,6 +921,18 @@ export function createWorld(opt) {
     }
     PLANT_U.uMe.value.set(pos.x, pos.z, onFeet ? meK : 0, 0);
   }
+  // the hour and the wind of a `day` area at world time t (DAY above): the skylight, then (once built) its ground
+  function dayApply(A, t) {
+    const w = dayW(t), P = A.skyMat.uniforms, M = dayMix(skyOf(A.env.sky), skyOf(A.env.day.to), w), el = DAY.EL0 + (A.env.day.el - DAY.EL0) * w;
+    P.uZen.value.copy(M.zen); P.uHor.value.copy(M.hor); P.uCloud.value.copy(M.cloud); P.uShade.value.copy(M.shade); P.uSunCol.value.copy(M.sunCol);
+    P.uCover.value = M.cover; P.uDens.value = M.dens; P.uSun.value = M.sun; P.uHaze.value = M.haze; P.uBirds.value = M.birds; P.uRays.value = M.rays; P.uStars.value = M.stars; P.uMoon.value = M.moon;
+    sunAt(el, P.uSunDir.value);
+    A.dayNow = { w, el, lit: M.lit, gust: dayGust(t, A.seed), hor: "#" + M.hor.getHexString(), sun: M.sun };
+    if (!A.pit) return;
+    skyLight(M, A.LU.uAmb.value, A.LU.uSun.value); A.LU.uSunDir.value.copy(P.uSunDir.value); A.LU.uGust.value = A.dayNow.gust;
+    if (A.waterMat && A.waterBase) { const W = A.waterMat.uniforms; W.uDeep.value.copy(A.waterBase.uDeep).multiplyScalar(M.lit); W.uShallow.value.copy(A.waterBase.uShallow).multiplyScalar(M.lit); W.uSky.value.copy(M.hor).multiplyScalar(M.lit); }
+  }
+  function skip(secs) { time += secs; }
   function update(dt, pos, inRoom, reduce) {
     if (!reduce) time += dt;
     builtThisFrame = 0; flashNow = 0;
@@ -906,6 +950,7 @@ export function createWorld(opt) {
       if (!see) continue;
       animating = animating || !reduce;
       const P = A.skyMat.uniforms; P.uTime.value = time;
+      if (A.env.day) dayApply(A, time);
       // lightning
       const bolts = A.skyMat.userData.preset.bolts || 0;
       if (bolts && !reduce) {
@@ -939,5 +984,5 @@ export function createWorld(opt) {
     return best;
   }
   function forceBolt(id) { const A = areas.find((x) => x.id === id); if (A) A.nextBolt = 0; }
-  return { addArea, update, areaAt, splash, events, areas, forceBolt, plantsMe: () => PLANT_U.uMe.value.toArray(), get flash() { return flashNow; }, get time() { return time; } };
+  return { addArea, update, areaAt, splash, events, areas, forceBolt, skip, plantsMe: () => PLANT_U.uMe.value.toArray(), get flash() { return flashNow; }, get time() { return time; } };
 }
