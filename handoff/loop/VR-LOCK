@@ -1,2 +1,1 @@
-2026-11-17T04:12Z VR loop run (independent review of #178; previous lock 00:51Z was stale, run left no note)
-RELEASED 2026-11-17T04:59Z: run finished (#178 review PASS). Removing this file was blocked in that session; treat this lock as free (its 04:12Z stamp is stale from 05:42Z anyway).
+2026-11-17T05:00Z VR loop run (G3 frame budget)
