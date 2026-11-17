@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-17 (00:35 UTC)
+# Handoff — updated 2026-11-17 (04:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #176 Pilate Stone stands upright (2026-11-17 ~00:33 UTC)
+## Latest: #177 ch38 sources merged (2026-11-17 ~04:44 UTC)
+`main` = `5570e888` (deploy run 299 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-16-carter-ch38-yes.md`). Chapter 38 (Wicca & Modern Paganism) gains seven checked sources for the five claims the Wikipedia removal left unsourced (Gardner's New Forest coven story, Dianic Wicca, the Icelandic Ásatrú society, the 2007 VA pentacle, the name "Mabon"); chapter text unchanged; ch38 stays cleared. Next: #179 (ch32) and #180 (ch33) need independent review, re-sync onto `5570e888`, delta check and Lighthouse, then merge on Carter's yes (on record).
+
+## Earlier: #176 Pilate Stone stands upright (2026-11-17 ~00:33 UTC)
 `main` = `cf718704` (deploy run 298 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-16-carter-pilate-stone-yes.md`). The museum's 3D Pilate Stone now stands upright at CIIP II 1277's measurements, 82 cm high × 65 cm wide × 20 cm deep; letters unchanged. (#175 Rotunda reword went live just before, `8226a332`, deploy 297.) Owed by atlas: re-check the Game-Asset Pack One listing disclosure for the Pilate Stone. Next: #177 (ch38 sources) re-sync onto `cf718704`, delta check, Lighthouse, Carter's yes; re-sourcing ch32.
 
 ## Earlier: #173 ch37 SPR 1986 sentence merged (2026-11-16 ~21:48 UTC)
