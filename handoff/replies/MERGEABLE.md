@@ -121,9 +121,13 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **VR, per item** (new build). The hour drifts (Egypt/corridor golden → clear, Mesopotamia haze → dusk, 8 min,
   eased), plants gust; no light/draw call added; rain not built. Local: day-check all pass (960/390/360), xr-entry
   pass, ground-check pass, react-check ch03 pass (ch02 lines lost from the log; corridor OOM as on #170/#174),
-  phone baseline 39/85/68 = #174's, build no diff, verify 18/18, tests 51/51, review-checks 9/9. **Missing:**
-  independent review; Lighthouse on `dc1f1f75` (running at 01:00 UTC); re-sync onto `main` at merge; Carter's
-  per-item yes (after #169, #170, #174).
+  phone baseline 39/85/68 = #174's, build no diff, verify 18/18, tests 51/51, review-checks 9/9.
+  **GitHub 7/7 green incl. Lighthouse on `dc1f1f75`** (00:52 UTC; guard skipped as usual). **Independent review PASS,
+  0 open** (2026-11-17 ~05:10 UTC, a VR-loop run that wrote none of it; `reviews/loop/2026-11-17-vr-daylight-178-independent-review.md`
+  on `review-log` `e8b2f187`; local re-run green: day-check 960/390/360, react-check 71 ok incl. ch02 and the corridor,
+  xr-entry 74 ok, phone baseline 39/85/68, build no diff, 18/18, 51/51, 9/9). **Qualified except:** #169, #170, #174
+  first; re-sync onto `main` (now `5570e888`; merge only; re-run `build-entity-registry.js` for the generated registry
+  files); Carter's per-item yes. Reply `vr/2026-11-17-0510-review-178.md`.
 - **#170 VR pilot — the ground reacts to you (ch02, ch03, Bronze Age corridor)** `loop/vr-react` `fbc0d6f4` (stacked
   on #169 `5067bc74`; PR base `loop/vr-ground`; built 2026-11-16 ~13:14–15:50 UTC by VR-loop session
   ..01HFWzTkbhbPYXxCEMorQQ2J, which may not review it). **VR, per item** (new build). Creatures keep their distance
