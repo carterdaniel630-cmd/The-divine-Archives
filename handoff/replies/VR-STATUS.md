@@ -1,35 +1,36 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-17 ~05:15 UTC. **Independent review of #178 (day and weather): PASS, 0 open.** GitHub green
-incl. Lighthouse on `dc1f1f75`. #169, #170, #174 and now #178 are all qualified except Carter's yes (and a
-merge-only re-sync onto `main`, which moved to `5570e888` with #177).
+**As of:** 2026-11-17 ~05:50 UTC. **G3 frame budget built: PR #181** (`loop/vr-frame-budget` `66d6969b`, tools and
+report only). The measurement says the pilot rooms are **not yet shown to fit the Quest 2 floor**: there are 8 lights
+where 5 are allowed, ch02/ch03 draw ~200–226 calls where 160 are allowed, and the Wing II corridor sightline passes the
+triangle hard-fail line. Report: `audits/vr-frame-budget/2026-11-17-pilot.md`.
 
 ## Done
-- **Review of #178 — PASS, 0 open** (this run; reply `vr/2026-11-17-0510-review-178.md`; filed on `review-log`
-  `e8b2f187`). Local re-run green, incl. react-check for ch02 (71 ok, the corridor too) and day-check at 960/390/360.
-  One wording fix: the hour drift runs on the museum's single clock, so only a first visit soon after the page loads
-  is sure to start at the room's own hour; a later visit arrives wherever the 8-minute cycle has got to.
-- Day and weather — PR #178 `loop/vr-daylight` `dc1f1f75`. Reviews PASS: #174, #170, #169. #166 height check LIVE.
-- Spec set is staged in `handoff/vr-*.md` (atlas, 2026-11-15); Next was re-planned from it.
-- The 00:51Z run (also reviewing #178) left a lock and nothing else; this run overwrote it as stale.
+- **G3 — PR #181** (this run; reply `vr/2026-11-17-0550-frame-budget.md`). Harness `tools/vr-frame-budget.js`;
+  stand-in headset shared in `tools/xr-standin.js`. Local checks all green; `xr-entry-check` all pass.
+- Review of #178: PASS, 0 open. Reviews PASS: #174, #170, #169. #166 height check is LIVE.
+- The spec set is staged in `handoff/vr-*.md`.
 
 ## In progress
-- Nothing held. Stack: `main` → #169 `5067bc74` → #170 `fbc0d6f4` → #174 `aadc971c` → #178 `dc1f1f75`. At merge
-  time: re-sync onto `5570e888` (merge only) and re-run `node tools/build-entity-registry.js` for the generated
-  registry files.
+- Nothing held. Living-ground stack: `main` → #169 `5067bc74` → #170 `fbc0d6f4` → #174 `aadc971c` → #178 `dc1f1f75`.
+  At merge time: re-sync onto `5570e888` (merge only) and re-run `node tools/build-entity-registry.js`.
+- #181 needs its independent review (by a run that wrote none of it) and GitHub green incl. Lighthouse.
 
 ## Next (in order)
-1. **G3 Frame budget**: Quest 2 72 fps gate per pilot room (with the living ground, creatures and the drift in it),
-   draw calls and triangles per view for the Rotunda, ch02, ch03; harness beside `tools/museum-baseline.js`, with a
-   report. Measure, don't guess. Needs no approval to build.
-2. Controllers + select → plaques (incl. §15 seated re-anchoring of every plaque). This is the pilot's answer to the
-   field report's "relics still aren't clickable" (item 5) for the three pilot rooms; audio; performance scope;
-   pilot spaces; living-room contract (as before).
-3. Day and weather, later steps (each its own piece): air (dust in the light), the Rotunda's oculus shaft. Rain:
-   not in the pilot.
-4. More creatures, later candidates (each needs a source and the keep-your-distance rule first): marsh frog,
-   Euphrates softshell turtle (ch03); Nile frogs, turtles (ch02).
-G4 curtain: not needed for ch02 (Carter); other pending elements surface before building.
+1. **Independent review of #181** (any VR run that did not write it).
+2. **Light rig per tier, in a session only** (§2 as settled in AM-PER-01; Appendix risk 1). Target: ≤ 5 lights on
+   Quest 2 and ≤ 6 on Quest 3. Take the lightning hemisphere out of the scene while it is at 0, merge the hemispheres,
+   and use 2 pooled points on Quest 2 (3 on Quest 3). The flat museum stays unchanged. Measure before and after with
+   `tools/vr-frame-budget.js`. Needs no approval to build.
+3. **Draw calls in ch02/ch03** (§4b: extend `bake()` to relic shared-material meshes) and **portal culling for the
+   corridor sightline** (§5). Each is its own piece and is re-measured with the harness. Also find the source of the
+   5,206 points per eye.
+4. Controllers + select → plaques (incl. §15 seated re-anchoring). This answers the field report's "relics not
+   clickable" for the pilot rooms.
+5. In-headset overlay `?vrfps=1` (§7) so Carter's walk can certify frame time.
+6. Day and weather, later steps (dust in the light, the Rotunda's oculus shaft). More creatures (each needs a source
+   first).
+G4 curtain: not needed for ch02 (Carter). Other pending elements surface before building.
 
 ## Carter's field report (`field-report-2026-11-16-vr-walk.md`), against the VR pilot
 - 2 ground below the glass, 3 birds below the glass: fixed by the waiting stack (#169 raises the ground; react-check
@@ -41,6 +42,7 @@ G4 curtain: not needed for ch02 (Carter); other pending elements surface before 
   pilot rooms or not in the pilot spec. Not built by this loop; for the build loop / Carter.
 
 ## Needs Carter
+0. **Your yes for #181 (frame-budget tool and report)** when its review passes. Tools only, nothing on the live site changes. Options: a) yes once reviewed (recommended); b) not yet.
 1. **Your yes to put the living ground live: #169 (ground at your feet), #170 (creatures and plants react to you),
    #174 (more creatures), #178 (day and weather).** All four reviewed PASS and green. They go live together, in that
    order; this is also the fix for "ground below the glass" and "birds below the glass" from your walk. Options:
