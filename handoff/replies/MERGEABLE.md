@@ -99,8 +99,10 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   `66d6969b` on `main` `5570e888` (fast-forwards). **VR, per item** (new build). Tools and a report only, no `docs/`
   change: `tools/vr-frame-budget.js`, `tools/xr-standin.js` (stand-in headset moved out of `xr-entry-check.js` unchanged),
   `audits/vr-frame-budget/2026-11-17-pilot.md` + JSON. Local: build no diff, review-checks 9/0, verify all pass, tests
-  51/51, xr-entry-check all pass (74 ok), harness 0 script errors on `main` and on the #178 stack. **Missing:**
-  independent review by a run that wrote none of it; GitHub green incl. Lighthouse on `66d6969b`; Carter's per-item yes.
+  51/51, xr-entry-check all pass (74 ok), harness 0 script errors on `main` and on the #178 stack. **Independent
+  review PASS, 0 open** (05:45 UTC, run that wrote none of it; re-measured, figures reproduced; filed on `review-log`,
+  reply `vr/2026-11-17-0545-review-181.md`). **GitHub green on `66d6969b`:** checks, guard, runtime ×2; Lighthouse does
+  not run for this PR (its workflow triggers only on `docs/**`; no `docs/` change). **Missing: only Carter's per-item yes.**
   Reply `vr/2026-11-17-0550-frame-budget.md`.
 - **PR #180 ch33 re-sourcing, flag 89 (2026-11-17 ~01:10 UTC)** `loop/resourcing-ch33` `ac57054a` on `main` `cf718704` (fast-forwards): 2 Sources entries (Ortiz de Montellano, *Skeptical Inquirer* 1996; van Beek, *Current Anthropology* 1991, abstract) + dated source-log section; chapter text unchanged. Local: build no diff, review-checks 9/0/2warn, verify 18/18, tests 51/51, headless 320/360/390/1280 0 errors. **Per item** (religious subject). **GitHub 10/10 green incl. Lighthouse on `ac57054a` (01:16 UTC, run 43991771611).** Missing: independent review by a session other than ..01HFWzTm39J9wiLJdNhDEjS3; Carter's yes.
 - **PR #179 ch32 re-sourcing, flag 86 (2026-11-17 ~00:58 UTC)** `loop/resourcing-ch32` `3b1d00c3` on `main` `cf718704` (fast-forwards): 3 Sources entries (Gibbons 1998; U. Oregon "Myth of Nine Million Victims" after Behringer 1998; Hutton, Gresham 2024) + dated source-log section; chapter text unchanged. Local: build no diff, review-checks 9/0/2warn, verify 18/18, tests 51/51, headless 320/360/390/1280 0 errors. **Per item** (religious subject). **GitHub 10/10 green incl. Lighthouse on `3b1d00c3` (01:12 UTC, run 43991386286).** Missing: independent review by a session other than ..01HFWzTm39J9wiLJdNhDEjS3; Carter's yes.
