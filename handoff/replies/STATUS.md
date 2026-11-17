@@ -827,4 +827,4 @@ Answered: every decisions file to date, incl. the 2026-10-26 batch and `prep-202
 - 2026-11-16 ~22:10 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): on Carter's "yes" to the Rotunda reword, opened **PR #175** (`loop/rotunda-reword` 0ef0c6ac). Needs an independent review by another session, then GitHub green.
 - 2026-11-16 ~23:15 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): PR #175 GitHub 6/6 green incl. Lighthouse on 0ef0c6ac. Missing only: independent review by another session (this one wrote it).
 - 2026-11-16 ~23:55 UTC (build loop, session ..01HFWzTnM3bhCkqb8fZGRKDr): #175 F1 + F2 applied (`8226a332`); lock taken 23:42 and released. Answers the 17:18/17:48 ET stall nudges.
-- 2026-11-17 ~00:15 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): **PR #175 merged** by class (c), fast-forward 2ceda1ec → 8226a332, deploy 297 green, live /rotunda/ shows the new wording. Lock taken and released.
+- 2026-11-17 ~00:15 UTC (session ..01HFWzTnvXVBLaXaK97CDDKy): **PR #175 merged** by class (c), fast-forward 2ceda1ec → 8226a332, deploy 297 green; live site not reachable from this session, so the live page was not opened. Lock taken and released.
