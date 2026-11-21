@@ -19,3 +19,10 @@ Session ..01HFWzTkiswjZCRdX7PmTty8, on Carter's in-thread go (`decisions-2026-11
 
 ## #182
 VR loop's review PASS 0 is filed on review-log (2d08ec5b; its staging write-back was refused, see VR-LOCK). Needs re-sync onto d33e839d, delta check, green, merge per item (Carter's yes on file).
+
+## Later (~23:30 UTC): #182 re-synced
+- #182 `loop/vr-light-rig` 118abdcc → **25475e9e** (merge main d33e839d). Only conflict: `docs/museum.html` cache key; kept #182's `app.js?v=56` (main has 55, base had 51). Diff vs main == reviewed diff except that cache-key base line.
+- Local: build no diff, review-checks 9/0/0, verify all pass, tests 51/51; xr-entry-check **all pass** (74 ok) on 25475e9e in a clean worktree.
+- GitHub at ~23:30 UTC: #179 ce5a84f3, #180 6871e3ca, #182 25475e9e — every check green except Lighthouse, still running on all three (one originality run on 6871e3ca cancelled by the PR base change; a later originality run on the same head is green).
+
+## Owed before merge (each): delta check by a session other than ..01HFWzTkiswjZCRdX7PmTty8; Lighthouse green; Carter's go in the merging session's thread (yeses on file).
