@@ -476,12 +476,15 @@ CAT.v44 = (E) => {                                          // the Pilate Stone:
   //   [---]S TIBERIEVM / [----]NTIVS PILATVS / [-----]ECTVS IVDA[--]E / [-----]E[-------]
   // Each line loses its start to the broken left side; line 3 has a two-letter gap before its last E; of line 4
   // only one letter survives, a vertical stroke under an apex, read as E. Every line runs left to right.
-  const w = 0.82, h = 0.65, pts = outline(w, h, { jag: 0.02, jagL: 0.08, n: 10 }); pts.forEach((p) => { if (p[0] < -0.2) p[0] += (R() * 0.08); });
+  // The block stands upright, as CIIP II 1277 measures it: 82 cm high, 65 cm wide, 20 cm deep (until 2026-11-16 the
+  // model lay on its side, 82 wide). The letters keep their size (6 cm) and their place below the top and in from the
+  // right edge; the taller block simply runs on below the last line.
+  const w = 0.65, h = 0.82, pts = outline(w, h, { jag: 0.02, jagL: 0.08, n: 10 }); pts.forEach((p) => { if (p[0] < -0.2) p[0] += (R() * 0.08); });
   const g = slab({ pts, d: 0.2, stone: "limestone", env: E.env, relief: 5, paint: (c, hg, W, H) => {
-    const px = Math.round(H * 0.092), right = W * 0.9, font = `600 ${px}px "Times New Roman", Times, "Liberation Serif", "DejaVu Serif", serif`;
+    const k = W / w, px = Math.round(0.06 * k), right = W - 0.082 * k, font = `600 ${px}px "Times New Roman", Times, "Liberation Serif", "DejaVu Serif", serif`;
     const cut = (x, y, str) => { [[c, "rgba(60,50,40,.7)"], [hg, "#3a3a3a"]].forEach(([q, ink]) => { if (!q) return; q.save(); q.font = font; q.textAlign = "left"; q.textBaseline = "alphabetic"; q.fillStyle = ink; q.fillText(str, x, y); q.restore(); }); };
     const wid = (str) => { c.save(); c.font = font; const m = c.measureText(str).width; c.restore(); return m; };
-    const base = [H * 0.3, H * 0.47, H * 0.64, H * 0.81];
+    const base = [0.195, 0.3055, 0.416, 0.5265].map((m) => m * k);   // baselines, in metres below the top
     cut(right - wid("S TIBERIEVM"), base[0], "S TIBERIEVM");
     cut(right - wid("NTIVS PILATVS"), base[1], "NTIVS PILATVS");
     const gap = wid("EA"), tail = wid("E");                  // line 3: IVDA, two letters lost, then the last E

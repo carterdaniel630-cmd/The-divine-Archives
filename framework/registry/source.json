@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2032,
+ "count": 2037,
  "entities": [
   {
    "id": "source:3dgo-app/94d72cec62",
@@ -4781,6 +4781,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:doi-org/0e452e8780",
+   "type": "source",
+   "label": "https://doi.org/10.1093/jaarel/lfab109",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
+  },
+  {
    "id": "source:doi-org/26160de2be",
    "type": "source",
    "label": "https://doi.org/10.1080/13530194.2022.2057279",
@@ -4806,6 +4815,15 @@
     "chapter:ch75"
    ],
    "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
+   "id": "source:doi-org/4f30735d8e",
+   "type": "source",
+   "label": "https://doi.org/10.1525/nr.2008.11.3.37",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
   },
   {
    "id": "source:doi-org/61efcc8130",
@@ -14492,6 +14510,15 @@
    "from": "sources/v49-book-of-enoch.md"
   },
   {
+   "id": "source:psi-encyclopedia-spr-ac-uk/7edaec21b8",
+   "type": "source",
+   "label": "https://psi-encyclopedia.spr.ac.uk/articles/hodgson-report-theosophy/",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
+  },
+  {
    "id": "source:publications-dainst-org/2925843ff2",
    "type": "source",
    "label": "https://publications.dainst.org/journals/efb/article/view/2596",
@@ -15084,6 +15111,15 @@
    "type": "source",
    "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx",
    "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
+   "id": "source:sacred-texts-com/14ba49c68a",
+   "type": "source",
+   "label": "https://sacred-texts.com/the/sd/sd2-3-09.htm",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
   },
   {
    "id": "source:sacred-texts-com/2a4e0f40a7",
@@ -16666,6 +16702,15 @@
     "chapter:ch60"
    ],
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
+  },
+  {
+   "id": "source:theosociety-org/9ff0191926",
+   "type": "source",
+   "label": "https://theosociety.org/pasadena/sd/sd-hp.htm",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
   },
   {
    "id": "source:theosophical-org/deb7bf79a8",
