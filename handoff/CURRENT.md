@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-21 (20:30 UTC)
+# Handoff — updated 2026-11-21 (23:10 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #181 VR frame-budget harness merged (2026-11-21 ~20:26 UTC)
+## Latest: VR stack #169/#170/#174/#178 merged (2026-11-21 ~22:45–23:00 UTC)
+`main` = `d33e839d` (deploy runs 301–304 green), fast-forwarded per item on Carter's yeses plus his in-thread go (`decisions-2026-11-21-carter-go-vr-stack.md`). In the VR museum pilot (Egypt, Mesopotamia, Bronze Age corridor): the ground and birds sit above the glass floor, the ground reacts to the visitor, more creatures, and the hour drifts with wind gusts. Flat screens and phones unchanged. Next: #179 (ch32) / #180 (ch33) re-synced and waiting on a delta check + Lighthouse; #182 (VR light rig) re-sync.
+
+## Earlier: #181 VR frame-budget harness merged (2026-11-21 ~20:26 UTC)
 `main` = `66d6969b` (deploy run 300 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-17-carter-pr181-yes.md`). Adds `tools/vr-frame-budget.js`, `tools/xr-standin.js` and the pilot measurement report (`audits/vr-frame-budget/`); no visitor-facing change. Next: #169 (VR ground) re-sync onto `66d6969b`, delta check, Lighthouse, merge per item (yes fired); then the #170/#174/#178 stack, Rök Stone honesty fix, #182, #179/#180.
 
 ## Earlier: #177 ch38 sources merged (2026-11-17 ~04:44 UTC)
