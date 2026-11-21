@@ -1,6 +1,6 @@
 {
  "type": "source",
- "count": 2027,
+ "count": 2037,
  "entities": [
   {
    "id": "source:3dgo-app/94d72cec62",
@@ -698,6 +698,12 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:archive-aramcoworld-com/444274f5f4",
+   "type": "source",
+   "label": "https://archive.aramcoworld.com/issue/199405/butterflies.of.egypt.htm",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:archive-archaeology-org/e81af6a05a",
@@ -3435,6 +3441,12 @@
    "from": "sources/ch67-minoan-crete.md"
   },
   {
+   "id": "source:cambridge-org/e23fa3a273",
+   "type": "source",
+   "label": "https://www.cambridge.org/core/product/A4C4E5C0EDEF5B8C57FE1556BD75F798",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:cambridge-org/ebb2323a01",
    "type": "source",
    "label": "https://www.cambridge.org/core/journals/journal-of-the-royal-asiatic-society/article/abs/new-interpretation-of-akbars-infallibility-decree-of-15791/0DC1BE9F648EC16A790CF8DAE48E6806",
@@ -4141,6 +4153,12 @@
     "chapter:ch75"
    ],
    "from": "sources/ch75-siberian-arctic-shamanism.md"
+  },
+  {
+   "id": "source:czasopisma-bg-ug-edu-pl/64b2612697",
+   "type": "source",
+   "label": "https://czasopisma.bg.ug.edu.pl/index.php/oandhs/article/view/13500",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:d-museum-kokugakuin-ac-jp/bc17dcf4dc",
@@ -5128,6 +5146,12 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:ejabf-journals-ekb-eg/3192c728dc",
+   "type": "source",
+   "label": "https://ejabf.journals.ekb.eg/article_241691.html",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:ejournal-brin-go-id/92af4dcbd3",
@@ -6660,6 +6684,12 @@
     "relic:v17"
    ],
    "from": "sources/v17-gospel-of-jesus-wife.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/6a9bdf9234",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Pied_kingfisher",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:en-wikipedia-org/6b92d57cf4",
@@ -9270,6 +9300,12 @@
    "from": "sources/ch76-olmec.md"
   },
   {
+   "id": "source:feow-org/28f36b750a",
+   "type": "source",
+   "label": "https://feow.org/ecoregions/details/441",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:fgh-perseids-org/01a5d0f5e3",
    "type": "source",
    "label": "https://fgh.perseids.org/read/greekLit/tlg0007/tlg084b/perseus-eng4/3-21",
@@ -9322,6 +9358,12 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:fishbase-se/459b4aa4d2",
+   "type": "source",
+   "label": "https://fishbase.se/summary/54811",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:fiveable-me/6efa83fc68",
@@ -9475,6 +9517,12 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:gizmodo-com/a70e31348c",
+   "type": "source",
+   "label": "https://gizmodo.com/ancient-egyptian-murals-show-lifelike-doves-kingfisher-1849923985",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:globalfreedomofexpression-columbia-edu/d8344306b8",
@@ -11151,6 +11199,12 @@
    "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
+   "id": "source:jnhm-uobaghdad-edu-iq/68cdc23221",
+   "type": "source",
+   "label": "https://jnhm.uobaghdad.edu.iq/index.php/BINHM/article/view/627",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:johnwoodruff-com/66dd79091c",
    "type": "source",
    "label": "https://www.johnwoodruff.com/research/scholarship/rethinking-the-context-of-popol-vuh",
@@ -11588,6 +11642,12 @@
     "chapter:ch74"
    ],
    "from": "sources/ch74-secularism-nonreligion.md"
+  },
+  {
+   "id": "source:kuwaitbirds-org/3ee9e5f049",
+   "type": "source",
+   "label": "https://kuwaitbirds.org/node/639",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:larryhurtado-wordpress-com/c1ab9874b9",

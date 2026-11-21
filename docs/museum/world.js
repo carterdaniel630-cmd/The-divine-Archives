@@ -11,6 +11,17 @@
      (a brook, a lotus pond, the Nile's reeds, a shore with waves, dunes,
      a forest floor, snow, red earth, a cave, lava, a starry abyss...),
      which you walk over as if it were under glass in a museum floor.
+     Areas marked `feet` (the VR pilot's: ch02, ch03 and their corridor) have
+     no glass: their ground is raised to the floor, so the visitor walks on
+     the earth with the water just below (Carter, 2026-11-16, "ground at your
+     feet"; handoff/decisions-2026-11-16-carter-ground-at-your-feet.md).
+     There the ground also reacts to the visitor ("React to you", same
+     ruling): plants within PART.R lean away from them, walking through the
+     water leaves rings at their feet, and the creatures keep their distance
+     (fauna.js, SHY). Flat screen and headset alike.
+   Areas marked `day` (the same three) are not held at one hour: their light
+     drifts slowly between the room's own sky and a second hour, and the
+     wind comes in gusts ("Day and weather", same ruling; DAY below).
    These are atmosphere, not reconstructions. The table ENV below is the one
    place the choices are made; fauna.js puts animals in them and sound.js
    gives each its sound.
@@ -28,7 +39,7 @@ export const ENV = {
   spine: { sky: "time", ground: "river", fauna: ["trout", "swallows"] },
   // corridors, one per Age
   "cor:01-prehistory": { sky: "night", ground: "brook", fauna: ["trout"] },
-  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"] },
+  "cor:02-bronze-age": { sky: "golden", ground: "brook", fauna: ["trout"], feet: true, day: { to: "clear", el: 68 } },
   "cor:03-early-iron-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:04-axial-age": { sky: "clear", ground: "brook", fauna: ["trout"] },
   "cor:05-late-antiquity": { sky: "dusk", ground: "brook", fauna: ["trout"] },
@@ -41,8 +52,11 @@ export const ENV = {
   ch42: { sky: "dawn", ground: "field", fauna: ["swallows", "mice"] },              // the Neolithic: the first fields
   ch61: { sky: "starry", ground: "redearth", fauna: ["lizards"] },                  // the Dreaming: desert country under the night sky
   // Bronze Age
-  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia"] },
-  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "tilapia"] },
+  // ch02 and ch03 (the VR pilot): each creature is logged with its source in sources/museum-fauna-pilot.md ("More
+  // creatures", Carter 2026-11-16). ch03 had tilapia: not native to Mesopotamia (first Iraqi records 2007-2015), so
+  // it has the bunni, a barbel endemic to the Tigris-Euphrates, instead.
+  ch02: { sky: "golden", ground: "nile", fauna: ["cats", "lizards", "ibis", "tilapia", "pkingfisher", "butterflies"], feet: true, day: { to: "clear", el: 72 } },
+  ch03: { sky: "haze", ground: "marsh", fauna: ["heron", "bunni", "pkingfisher", "dragonflies"], feet: true, day: { to: "dusk", el: 20 } },
   ch04: { sky: "haze", ground: "river", fauna: ["tilapia", "kingfisher"] },
   ch05: { sky: "dawn", ground: "river", fauna: ["tilapia", "swallows"] },           // Ushas, the dawn
   ch57: { sky: "thunder", ground: "steppe", fauna: ["lizards"] },                   // the Storm-god of Hatti
@@ -151,6 +165,30 @@ const SKY = {
   time:     { lit: 0.8, zen: "#2f6fc4", hor: "#b8d8f0", cloud: "#ffffff", shade: "#a8b4c4", cover: 0.35, dens: 0.6, speed: 0.5, sun: 0.9, sunCol: "#fff2d8", cycle: 1 }
 };
 export function skyOf(key) { return SKY[key] || SKY.clear; }
+
+// ---------------------------------------------------------------- the hour drifts (ENV `day`)
+// "Day and weather" (Carter 2026-11-16, decisions-2026-11-16-carter-ground-at-your-feet.md 2; order-2026-11-15-vr-
+// buildout.md 5: light first, rain last if ever; vr-expert-walkthrough-2026-11-15.md: fixed hours per open space and
+// a slow drift between two of them). The museum's light is baked, so nothing baked moves. What follows the hour is
+// only what is already drawn live from the sky: the skylight's colours, cloud and sun; the sun's height (el, degrees;
+// the room's own hour keeps the sun where it always was, EL0); and the light the ground, water, plants and creatures
+// take from that sky. No lamp is added, no draw call, no texture. The drift there and back takes PERIOD seconds,
+// eased at both ends: it is never seen to move, only found changed (Comfort: no flash, no pulse). Wind comes in
+// slow gusts that bend the plants between 1 - GUST and 1 + GUST of their calm sway. The cloud speed is left alone
+// (changing it would jump the clouds). Rain is not built.
+export const DAY = { PERIOD: 480, GUST: 0.55, EL0: Math.atan2(0.8, Math.hypot(0.35, 0.45)) * 180 / Math.PI };
+const SUN_AZ = Math.atan2(-0.45, 0.35), DAY_C = ["zen", "hor", "cloud", "shade", "sunCol"], DAY_F = ["lit", "cover", "dens", "sun", "haze", "birds", "rays", "stars", "moon"];
+export function dayW(t) { return 0.5 - 0.5 * Math.cos(t / DAY.PERIOD * Math.PI * 2); }          // 0 at the room's own hour, 1 at day.to
+export function dayGust(t, seed) { return 1 + DAY.GUST * (0.6 * Math.sin(t * 0.23 + seed * 5.1) + 0.4 * Math.sin(t * 0.61 + seed * 2.3)); }
+// the sky at drift w between preset P0 and P1 (colours as THREE.Color, numbers mixed; missing numbers are 0)
+function dayMix(P0, P1, w) {
+  const o = {};
+  DAY_C.forEach((k) => { o[k] = C(P0[k] || "#ffffff").lerp(C(P1[k] || "#ffffff"), w); });
+  DAY_F.forEach((k) => { o[k] = (P0[k] || 0) * (1 - w) + (P1[k] || 0) * w; });
+  if (!P0.lit || !P1.lit) o.lit = (P0.lit || 0.8) * (1 - w) + (P1.lit || 0.8) * w;
+  return o;
+}
+function sunAt(el, v) { const e = el * Math.PI / 180, c = Math.cos(e); return v.set(c * Math.cos(SUN_AZ), Math.sin(e), c * Math.sin(SUN_AZ)); }
 
 // ---------------------------------------------------------------- shared GLSL
 const GLSL_NOISE = `
@@ -300,7 +338,7 @@ function waterMaterial(o) {
   const u = {
     uTime: { value: 0 }, uFlow: { value: new THREE.Vector2(o.flow ? o.flow[0] : 0, o.flow ? o.flow[1] : 0) }, uCalm: { value: o.calm || 0 },
     uDeep: { value: C(o.deep || "#0e3a3a") }, uShallow: { value: C(o.shallow || "#3a8a80") }, uSky: { value: C(o.sky || "#9cc0d8") },
-    uLamp: { value: new THREE.Vector3() }, uSplash: { value: [0, 1, 2, 3].map(() => new THREE.Vector4(0, 0, 0, 99)) },
+    uLamp: { value: new THREE.Vector3() }, uSplash: { value: [0, 1, 2, 3, 4, 5].map(() => new THREE.Vector4(0, 0, 0, 99)) },
     uShore: { value: new THREE.Vector4(0, 0, 0, 0) }, uAlpha: { value: o.alpha || 0.62 }, uMurk: { value: o.murk || 0 }
   };
   return new THREE.ShaderMaterial({
@@ -313,14 +351,14 @@ void main(){
   if (uShore.w > 0.) { float s = dot(w.xz, uShore.xy); w.y += uShore.w * (.5 + .5 * sin(uTime * .8 - s * 1.6)) * .09 + sin(uTime * .21) * .025 * uShore.w; }
   vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
     fragmentShader: `
-uniform float uTime, uCalm, uAlpha, uMurk; uniform vec2 uFlow; uniform vec3 uDeep, uShallow, uSky, uLamp; uniform vec4 uSplash[4]; uniform vec4 uShore;
+uniform float uTime, uCalm, uAlpha, uMurk; uniform vec2 uFlow; uniform vec3 uDeep, uShallow, uSky, uLamp; uniform vec4 uSplash[6]; uniform vec4 uShore;
 varying vec3 vW;
 ${GLSL_NOISE}
 float hgt(vec2 p){
   vec2 f = uFlow * uTime;
   float h = fbm(p * 1.6 - f * 1.3) * .6 + fbm(p * 3.1 - f * 2.1 + 4.) * .25;
   h *= (1. - uCalm * .8);
-  for (int i = 0; i < 4; i++) { float age = uSplash[i].w; if (age < 4.) { float r = length(p - uSplash[i].xy); h += sin(r * 38. - age * 9.) * exp(-age * 1.3) * exp(-r * 2.5) * .35 * uSplash[i].z; } }
+  for (int i = 0; i < 6; i++) { float age = uSplash[i].w; if (age < 4.) { float r = length(p - uSplash[i].xy); h += sin(r * 38. - age * 9.) * exp(-age * 1.3) * exp(-r * 2.5) * .35 * uSplash[i].z; } }
   return h;
 }
 void main(){
@@ -428,19 +466,32 @@ function groundTex(kind) {
 // Pit materials are lit by their own sky, not the museum's lamps: unlit base, then an ambient from the sky,
 // a sun (or moon) from the sky's direction and a touch of warm lamplight from above. Normals come from
 // screen derivatives (faceted, cheap). Ground adds caustics below the water line and, for ash, glowing cracks.
+// Plants part (ENV `feet` only): a stem within PART.R of the visitor leans away from them, most at the top, as if
+// brushed aside. uMe = (x, z, strength, 0) is set by the world each frame; the strength fades in over a moment after
+// a teleport, so nothing at your feet snaps (Comfort §e.22). The lean is turned into the instance's own frame.
+export const PART = { R: 0.85, IN: 0.25, LEAN: 0.5, FADE: 1.6 };
+const PART_GLSL = `
+      #ifdef USE_INSTANCING
+      { vec2 dme = io.xz - uMe.xy; float dl = length(dme);
+        float push = (1. - smoothstep(${PART.IN.toFixed(2)}, ${PART.R.toFixed(2)}, dl)) * uMe.z;
+        if (push > 0.) { vec3 pd = transpose(mat3(instanceMatrix)) * vec3(dme.x, 0., dme.y) / max(dl, .001); pd.y = 0.; pd = normalize(pd + vec3(1e-5));
+          float hy = max(transformed.y, 0.); vec2 bend = pd.xz * push * min(hy * hy * 1.6, ${PART.LEAN.toFixed(2)});
+          transformed.xz += bend; transformed.y -= dot(bend, bend) * .9; } }
+      #endif`;
 function pitMat(o, LU) {
   const m = new THREE.MeshBasicMaterial({ map: o.map || null, vertexColors: true, side: o.side || THREE.FrontSide });
   const amp = o.sway || 0;
   m.onBeforeCompile = (sh) => {
-    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime }, o.uniforms || {});
-    sh.vertexShader = "uniform float uTime; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
+    Object.assign(sh.uniforms, LU, { uTime: PLANT_U.uTime, uMe: PLANT_U.uMe }, o.uniforms || {});
+    sh.vertexShader = "uniform float uTime, uGust; uniform vec4 uMe; varying vec3 vWp;\n" + sh.vertexShader.replace("#include <begin_vertex>", `#include <begin_vertex>
       #ifdef USE_INSTANCING
       vec3 io = (instanceMatrix * vec4(0., 0., 0., 1.)).xyz;
       #else
       vec3 io = vec3(0.);
       #endif
-      float sw = sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1);
+      float sw = (sin(uTime * 1.6 + io.x * 1.3 + io.z * .9) + .5 * sin(uTime * 2.7 + io.x * 3.1)) * uGust;
       transformed.x += sw * ${amp.toFixed(3)} * transformed.y * transformed.y * 2.; transformed.z += sw * ${(amp * 0.5).toFixed(3)} * transformed.y * transformed.y;
+      ${o.part ? PART_GLSL : ""}
       ${o.vert || ""}`).replace("#include <skinning_vertex>", `#include <skinning_vertex>
       vec4 wpp = vec4(transformed, 1.);
       #ifdef USE_INSTANCING
@@ -462,17 +513,21 @@ function pitMat(o, LU) {
       if (uLava > 0.) { float cr = fbm(vWp.xz * 1.7); float crack = smoothstep(.018, .0, abs(cr - .5)) + .35 * smoothstep(.05, .0, abs(cr - .5)); float pulse = .7 + .3 * sin(uTime * 1.1 + vWp.x * 2.);
         outgoingLight = mix(outgoingLight, vec3(.95, .22, .04) * 1.4 * pulse, clamp(crack, 0., 1.) * uLava); }`);
   };
-  m.customProgramCacheKey = () => "pit" + amp + (o.key || "");
+  m.customProgramCacheKey = () => "pit" + amp + (o.part ? "p" : "") + (o.key || "");
   return m;
 }
 export { pitMat, colorize, mergeG, blade, rot, rockGeo, PLANT_U };
-function lightOf(A) {
-  const P = skyOf(A.env.sky), lit = P.lit || 0.8;
-  const amb = C(P.hor).lerp(C(P.zen), 0.5).multiplyScalar(0.35 + 0.75 * lit);
-  const sun = C(P.sunCol || "#ffffff").multiplyScalar((P.sun || 0) * 0.55 * lit);
+// the light a sky preset (or a mix of two, dayMix) throws on the ground, water, plants and creatures under it
+function skyLight(P, amb, sun) {
+  const lit = P.lit || 0.8;
+  amb.set(P.hor).lerp(C(P.zen), 0.5).multiplyScalar(0.35 + 0.75 * lit);
+  sun.set(P.sunCol || "#ffffff").multiplyScalar((P.sun || 0) * 0.55 * lit);
   if (P.moon) sun.add(C("#9ab0e0").multiplyScalar(P.moon * 0.18));
+}
+function lightOf(A) {
+  const amb = new THREE.Color(), sun = new THREE.Color(); skyLight(skyOf(A.env.sky), amb, sun);
   return { uAmb: { value: amb }, uSun: { value: sun }, uSunDir: { value: new THREE.Vector3(0.35, 0.8, -0.45).normalize() }, uLamp: { value: new THREE.Color(0.2, 0.14, 0.08) },
-    uWater: { value: A.waterY == null ? -99 : A.waterY }, uLava: { value: A.biome.lava || 0 } };
+    uWater: { value: A.waterY == null ? -99 : A.waterY }, uLava: { value: A.biome.lava || 0 }, uGust: { value: 1 } };
 }
 
 // ---------------------------------------------------------------- plants, stones and other scattered things
@@ -557,7 +612,8 @@ const BIOME = {
     tint: (h, w) => h < w ? [0.7, 0.62, 0.5] : [0.62, 0.66, 0.4], scatter: [["reed", 0.9, "shore"], ["tuft", 1.2, "bank"], ["pebble", 0.5, "any"], ["rock", 0.05, "bank"]] },
   nile: { tex: "mud", h: (s, t, A) => -0.7 + 0.08 * fbm2(s * 0.4, t * 0.4, 4) - 0.45 * chan(s, t, A, 0.4), wet: -0.88, water: { y: -0.9, flow: [0.6, 0], deep: "#233a22", shallow: "#6a8a54", murk: 0.2 },
     tint: (h, w) => h < w ? [0.66, 0.58, 0.44] : [0.82, 0.72, 0.52], scatter: [["papyrus", 1.3, "shore"], ["reed", 0.6, "shore"], ["drytuft", 0.6, "bank"], ["lotusPad", 0.4, "water"]] },
-  marsh: { tex: "mud", h: (s, t) => -1.0 + 0.3 * smooth(0.5, 0.8, fbm2(s * 0.45, t * 0.45, 6)), wet: -0.88, water: { y: -0.9, flow: [0.15, 0.1], calm: 0.6, deep: "#1e3228", shallow: "#627a58", murk: 0.25 },
+  // open water threads the reed beds in a shallow channel (≤ 0.30 m deep at your feet) where the marsh's fish can swim
+  marsh: { tex: "mud", h: (s, t, A) => -1.0 + 0.3 * smooth(0.5, 0.8, fbm2(s * 0.45, t * 0.45, 6)) - 0.18 * chan(s, t, A, 0.3), wet: -0.88, water: { y: -0.9, flow: [0.15, 0.1], calm: 0.6, deep: "#1e3228", shallow: "#627a58", murk: 0.25 },
     tint: () => [0.62, 0.62, 0.46], scatter: [["reed", 3.5, "shore"], ["papyrus", 0.4, "shore"]] },
   lake: { tex: "pebble", h: (s, t, A) => -1.1 + 0.55 * smooth(A.L * 0.62, A.L * 0.95, s) + 0.05 * fbm2(s, t, 8), wet: -0.88, water: { y: -0.88, flow: [0.1, 0.05], calm: 0.5, deep: "#0f3446", shallow: "#4a8aa0" },
     tint: (h, w) => h < w ? [0.72, 0.7, 0.62] : [0.86, 0.8, 0.64], scatter: [["reed", 1.2, "shore"], ["pebble", 1.4, "any"], ["tuft", 0.6, "bank"]] },
@@ -599,9 +655,22 @@ function edge(s, t, A, m) {                // 0 in the middle of the pit, 1 with
 }
 export function biomeOf(k) { const b = BIOME[k] || BIOME.meadow; return b.like ? Object.assign({}, BIOME[b.like], b) : b; }
 
+// Ground at your feet (ENV `feet`): the biome's heights, made for a pit under glass, are carried up to the floor.
+// Water (or ice) sits WATER below the floor; everything under it keeps its depth, so beds, fish and waders are as
+// before; land above it rises at K of its slope and is held TOP below the floor, so nothing pokes through and there
+// is never a step up or a drop of more than a few centimetres (Comfort §a.6: no pits, no drops). Dry biomes are
+// lifted so their highest point sits at TOP. Plants, fauna and the water shader all read the raised heights.
+export const RIPPLE = { STEP: 0.42, K: 0.5 };
+export const FEET = { WATER: -0.06, TOP: -0.012, K: 0.5, D: 0.6 };
+export function feetMap(B, top) {
+  const wy = B.water ? B.water.y : B.ice != null ? B.ice : null;
+  if (wy == null) return (y) => Math.min(FEET.TOP, y - top + FEET.TOP);
+  return (y) => y < wy ? FEET.WATER + (y - wy) : Math.min(FEET.TOP, FEET.WATER + (y - wy) * FEET.K);
+}
+
 // ---------------------------------------------------------------- shared materials
-const PLANT_U = { uTime: { value: 0 } };
-function plantMat(kind, A) { return pitMat({ side: THREE.DoubleSide, sway: SWAY[kind] || 0 }, A.LU); }
+const PLANT_U = { uTime: { value: 0 }, uMe: { value: new THREE.Vector4(0, 0, 0, 0) } };
+function plantMat(kind, A) { return pitMat({ side: THREE.DoubleSide, sway: SWAY[kind] || 0, part: !!(A.feet && SWAY[kind]) }, A.LU); }
 let STONE = null, BRONZE = null, GLASS = null, ICE = null;
 function sharedMats() {
   if (STONE) return;
@@ -638,14 +707,20 @@ function buildSky(A, q) {
 }
 function buildPit(A, q, faunaFn) {
   sharedMats();
-  const B = biomeOf(A.env.ground), h = A.hole, g = new THREE.Group(), R = rng(A.seedN), D = 1.35, z0 = A.seed;
-  A.lit = skyOf(A.env.sky).lit || 0.8; A.biome = B; A.waterY = B.water ? B.water.y : (B.ice != null ? B.ice : null); A.anim = []; A.LU = lightOf(A);
+  const B = biomeOf(A.env.ground), h = A.hole, g = new THREE.Group(), R = rng(A.seedN), feet = !!A.env.feet && !B.void, D = feet ? FEET.D : 1.35, z0 = A.seed;
+  // the biome's own heights (raw), and where they are drawn: the same, or raised to the floor for `feet`
+  const RAW = (x, z) => { const [s, t] = A.toL(x, z); return B.h ? B.h(s, t, A) + (B.flat ? 0 : 0.03 * (fbm2(s * 2.6, t * 2.6, 91, 3) - 0.5)) : -1.2; };
+  let up = (y) => y;
+  if (feet) { let top = -9; if (!B.water && B.ice == null) for (let x = h.x0; x <= h.x1; x += 0.25) for (let z = h.z0; z <= h.z1; z += 0.25) top = Math.max(top, RAW(x, z)); up = feetMap(B, top); }
+  A.feet = feet; A.up = up;
+  const rawW = B.water ? B.water.y : (B.ice != null ? B.ice : null);
+  A.lit = skyOf(A.env.sky).lit || 0.8; A.biome = B; A.waterY = rawW == null ? null : up(rawW); A.anim = []; A.LU = lightOf(A);
   // walls of the pit
   const W = [], wq = (ax, az, bx, bz) => { const len = Math.hypot(bx - ax, bz - az), gq = new THREE.PlaneGeometry(len, D); gq.translate(0, -D / 2, 0); gq.rotateY(Math.atan2(-(bz - az), bx - ax)); gq.translate((ax + bx) / 2, 0, (az + bz) / 2); W.push(gq); };
   wq(h.x1, h.z0, h.x0, h.z0); wq(h.x0, h.z1, h.x1, h.z1); wq(h.x0, h.z0, h.x0, h.z1); wq(h.x1, h.z1, h.x1, h.z0);
   const walls = new THREE.Mesh(colorize(mergeG(W), (x, y) => { const k = 0.18 + 0.1 * smooth(-1.3, 0, y) + 0.05 * fbm2(x * 3, y * 3 + z0, 5, 2); return [k * 1.1, k, k * 0.88]; }), pitMat({}, A.LU)); g.add(walls);
   // ground
-  const HF = (x, z) => { const [s, t] = A.toL(x, z); return B.h ? B.h(s, t, A) + (B.flat ? 0 : 0.03 * (fbm2(s * 2.6, t * 2.6, 91, 3) - 0.5)) : -1.2; };
+  const HF = feet ? (x, z) => up(RAW(x, z)) : RAW;
   A.groundH = HF;
   if (B.void) {
     const vm = voidMaterial(q); A.anim.push(vm);
@@ -656,9 +731,9 @@ function buildPit(A, q, faunaFn) {
     const gg = new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0, nx, nz); gg.rotateX(-Math.PI / 2); gg.translate((h.x0 + h.x1) / 2, 0, (h.z0 + h.z1) / 2);
     const P = gg.attributes.position, uv = gg.attributes.uv, col = new Float32Array(P.count * 3), wy = B.wet != null ? B.wet : -9;
     for (let i = 0; i < P.count; i++) {
-      const x = P.getX(i), z = P.getZ(i), y = HF(x, z); P.setY(i, y); uv.setXY(i, x / 1.6, z / 1.6);
+      const x = P.getX(i), z = P.getZ(i), yr = RAW(x, z); P.setY(i, up(yr)); uv.setXY(i, x / 1.6, z / 1.6);
       const [ls, lt] = A.toL(x, z), wd = Math.min(ls, A.L - ls, lt + A.W / 2, A.W / 2 - lt), ao = 0.45 + 0.55 * smooth(0, 0.9, wd);
-      const c = B.tint(y, wy), n = (0.85 + 0.3 * fbm2(x * 1.3, z * 1.3, 77, 3)) * ao;
+      const c = B.tint(yr, wy), n = (0.85 + 0.3 * fbm2(x * 1.3, z * 1.3, 77, 3)) * ao;
       col.set([c[0] * n, c[1] * n, c[2] * n], i * 3);
     }
     gg.setAttribute("color", new THREE.BufferAttribute(col, 3)); gg.computeVertexNormals();
@@ -668,28 +743,29 @@ function buildPit(A, q, faunaFn) {
   // water
   if (B.water) {
     const wm = waterMaterial(Object.assign({ sky: skyOf(A.env.sky).hor }, B.water)); A.waterMat = wm;
+    A.waterBase = { uDeep: wm.uniforms.uDeep.value.clone(), uShallow: wm.uniforms.uShallow.value.clone() };
     ["uDeep", "uShallow", "uSky"].forEach((k) => wm.uniforms[k].value.multiplyScalar(A.lit));
     wm.uniforms.uLamp.value.set(A.lamp[0], A.lamp[1], A.lamp[2]);
     const flow = B.water.flow || [0, 0], fw = A.axis === "x" ? flow : [flow[1], flow[0]]; wm.uniforms.uFlow.value.set(fw[0], fw[1]);
     const seg = B.water.shore ? 48 : 1;
-    const wp = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02, seg, seg), wm); wp.rotation.x = -Math.PI / 2; wp.position.set((h.x0 + h.x1) / 2, B.water.y, (h.z0 + h.z1) / 2); wp.renderOrder = 1; g.add(wp);
+    const wp = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02, seg, seg), wm); wp.rotation.x = -Math.PI / 2; wp.position.set((h.x0 + h.x1) / 2, A.waterY, (h.z0 + h.z1) / 2); wp.renderOrder = 1; g.add(wp);
     if (B.water.shore) { const dir = A.axis === "x" ? [1, 0] : [0, 1]; const [sx, sz] = A.toW(0, 0); wm.uniforms.uShore.value.set(dir[0], dir[1], 0, 1); A.shore = { dir, o: dir[0] * sx + dir[1] * sz };
       // the shoreline: where the sand meets the still water level
       let s0 = 0; for (let s = 0; s < A.L; s += 0.02) { if (B.h(s, 0, A) > B.water.y) { s0 = s; break; } } wm.uniforms.uShore.value.z = A.shore.o + s0; }
   }
-  if (B.ice != null) { const ice = new THREE.MeshBasicMaterial({ color: A.LU.uAmb.value.clone().multiplyScalar(1.5).lerp(C("#dff0ff"), 0.35), transparent: true, opacity: 0.8, map: iceTex() }); const ip = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02), ice); ip.rotation.x = -Math.PI / 2; ip.position.set((h.x0 + h.x1) / 2, B.ice, (h.z0 + h.z1) / 2); g.add(ip); A.waterY = B.ice; }
+  if (B.ice != null) { const ice = new THREE.MeshBasicMaterial({ color: A.LU.uAmb.value.clone().multiplyScalar(1.5).lerp(C("#dff0ff"), 0.35), transparent: true, opacity: 0.8, map: iceTex() }); const ip = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0 - 0.02, h.z1 - h.z0 - 0.02), ice); ip.rotation.x = -Math.PI / 2; ip.position.set((h.x0 + h.x1) / 2, up(B.ice), (h.z0 + h.z1) / 2); g.add(ip); A.waterY = up(B.ice); }
   // scattered plants and stones
-  const area = A.L * A.W, wy = A.waterY != null ? A.waterY : -99, M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), Sc = new THREE.Vector3(), E = new THREE.Euler(), cc = new THREE.Color();
+  const area = A.L * A.W, wy = rawW != null ? rawW : -99, M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), Sc = new THREE.Vector3(), E = new THREE.Euler(), cc = new THREE.Color();
   const want = (B.scatter || []).map(([kind, dens]) => dens * area * (q > 1 ? 1 : 0.55) * geoOf(kind).attributes.position.count / 3);
   const budget = (q > 1 ? 70000 : 28000) * (A.kind === "room" ? 1 : 0.6), total = want.reduce((a, b) => a + b, 0), scale = Math.min(1, budget / Math.max(1, total));
   (B.scatter || []).forEach(([kind, dens, where]) => {
     const n = Math.round(dens * area * (q > 1 ? 1 : 0.55) * scale); if (!n) return;
     const im = new THREE.InstancedMesh(geoOf(kind), plantMat(kind, A), n); let k = 0;
     for (let tries = 0; tries < n * 12 && k < n; tries++) {
-      const s = 0.12 + R() * (A.L - 0.24), t = (R() - 0.5) * (A.W - 0.24), [x, z] = A.toW(s, t), y = HF(x, z);
-      let ok = true, yy = y;
+      const s = 0.12 + R() * (A.L - 0.24), t = (R() - 0.5) * (A.W - 0.24), [x, z] = A.toW(s, t), y = RAW(x, z);
+      let ok = true, yy = up(y);
       if (where === "bank") ok = y > wy + 0.02;
-      else if (where === "water") { ok = y < wy - 0.06; yy = wy + 0.003; }
+      else if (where === "water") { ok = y < wy - 0.06; yy = up(wy) + 0.003; }
       else if (where === "shore") ok = Math.abs(y - wy) < 0.07 || (y > wy && y < wy + 0.12 && R() < 0.4);
       else if (where === "wet") ok = y > wy - 0.08 && y < wy + 0.04;
       else if (where === "dry") ok = y > wy + 0.05;
@@ -707,16 +783,19 @@ function buildPit(A, q, faunaFn) {
   if (B.extras) EXTRAS[B.extras](A, g, R);
   if (B.embers) { const e = embers(A, R); g.add(e); A.embers = e; }
   if (B.water && B.water.drips) A.drips = true;
-  // the glass over it all, on a bronze grid
-  const glass = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0), GLASS); glass.rotation.x = -Math.PI / 2; glass.position.set((h.x0 + h.x1) / 2, 0.002, (h.z0 + h.z1) / 2); glass.renderOrder = 3; g.add(glass);
+  // the glass over it all, on a bronze grid; none where the ground is at your feet (the room's kerb is its edge)
+  if (!feet) addGlass(h, g);
+  if (faunaFn) { const F = faunaFn(A, q); if (F) { g.add(F.group); A.fauna = F; } }
+  return g;
+}
+function addGlass(h, g) {
+  const glass = new THREE.Mesh(new THREE.PlaneGeometry(h.x1 - h.x0, h.z1 - h.z0), GLASS); glass.name = "pit-glass"; glass.rotation.x = -Math.PI / 2; glass.position.set((h.x0 + h.x1) / 2, 0.002, (h.z0 + h.z1) / 2); glass.renderOrder = 3; g.add(glass);
   const L = [], strip = (x0, z0, x1, z1, w, y) => { const b = new THREE.BoxGeometry(Math.max(w, Math.abs(x1 - x0)), 0.014, Math.max(w, Math.abs(z1 - z0))); b.translate((x0 + x1) / 2, y || 0.004, (z0 + z1) / 2); L.push(b); };
   strip(h.x0, h.z0, h.x1, h.z0, 0.1); strip(h.x0, h.z1, h.x1, h.z1, 0.1); strip(h.x0, h.z0, h.x0, h.z1, 0.1); strip(h.x1, h.z0, h.x1, h.z1, 0.1);
   const gx = Math.max(1, Math.round((h.x1 - h.x0) / 1.8)), gz = Math.max(1, Math.round((h.z1 - h.z0) / 1.8));
   for (let i = 1; i < gx; i++) { const x = h.x0 + (h.x1 - h.x0) * i / gx; strip(x, h.z0, x, h.z1, 0.02); }
   for (let i = 1; i < gz; i++) { const z = h.z0 + (h.z1 - h.z0) * i / gz; strip(h.x0, z, h.x1, z, 0.02); }
   g.add(new THREE.Mesh(mergeG(L), BRONZE));
-  if (faunaFn) { const F = faunaFn(A, q); if (F) { g.add(F.group); A.fauna = F; } }
-  return g;
 }
 
 // special furniture for a few grounds
@@ -809,7 +888,7 @@ export function createWorld(opt) {
     A.env = ENV[A.id] || ENV["cor:04-axial-age"];
     localFrame(A);
     A.skyG = buildSky(A, q); A.skyG.visible = false; opt.scene.add(A.skyG);
-    A.pit = null; A.flash = 0; A.boltT = 0; A.nextBolt = 4 + Math.random() * 8; A.splash = [0, 1, 2, 3].map(() => [0, 0, 0, 99]); A.si = 0;
+    A.pit = null; A.flash = 0; A.boltT = 0; A.nextBolt = 4 + Math.random() * 8; A.splash = [0, 1, 2, 3, 4, 5].map(() => [0, 0, 0, 99]); A.si = 0; A.me = { x: 0, z: 0, on: false }; A.rip = null; A.ri = 0;
     areas.push(A);
     return A;
   }
@@ -820,11 +899,46 @@ export function createWorld(opt) {
   }
   const isShared = (geo) => { for (const g2 of GEO.values()) if (g2 === geo) return true; return false; };
   function splash(A, x, z, strength) { const s = A.splash[A.si++ % 4]; s[0] = x; s[1] = z; s[2] = strength || 1; s[3] = 0; events.push({ type: "splash", area: A, x, z, strength: strength || 1 }); }
+  // React to you (ENV `feet`): where the visitor stands, for the plants (uMe), the water (rings where they walk)
+  // and the creatures (A.me, read by fauna.js). A jump of more than a metre in one frame is a teleport: the plants'
+  // lean then fades back in rather than snapping.
+  let meX = null, meZ = null, meK = 0;
+  function feel(dt, pos, reduce) {
+    const jump = meX == null || Math.hypot(pos.x - meX, pos.z - meZ) > 1;
+    meK = jump ? 0 : Math.min(1, meK + dt * PART.FADE); meX = pos.x; meZ = pos.z;
+    let onFeet = false;
+    for (const A of areas) {
+      const b = A.bounds, on = !!(A.pit && A.feet && pos.x >= b.x0 && pos.x <= b.x1 && pos.z >= b.z0 && pos.z <= b.z1);
+      A.me.x = pos.x; A.me.z = pos.z; A.me.on = on; onFeet = onFeet || on;
+      if (!on || !A.waterMat || reduce) { A.rip = null; continue; }
+      const h = A.hole, over = pos.x > h.x0 && pos.x < h.x1 && pos.z > h.z0 && pos.z < h.z1 && A.groundH(pos.x, pos.z) < A.waterY;
+      if (!over) { A.rip = null; continue; }
+      // a ring every RIPPLE.STEP metres walked through the water (and one where a teleport lands), in the two
+      // slots kept for the visitor so fish and herons keep theirs
+      if (!A.rip || Math.hypot(pos.x - A.rip[0], pos.z - A.rip[1]) > RIPPLE.STEP) {
+        A.rip = [pos.x, pos.z]; const s = A.splash[4 + (A.ri++ % 2)]; s[0] = pos.x; s[1] = pos.z; s[2] = RIPPLE.K; s[3] = 0;
+      }
+    }
+    PLANT_U.uMe.value.set(pos.x, pos.z, onFeet ? meK : 0, 0);
+  }
+  // the hour and the wind of a `day` area at world time t (DAY above): the skylight, then (once built) its ground
+  function dayApply(A, t) {
+    const w = dayW(t), P = A.skyMat.uniforms, M = dayMix(skyOf(A.env.sky), skyOf(A.env.day.to), w), el = DAY.EL0 + (A.env.day.el - DAY.EL0) * w;
+    P.uZen.value.copy(M.zen); P.uHor.value.copy(M.hor); P.uCloud.value.copy(M.cloud); P.uShade.value.copy(M.shade); P.uSunCol.value.copy(M.sunCol);
+    P.uCover.value = M.cover; P.uDens.value = M.dens; P.uSun.value = M.sun; P.uHaze.value = M.haze; P.uBirds.value = M.birds; P.uRays.value = M.rays; P.uStars.value = M.stars; P.uMoon.value = M.moon;
+    sunAt(el, P.uSunDir.value);
+    A.dayNow = { w, el, lit: M.lit, gust: dayGust(t, A.seed), hor: "#" + M.hor.getHexString(), sun: M.sun };
+    if (!A.pit) return;
+    skyLight(M, A.LU.uAmb.value, A.LU.uSun.value); A.LU.uSunDir.value.copy(P.uSunDir.value); A.LU.uGust.value = A.dayNow.gust;
+    if (A.waterMat && A.waterBase) { const W = A.waterMat.uniforms; W.uDeep.value.copy(A.waterBase.uDeep).multiplyScalar(M.lit); W.uShallow.value.copy(A.waterBase.uShallow).multiplyScalar(M.lit); W.uSky.value.copy(M.hor).multiplyScalar(M.lit); }
+  }
+  function skip(secs) { time += secs; }
   function update(dt, pos, inRoom, reduce) {
     if (!reduce) time += dt;
     builtThisFrame = 0; flashNow = 0;
     let animating = false;
     PLANT_U.uTime.value = time;
+    feel(dt, pos, reduce);
     for (const A of areas) {
       const d = dist(A.bounds, pos), inside = d === 0;
       const near = A.kind === "room" ? d < 7 : A.kind === "corridor" ? d < 14 : d < 30;
@@ -836,6 +950,7 @@ export function createWorld(opt) {
       if (!see) continue;
       animating = animating || !reduce;
       const P = A.skyMat.uniforms; P.uTime.value = time;
+      if (A.env.day) dayApply(A, time);
       // lightning
       const bolts = A.skyMat.userData.preset.bolts || 0;
       if (bolts && !reduce) {
@@ -869,5 +984,5 @@ export function createWorld(opt) {
     return best;
   }
   function forceBolt(id) { const A = areas.find((x) => x.id === id); if (A) A.nextBolt = 0; }
-  return { addArea, update, areaAt, splash, events, areas, forceBolt, get flash() { return flashNow; }, get time() { return time; } };
+  return { addArea, update, areaAt, splash, events, areas, forceBolt, skip, plantsMe: () => PLANT_U.uMe.value.toArray(), get flash() { return flashNow; }, get time() { return time; } };
 }
