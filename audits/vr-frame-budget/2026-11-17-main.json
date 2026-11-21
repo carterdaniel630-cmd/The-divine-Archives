@@ -1,0 +1,762 @@
+{
+ "root": "docs",
+ "device": "stand-in Quest 2 (floor tier), SwiftShader; per-eye projection 1.6 rad vertical, aspect 0.9 (an approximation of the headset's field, not a Meta figure)",
+ "ceilings": {
+  "calls": {
+   "q2": 160,
+   "q3": 240,
+   "hard": 320
+  },
+  "tris": {
+   "q2": 350000,
+   "q3": 600000,
+   "hard": 500000
+  },
+  "lights": {
+   "q2": 5,
+   "q3": 6,
+   "hard": 8
+  },
+  "points": {
+   "q2": 4000,
+   "q3": 8000,
+   "hard": 15000
+  },
+  "canvasTex": {
+   "q2": 14,
+   "q3": 20,
+   "hard": 28
+  },
+  "texMB": {
+   "q2": 16,
+   "q3": 24,
+   "hard": 40
+  },
+  "sessionMB": {
+   "q2": 128,
+   "q3": 256,
+   "hard": null
+  }
+ },
+ "places": [
+  {
+   "label": "Rotunda — arrival",
+   "target": "@rotunda",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "The Rotunda · Comparative themes|The Flood",
+   "worst": {
+    "calls": 156,
+    "tris": 262820,
+    "lights": 8,
+    "lightsAt0": 1,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 5
+    },
+    "points": 5206,
+    "textures": 51,
+    "texMB": 62.8,
+    "canvasTex": 48,
+    "sessionMB": 135.6,
+    "sessionCanvasTex": 83,
+    "programs": 34,
+    "msPerFrameSwiftShader": 317
+   },
+   "verdict": {
+    "calls": "within Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "over Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 144,
+     "tris": 262820,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 142,
+     "tris": 262748,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 118,
+     "tris": 257364,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 76,
+     "tris": 166332,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 96,
+     "tris": 166726,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 132,
+     "tris": 169910,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 156,
+     "tris": 260198,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 122,
+     "tris": 261932,
+     "lights": 8,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "Rotunda — centre",
+   "target": "@rotunda",
+   "inward": 8,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "The Rotunda · Comparative themes|The Rotunda",
+   "worst": {
+    "calls": 148,
+    "tris": 271804,
+    "lights": 8,
+    "lightsAt0": 1,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 5
+    },
+    "points": 5206,
+    "textures": 57,
+    "texMB": 71.4,
+    "canvasTex": 51,
+    "sessionMB": 135.9,
+    "sessionCanvasTex": 84,
+    "programs": 38,
+    "msPerFrameSwiftShader": 356
+   },
+   "verdict": {
+    "calls": "within Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "over Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 126,
+     "tris": 271804,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 112,
+     "tris": 262392,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 106,
+     "tris": 256504,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 96,
+     "tris": 172540,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 148,
+     "tris": 176066,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 146,
+     "tris": 176062,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 102,
+     "tris": 265128,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 120,
+     "tris": 271416,
+     "lights": 8,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "ch02 Egypt — doorway",
+   "target": "ch02",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Egypt",
+   "worst": {
+    "calls": 206,
+    "tris": 347722,
+    "lights": 8,
+    "lightsAt0": 2,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 4,
+     "PointLight (0)": 1
+    },
+    "points": 162,
+    "textures": 125,
+    "texMB": 102.7,
+    "canvasTex": 67,
+    "sessionMB": 282,
+    "sessionCanvasTex": 283,
+    "programs": 46,
+    "msPerFrameSwiftShader": 477
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "within Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 184,
+     "tris": 347722,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 45,
+     "calls": 184,
+     "tris": 346090,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 90,
+     "calls": 150,
+     "tris": 328566,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 135,
+     "calls": 206,
+     "tris": 323728,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 180,
+     "calls": 190,
+     "tris": 314380,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 225,
+     "calls": 118,
+     "tris": 317650,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 270,
+     "calls": 124,
+     "tris": 318534,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 315,
+     "calls": 142,
+     "tris": 321198,
+     "lights": 8,
+     "points": 162
+    }
+   ]
+  },
+  {
+   "label": "ch02 Egypt — mid-room",
+   "target": "ch02",
+   "inward": 3,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Egypt",
+   "worst": {
+    "calls": 214,
+    "tris": 346010,
+    "lights": 8,
+    "lightsAt0": 2,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 4,
+     "PointLight (0)": 1
+    },
+    "points": 162,
+    "textures": 132,
+    "texMB": 103.7,
+    "canvasTex": 68,
+    "sessionMB": 282,
+    "sessionCanvasTex": 283,
+    "programs": 47,
+    "msPerFrameSwiftShader": 422
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "within Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 166,
+     "tris": 344926,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 45,
+     "calls": 182,
+     "tris": 346010,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 90,
+     "calls": 164,
+     "tris": 330518,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 135,
+     "calls": 214,
+     "tris": 323912,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 180,
+     "calls": 196,
+     "tris": 314484,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 225,
+     "calls": 124,
+     "tris": 318474,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 270,
+     "calls": 130,
+     "tris": 319602,
+     "lights": 8,
+     "points": 162
+    },
+    {
+     "heading": 315,
+     "calls": 140,
+     "tris": 321118,
+     "lights": 8,
+     "points": 162
+    }
+   ]
+  },
+  {
+   "label": "ch03 Mesopotamia — doorway",
+   "target": "ch03",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Mesopotamia",
+   "worst": {
+    "calls": 226,
+    "tris": 346092,
+    "lights": 8,
+    "lightsAt0": 2,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 4,
+     "PointLight (0)": 1
+    },
+    "points": 5206,
+    "textures": 155,
+    "texMB": 90.2,
+    "canvasTex": 54,
+    "sessionMB": 282,
+    "sessionCanvasTex": 283,
+    "programs": 44,
+    "msPerFrameSwiftShader": 491
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "over Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 216,
+     "tris": 338444,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 114,
+     "tris": 321922,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 114,
+     "tris": 328138,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 108,
+     "tris": 327930,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 122,
+     "tris": 337274,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 138,
+     "tris": 337970,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 126,
+     "tris": 324010,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 226,
+     "tris": 346092,
+     "lights": 8,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "ch03 Mesopotamia — mid-room",
+   "target": "ch03",
+   "inward": 3,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Mesopotamia",
+   "worst": {
+    "calls": 224,
+    "tris": 346012,
+    "lights": 8,
+    "lightsAt0": 2,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 4,
+     "PointLight (0)": 1
+    },
+    "points": 5206,
+    "textures": 156,
+    "texMB": 90.2,
+    "canvasTex": 54,
+    "sessionMB": 282,
+    "sessionCanvasTex": 283,
+    "programs": 44,
+    "msPerFrameSwiftShader": 433
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "within Q2",
+    "lights": "over Q2 and Q3",
+    "points": "over Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 204,
+     "tris": 330428,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 110,
+     "tris": 321838,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 118,
+     "tris": 329766,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 118,
+     "tris": 329614,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 128,
+     "tris": 337330,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 142,
+     "tris": 338098,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 132,
+     "tris": 330394,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 224,
+     "tris": 346012,
+     "lights": 8,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "Wing II corridor (sightline into ch02/ch03)",
+   "target": "@02-bronze-age",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Corridor|Wing II · The Bronze Age",
+   "worst": {
+    "calls": 268,
+    "tris": 712456,
+    "lights": 8,
+    "lightsAt0": 2,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "HemisphereLight (0)": 1,
+     "AmbientLight": 1,
+     "PointLight": 4,
+     "PointLight (0)": 1
+    },
+    "points": 5206,
+    "textures": 144,
+    "texMB": 131.5,
+    "canvasTex": 92,
+    "sessionMB": 343.4,
+    "sessionCanvasTex": 381,
+    "programs": 47,
+    "msPerFrameSwiftShader": 866
+   },
+   "verdict": {
+    "calls": "over Q2 and Q3",
+    "tris": "HARD FAIL",
+    "lights": "over Q2 and Q3",
+    "points": "over Q2",
+    "canvasTex": "HARD FAIL",
+    "texMB": "HARD FAIL",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 208,
+     "tris": 712456,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 200,
+     "tris": 682236,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 224,
+     "tris": 695120,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 202,
+     "tris": 676620,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 164,
+     "tris": 630636,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 210,
+     "tris": 673052,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 268,
+     "tris": 673818,
+     "lights": 8,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 204,
+     "tris": 665344,
+     "lights": 8,
+     "points": 5206
+    }
+   ]
+  }
+ ],
+ "errors": [],
+ "overQuest2": [
+  "Rotunda — arrival: lights 8 (over Q2 and Q3)",
+  "Rotunda — arrival: points 5206 (over Q2)",
+  "Rotunda — arrival: canvasTex 48 (HARD FAIL)",
+  "Rotunda — arrival: texMB 62.8 (HARD FAIL)",
+  "Rotunda — arrival: sessionMB 135.6 (over Q2)",
+  "Rotunda — centre: lights 8 (over Q2 and Q3)",
+  "Rotunda — centre: points 5206 (over Q2)",
+  "Rotunda — centre: canvasTex 51 (HARD FAIL)",
+  "Rotunda — centre: texMB 71.4 (HARD FAIL)",
+  "Rotunda — centre: sessionMB 135.9 (over Q2)",
+  "ch02 Egypt — doorway: calls 206 (over Q2)",
+  "ch02 Egypt — doorway: lights 8 (over Q2 and Q3)",
+  "ch02 Egypt — doorway: canvasTex 67 (HARD FAIL)",
+  "ch02 Egypt — doorway: texMB 102.7 (HARD FAIL)",
+  "ch02 Egypt — doorway: sessionMB 282 (over Q2 and Q3)",
+  "ch02 Egypt — mid-room: calls 214 (over Q2)",
+  "ch02 Egypt — mid-room: lights 8 (over Q2 and Q3)",
+  "ch02 Egypt — mid-room: canvasTex 68 (HARD FAIL)",
+  "ch02 Egypt — mid-room: texMB 103.7 (HARD FAIL)",
+  "ch02 Egypt — mid-room: sessionMB 282 (over Q2 and Q3)",
+  "ch03 Mesopotamia — doorway: calls 226 (over Q2)",
+  "ch03 Mesopotamia — doorway: lights 8 (over Q2 and Q3)",
+  "ch03 Mesopotamia — doorway: points 5206 (over Q2)",
+  "ch03 Mesopotamia — doorway: canvasTex 54 (HARD FAIL)",
+  "ch03 Mesopotamia — doorway: texMB 90.2 (HARD FAIL)",
+  "ch03 Mesopotamia — doorway: sessionMB 282 (over Q2 and Q3)",
+  "ch03 Mesopotamia — mid-room: calls 224 (over Q2)",
+  "ch03 Mesopotamia — mid-room: lights 8 (over Q2 and Q3)",
+  "ch03 Mesopotamia — mid-room: points 5206 (over Q2)",
+  "ch03 Mesopotamia — mid-room: canvasTex 54 (HARD FAIL)",
+  "ch03 Mesopotamia — mid-room: texMB 90.2 (HARD FAIL)",
+  "ch03 Mesopotamia — mid-room: sessionMB 282 (over Q2 and Q3)",
+  "Wing II corridor (sightline into ch02/ch03): calls 268 (over Q2 and Q3)",
+  "Wing II corridor (sightline into ch02/ch03): tris 712456 (HARD FAIL)",
+  "Wing II corridor (sightline into ch02/ch03): lights 8 (over Q2 and Q3)",
+  "Wing II corridor (sightline into ch02/ch03): points 5206 (over Q2)",
+  "Wing II corridor (sightline into ch02/ch03): canvasTex 92 (HARD FAIL)",
+  "Wing II corridor (sightline into ch02/ch03): texMB 131.5 (HARD FAIL)",
+  "Wing II corridor (sightline into ch02/ch03): sessionMB 343.4 (over Q2 and Q3)"
+ ]
+}
