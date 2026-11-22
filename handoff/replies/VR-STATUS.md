@@ -1,18 +1,16 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~22:35 UTC. **#189 re-synced onto `main` after #188** → `loop/vr-perf-overlay` `f206d61a`. One
-conflict (the debug hooks in `app.js`): both sides kept; `museum.html` takes `app.js?v=61`. Local checks all pass.
-Reply: `vr/2026-11-22-2235-resync-189.md`. Carter's yes for #190 is now on file too (`decisions-2026-11-22-pr190-yes.md`).
+**As of:** 2026-11-22 ~22:50 UTC. **#189 delta check PASS 0** on `f206d61a` and **#190 independent review PASS 0**, both by
+a run that wrote none of them. Reply: `vr/2026-11-22-2250-delta-189-review-190.md`. #189 waits only on Lighthouse (running at
+write time); #190 is fully qualified and goes after #189. Both have Carter's yes on file; the build loop merges them.
 
 ## Done
-- #190 `loop/vr-corridor-measure` `4436c5d0` on `main` `1cfb8d9f`: `tools/vr-draw-ledger.js` + corridor report. Local
-  checks all pass (build no diff, verify 18/18, tests 51/51, review-checks 9/0/0, xr-entry-check pass, baseline 0
-  errors). GitHub 4/4 green (Lighthouse does not run: no `docs/` change). Carter's yes on file. **Waiting on:**
-  independent review by a run that wrote none of it.
+- #190 `loop/vr-corridor-measure` `4436c5d0` on `main` `1cfb8d9f`: `tools/vr-draw-ledger.js` + corridor report.
+  **Independent review PASS 0** (22:45; tool re-run reproduces every figure). GitHub 4/4 green (no Lighthouse: no `docs/`
+  change). Carter's yes on file. **Ready; goes after #189** (build loop rebases onto the then-`main`, re-runs checks).
 - #189 `loop/vr-perf-overlay` **`f206d61a`** (re-synced onto `f12dc09d`): independent review PASS 0 (on `ee7ffc76`);
-  Carter's yes on file. Local on `f206d61a`: build no diff, verify 18/18, tests 51/51, review-checks 9/0/0,
-  vr-perf-overlay-check and xr-entry-check all pass, flat 360/390 0 script errors. **Waiting on:** delta check by a run
-  that did not re-sync; GitHub green on `f206d61a` incl. Lighthouse.
+  Carter's yes on file. **Delta check PASS 0** (22:45, a run that did not re-sync; all local checks re-run). GitHub 6
+  green; **waiting on Lighthouse** on `f206d61a` (running at 22:50), then the build loop merges it.
 - LIVE on `main`: #188 tap-to-read labels (`f12dc09d`); #187 portal culling (`1cfb8d9f`); #185 static zones; #183 stick walking; #182 light rig; #181 harness;
   the living-ground stack; #166 height check.
 
@@ -20,26 +18,22 @@ Reply: `vr/2026-11-22-2235-resync-189.md`. Carter's yes for #190 is now on file 
 - Nothing held.
 
 ## Next (in order)
-1. **Delta check of #189's re-sync** (`ee7ffc76..f206d61a`, the merge resolution only) by a run that did not re-sync
-   (the 22:35 run did; any later run qualifies). Then GitHub green on `f206d61a` incl. Lighthouse; then the build loop
-   merges #189 per item.
-2. (build loop, not this loop) merge #189 per item once 1 holds; then #190 (after its review) — #190 touches only
-   `tools/` + `audits/`, so it needs no re-sync unless `main` changes those files.
-3. **Independent review of #190** (a run that wrote none of it; `tools/` + `audits/` only), filed on `review-log`.
-4. **Ground culling bounds (fix 1 of the report), buildable now:** give the living ground's plant scatters
+1. (build loop, not this loop) merge #189 per item once Lighthouse is green on `f206d61a`; then #190 (rebase onto the
+   then-`main`, re-run checks 2–3). If Lighthouse fails on `f206d61a`, the next VR run looks into it first.
+2. **Ground culling bounds (fix 1 of the report), buildable now:** give the living ground's plant scatters
    (`world.js` 781) real bounding spheres, plus a margin for any sway, and turn culling back on. Give the creatures
    (`fauna.js` 165, 288, 330, 423) their pit's box as their sphere. Nothing on screen may change; prove it with
    before/after screenshots, flat and headset. Then re-measure with `vr-draw-ledger.js` and `vr-frame-budget.js`.
    Branch `loop/vr-ground-cull` from `origin/main`.
-5. **Cut the Spine's ground into ~10 m pieces** (fix 2): invisible; re-measure after.
-6. Identify scene child 109 (92 instanced spheres across the whole building, 14.7k triangles, drawn from the corridor)
+3. **Cut the Spine's ground into ~10 m pieces** (fix 2): invisible; re-measure after.
+4. Identify scene child 109 (find it by content: scene-child numbers shift between runs) (92 instanced spheres across the whole building, 14.7k triangles, drawn from the corridor)
    and child 108 (instanced shader quad, not culled; probably the flames).
-7. Readings, later steps:
+5. Readings, later steps:
    - near-field poke and magnification;
    - the A button as a select;
    - the pilot spec's verbatim era plaques (§4.3);
    - the shaft-of-light beam (artistry pass).
-8. Day and weather, later steps. More creatures (each needs a source first).
+6. Day and weather, later steps. More creatures (each needs a source first).
 - Small tidy for whoever next touches `portals.js`: its comment on the order rooms are checked in is wrong (harmless).
 - GPU headroom is tight: with #185, #187 and a reading open, the worst view in Egypt is about 158 of 160 calls.
 
@@ -62,9 +56,9 @@ naming a model). The graphify CLI installs with `bash tools/graphify-session.sh`
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#189 (frame-budget readout in the headset):** nothing more needed; your yes is on file. Re-synced; waits on a delta
-  check by another run and green checks, then the build loop puts it live.
-- **#190 (draw ledger):** your yes is on file. It waits on its independent review, then goes live after #189.
+- **#189 (frame-budget readout in the headset):** nothing more needed; your yes is on file. Checked; waits only on one
+  slow automatic check, then the build loop puts it live.
+- **#190 (draw ledger):** nothing more needed; your yes is on file. Checked; goes live right after #189.
 - On your next headset visit:
   - once #189 is live, open `getconexto.com/museum.html?vrfps=1`, enter VR, and walk each pilot room for about a
     minute. The plate in the lower view says WITHIN or OVER and names what is over. Send a photo or the words;
