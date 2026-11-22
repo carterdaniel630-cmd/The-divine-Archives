@@ -486,6 +486,7 @@ Standard (`perfection-standard-2026-10-26.md`): every piece climbs all five rung
 - **PR #87** is merged (by its own thread); its review record is now filed on `review-log` (`40371d3`).
 
 ## Next (value order, `decisions-2026-10-17-priority-by-value.md`; Perfection Standard on every piece)
+0hc. **Added 2026-11-22 ~06:20 UTC:** **PR #186** (save rules in `.claude/settings.json`, Carter's yes `decisions-2026-11-22-carter-save-rules-yes.md`): independent review by any session except ..01HFWzTkiswjZCRdX7PmTty8, checks green, merge per item. Takes effect only after Carter switches the GitHub default branch to `main` (diagnosis `2026-11-22-session-saves-diagnosis.md`).
 0hg. **Now (2026-11-22 ~05:05 UTC):** `main` = `a2a6aa4b` (#183 live). In value order:
    (1) **PR #184 games placement step 1** `62862601`: independent review by any session except ..01HFWzTknbShcVs1863TNtiD; re-sync onto `a2a6aa4b` first if needed (no shared files expected); then Carter's per-item yes.
    (2) **#185 VR static zones** `9fa3237a`: independent review by a run that wrote none of it; merge-only re-sync onto `a2a6aa4b` (shares `museum.html` key with #183: keep v=58, highest; rebuild generated files, never hand-merge); delta check by a non-re-syncer; Carter's per-item yes.
