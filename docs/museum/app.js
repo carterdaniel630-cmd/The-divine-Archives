@@ -24,8 +24,8 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=9";
-import { makeFauna } from "./fauna.js?v=7";
+import { createWorld } from "./world.js?v=10";
+import { makeFauna } from "./fauna.js?v=8";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
@@ -35,6 +35,7 @@ import { createXRHeight } from "./xr-height.js?v=1";
 import { createXRWalk } from "./xr-walk.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
+import { createPortals } from "./portals.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -304,6 +305,7 @@ function boxAt(w, h, d, x, y, z, rotY) {
 
 // ---------------------------------------------------------------- collision (circle vs wall segments, hashed)
 const SEGS = [], GRID = new Map(), CELL = 8;
+const WALLS = [];      // the building's own walls (no columns, cases or fittings), for tools/xr-portal-check.js
 function addSeg(ax, az, bx, bz, owner) {
   const s = [ax, az, bx, bz]; SEGS.push(s);
   if (owner) owner.push(s);
@@ -343,7 +345,7 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
     if (pts[i + 1] - pts[i] < 0.01) continue;
     z.wall.push(quad(x0, z0, x1, z1, 0, h));
     z.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95));
-    addSeg(x0, z0, x1, z1);
+    addSeg(x0, z0, x1, z1); WALLS.push([x0, z0, x1, z1]);
   }
   for (let i = 1; i < pts.length - 1; i += 2) {
     const [x0, z0] = P(pts[i]), [x1, z1] = P(pts[i + 1]), dh = doorH || DOOR_H;
@@ -428,6 +430,13 @@ function build() {
   rect(zh, -2, 2, ROT.cz + ROT.r, 0, 4.2);
   wall(zh, -2, ROT.cz + ROT.r, -2, 0, 4.2); wall(zh, 2, ROT.cz + ROT.r, 2, 0, 4.2);
   region("hall", "The entrance hall", HALL.x0, HALL.x1, ROT.cz + ROT.r, HALL.z1);
+  // the plan's cells and doors, for culling in the headset (portals.js)
+  const PG = S.portals = createPortals();
+  PG.round("rotunda", "rotunda", ROT.cx, ROT.cz, ROT.r);
+  PG.rect("hall", "hall", HALL.x0, HALL.x1, HALL.z0, HALL.z1);
+  PG.rect("passage", "hall", -2, 2, ROT.cz + ROT.r, HALL.z0);
+  PG.door("hall", "passage", -2, HALL.z0, 2, HALL.z0);
+  PG.door("passage", "rotunda", -2, ROT.cz + ROT.r, 2, ROT.cz + ROT.r);
   lamp(0, 5.6, 7, 1.3); lamp(-6, 4.5, 3); lamp(6, 4.5, 3);
   for (const x of [-5, 5]) for (const zc of [4, 10]) zh.trim.push(new THREE.CylinderGeometry(0.42, 0.5, HALL.h, 12).translate(x, HALL.h / 2, zc));
   for (const x of [-5, 5]) for (const zc of [4, 10]) addBox(x, zc, 0.5);
@@ -443,7 +452,7 @@ function build() {
     const gapS = Math.abs(angDiff(mid, Math.PI / 2)) < gapA, gapN = Math.abs(angDiff(mid, -Math.PI / 2)) < gapA;
     const x0 = ROT.cx + ROT.r * Math.cos(a0), z0 = ROT.cz + ROT.r * Math.sin(a0), x1 = ROT.cx + ROT.r * Math.cos(a1), z1 = ROT.cz + ROT.r * Math.sin(a1);
     if (gapS || gapN) { zr.wall.push(quad(x0, z0, x1, z1, gapS ? 4.2 : WING_DOOR_H, ROT.h)); continue; }
-    zr.wall.push(quad(x0, z0, x1, z1, 0, ROT.h)); zr.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95)); addSeg(x0, z0, x1, z1);
+    zr.wall.push(quad(x0, z0, x1, z1, 0, ROT.h)); zr.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95)); addSeg(x0, z0, x1, z1); WALLS.push([x0, z0, x1, z1]);
   }
   zr.box.set(new THREE.Vector3(-ROT.r, 0, ROT.cz - ROT.r), new THREE.Vector3(ROT.r, ROT.h + ROT.r, ROT.cz + ROT.r));
   region("rotunda", "The Rotunda · Comparative themes", -ROT.r, ROT.r, ROT.cz - ROT.r, ROT.cz + ROT.r, { round: true });
@@ -473,9 +482,11 @@ function build() {
   wall(zs, SPINE_HALF, SPINE_Z0, SPINE_HALF, zEnd, SPINE_H, doorsE, WING_DOOR_H);
   wall(zs, -SPINE_HALF, zEnd, SPINE_HALF, zEnd, SPINE_H);
   // the short joins between the rotunda's round wall and the spine's straight walls
-  for (const sx of [-1, 1]) { const ax = sx * 2.1, az = ROT.cz - Math.sqrt(ROT.r * ROT.r - 2.1 * 2.1); zs.wall.push(quad(ax, az, sx * SPINE_HALF, SPINE_Z0, 0, SPINE_H)); addSeg(ax, az, sx * SPINE_HALF, SPINE_Z0); }
+  for (const sx of [-1, 1]) { const ax = sx * 2.1, az = ROT.cz - Math.sqrt(ROT.r * ROT.r - 2.1 * 2.1); zs.wall.push(quad(ax, az, sx * SPINE_HALF, SPINE_Z0, 0, SPINE_H)); addSeg(ax, az, sx * SPINE_HALF, SPINE_Z0); WALLS.push([ax, az, sx * SPINE_HALF, SPINE_Z0]); }
   zs.floor.push(flat(-2.3, 2.3, SPINE_Z0, SPINE_Z0 + 0.5, -0.004, false));
   region("spine", "The Spine gallery", -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0);
+  PG.rect("spine", "spine", -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0);
+  PG.door("spine", "rotunda", -SPINE_HALF, SPINE_Z0, SPINE_HALF, SPINE_Z0);   // the whole end, not only the gap: wider is safe
   for (let zc = SPINE_Z0 - 6; zc > zEnd; zc -= 10) lamp(0, 6.4, zc, 1.1);
   // pilasters along the spine, clear of the wing doors
   for (let zc = SPINE_Z0 - 3; zc > zEnd + 1; zc -= 4) {
@@ -498,6 +509,8 @@ function build() {
     rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole, corStyle && corStyle.floor);
     S.areas.push({ id: "cor:" + e.slug, kind: "corridor", axis: "x", hole: corHole, bounds: { x0: cx0, x1: cx1, z0: zk - COR_W / 2, z1: zk + COR_W / 2 }, sky: { x0: cx0 + 0.6, x1: cx1 - 0.6, z0: zk - 1.4, z1: zk + 1.4, y: COR_H }, lamp: [(cx0 + cx1) / 2, 3.9, zk] });
     region("wing-" + e.slug, "Wing " + e.num + " · " + e.name, xa, xb, zk - COR_W / 2, zk + COR_W / 2, { era: e.slug });
+    PG.rect("cor:" + e.slug, e.slug, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2);
+    PG.door("spine", "cor:" + e.slug, xa, zk - WING_DOOR / 2, xa, zk + WING_DOOR / 2);
     const gapsN = [], gapsS = [];
     ids.forEach((id, i) => {
       const j = Math.floor(i / 2), north = i % 2 === 0;
@@ -518,6 +531,8 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
+      PG.rect(id, e.slug, x0, x1, rz0, rz1);
+      PG.door(id, "cor:" + e.slug, cx - 1.75, ez, cx + 1.75, ez);   // as wide as the door sign over it (3.4 m), not only the 2.6 m door
       if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6, box: new THREE.Box3(new THREE.Vector3(x0, 0, rz0), new THREE.Vector3(x1, ROOM_H, rz1)) });
       else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
@@ -582,18 +597,22 @@ function lod(obj, far) { LOD.push({ obj, far: far || SIGN_FAR }); return obj; }
 // signs and exhibits that need no wing detail (entrance, spine, wing doors)
 function buildStatic() {
   const g = new THREE.Group(); scene.add(g);
+  // what stands inside the entrance hall or the Rotunda rides in that zone's own group, so it is drawn exactly when the
+  // walls round it are (manageZones: within SHOW_FAR). Hung on the museum-wide group it was drawn from every wing,
+  // behind the walls: from ch02/ch03 the Pilgrimage portal alone cost ~75 of a headset's draw calls (VR budget §4b/§5)
+  const hallG = ZONES.hall.group, rotG = ZONES.rotunda.group;
   // entrance: title over the north door, orientation plaque, trails board
   const title = plane(9, 1.6, new THREE.MeshBasicMaterial({ map: textTex(["The Museum", "of the Divine Archives"], { w: 1024, h: 192, size: 78, frame: false, bg: "#140d07" }) }));
-  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); g.add(lod(title, 34));
+  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); hallG.add(lod(title, 34));
   const plaque = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["About this museum", "how to read the exhibits"], { w: 512, h: 320, size: 40 }) }));
-  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); g.add(plaque);
-  addExhibit(g, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
+  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); hallG.add(plaque);
+  addExhibit(hallG, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
-  addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
+  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); hallG.add(trails);
+  addExhibit(hallG, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
   const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
-  addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
+  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); hallG.add(dir);
+  addExhibit(hallG, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
   S.manifest.eras.forEach((e) => {
     const E = S.eras[e.slug], s = E.side;
@@ -610,8 +629,8 @@ function buildStatic() {
   if (S.reservedBay) {
     const { f, t } = S.reservedBay; const [x, z] = W(f, 0, 0);
     const p = plane(2.6, 1.6, new THREE.MeshLambertMaterial({ map: textTex([t.name, "in preparation"], { w: 512, h: 320, size: 40 }) }));
-    placeOnWall(p, x, 2.4, z, f.fx, f.fz); g.add(lod(p, 24));
-    addExhibit(g, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
+    placeOnWall(p, x, 2.4, z, f.fx, f.fz); rotG.add(lod(p, 24));
+    addExhibit(rotG, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
   }
   // the planetarium's star projector at the centre of the Rotunda
   const proj = new THREE.Group(); proj.position.set(ROT.cx, 0, ROT.cz);
@@ -619,8 +638,8 @@ function buildStatic() {
   proj.add(new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 16).translate(0, 1.4, 0), MAT.darkstone));
   const holes = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 6, 4), MAT.flame, 60), mt = new THREE.Matrix4();
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
-  proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
-  addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
+  proj.add(holes); rotG.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
+  addExhibit(rotG, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
   // statues in their rooms (docs/museum/statues.js; Carter's change of plans 2026-11-09: none in the Rotunda): a pedestal
   // and plaque for each placed statue in its room's centre aisle, facing the door; the statue itself is fetched only when
   // the visitor comes near (statueTick) and drawn only while its room is shown. They are built here, once, not with the
@@ -654,11 +673,11 @@ function buildStatic() {
   const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = portalPose().ry;
   const pPlaque = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.34), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 512, h: 128, size: 40, bg: "#2a1c10" }) }));
   pPlaque.position.set(0, 3.95, 0.14); portal.add(pPlaque);
-  g.add(portal);
+  hallG.add(portal);
   const pq = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), portal.rotation.y), side = new THREE.Vector3(1, 0, 0).applyQuaternion(pq);
   for (const sx of [-1, 1]) addBox(px + side.x * sx * 0.83, pz + side.z * sx * 0.83, 0.16);   // only the pillars block; the opening is open
   S.portalFx = { fx, pos: new THREE.Vector3(px, 0, pz), inv: pq.clone().invert(), fired: !!S.portalArrived };
-  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
+  const hit = hitBoxFor(portal, 0.3); addExhibit(hallG, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
   // room door signs are built with each wing's exhibits
 }
 // where the Pilgrimage portal stands, and which way it faces (also used to arrive back through it): against the
@@ -954,9 +973,26 @@ async function loadDetail(zoneId) {
 function distToBox(b, p) { const dx = Math.max(b.min.x - p.x, 0, p.x - b.max.x), dz = Math.max(b.min.z - p.z, 0, p.z - b.max.z); return Math.hypot(dx, dz); }
 // inside a room only that room's exhibits are drawn; from a corridor, the rooms whose doors are near
 function roomVisibility(z, d) {
-  z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR;
-  z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW; });
+  z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR && zoneSeen(z.id);
+  z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = (S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW) && cellSeen(rg.name.slice(5)); });
 }
+// In the headset only (handoff/vr-performance-budget.md §5): what the plan's doors let the visitor see (portals.js).
+// S.cull is the set of cells seen from the head; null on the flat screen, or when the head is outside every cell, and
+// then nothing is culled, so the flat museum is exactly as before. A zone is seen when any of its cells is; an id that
+// is not a cell (a Rotunda bay, say) is never culled by this.
+function cullUpdate() {
+  const on = renderer.xr.isPresenting && S.portals;
+  const set = on ? S.portals.visible(S.pos.x, S.pos.z) : null;
+  const key = set ? [...set].sort().join(",") : "";
+  if (key === S.cullKey) return false;
+  S.cullKey = key; S.cull = set;
+  S.cullZones = set ? new Set([...set].map((id) => S.portals.zoneOf(id))) : null;
+  S.cullCor = !!set && [...set].some((id) => id.indexOf("cor:") === 0);
+  return true;
+}
+function cellSeen(id) { return !S.cull || !S.portals.cells.has(id) || S.cull.has(id); }
+// the Spine's door frames stand 0.21 m out into each wing's corridor, so the Spine's shell is kept whenever a corridor is seen
+function zoneSeen(id) { return !S.cullZones || S.cullZones.has(id) || (id === "spine" && S.cullCor); }
 // the statues in their rooms: each fetched once the visitor is within STATUE_FETCH of its room, and shown (pedestal,
 // statue, tap target) exactly when its room's exhibits are: from inside the room, or within ROOM_SHOW of it while not
 // inside another room (roomVisibility), so a statue is never drawn behind the walls of a neighbouring room
@@ -970,15 +1006,17 @@ function statueTick() {
       loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.midTris = t.midTris; s.farTris = t.farTris; S.dirty = true; })
         .catch((e) => { s.state = "failed"; console.warn("The " + s.st.name + " statue could not be loaded.", e); });
     }
-    const vis = S.inRoom ? S.inRoom === s.st.room : d < ROOM_SHOW;
+    const vis = (S.inRoom ? S.inRoom === s.st.room : d < ROOM_SHOW) && cellSeen(s.st.room);
     if (s.ped.visible !== vis) { s.ped.visible = vis; S.dirty = true; }
   }
 }
 function manageZones() {
+  cullUpdate();
   for (let i = LOD.length - 1; i >= 0; i--) {
     const l = LOD[i];
     if (!l.obj.parent) { LOD.splice(i, 1); continue; }
-    l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far;
+    if (S.cull && l.cell === undefined) { l.obj.updateWorldMatrix(true, false); const p = new THREE.Vector3().setFromMatrixPosition(l.obj.matrixWorld), c = S.portals.cellAt(p.x, p.z); l.cell = c ? c.id : null; }   // the cell a sign hangs in
+    l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far && (!l.cell || cellSeen(l.cell));
   }
   if (S.sky) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
   statueTick();
@@ -986,14 +1024,14 @@ function manageZones() {
   S.inRoom = inside ? inside.room : null;
   for (const z of Object.values(ZONES)) {
     const d = distToBox(z.box, S.pos);
-    z.group.visible = d < SHOW_FAR || z.id === "spine";
+    z.group.visible = (d < SHOW_FAR || z.id === "spine") && zoneSeen(z.id);
     if (z.decorGroup) {
       const E = S.eras[z.id], here = S.regions.find((r) => r.era === z.id && S.pos.x >= r.x0 - 0.3 && S.pos.x <= r.x1 + 0.3 && S.pos.z >= r.z0 - 0.3 && S.pos.z <= r.z1 + 0.3);
       const bySpine = E && Math.abs(S.pos.x) < SPINE_HALF + 0.3 && Math.abs(S.pos.z - E.zk) < 14;
       z.decorGroup.visible = !!(here || bySpine);
     }
     for (const r of z.decorRooms || []) {                    // a room's fittings and flames: only in or near it (as its exhibits)
-      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10);
+      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10) && cellSeen(r.id);
       if (vis !== r.group.visible || r.flamesShown !== vis) { r.group.visible = vis; r.flamesShown = vis; S.style.setAreaVisible(r.id, vis); S.dirty = true; }
     }
     if (z.id === "hall" || z.id === "spine") continue;
@@ -1003,6 +1041,8 @@ function manageZones() {
     if (z.exGroup && !z.exGroup.parent) z.exGroup = null;
     if (z.exGroup) roomVisibility(z, d);
   }
+  // in the headset the planetarium follows the Rotunda's shell in the same check, so it never appears a check late
+  if (S.sky && S.cull) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
 }
 
 // ---------------------------------------------------------------- lights: pooled onto the nearest lamps
@@ -1613,14 +1653,14 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); if (S.xrRead) S.xrRead.update(dt, S.xrMove.inputs); xrFollow(); }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); if (S.xrRead) S.xrRead.update(dt, S.xrMove.inputs); xrFollow(); if (cullUpdate()) { zoneT = 0; manageZones(); } }   // a door comes into view: show it now, not at the next check
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
   if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, false)) S.dirty = true;
   if (S.world) {
-    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; setFlash(S.world.flash);
+    if (S.world.update(dt, S.pos, S.inRoom, false, S.cull ? cellSeen : null)) S.dirty = true; setFlash(S.world.flash);
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
@@ -1873,6 +1913,25 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
+  // the headset's portal culling (portals.js): the plan's cells and doors, the walls, and the set seen now (null: none culled)
+  portals: () => S.portals ? { cells: S.portals.list(), walls: WALLS.map((w) => w.slice()), cull: S.cull ? [...S.cull].sort() : null } : null,
+  // where each drawn thing of each zone stands in plan (zone shell; wing exhibits by room): up to `n` triangle centres
+  // (points, for a Points object) per object, world x/z, for the check's containment test
+  portalOwners: (n) => { const out = [], v = new THREE.Vector3(), lim = n || 1500;
+    const walk = (root, zone, part) => root.traverse((o) => { if (!(o.isMesh || o.isPoints) || o.userData.exhibit || !o.geometry || !o.geometry.attributes.position) return;
+      let room = null; for (let p = o; p && p !== root; p = p.parent) if (p.name && p.name.indexOf("room-") === 0) { room = p.name.slice(5); break; }
+      o.updateWorldMatrix(true, false);
+      if (o.isInstancedMesh) { const m4 = new THREE.Matrix4(), pts = []; for (let k = 0; k < o.count; k++) { o.getMatrixAt(k, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); pts.push(+v.x.toFixed(3), +v.z.toFixed(3)); } out.push({ zone, part, room, name: o.name || "instanced", pts }); return; }
+      const P = o.geometry.attributes.position, I = o.geometry.index, pts = [], count = o.isPoints ? P.count : (I ? I.count : P.count) / 3, step = Math.max(1, Math.floor(count / lim));
+      const at = (k) => (I ? I.getX(k) : k);
+      for (let t = 0; t < count; t += step) {
+        if (o.isPoints) { v.fromBufferAttribute(P, t).applyMatrix4(o.matrixWorld); pts.push(+v.x.toFixed(3), +v.z.toFixed(3)); continue; }
+        let x = 0, z = 0; for (let c = 0; c < 3; c++) { v.fromBufferAttribute(P, at(t * 3 + c)).applyMatrix4(o.matrixWorld); x += v.x; z += v.z; }
+        pts.push(+(x / 3).toFixed(3), +(z / 3).toFixed(3));
+      }
+      out.push({ zone, part, room, name: o.name || o.type, pts }); });
+    for (const z of Object.values(ZONES)) { walk(z.group, z.id, "shell"); if (z.exGroup) walk(z.exGroup, z.id, "exhibits"); }
+    return out; },
   xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
   xrExit: () => S.xr && S.xr.exit(),
   lights: () => { const on = []; scene.traverseVisible((o) => { if (o.isLight) on.push(o.type); }); return { on, pooled: lit.length, merged: hemiMerged, flashOn: flashLight.visible, hemi: [hemi.color.r * hemi.intensity, hemi.color.g * hemi.intensity, hemi.color.b * hemi.intensity], hemiGround: [hemi.groundColor.r * hemi.intensity, hemi.groundColor.g * hemi.intensity, hemi.groundColor.b * hemi.intensity], flash: flashLight.intensity }; },   // the light rig (VR loop: light rig per tier)
