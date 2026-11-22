@@ -2,8 +2,13 @@
 // Numbers are the Comfort Warden's (handoff/vr-comfort-brief.md §a–§b) as settled in handoff/vr-interaction-spec.md
 // §2 and its [WARDEN] table: teleport arc max 8 m, hold 200 ms to aim, a 150–250 ms dip-to-dark on arrival, no
 // vignette on teleport; snap turn 30°, cooldown 250 ms, with the vignette (40–60 %, onset ≤ 100 ms, clearing over
-// 300–400 ms). Smooth movement and smooth turn are opt-in only and need the settings stele, a later piece: they are
-// not offered here, so a first session is the most comfortable one (Comfort §f.25).
+// 300–400 ms). Smooth turn is not offered. Stick walking (Carter's "a", 2026-11-21) is opt-in only: off until the
+// visitor turns it on at the walking plaque (xr-walk.js, two confirmations), so a first session is the most comfortable
+// one (Comfort §f.25). When on, the LEFT-hand stick walks inside the Warden's envelope (Comfort §a.4, architecture §4.2:
+// top speed 2.0 m/s, speeding up 0 → 2.0 m/s over 1.0 s; slowing at 4 m/s², the most §a.4 allows, so the visitor never
+// drifts on after letting go), in the direction the head faces, level (no roll or pitch, §a.5), stopped by walls as
+// walking is; the vignette is on for the whole glide (§b.7: "any artificial motion"; the interaction spec's 1.2 m/s
+// line is inside that). The right stick still snap-turns; teleport works as before.
 //
 // Everything moves the RIG (xr.js), never the camera: the headset owns the camera's pose inside the rig.
 // One hand is enough (Comfort §d.16): either controller's trigger aims and either stick turns.
@@ -17,7 +22,11 @@ export const MOVE = {
   SNAP: Math.PI / 6,         // 30°
   COOLDOWN: 0.25,            // s between snaps
   STICK_ON: 0.7, STICK_OFF: 0.3,
-  VIG: 0.5, VIG_ON: 0.08, VIG_OFF: 0.35            // strength 50 %, onset 80 ms, clears over 350 ms
+  VIG: 0.5, VIG_ON: 0.08, VIG_OFF: 0.35,           // strength 50 %, onset 80 ms, clears over 350 ms
+  WALK_MAX: 2.0,             // m/s, stick walking's top speed (no run)
+  WALK_UP: 2.0,              // m/s², 0 → 2.0 m/s over 1.0 s
+  WALK_DOWN: 4.0,            // m/s², letting go stops within half a metre
+  WALK_DEAD: 0.15            // stick dead zone, so a resting thumb never creeps
 };
 const GOLD = new THREE.Color("#e0b252"), CRIMSON = new THREE.Color("#b3342b");
 
@@ -32,7 +41,7 @@ function canvasTexture(w, h, draw) {
 // onMoved(): called after a teleport or a turn. onTap(ctrl): a short trigger press (under HOLD), with that hand's
 // target-ray space, for whatever the hand points at (the posture plaque, xr-height.js).
 export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap }) {
-  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0 };
+  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0, walk: false, speed: 0, speedPeak: 0, accelPeak: 0, walked: 0, blocked: 0 };
 
   // ---- controllers: target-ray and grip spaces live in the rig, so they move with it
   const hands = [0, 1].map((i) => {
@@ -89,6 +98,7 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
   veil.renderOrder = 999; veil.visible = false; veil.frustumCulled = false;
 
   let aim = null, target = new THREE.Vector3(), valid = false, fade = null, cool = 0, vigT = 0, vigOn = false;
+  let walkOn = false, vx = 0, vz = 0;   // stick walking: on or off, and the current glide velocity (world, m/s)
   const head = new THREE.Vector3(), p0 = new THREE.Vector3(), dir = new THREE.Vector3(), ctl = new THREE.Vector3(), tmp = new THREE.Vector3(), bez = new THREE.QuadraticBezierCurve3();
 
   function attach() { camera.add(vig); camera.add(veil); }
@@ -96,13 +106,14 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     camera.remove(vig); camera.remove(veil);
     aim = null; fade = null; arc.visible = false; marker.visible = false; vig.visible = false; veil.visible = false;
     vigOn = false; vigT = 0; dbg.aiming = false; dbg.fade = 0; dbg.vignette = 0;
+    walkOn = false; vx = vz = 0; dbg.walk = false; dbg.speed = 0;
     hands.forEach((h) => { h.held = null; h.armed = true; });
   }
 
   function stopAim(release) {
     const h = aim; aim = null; arc.visible = false; marker.visible = false; dbg.aiming = false;
     if (!h) return;
-    if (release && valid) fade = { t: 0, moved: false, to: target.clone() };
+    if (release && valid) { fade = { t: 0, moved: false, to: target.clone() }; vx = vz = 0; }
     else if (release) dbg.cancelled++;   // an invalid release cancels silently
   }
 
@@ -141,10 +152,49 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     if (onMoved) onMoved();
   }
 
-  function stickX(src) {
-    const gp = src && src.gamepad; if (!gp || !gp.axes) return 0;
+  function stickX(src) { return stick(src)[0]; }
+  function stick(src) {
+    const gp = src && src.gamepad; if (!gp || !gp.axes) return [0, 0];
     // xr-standard puts the thumbstick on axes 2–3; some runtimes report only 0–1 (do not hardcode, arch §6)
-    return gp.axes.length >= 4 ? gp.axes[2] || 0 : gp.axes[0] || 0;
+    return gp.axes.length >= 4 ? [gp.axes[2] || 0, gp.axes[3] || 0] : [gp.axes[0] || 0, gp.axes[1] || 0];
+  }
+  // the hand that walks: the left one, and only while stick walking is on (one controller alone keeps turning with it)
+  function walkHand() { return walkOn ? hands.find((h) => h.source && h.source.handedness === "left") || null : null; }
+
+  // one frame of stick walking: ease the velocity toward where the stick points, then move the rig unless a wall says no
+  function glide(dt, h) {
+    let tx = 0, tz = 0;
+    if (h && !aim && !fade) {
+      const [sx, sy] = stick(h.source), m = Math.min(1, Math.hypot(sx, sy));
+      if (m > MOVE.WALK_DEAD) {
+        const k = (m - MOVE.WALK_DEAD) / (1 - MOVE.WALK_DEAD) * MOVE.WALK_MAX / m, yaw = headYaw();
+        const f = -sy * k, r = sx * k;   // stick forward is -y
+        tx = -Math.sin(yaw) * f + Math.cos(yaw) * r; tz = -Math.cos(yaw) * f - Math.sin(yaw) * r;
+      }
+    }
+    if (fade) { vx = vz = 0; }
+    const dx = tx - vx, dz = tz - vz, gap = Math.hypot(dx, dz);
+    if (gap > 1e-6) {
+      const speeding = Math.hypot(tx, tz) >= Math.hypot(vx, vz);
+      const step = Math.min(gap, (speeding ? MOVE.WALK_UP : MOVE.WALK_DOWN) * dt);
+      vx += dx / gap * step; vz += dz / gap * step;
+      if (dt > 0) dbg.accelPeak = Math.max(dbg.accelPeak, +(step / dt).toFixed(3));
+    }
+    let sp = Math.hypot(vx, vz);
+    if (sp > MOVE.WALK_MAX) { vx *= MOVE.WALK_MAX / sp; vz *= MOVE.WALK_MAX / sp; sp = MOVE.WALK_MAX; }
+    if (sp < 1e-3) { vx = vz = 0; dbg.speed = 0; return false; }
+    const hp = headPos(), mx = vx * dt, mz = vz * dt;
+    // straight on, else slide along the wall (one axis at a time), else stop
+    let ok = [mx, mz];
+    if (!canStand(hp.x + mx, hp.z + mz, hp.x, hp.z)) {
+      if (Math.abs(mx) > 1e-6 && canStand(hp.x + mx, hp.z, hp.x, hp.z)) { ok = [mx, 0]; vz = 0; }
+      else if (Math.abs(mz) > 1e-6 && canStand(hp.x, hp.z + mz, hp.x, hp.z)) { ok = [0, mz]; vx = 0; }
+      else { ok = null; vx = vz = 0; }
+      dbg.blocked++;
+    }
+    if (ok) { rig.position.x += ok[0]; rig.position.z += ok[1]; rig.updateMatrixWorld(true); dbg.walked += Math.hypot(ok[0], ok[1]); }
+    sp = Math.hypot(vx, vz); dbg.speed = +sp.toFixed(3); dbg.speedPeak = Math.max(dbg.speedPeak, dbg.speed);
+    return !!ok;
   }
 
   function update(dt) {
@@ -163,16 +213,20 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
       veil.material.opacity = o * MOVE.FADE_MAX; veil.visible = o > 0.001; dbg.fade = +veil.material.opacity.toFixed(3); dbg.fadePeak = Math.max(dbg.fadePeak, dbg.fade);
       if (fade.t >= MOVE.FADE_OUT + MOVE.FADE_IN) { fade = null; veil.visible = false; dbg.fade = 0; }
     }
+    const wh = walkHand();
     for (const h of hands) {
       if (!h.source) continue;
+      if (h === wh) { if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; } continue; }   // its stick walks
       if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; }
       const x = stickX(h.source);
       if (!h.armed && Math.abs(x) < MOVE.STICK_OFF) h.armed = true;
       if (h.armed && Math.abs(x) > MOVE.STICK_ON && cool === 0 && !fade) { h.armed = false; snap(Math.sign(x)); }
     }
     if (aim) updateAim();
-    // vignette: on with each snap (teleport has none, Comfort §b.8), then eases off
-    if (vigOn) { vigT = Math.min(MOVE.VIG, vigT + dt * MOVE.VIG / MOVE.VIG_ON); if (vigT >= MOVE.VIG) vigOn = false; }
+    const gliding = walkOn ? glide(dt, wh) : false;
+    // vignette: on with each snap (teleport has none, Comfort §b.8), then eases off; held on for a whole glide
+    if (gliding) { vigT = Math.min(MOVE.VIG, vigT + dt * MOVE.VIG / MOVE.VIG_ON); vigOn = false; }
+    else if (vigOn) { vigT = Math.min(MOVE.VIG, vigT + dt * MOVE.VIG / MOVE.VIG_ON); if (vigT >= MOVE.VIG) vigOn = false; }
     else vigT = Math.max(0, vigT - dt * MOVE.VIG / MOVE.VIG_OFF);
     vig.material.opacity = vigT; vig.visible = vigT > 0.001; dbg.vignette = +vigT.toFixed(3); dbg.vignettePeak = Math.max(dbg.vignettePeak, dbg.vignette);
   }
@@ -181,5 +235,8 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
   // world up or down at once, so the visitor never sees it slide); refused while aiming or already dipping
   function dip(cb) { if (aim || fade) { return false; } fade = { t: 0, moved: false, cb }; return true; }
 
-  return { update, attach, detach, dip, debug: dbg, get busy() { return !!(aim || fade); }, get controllers() { return hands.filter((h) => h.source).map((h) => h.ctrl); } };
+  // stick walking on or off (xr-walk.js decides, after the visitor's confirmations)
+  function setWalk(on) { walkOn = !!on; dbg.walk = walkOn; if (!walkOn) { vx = vz = 0; dbg.speed = 0; } }
+
+  return { update, attach, detach, dip, setWalk, debug: dbg, get walk() { return walkOn; }, get hasLeft() { return hands.some((h) => h.source && h.source.handedness === "left"); }, get busy() { return !!(aim || fade); }, get controllers() { return hands.filter((h) => h.source).map((h) => h.ctrl); } };
 }

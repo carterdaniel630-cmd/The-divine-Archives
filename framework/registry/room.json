@@ -35,7 +35,6 @@
     "figure:ra",
     "figure:set",
     "figure:thoth",
-    "game:chess",
     "relic:v20",
     "relic:v34",
     "relic:v43",
@@ -59,7 +58,6 @@
     "figure:pazuzu",
     "figure:shamash",
     "figure:tiamat",
-    "game:ziggurat",
     "relic:v35",
     "relic:v52"
    ],
@@ -72,8 +70,7 @@
    "parent": "wing:02-bronze-age",
    "href": "museum.html#ch04",
    "links": [
-    "chapter:ch04",
-    "game:excavation"
+    "chapter:ch04"
    ],
    "from": "docs/museum/manifest.json"
   },
@@ -104,7 +101,6 @@
     "figure:anahita",
     "figure:angra-mainyu",
     "figure:mithra",
-    "game:antithesis",
     "relic:v54"
    ],
    "from": "docs/museum/manifest.json"
@@ -160,7 +156,6 @@
     "figure:hera",
     "figure:poseidon",
     "figure:zeus",
-    "game:fighter",
     "relic:v39",
     "relic:v56"
    ],
@@ -255,7 +250,6 @@
     "figure:jupiter",
     "figure:mars",
     "figure:vesta",
-    "game:dominion",
     "relic:v44"
    ],
    "from": "docs/museum/manifest.json"
@@ -423,7 +417,6 @@
    "href": "museum.html#ch22",
    "links": [
     "chapter:ch22",
-    "game:reliquary",
     "relic:v04",
     "relic:v15",
     "relic:v24"
@@ -535,7 +528,6 @@
     "figure:hero-twins",
     "figure:itzamna",
     "figure:maize-god",
-    "game:labyrinth",
     "relic:v31",
     "relic:v32"
    ],
@@ -645,7 +637,6 @@
    "links": [
     "chapter:ch37",
     "figure:baphomet",
-    "game:ouroboros",
     "relic:v73"
    ],
    "from": "docs/museum/manifest.json"
@@ -687,7 +678,6 @@
     "figure:baron-samedi",
     "figure:ezili-freda",
     "figure:papa-legba",
-    "game:seeker",
     "relic:v77"
    ],
    "from": "docs/museum/manifest.json"
@@ -733,7 +723,6 @@
     "figure:quetzalcoatl",
     "figure:tezcatlipoca",
     "figure:tlaloc",
-    "game:treasure",
     "relic:v13",
     "relic:v41",
     "relic:v51",
