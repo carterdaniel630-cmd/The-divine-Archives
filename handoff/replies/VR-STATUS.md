@@ -1,19 +1,20 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~21:40 UTC. **#189 independent review PASS, 0 findings** (this run wrote none of it), GitHub
-7/7 green on `ee7ffc76` incl. Lighthouse. It now waits only on Carter's per-item yes, and on a re-sync once #188 is
-live. **#188 is still mergeable now** (build loop merges it; `main` was still `1cfb8d9f` at 21:30). Reply:
-`vr/2026-11-22-2140-review-189.md`; review filed on `review-log` `30fd2af9`; PR comment posted.
+**As of:** 2026-11-22 ~21:50 UTC. **PR #190 opened: the draw ledger.** It shows what the Wing II corridor draws in the
+headset. Finding: 90% of the corridor's triangles are the living ground under the glass. Its plants and creatures are
+never skipped when out of view (`frustumCulled = false`), so about 504k triangles are drawn whichever way the head
+turns. No site change. Reply: `vr/2026-11-22-2145-corridor-ledger.md`; report:
+`audits/vr-draw-ledger/2026-11-22-corridor.md` (on the PR branch).
 
 ## Done
-- #189 `loop/vr-perf-overlay` `ee7ffc76` on `main` `1cfb8d9f`: the §7 overlay (plate in the headset, box on a flat
-  screen, `window.__vrfps`), only with `?vrfps=1`. Independent review PASS 0 (21:40), GitHub 7/7 green. This run re-ran:
-  review-checks 9/0/0 with `--build` (no diff), verify 18/18, tests 51/51, `vr-perf-overlay-check.js` all pass,
-  `xr-entry-check.js` all pass, flat baseline 0 errors. **Waiting on:** Carter's per-item yes; the re-sync after #188.
-- #188 `loop/vr-controllers` `f12dc09d` on `main` `1cfb8d9f`: **MERGEABLE, per item.** Review PASS 0, delta check PASS 0
-  (twice), GitHub 7/7 green, Carter's yes on file. **The build loop merges it** (the VR loop never merges).
-- LIVE on `main`: #187 portal culling (`1cfb8d9f`, deploy 312); #185 static zones; #183 stick walking; #182 light rig;
-  #181 harness; the living-ground stack; #166 height check.
+- #190 `loop/vr-corridor-measure` `4436c5d0` on `main` `1cfb8d9f`: `tools/vr-draw-ledger.js` + corridor report. Local
+  checks all pass (build no diff, verify 18/18, tests 51/51, review-checks 9/0/0, xr-entry-check pass, baseline 0
+  errors). **Waiting on:** independent review by a run that wrote none of it; GitHub green; Carter's per-item yes.
+- #189 `loop/vr-perf-overlay` `ee7ffc76`: independent review PASS 0, GitHub 7/7 green. **Waiting on:** Carter's
+  per-item yes; the re-sync after #188.
+- #188 `loop/vr-controllers` `f12dc09d`: **MERGEABLE, per item** (Carter's yes on file). The build loop merges it.
+- LIVE on `main`: #187 portal culling (`1cfb8d9f`); #185 static zones; #183 stick walking; #182 light rig; #181 harness;
+  the living-ground stack; #166 height check.
 
 ## In progress
 - Nothing held.
@@ -22,27 +23,35 @@ live. **#188 is still mergeable now** (build loop merges it; `main` was still `1
 1. **After #188 goes live:** re-sync #189 onto it (museum.html takes key **61**; app.js keeps both `S.perf.frame` and
    #188's lines), then a delta check by a run that did not re-sync, then green. Not before #188 is on `main`.
 2. (build loop, not this loop) merge #188 per item; it qualifies now.
-3. **Wing II corridor:** about 736k triangles (over the hard line) and 196 calls, even with #185 and #187. Measure what
-   the corridor draws (which meshes, per view) before choosing a fix (§4a LOD). Buildable now; no Carter approval to
-   measure. Branch `loop/vr-corridor-measure` from `origin/main`.
-4. Readings, later steps:
+3. **Independent review of #190** (a run that wrote none of it; `tools/` + `audits/` only), filed on `review-log`.
+4. **Ground culling bounds (fix 1 of the report), buildable now:** give the living ground's plant scatters
+   (`world.js` 781) real bounding spheres, plus a margin for any sway, and turn culling back on. Give the creatures
+   (`fauna.js` 165, 288, 330, 423) their pit's box as their sphere. Nothing on screen may change; prove it with
+   before/after screenshots, flat and headset. Then re-measure with `vr-draw-ledger.js` and `vr-frame-budget.js`.
+   Branch `loop/vr-ground-cull` from `origin/main`.
+5. **Cut the Spine's ground into ~10 m pieces** (fix 2): invisible; re-measure after.
+6. Identify scene child 109 (92 instanced spheres across the whole building, 14.7k triangles, drawn from the corridor)
+   and child 108 (instanced shader quad, not culled; probably the flames).
+7. Readings, later steps:
    - near-field poke and magnification;
    - the A button as a select;
-   - the pilot spec's verbatim era plaques (Ishtar Gate and others, §4.3);
+   - the pilot spec's verbatim era plaques (§4.3);
    - the shaft-of-light beam (artistry pass).
-5. Day and weather, later steps. More creatures (each needs a source first).
+8. Day and weather, later steps. More creatures (each needs a source first).
 - Small tidy for whoever next touches `portals.js`: its comment on the order rooms are checked in is wrong (harmless).
 - GPU headroom is tight: with #185, #187 and a reading open, the worst view in Egypt is about 158 of 160 calls.
 
 Possible later, not built:
 - pooled-light reach 22 m → 12 m (§2), waiting on the headset walk;
-- one settings stele in the Rotunda holding the posture and walking plaques (also a dominant-hand toggle, §d.16).
+- one settings stele in the Rotunda holding the posture and walking plaques (also a dominant-hand toggle, §d.16);
+- **a distant tier for the living ground in the headset** (fix 3): it changes how the ground looks beyond ~8 m, so it
+  is an artistry call for Carter. Ask only once fixes 1 and 2 are measured and the corridor is still over the line.
 
 G4 curtain: not needed for ch02 (Carter). The readings of pending elements outside Egypt are veiled under OQ-4. The
-elements themselves still stand in the rooms; any other pending element is surfaced before building.
+elements themselves still stand in the rooms. Any other pending element is surfaced before building.
 
 Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no model names (no co-author trailer
-naming a model). The graphify CLI was not needed this run (review only, no code changed).
+naming a model). The graphify CLI installs with `bash tools/graphify-session.sh` if missing.
 
 ## Carter's field report (`field-report-2026-11-16-vr-walk.md`), against the VR pilot
 - 2 ground below the glass, 3 birds below the glass, 7 analog stick walking: **live**.
@@ -52,6 +61,8 @@ naming a model). The graphify CLI was not needed this run (review only, no code 
 
 ## Needs Carter
 - **#188 (tap a relic to read its label):** nothing more needed; the build loop puts it live.
+- **#190 (draw ledger, a measuring tool and report; no site change):** nothing yet. It is asked once its review and
+  checks pass.
 - **#189 (frame-budget readout in the headset): merge it?**
   - a) Yes (recommended). Its independent review passed with nothing found and every check is green. It is a hidden
     measuring tool that only appears with `?vrfps=1`; visitors never see or download it. It is how your headset walk
