@@ -106,8 +106,16 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 > **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **#189 VR pilot — in-headset frame-budget overlay `?vrfps=1` (2026-11-22 ~16:50 UTC)** `loop/vr-perf-overlay`
+  `ee7ffc76` on `main` `1cfb8d9f`. **VR, per item** (new build piece; no Carter yes yet). Hidden debug instrument
+  (vr-performance-budget.md §7): only with `museum.html?vrfps=1`; visitors never download it. Local results: build no
+  diff, verify 18/18, tests 51/51, review-checks 9/0/0, `vr-perf-overlay-check.js` all pass, xr-entry and xr-portal
+  checks pass, `vr-frame-budget.js` unchanged, flat baseline calls/triangles identical to `main` (+798 bytes).
+  **Still missing:** independent review by a run that wrote none of it; GitHub checks green incl. Lighthouse; Carter's
+  per-item yes. Conflicts expected with #188 in `museum.html` (keep the higher key) and the `app.js` tick()/hook lines
+  (keep both): whichever goes second re-syncs.
 - **#188 VR pilot — point at a relic and tap to read its label (2026-11-22 ~12:10 UTC)** `loop/vr-controllers` `1fef4276`
-  on `main` `fa9e526d`. **VR, per item** (new build piece; no Carter yes yet). Headset only, pilot rooms only. The flat
+  on `main` `fa9e526d`. **VR, per item** (new build piece; **Carter's yes on file 2026-11-22, `decisions-2026-11-22-pr188-yes.md`**). Headset only, pilot rooms only. The flat
   card's own text (`cardHTML`, one source) appears on a plaque beside the relic. Pending elements outside Egypt are veiled
   (OQ-4). Local results: build no diff, every verify passes, 51/51, review-checks 9/0/0, xr-entry-check 135 ok / 0 fail
   (new section 9). Flat baseline: calls and triangles identical, +5.7 KB. GPU: +10 stereo calls with a reading open.

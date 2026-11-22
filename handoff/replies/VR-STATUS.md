@@ -1,26 +1,40 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~12:40 UTC. **#187 (portal culling) delta check PASS 0** on `1cfb8d9f` by a run that did not
-re-sync. Only Lighthouse is left (it was still running); then the build loop merges it (Carter's yes on file).
-#188 still waits on Carter's per-item yes. Reply: `vr/2026-11-22-1240-delta-187.md`.
+**As of:** 2026-11-22 ~16:50 UTC. **#189, the in-headset frame-budget overlay `?vrfps=1`, is built.** All local checks
+pass. It needs an independent review, GitHub green and Carter's per-item yes. **#187 is live** (`main` `1cfb8d9f`).
+**Carter's yes for #188 is on file** (`decisions-2026-11-22-pr188-yes.md`); #188 now needs a re-sync onto `1cfb8d9f`.
+Reply: `vr/2026-11-22-1650-vrfps-overlay.md`.
 
 ## Done
-- #187 `loop/vr-portal-cull` **`1cfb8d9f`** (re-sync of reviewed `758056a4`): review PASS 0; **delta check PASS 0**
-  (`review-log` `e3dfd3aa`); Carter's yes on file (`decisions-2026-11-22-carter-pr187-yes.md`). GitHub 6/7 green; waiting
-  on Lighthouse on `1cfb8d9f` (re-run once if flaky). Then the build loop merges it.
-- #188 `loop/vr-controllers` `1fef4276`: independent review PASS 0 (`review-log` `afc6f30c`); GitHub 7/7 green.
-  Waiting on Carter's per-item yes.
-- LIVE on `main`: #185 static zones (`23d312d5`, deploy 311), #183 stick walking, #182 light rig, #181 harness, the
-  living-ground stack, #166 height check.
+- #189 `loop/vr-perf-overlay` `ee7ffc76`: the §7 overlay (plate in the headset, box on a flat screen,
+  `window.__vrfps`). Only with `?vrfps=1`. Local checks all pass (reply). Waiting on:
+  - an independent review by a run that wrote none of it;
+  - GitHub green incl. Lighthouse;
+  - Carter's per-item yes.
+- #188 `loop/vr-controllers` `1fef4276`: review PASS 0 (`review-log` `afc6f30c`). **Carter's yes is on file**
+  (2026-11-22). Needs a re-sync onto `main` `1cfb8d9f` (#187 is live), then a delta check and green. Then the build
+  loop merges it.
+- LIVE on `main`:
+  - #187 portal culling (`1cfb8d9f`, deploy 312);
+  - #185 static zones;
+  - #183 stick walking;
+  - #182 light rig;
+  - #181 harness;
+  - the living-ground stack;
+  - #166 height check.
 
 ## In progress
 - Nothing held.
 
 ## Next (in order)
-1. **In-headset overlay `?vrfps=1`** (§7), so Carter's walk can certify frame time. Buildable now.
-2. When #187 is live: #188 re-syncs onto that `main`. Conflicts in `museum.html` (keep the higher key) and the `app.js`
-   tick() headset line (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
-   (If Lighthouse on #187 fails twice on pages the diff cannot reach, put it to Carter, LOOP.md note of 2026-11-01.)
+1. **#188 re-sync onto `main` `1cfb8d9f`** (Carter's yes on file).
+   - Conflicts are expected in `museum.html` (keep the higher key) and in the `app.js` tick() headset line (keep both
+     `cullUpdate` and `xrRead.update`).
+   - Then a delta check by a run that did not re-sync, and GitHub green. Then the build loop merges it.
+   - If Lighthouse fails twice on pages the diff cannot reach, put it to Carter (LOOP.md note of 2026-11-01).
+2. **Independent review of #189** by a run that wrote none of it, with GitHub green.
+   - If #188 goes live first, #189 re-syncs onto it: museum.html keeps the higher key, and app.js keeps both
+     `S.perf.frame` and #188's lines.
 3. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187. Measure what the
    corridor draws before choosing a fix (§4a LOD).
 4. Readings, later steps:
@@ -49,11 +63,16 @@ in the 12:30 and 12:40 runs; read `graphify-out/GRAPH_REPORT.md` or the code dir
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#187 (portal culling):** your yes is on file, and its last review passed. Nothing more is needed from you; it goes
-  live once one slow website check finishes green.
-- **#188 (tap a relic to read its label): merge it?** a) Yes (recommended): review passed with 0 findings, every check
-  green; it goes live after #187, once re-synced and re-checked. b) Not yet.
+- **#188 (tap a relic to read its label):** your yes is on file. Nothing more is needed from you. It goes live after a
+  re-sync and a re-check.
+- **#189 (frame-budget readout in the headset): merge it?**
+  - a) Yes, once its independent review passes and every check is green (recommended). It is a hidden measuring tool
+    that only appears with `?vrfps=1`. Visitors never see or download it. It is how your headset walk can certify
+    72 fps.
+  - b) Not yet.
 - On your next headset visit:
+  - once #189 is live, open `getconexto.com/museum.html?vrfps=1`, enter VR, and walk each pilot room for about a
+    minute. The plate in the lower view says WITHIN or OVER and names what is over. Send a photo or the words;
   - try a snap turn while walking, and say if it feels off;
   - say if anything "pops in" at a doorway;
   - once #188 is live, say if the label plaques are easy to read and to point at.
