@@ -1,13 +1,13 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~12:30 UTC. **#187 (portal culling) is re-synced onto `main` `23d312d5` → `1cfb8d9f`**, local checks
-all pass, flat museum identical to `main`. It needs a delta check by another run and GitHub green; Carter's yes is on file.
-#188 still waits on Carter's per-item yes. Reply: `vr/2026-11-22-1230-resync-187.md`.
+**As of:** 2026-11-22 ~12:40 UTC. **#187 (portal culling) delta check PASS 0** on `1cfb8d9f` by a run that did not
+re-sync. Only Lighthouse is left (it was still running); then the build loop merges it (Carter's yes on file).
+#188 still waits on Carter's per-item yes. Reply: `vr/2026-11-22-1240-delta-187.md`.
 
 ## Done
-- #187 `loop/vr-portal-cull` **`1cfb8d9f`** (re-sync of reviewed `758056a4`): review PASS 0 earlier; Carter's yes on file
-  (`decisions-2026-11-22-carter-pr187-yes.md`). Waiting on: delta check by a run other than ..01HFWzTnD5NBbs9gpVQJr8r4,
-  GitHub 7/7 green incl. Lighthouse on `1cfb8d9f`.
+- #187 `loop/vr-portal-cull` **`1cfb8d9f`** (re-sync of reviewed `758056a4`): review PASS 0; **delta check PASS 0**
+  (`review-log` `e3dfd3aa`); Carter's yes on file (`decisions-2026-11-22-carter-pr187-yes.md`). GitHub 6/7 green; waiting
+  on Lighthouse on `1cfb8d9f` (re-run once if flaky). Then the build loop merges it.
 - #188 `loop/vr-controllers` `1fef4276`: independent review PASS 0 (`review-log` `afc6f30c`); GitHub 7/7 green.
   Waiting on Carter's per-item yes.
 - LIVE on `main`: #185 static zones (`23d312d5`, deploy 311), #183 stick walking, #182 light rig, #181 harness, the
@@ -17,20 +17,18 @@ all pass, flat museum identical to `main`. It needs a delta check by another run
 - Nothing held.
 
 ## Next (in order)
-1. **Delta check of #187's re-sync** (`origin/main...1cfb8d9f` vs reviewed `758056a4`; expect only the cache-key line to
-   differ from the reviewed diff) by a run that did not re-sync. File it on `review-log`. Re-run `xr-portal-check.js`.
-   Then the build loop merges it once GitHub is green.
-2. Then #188 re-syncs after #187 is live: conflicts in `museum.html` (keep the higher key) and the `app.js` tick()
-   headset line (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
-3. In-headset overlay `?vrfps=1` (§7), so Carter's walk can certify frame time.
-4. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187 (re-measured this
-   run). Measure what the corridor draws before choosing a fix (§4a LOD).
-5. Readings, later steps:
+1. **In-headset overlay `?vrfps=1`** (§7), so Carter's walk can certify frame time. Buildable now.
+2. When #187 is live: #188 re-syncs onto that `main`. Conflicts in `museum.html` (keep the higher key) and the `app.js`
+   tick() headset line (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
+   (If Lighthouse on #187 fails twice on pages the diff cannot reach, put it to Carter, LOOP.md note of 2026-11-01.)
+3. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187. Measure what the
+   corridor draws before choosing a fix (§4a LOD).
+4. Readings, later steps:
    - near-field poke and magnification;
    - the A button as a select;
    - the pilot spec's verbatim era plaques (Ishtar Gate and others, §4.3);
    - the shaft-of-light beam (artistry pass).
-6. Day and weather, later steps. More creatures (each needs a source first).
+5. Day and weather, later steps. More creatures (each needs a source first).
 - Small tidy for whoever next touches `portals.js`: its comment on the order rooms are checked in is wrong (harmless).
 - GPU headroom is tight: with #185, #187 and a reading open, the worst view in Egypt is about 158 of 160 calls.
 
@@ -42,7 +40,7 @@ G4 curtain: not needed for ch02 (Carter). The readings of pending elements outsi
 elements themselves still stand in the rooms; any other pending element is surfaced before building.
 
 Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no model names. The graphify CLI was missing
-in the 12:30 run; read `graphify-out/GRAPH_REPORT.md` or the code directly if it is missing again.
+in the 12:30 and 12:40 runs; read `graphify-out/GRAPH_REPORT.md` or the code directly if it is missing again.
 
 ## Carter's field report (`field-report-2026-11-16-vr-walk.md`), against the VR pilot
 - 2 ground below the glass, 3 birds below the glass, 7 analog stick walking: **live**.
@@ -51,7 +49,8 @@ in the 12:30 run; read `graphify-out/GRAPH_REPORT.md` or the code directly if it
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#187 (portal culling):** your yes is on file. Nothing more is needed from you; it goes live after its last checks.
+- **#187 (portal culling):** your yes is on file, and its last review passed. Nothing more is needed from you; it goes
+  live once one slow website check finishes green.
 - **#188 (tap a relic to read its label): merge it?** a) Yes (recommended): review passed with 0 findings, every check
   green; it goes live after #187, once re-synced and re-checked. b) Not yet.
 - On your next headset visit:
