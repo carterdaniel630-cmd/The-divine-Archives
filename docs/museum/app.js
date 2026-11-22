@@ -30,8 +30,9 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=2";
+import { createXRMove } from "./xr-move.js?v=3";
 import { createXRHeight } from "./xr-height.js?v=1";
+import { createXRWalk } from "./xr-walk.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 
@@ -67,7 +68,9 @@ const S = {
 };
 
 // ---------------------------------------------------------------- renderer
-let renderer, scene, camera, lantern, pool = [], lampPoints, flashLight;
+// the museum's sky light and the lightning in its skylights (colour of the sky side, of the ground side, strength)
+const HEMI = { sky: "#8a6a44", ground: "#1a120a", i: 1.3 }, FLASH = { sky: "#c4d2ff", ground: "#262a3a", i: 2.4 };
+let renderer, scene, camera, lantern, pool = [], lit = [], lampPoints, flashLight, hemi;
 function initRenderer() {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance", xrCompatible: true });   // xrCompatible: ready for a VR session (xr.js) without a context reset
@@ -87,12 +90,13 @@ function initRenderer() {
   scene.fog = new THREE.Fog("#0b0704", 10, 52);
   camera = new THREE.PerspectiveCamera(touch ? 70 : 64, 1, 0.05, 140);
   scene.add(camera);
-  scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.3));
-  flashLight = new THREE.HemisphereLight("#c4d2ff", "#262a3a", 0); scene.add(flashLight);   // lightning in the skylights
+  hemi = new THREE.HemisphereLight(HEMI.sky, HEMI.ground, HEMI.i); scene.add(hemi);
+  flashLight = new THREE.HemisphereLight(FLASH.sky, FLASH.ground, 0); scene.add(flashLight);   // lightning in the skylights
   scene.add(new THREE.AmbientLight("#40301f", 0.6));
   lantern = new THREE.PointLight("#ffa65a", 2.8, 7, 1.6);   // the visitor's own light: a dim hand-held torch (it flickers, see updateLights)
   camera.add(lantern);
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight("#ffb46a", 0, 22, 1.6); scene.add(l); pool.push(l); }
+  lit = pool;
   resize();
   window.addEventListener("resize", resize);
 }
@@ -1008,10 +1012,10 @@ const PLAIN_PAGES = new Set(["v28", "v29"]);
 const BULB = new THREE.Color("#ffb46a"), FLAME = new THREE.Color("#ffa860");
 function updateLights() {
   const p = S.pos;
-  const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
+  const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, lit.length);
   // among flames, only the nearest three are real lights (plans/museum-visual-pass.md §4); the rest are glow and painted light
-  const flames = near.length && near[0][0].flame, n = flames ? 3 : pool.length;
-  pool.forEach((L, i) => {
+  const flames = near.length && near[0][0].flame, n = flames ? Math.min(3, lit.length) : lit.length;
+  lit.forEach((L, i) => {
     const e = near[i];
     if (!e || i >= n) { L.intensity = 0; return; }
     const l = e[0]; L.position.copy(l.p); L.color.copy(l.flame ? FLAME : BULB);
@@ -1021,6 +1025,37 @@ function updateLights() {
     L.intensity = 26 * l.s * f;
   });
   lantern.intensity = 2.8 * (0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
+}
+
+// ---------------------------------------------------------------- the light rig in a headset
+// handoff/vr-performance-budget.md §2 as settled in AM-PER-01: at most 5 lights on the floor tier (Quest 2 and unknown
+// headsets) and 6 on Quest 3, counted in the scene graph. three.js evaluates every switched-on light in every lit pixel,
+// even at intensity 0, so the cut is made by switching lights off (visible = false), not by dimming them. In a session:
+// 1 hemisphere (the lightning one is folded into it) + ambient + the visitor's lantern + 2 pooled lamp lights (3 on
+// Quest 3). The flat museum keeps its rig exactly as before. The rig changes only when a session starts or ends, so
+// three.js rebuilds its shaders for the new light count once, not during a lightning flash.
+const XR_POOL = { floor: 2, q3: 3 };
+let hemiMerged = false;
+const flashTmp = new THREE.Color();
+function lightRig(tier) {   // tier: null for the flat museum, else xr.js's tier ("floor" / "q3")
+  const k = tier ? Math.min(pool.length, XR_POOL[tier] || XR_POOL.floor) : pool.length;
+  lit = pool.slice(0, k);
+  pool.forEach((L, i) => { L.visible = i < k; if (i >= k) L.intensity = 0; });
+  hemiMerged = !!tier; flashLight.visible = !tier; flashLight.intensity = 0;
+  setFlash(0);
+}
+// the lightning in the skylights (world.flash, 0..1). Flat: its own hemisphere light, as before. In a headset: added
+// into the one hemisphere. three.js sums each hemisphere's colour × intensity, so one light with the summed colours
+// lights every surface the same as the two did.
+function setFlash(f) {
+  if (!hemiMerged) {
+    flashLight.intensity = f * FLASH.i;
+    if (hemi.intensity !== HEMI.i) { hemi.color.set(HEMI.sky); hemi.groundColor.set(HEMI.ground); hemi.intensity = HEMI.i; }
+    return;
+  }
+  hemi.intensity = 1;
+  hemi.color.set(HEMI.sky).multiplyScalar(HEMI.i).add(flashTmp.set(FLASH.sky).multiplyScalar(f * FLASH.i));
+  hemi.groundColor.set(HEMI.ground).multiplyScalar(HEMI.i).add(flashTmp.set(FLASH.ground).multiplyScalar(f * FLASH.i));
 }
 
 // ---------------------------------------------------------------- where am I
@@ -1564,14 +1599,14 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); xrFollow(); }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); xrFollow(); }
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
   if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, false)) S.dirty = true;
   if (S.world) {
-    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
+    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; setFlash(S.world.flash);
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
@@ -1651,14 +1686,18 @@ function initXR() {
       if (S.insp && S.insp.active) S.insp.close();
       if (!$("mu-guide").hidden) toggleGuide(false);
       document.body.classList.add("is-xr");
+      lightRig(XRProbe.tier || "floor");
       S.xrMove.attach();
       S.xrHeight.attach({ floor: !seated });
+      S.xrWalk.attach();   // stick walking: off unless this device kept the visitor's confirmed choice
       S.snd.wake(); S.dirty = true;
     },
     onEnd: (at) => {
       document.body.classList.remove("is-xr");
+      lightRig(null);
       S.xrMove.detach();
       const said = S.xrHeight.detach();
+      S.xrWalk.detach();
       if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
       S.pitch = 0; S.keys.clear(); S.auto = null;
       resize(); manageZones(); locate(); savePos();
@@ -1667,12 +1706,18 @@ function initXR() {
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) });
   S.xrHeight = createXRHeight({
     camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
     clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
     dip: (cb) => S.xrMove.dip(cb),
     load: () => store.get("mu-vr-posture"), save: (v) => store.set("mu-vr-posture", v)
+  });
+  S.xrWalk = createXRWalk({
+    camera, scene, anchor: S.xrHeight.plaque,
+    clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+    load: () => store.get("mu-vr-walk"), save: (v) => store.set("mu-vr-walk", v),
+    onChange: (on) => S.xrMove.setWalk(on), hasLeft: () => S.xrMove.hasLeft
   });
   let was = false;
   const paint = async () => {
@@ -1747,10 +1792,13 @@ async function start() {
 window.__MU = {
   xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
   xrExit: () => S.xr && S.xr.exit(),
+  lights: () => { const on = []; scene.traverseVisible((o) => { if (o.isLight) on.push(o.type); }); return { on, pooled: lit.length, merged: hemiMerged, flashOn: flashLight.visible, hemi: [hemi.color.r * hemi.intensity, hemi.color.g * hemi.intensity, hemi.color.b * hemi.intensity], hemiGround: [hemi.groundColor.r * hemi.intensity, hemi.groundColor.g * hemi.intensity, hemi.groundColor.b * hemi.intensity], flash: flashLight.intensity }; },   // the light rig (VR loop: light rig per tier)
   xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
   xrHeight: () => S.xrHeight ? Object.assign({}, S.xrHeight.debug, { posture: S.xrHeight.posture, plaqueShown: S.xrHeight.plaque.visible, rigY: S.xr.rig.position.y, rig: [S.xr.rig.position.x, S.xr.rig.position.y, S.xr.rig.position.z, S.xr.rig.rotation.y], plaquePos: S.xrHeight.plaque.position.toArray() }) : null,
   xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
+  xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
+  xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
   // the water level, and where its creatures stand (ground-check.js)

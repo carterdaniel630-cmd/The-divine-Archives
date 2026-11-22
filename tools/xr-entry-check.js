@@ -10,7 +10,9 @@
 //  4. a refused session stays flat with one honest line;
 //  5. the per-tier constants: Quest 2 (and unknown headsets) 1.0 foveation / 0.8 scale, Quest 3 0.75 / 1.0;
 //  6. moving (teleport, snap turn, vignette);
-//  7. standing or seated (xr-height.js): the posture plaque, measured or set eye height, the switch, the note on leaving.
+//  7. standing or seated (xr-height.js): the posture plaque, measured or set eye height, the switch, the note on leaving;
+//  8. stick walking (xr-walk.js, xr-move.js): off by default, the walking plaque and its two confirmations, the
+//     Warden's speed and ramp, level travel along the head's facing, the vignette, stopping, walls, kept on the device.
 // SHOTS=<dir> also saves the headset's two-eye view while aiming (open floor, then a wall).
 // A stand-in device proves the museum's side of the contract only. Certification is on a real Quest 2 (the floor
 // device), which a build session cannot wear.
@@ -358,6 +360,166 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
       check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
       await t.ctx.close();
     }
+  }
+
+  console.log("8. stick walking: opt-in, two confirmations, the Warden's envelope, walls (simulated Quest 2, two controllers)");
+  {
+    const openWalk = async (xr) => {
+      const { ctx, page, errors } = await open(b, { width: 400, height: 300, ua: Q2, xr });
+      const frames = (n) => page.evaluate((n) => new Promise((ok) => { const f0 = window.__fx.frames; const w = () => (window.__fx.frames - f0 >= n ? ok() : setTimeout(w, 30)); w(); }), n);
+      const W = () => page.evaluate(() => window.__MU.xrWalk());
+      const M = () => page.evaluate(() => window.__MU.xrMove());
+      const enterAt = async (x, z, yaw, n) => {
+        await page.evaluate(([x, z, yaw]) => { window.__MU.place(x, z, yaw, 0); window.__fx.head = { x: 0, z: 0, yaw: 0 }; window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; window.__fx.source.gamepad.axes = [0, 0, 0, 0]; window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; }, [x, z, yaw]);
+        await page.evaluate(() => document.exitPointerLock && document.exitPointerLock()); await page.click("#mu-vr-btn", { force: true });
+        await page.waitForFunction((n) => window.__MU.xr().presenting && window.__MU.xrMove().controllers === n && window.__MU.xrWalk().shown, n, { timeout: 30000 });
+        await frames(3);
+      };
+      const exit = async () => { await page.evaluate(() => window.__MU.xrExit()); await page.waitForFunction(() => !window.__MU.xr().presenting, null, { timeout: 15000 }); await page.waitForTimeout(200); };
+      // point the right controller (in the play space) at the walking plaque's centre
+      const pointAtWalk = () => page.evaluate(() => {
+        const h = window.__MU.xrHeight(), [rx, ry, rz, th] = h.rig, [px, py, pz] = window.__MU.xrWalk().pos, k = window.__fx.ctrl, fy = window.__fx.session.floor ? 0 : 1.6;
+        const c = Math.cos(th), s = Math.sin(th), wx = rx + k.x * c + k.z * s, wy = ry + k.y - fy, wz = rz - k.x * s + k.z * c;
+        let dx = px - wx, dy = py - wy, dz = pz - wz; const L = Math.hypot(dx, dy, dz); dx /= L; dy /= L; dz /= L;
+        const lx = dx * c - dz * s, lz = dx * s + dz * c;
+        k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
+      });
+      const tap = async () => { await pointAtWalk(); await frames(2); await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); await frames(2); };
+      return { ctx, page, errors, frames, W, M, enterAt, exit, tap };
+    };
+    const t = await openWalk({ controller: true, left: true });
+    const { page, errors, frames, W, M, enterAt, exit, tap } = t;
+    const st = await page.evaluate(() => window.__MU.state());
+    // an open heading with about 4 m of floor ahead, and a walled one with a wall within about 3 m
+    const probe = await page.evaluate(([x, z]) => {
+      const out = { ok: null, bad: null };
+      for (let k = 0; k < 48; k++) { const yaw = k * Math.PI / 24, sx = -Math.sin(yaw), sz = -Math.cos(yaw);
+        let r = 0.2; while (r < 6 && window.__MU.xrCanStand(x + sx * r, z + sz * r, x, z)) r += 0.1;
+        if (r >= 4.2 && out.ok == null) out.ok = yaw;
+        if (r >= 1.2 && r <= 3.2 && out.bad == null) out.bad = yaw; }
+      return out; }, [st.x, st.z]);
+    check(probe.ok != null && probe.bad != null, `test setup: an open heading (${probe.ok}) and a walled one (${probe.bad}) from the start spot`);
+    await page.evaluate(() => localStorage.removeItem("mu-vr-walk"));
+
+    // a. a first session: stick walking is off; the left stick does not move the visitor
+    await enterAt(st.x, st.z, probe.ok, 2);
+    let w = await W(), m = await M();
+    check(w.state === "off" && !w.on && !m.walk && w.title === "STICK WALKING" && /^Off: you move by teleport$/.test(w.lines[0]), `first session: stick walking off; walking plaque reads ${w.title} / ${w.lines.join(" / ")}`);
+    const h0 = await page.evaluate(() => window.__MU.xrHeight());
+    const wallFree = await page.evaluate(([a, b]) => window.__MU.xrClear(a[0], a[2], b[0], b[2]), [h0.rig, w.pos]);
+    const dHead = Math.hypot(w.pos[0] - h0.rig[0], w.pos[2] - h0.rig[2]), dPlaques = Math.hypot(w.pos[0] - h0.plaquePos[0], w.pos[2] - h0.plaquePos[2]);
+    check(wallFree && dHead >= 0.8 && dHead <= 2.5 && dPlaques > 1.5 && Math.abs(w.pos[1] - h0.plaquePos[1]) < 1e-6, `walking plaque beside the posture plaque (${dPlaques.toFixed(2)} m apart), ${dHead.toFixed(2)} m away, same height ${w.pos[1].toFixed(2)} m, no wall between`);
+    check(w.bodyDeg >= 1.3 && w.titleDeg >= 1.8 && !w.overflow, `walking plaque text at 2 m: body ${w.bodyDeg}°, title ${w.titleDeg}°, every line fits`);
+    const p0 = await page.evaluate(() => window.__MU.state());
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, -1]; }); await frames(20);
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
+    const p1 = await page.evaluate(() => window.__MU.state()); m = await M();
+    check(m.walked === 0 && Math.hypot(p1.x - p0.x, p1.z - p0.z) < 0.01 && m.snaps === 0, "with it off, pushing the left stick forward moves nothing (teleport is the way to move)");
+    if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-walk-off.png"), timeout: 120000 });
+
+    // b. turning it on: the request, then two deliberate confirmations
+    await tap(); w = await W();
+    check(w.state === "ask1" && w.title === "MORE INTENSE" && !(await M()).walk, `press 1: the plaque warns: ${w.title} / ${w.lines.join(" / ")}`);
+    // a quick double press: the first is confirmation 1, the second (milliseconds later) is not taken as confirmation 2
+    await page.waitForTimeout(650);
+    await page.evaluate(() => { for (let i = 0; i < 2; i++) { window.__fx.press("selectstart"); window.__fx.press("selectend"); } });
+    await frames(2); w = await W();
+    check(w.state === "ask2" && w.presses === 3 && !(await M()).walk && /\(2 of 2\)$/.test(w.lines[2]), `confirmation 1 of 2 (${w.lines.join(" / ")}); a second press under half a second later is not taken as confirmation 2`);
+    await page.waitForTimeout(650); await tap(); w = await W(); m = await M();
+    const kept = await page.evaluate(() => localStorage.getItem("mu-vr-walk"));
+    check(w.state === "on" && m.walk && kept === "on" && w.lines[0] === "On: the left stick walks", `confirmation 2 of 2: on, kept on this device (${kept}); plaque: ${w.lines.join(" / ")}`);
+    if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-walk-on.png"), timeout: 120000 });
+
+    // c. walking: the ramp, the top speed, level, along the head's facing, the vignette, and stopping
+    const a0 = await page.evaluate(() => ({ s: window.__MU.state(), rig: window.__MU.xrHeight().rig }));
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, -1]; });
+    await frames(6);
+    m = await M();
+    check(m.speed > 0 && m.speed < 1.0 && m.vignette >= 0.4 && m.vignette <= 0.6, `speeding up gently, not at once: ${m.speed} m/s after six frames (each at most 50 ms), vignette ${m.vignette}`);
+    await page.waitForFunction(() => window.__MU.xrMove().speed >= 1.99, null, { timeout: 60000 });
+    const a1 = await page.evaluate(() => ({ s: window.__MU.state(), rig: window.__MU.xrHeight().rig, m: window.__MU.xrMove() }));
+    const dx = a1.s.x - a0.s.x, dz = a1.s.z - a0.s.z, dist = Math.hypot(dx, dz);
+    const along = (dx * -Math.sin(a0.s.yaw) + dz * -Math.cos(a0.s.yaw)) / (dist || 1);
+    check(a1.m.speedPeak <= 2.0 + 1e-6 && a1.m.accelPeak <= 2.0 + 1e-3, `top speed ${a1.m.speedPeak} m/s (≤ 2.0), speeding up at ≤ ${a1.m.accelPeak} m/s² (0 → 2.0 over 1.0 s)`);
+    check(dist >= 0.85 && dist <= 1.3, `reaching top speed took about a metre (${dist.toFixed(2)} m: 1.0 m for a 1 s ramp)`);
+    check(along > 0.99, `the visitor goes the way the head faces (cos ${along.toFixed(4)})`);
+    check(Math.abs(a1.rig[1] - a0.rig[1]) < 1e-9 && Math.abs(a1.rig[3] - a0.rig[3]) < 1e-9, "level: no height change, no turning from walking (horizon lock)");
+    // let go, reading the distance walked at that same moment
+    const walked0 = await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; return window.__MU.xrMove().walked; });
+    await page.waitForFunction(() => window.__MU.xrMove().speed === 0, null, { timeout: 60000 });
+    m = await M();
+    check(m.walked - walked0 <= 0.55 && m.accelPeak <= 4.0 + 1e-3, `letting go stops within ${(m.walked - walked0).toFixed(2)} m (≤ 0.5 m at 4 m/s²); no drifting on`);
+    await page.waitForFunction(() => window.__MU.xrMove().vignette === 0, null, { timeout: 30000 });
+    check(true, "the vignette clears once the visitor stops");
+    // a resting thumb (inside the dead zone) does not creep
+    const r0 = (await M()).walked;
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0.08, -0.1]; }); await frames(12);
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
+    check((await M()).walked === r0, "a thumb resting on the stick (inside the dead zone) does not creep");
+
+    // d. with walking on: the right stick still snap-turns, and the trigger still aims a teleport
+    const n0 = (await M()).snaps;
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 1, 0]; });
+    await page.waitForFunction((n0) => window.__MU.xrMove().snaps === n0 + 1, n0, { timeout: 20000 });
+    await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 0, 0]; }); await frames(4);
+    check(true, "right stick: still a 30° snap turn");
+    await page.evaluate(() => { window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; window.__fx.press("selectstart"); });
+    await page.waitForFunction(() => window.__MU.xrMove().aiming, null, { timeout: 20000 });
+    await page.evaluate(() => window.__fx.press("selectend")); await frames(6);
+    check(!(await M()).aiming, "trigger: teleport aiming still works beside stick walking");
+    await exit();
+
+    // e. a remembered choice comes back; walking into a wall stops at it (or slides along it), never through
+    await enterAt(st.x, st.z, probe.bad, 2);
+    w = await W(); m = await M();
+    check(w.state === "on" && m.walk, "next entry: the device's confirmed choice comes back (on), no new confirmations");
+    const b0 = await page.evaluate(() => window.__MU.state());
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, -1]; });
+    await page.waitForFunction(() => window.__MU.xrMove().blocked > 0, null, { timeout: 90000 });
+    await frames(30);
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
+    await page.waitForFunction(() => window.__MU.xrMove().speed === 0, null, { timeout: 60000 });
+    const b1 = await page.evaluate(() => window.__MU.state());
+    const through = !(await page.evaluate(([a, c]) => window.__MU.xrClear(a.x, a.z, c.x, c.z), [b0, b1]));
+    const stand = await page.evaluate(([c]) => window.__MU.xrCanStand(c.x, c.z, c.x, c.z), [b1]);
+    check(!through && stand, `walking at a wall: stopped or slid along it, never through (${Math.hypot(b1.x - b0.x, b1.z - b0.z).toFixed(2)} m, still on open floor)`);
+
+    // f. turning it off is one press
+    await tap(); w = await W(); m = await M();
+    const off = await page.evaluate(() => localStorage.getItem("mu-vr-walk"));
+    check(w.state === "off" && !m.walk && off === "off", `one press turns it off (kept: ${off})`);
+    const q0 = await page.evaluate(() => window.__MU.state());
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, -1]; }); await frames(12);
+    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
+    const q1 = await page.evaluate(() => window.__MU.state());
+    check(Math.hypot(q1.x - q0.x, q1.z - q0.z) < 0.01, "off again: the left stick moves nothing");
+    // a request left unanswered is dropped
+    await tap(); w = await W();
+    check(w.state === "ask1", "a new request shows the warning");
+    await page.waitForFunction(() => window.__MU.xrWalk().state === "off", null, { timeout: 90000 });
+    check(!(await M()).walk, "unanswered for 10 seconds: back to off");
+    await exit();
+    const gone = await page.evaluate(() => ({ x: window.__MU.xr(), w: window.__MU.xrWalk() }));
+    check(!gone.w.shown && gone.x.cameraParent === "Scene" && gone.x.cameraChildren === 1, "after exit the walking plaque is put away; nothing left on the camera");
+    check(await drawsFlat(page), "flat render loop draws after the walking checks");
+    check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+    await t.ctx.close();
+
+    // g. only a right-hand controller, stick walking kept on: the plaque says it needs the left one; the stick turns
+    const u = await openWalk({ controller: true });
+    await u.page.evaluate(() => localStorage.setItem("mu-vr-walk", "on"));
+    const s2 = await u.page.evaluate(() => window.__MU.state());
+    await u.enterAt(s2.x, s2.z, s2.yaw, 1);
+    const w2 = await u.W();
+    check(w2.state === "on" && w2.lines[0] === "On: needs the left controller", `one right controller only: plaque reads "${w2.lines[0]}"`);
+    const n1 = (await u.M()).snaps;
+    await u.page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 1, 0]; });
+    await u.page.waitForFunction((n) => window.__MU.xrMove().snaps === n + 1, n1, { timeout: 20000 });
+    await u.page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 0, 0]; });
+    check((await u.M()).walked === 0, "its stick still snap-turns and walks nowhere");
+    await u.exit();
+    check(u.errors.length === 0, `0 script errors${u.errors.length ? " — " + u.errors.join(" | ") : ""}`);
+    await u.ctx.close();
   }
 
   await b.close(); srv.close();
