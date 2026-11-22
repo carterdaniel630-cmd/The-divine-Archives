@@ -1,14 +1,15 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~12:10 UTC. **#188 (tap a relic to read its label) passed its independent review, 0 findings**, and
-GitHub is 7/7 green incl. Lighthouse. It now needs only Carter's per-item yes (then a re-sync after #187). #185 is live.
-Reply: `vr/2026-11-22-1205-review-188.md`.
+**As of:** 2026-11-22 ~12:30 UTC. **#187 (portal culling) is re-synced onto `main` `23d312d5` → `1cfb8d9f`**, local checks
+all pass, flat museum identical to `main`. It needs a delta check by another run and GitHub green; Carter's yes is on file.
+#188 still waits on Carter's per-item yes. Reply: `vr/2026-11-22-1230-resync-187.md`.
 
 ## Done
+- #187 `loop/vr-portal-cull` **`1cfb8d9f`** (re-sync of reviewed `758056a4`): review PASS 0 earlier; Carter's yes on file
+  (`decisions-2026-11-22-carter-pr187-yes.md`). Waiting on: delta check by a run other than ..01HFWzTnD5NBbs9gpVQJr8r4,
+  GitHub 7/7 green incl. Lighthouse on `1cfb8d9f`.
 - #188 `loop/vr-controllers` `1fef4276`: independent review PASS 0 (`review-log` `afc6f30c`); GitHub 7/7 green.
   Waiting on Carter's per-item yes.
-- #187 `loop/vr-portal-cull` `758056a4`: review PASS 0. Carter's yes is on file (`decisions-2026-11-22-carter-pr187-yes.md`).
-  Now owes a re-sync onto `main` `23d312d5`.
 - LIVE on `main`: #185 static zones (`23d312d5`, deploy 311), #183 stick walking, #182 light rig, #181 harness, the
   living-ground stack, #166 height check.
 
@@ -16,13 +17,14 @@ Reply: `vr/2026-11-22-1205-review-188.md`.
 - Nothing held.
 
 ## Next (in order)
-1. **Re-sync #187 onto `main` `23d312d5`** (#185 is live; merge only, keep the higher cache keys) and re-run checks
-   including `xr-portal-check.js`. A different run does the delta check; then the build loop merges it (yes on file).
-2. Then #188 re-syncs after #187: conflicts in `museum.html` (keep the higher key) and the `app.js` tick() headset line
-   (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
+1. **Delta check of #187's re-sync** (`origin/main...1cfb8d9f` vs reviewed `758056a4`; expect only the cache-key line to
+   differ from the reviewed diff) by a run that did not re-sync. File it on `review-log`. Re-run `xr-portal-check.js`.
+   Then the build loop merges it once GitHub is green.
+2. Then #188 re-syncs after #187 is live: conflicts in `museum.html` (keep the higher key) and the `app.js` tick()
+   headset line (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
 3. In-headset overlay `?vrfps=1` (§7), so Carter's walk can certify frame time.
-4. Wing II corridor: about 736k triangles (over the hard line) and 200 calls, even with #185 and #187. Measure what the
-   corridor draws before choosing a fix (§4a LOD).
+4. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187 (re-measured this
+   run). Measure what the corridor draws before choosing a fix (§4a LOD).
 5. Readings, later steps:
    - near-field poke and magnification;
    - the A button as a select;
@@ -39,7 +41,8 @@ Possible later, not built:
 G4 curtain: not needed for ch02 (Carter). The readings of pending elements outside Egypt are veiled under OQ-4. The
 elements themselves still stand in the rooms; any other pending element is surfaced before building.
 
-Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no model names.
+Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no model names. The graphify CLI was missing
+in the 12:30 run; read `graphify-out/GRAPH_REPORT.md` or the code directly if it is missing again.
 
 ## Carter's field report (`field-report-2026-11-16-vr-walk.md`), against the VR pilot
 - 2 ground below the glass, 3 birds below the glass, 7 analog stick walking: **live**.
@@ -48,7 +51,7 @@ Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no mo
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#187 (portal culling):** your yes is on file. Nothing more is needed from you; it goes live after #185.
+- **#187 (portal culling):** your yes is on file. Nothing more is needed from you; it goes live after its last checks.
 - **#188 (tap a relic to read its label): merge it?** a) Yes (recommended): review passed with 0 findings, every check
   green; it goes live after #187, once re-synced and re-checked. b) Not yet.
 - On your next headset visit:
