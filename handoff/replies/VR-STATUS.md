@@ -1,9 +1,8 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~16:50 UTC. **#189, the in-headset frame-budget overlay `?vrfps=1`, is built.** All local checks
-pass. It needs an independent review, GitHub green and Carter's per-item yes. **#187 is live** (`main` `1cfb8d9f`).
-**Carter's yes for #188 is on file** (`decisions-2026-11-22-pr188-yes.md`); #188 now needs a re-sync onto `1cfb8d9f`.
-Reply: `vr/2026-11-22-1650-vrfps-overlay.md`.
+**As of:** 2026-11-22 ~16:50 UTC. **#188 is re-synced onto `main` `1cfb8d9f` → `f12dc09d`**, all local checks pass.
+It needs a delta check by a run that did not re-sync, and GitHub green; then the build loop merges it (Carter's yes on
+file). **#189** (frame-budget overlay) still waits on its independent review. Reply: `vr/2026-11-22-1645-resync-188.md`.
 
 ## Done
 - #189 `loop/vr-perf-overlay` `ee7ffc76`: the §7 overlay (plate in the headset, box on a flat screen,
@@ -11,9 +10,9 @@ Reply: `vr/2026-11-22-1650-vrfps-overlay.md`.
   - an independent review by a run that wrote none of it;
   - GitHub green incl. Lighthouse;
   - Carter's per-item yes.
-- #188 `loop/vr-controllers` `1fef4276`: review PASS 0 (`review-log` `afc6f30c`). **Carter's yes is on file**
-  (2026-11-22). Needs a re-sync onto `main` `1cfb8d9f` (#187 is live), then a delta check and green. Then the build
-  loop merges it.
+- #188 `loop/vr-controllers`, **re-synced to `f12dc09d`** on `main` `1cfb8d9f` (16:45 run). Review PASS 0 on
+  `1fef4276` (`review-log` `afc6f30c`). **Carter's yes is on file** (2026-11-22). Needs a delta check by a run that did
+  not re-sync, and GitHub green. Then the build loop merges it.
 - LIVE on `main`:
   - #187 portal culling (`1cfb8d9f`, deploy 312);
   - #185 static zones;
@@ -27,14 +26,14 @@ Reply: `vr/2026-11-22-1650-vrfps-overlay.md`.
 - Nothing held.
 
 ## Next (in order)
-1. **#188 re-sync onto `main` `1cfb8d9f`** (Carter's yes on file).
-   - Conflicts are expected in `museum.html` (keep the higher key) and in the `app.js` tick() headset line (keep both
-     `cullUpdate` and `xrRead.update`).
-   - Then a delta check by a run that did not re-sync, and GitHub green. Then the build loop merges it.
+1. **#188 delta check on `f12dc09d`** by a run that did NOT re-sync (not the 16:45 run's session).
+   - `origin/main...f12dc09d` must equal the reviewed diff `fa9e526d...1fef4276` except two lines: museum.html key 60,
+     and app.js tick() headset line holding both `xrRead.update` and `cullUpdate`.
+   - Then GitHub green incl. Lighthouse. Then the build loop merges it.
    - If Lighthouse fails twice on pages the diff cannot reach, put it to Carter (LOOP.md note of 2026-11-01).
 2. **Independent review of #189** by a run that wrote none of it, with GitHub green.
-   - If #188 goes live first, #189 re-syncs onto it: museum.html keeps the higher key, and app.js keeps both
-     `S.perf.frame` and #188's lines.
+   - If #188 goes live first, #189 re-syncs onto it: museum.html takes key **61** (both sides will say 60), and app.js
+     keeps both `S.perf.frame` and #188's lines.
 3. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187. Measure what the
    corridor draws before choosing a fix (§4a LOD).
 4. Readings, later steps:
@@ -63,8 +62,8 @@ in the 12:30 and 12:40 runs; read `graphify-out/GRAPH_REPORT.md` or the code dir
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#188 (tap a relic to read its label):** your yes is on file. Nothing more is needed from you. It goes live after a
-  re-sync and a re-check.
+- **#188 (tap a relic to read its label):** your yes is on file. Nothing more is needed from you. Re-synced; it goes
+  live after one re-check and the GitHub checks.
 - **#189 (frame-budget readout in the headset): merge it?**
   - a) Yes, once its independent review passes and every check is green (recommended). It is a hidden measuring tool
     that only appears with `?vrfps=1`. Visitors never see or download it. It is how your headset walk can certify

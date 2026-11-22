@@ -115,7 +115,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   per-item yes. Conflicts expected with #188 in `museum.html` (keep the higher key) and the `app.js` tick()/hook lines
   (keep both): whichever goes second re-syncs.
 - **#188 VR pilot — point at a relic and tap to read its label (2026-11-22 ~12:10 UTC)** `loop/vr-controllers` `1fef4276`
-  on `main` `fa9e526d`. **VR, per item** (new build piece; **Carter's yes on file 2026-11-22, `decisions-2026-11-22-pr188-yes.md`**). Headset only, pilot rooms only. The flat
+  on `main` `fa9e526d` (re-synced: now `f12dc09d` on `1cfb8d9f`). **VR, per item** (new build piece; **Carter's yes on file 2026-11-22, `decisions-2026-11-22-pr188-yes.md`**). Headset only, pilot rooms only. The flat
   card's own text (`cardHTML`, one source) appears on a plaque beside the relic. Pending elements outside Egypt are veiled
   (OQ-4). Local results: build no diff, every verify passes, 51/51, review-checks 9/0/0, xr-entry-check 135 ok / 0 fail
   (new section 9). Flat baseline: calls and triangles identical, +5.7 KB. GPU: +10 stereo calls with a reading open.
@@ -123,10 +123,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   **2026-11-22 ~12:05 UTC: independent review PASS, 0 findings** (VR run that wrote none of it; `review-log` `afc6f30c`,
   `reviews/loop/2026-11-22-vr-controllers-188-independent-review.md`; PR comment posted). Merges cleanly onto `main`
   `23d312d5` (#185 merged). **Still missing:**
-  - Carter's per-item yes.
-  - After #187 merges: a re-sync and a delta check by a run that did not re-sync. Conflicts with #187 in `museum.html`
-    (cache key: keep the higher) and in `app.js` tick(): keep BOTH calls on the headset line (`cullUpdate` and
-    `xrRead.update`).
+  - ~~Carter's per-item yes~~: on file 2026-11-22.
+  - ~~Re-sync onto `main` `1cfb8d9f`~~: **done 2026-11-22 ~16:45 UTC → `f12dc09d`** (VR loop session ..01HFWzTm2e2xjGcGM6MvV6xr).
+    Merge only: `museum.html` app.js key 60 (branch 58, main 59); `app.js` tick() headset line keeps both `xrRead.update`
+    and `cullUpdate`. Local on `f12dc09d`: build no diff, verify 18/18, 51/51, review-checks 9/0/0, xr-entry and
+    xr-portal checks all pass, stand-in stereo calls equal to #187's, phone 360/390 0 errors. Reply `vr/2026-11-22-1645-resync-188.md`.
+  - **Delta check** on `f12dc09d` by a run that did not re-sync (`origin/main...f12dc09d` = reviewed `1fef4276` diff
+    except the two conflict lines).
+  - **GitHub green on `f12dc09d`, Lighthouse included.** Then the build loop merges it per item.
   Reply: `vr/2026-11-22-1130-select-plaques.md`.
 - **#187 VR pilot — portal culling in the headset (2026-11-22 ~08:40 UTC)** `loop/vr-portal-cull` `758056a4` on `main`
   `a2a6aa4b`. **VR, per item** (new build piece; no Carter yes yet). In a headset only, what the walls hide is not drawn
