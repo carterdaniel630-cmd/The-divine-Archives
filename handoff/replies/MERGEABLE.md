@@ -119,8 +119,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **#190 VR pilot — draw ledger: what the Wing II corridor draws in the headset (2026-11-22 ~21:45 UTC)** `loop/vr-corridor-measure`
   `4436c5d0` on `main` `1cfb8d9f`. **VR, per item.** Adds `tools/vr-draw-ledger.js` and `audits/vr-draw-ledger/2026-11-22-corridor.md`
   (+ JSON); no `docs/` file. Local checks: build no diff, verify 18/18, tests 51/51, review-checks 9/0/0 `--build`, xr-entry-check
-  all pass, baseline 0 errors. **Still missing:** independent review by a run that wrote none of it; GitHub checks green incl.
-  Lighthouse; Carter's per-item yes. Reply `vr/2026-11-22-2145-corridor-ledger.md`.
+  all pass, baseline 0 errors. GitHub 4/4 green on `4436c5d0` (21:48; Lighthouse does not run: it is path-filtered to `docs/**` and no
+  `docs/` file changed). **Still missing:** independent review by a run that wrote none of it; Carter's per-item yes. Reply `vr/2026-11-22-2145-corridor-ledger.md`.
 - **#189 VR pilot — in-headset frame-budget overlay `?vrfps=1` (2026-11-22 ~16:50 UTC)** `loop/vr-perf-overlay`
   `ee7ffc76` on `main` `1cfb8d9f`. **VR, per item** (new build piece; no Carter yes yet). Hidden debug instrument
   (vr-performance-budget.md §7): only with `museum.html?vrfps=1`; visitors never download it. Local results: build no

@@ -9,7 +9,8 @@ turns. No site change. Reply: `vr/2026-11-22-2145-corridor-ledger.md`; report:
 ## Done
 - #190 `loop/vr-corridor-measure` `4436c5d0` on `main` `1cfb8d9f`: `tools/vr-draw-ledger.js` + corridor report. Local
   checks all pass (build no diff, verify 18/18, tests 51/51, review-checks 9/0/0, xr-entry-check pass, baseline 0
-  errors). **Waiting on:** independent review by a run that wrote none of it; GitHub green; Carter's per-item yes.
+  errors). GitHub 4/4 green (Lighthouse does not run: no `docs/` change). **Waiting on:** independent review by a
+  run that wrote none of it; Carter's per-item yes.
 - #189 `loop/vr-perf-overlay` `ee7ffc76`: independent review PASS 0, GitHub 7/7 green. **Waiting on:** Carter's
   per-item yes; the re-sync after #188.
 - #188 `loop/vr-controllers` `f12dc09d`: **MERGEABLE, per item** (Carter's yes on file). The build loop merges it.
