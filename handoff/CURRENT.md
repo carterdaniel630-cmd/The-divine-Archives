@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (12:55 UTC)
+# Handoff — updated 2026-11-22 (21:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #187 VR portal culling merged (2026-11-22 ~12:50 UTC)
+## Latest: #188 VR tap-to-read labels merged (2026-11-22 ~21:50 UTC)
+`main` = `f12dc09d` (deploy run 313 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-22-pr188-yes.md`). In a VR headset, in the pilot rooms, pointing the controller at a relic and tapping shows its label. Flat screens and phones unchanged. Next: #189 frame-budget overlay re-sync onto `f12dc09d` + delta check + green (Carter's yes on file); backlog census; #190 review; weekly audit.
+
+## Earlier: #187 VR portal culling merged (2026-11-22 ~12:50 UTC)
 `main` = `1cfb8d9f` (deploy run 312 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-22-carter-pr187-yes.md`). In a VR headset the museum pilot no longer draws rooms hidden behind walls (stand-in worst view with #185: ch02 ~128–148, ch03 ~102–114, corridor ~200, from 270). Flat screens and phones unchanged. Next: #188 re-sync + delta check (needs Carter's yes); backlog census; weekly audit.
 
 ## Earlier: #185 VR static zones merged (2026-11-22 ~11:50 UTC)
