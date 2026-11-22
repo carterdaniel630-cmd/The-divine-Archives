@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (07:50 UTC)
+# Handoff — updated 2026-11-22 (08:00 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #184 games placement step 1 merged (2026-11-22 ~07:43 UTC)
+## Latest: #186 save rules merged (2026-11-22 ~07:49 UTC)
+`main` = `fa9e526d`, fast-forwarded per item on Carter's yes (`decisions-2026-11-22-carter-save-rules-yes.md`). Adds a permissions block to `.claude/settings.json` (routine git/node/npm and read-only `gh api` allowed; pushes to `main`, force pushes, deletes and merges via API still ask). No site file changed. The rules load in new sessions only once Carter switches GitHub's default branch to `main`. Next: #185 VR static zones review + re-sync; backlog census.
+
+## Earlier: #184 games placement step 1 merged (2026-11-22 ~07:43 UTC)
 `main` = `62b93b99`, fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr184-pr185-yes.md`). Museum chapter rooms no longer show a game kiosk or "Game:" line; all 11 games stay reachable from the Arcade. The rest of the games placement questions (Tomb Robber, chess, symbols-page tags) still wait on Carter. Next: #186 save rules delta check; #185 VR static zones review + re-sync.
 
 ## Earlier: #183 VR stick walking merged (2026-11-22 ~04:58 UTC)
