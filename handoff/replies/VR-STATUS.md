@@ -1,29 +1,30 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~21:50 UTC. **PR #190 opened: the draw ledger.** It shows what the Wing II corridor draws in the
-headset. Finding: 90% of the corridor's triangles are the living ground under the glass. Its plants and creatures are
-never skipped when out of view (`frustumCulled = false`), so about 504k triangles are drawn whichever way the head
-turns. No site change. Reply: `vr/2026-11-22-2145-corridor-ledger.md`; report:
-`audits/vr-draw-ledger/2026-11-22-corridor.md` (on the PR branch).
+**As of:** 2026-11-22 ~22:35 UTC. **#189 re-synced onto `main` after #188** → `loop/vr-perf-overlay` `f206d61a`. One
+conflict (the debug hooks in `app.js`): both sides kept; `museum.html` takes `app.js?v=61`. Local checks all pass.
+Reply: `vr/2026-11-22-2235-resync-189.md`. Carter's yes for #190 is now on file too (`decisions-2026-11-22-pr190-yes.md`).
 
 ## Done
 - #190 `loop/vr-corridor-measure` `4436c5d0` on `main` `1cfb8d9f`: `tools/vr-draw-ledger.js` + corridor report. Local
   checks all pass (build no diff, verify 18/18, tests 51/51, review-checks 9/0/0, xr-entry-check pass, baseline 0
-  errors). GitHub 4/4 green (Lighthouse does not run: no `docs/` change). **Waiting on:** independent review by a
-  run that wrote none of it; Carter's per-item yes.
-- #189 `loop/vr-perf-overlay` `ee7ffc76`: independent review PASS 0, GitHub 7/7 green. **Waiting on:** Carter's
-  per-item yes; the re-sync after #188.
-- #188 `loop/vr-controllers` `f12dc09d`: **MERGEABLE, per item** (Carter's yes on file). The build loop merges it.
-- LIVE on `main`: #187 portal culling (`1cfb8d9f`); #185 static zones; #183 stick walking; #182 light rig; #181 harness;
+  errors). GitHub 4/4 green (Lighthouse does not run: no `docs/` change). Carter's yes on file. **Waiting on:**
+  independent review by a run that wrote none of it.
+- #189 `loop/vr-perf-overlay` **`f206d61a`** (re-synced onto `f12dc09d`): independent review PASS 0 (on `ee7ffc76`);
+  Carter's yes on file. Local on `f206d61a`: build no diff, verify 18/18, tests 51/51, review-checks 9/0/0,
+  vr-perf-overlay-check and xr-entry-check all pass, flat 360/390 0 script errors. **Waiting on:** delta check by a run
+  that did not re-sync; GitHub green on `f206d61a` incl. Lighthouse.
+- LIVE on `main`: #188 tap-to-read labels (`f12dc09d`); #187 portal culling (`1cfb8d9f`); #185 static zones; #183 stick walking; #182 light rig; #181 harness;
   the living-ground stack; #166 height check.
 
 ## In progress
 - Nothing held.
 
 ## Next (in order)
-1. **After #188 goes live:** re-sync #189 onto it (museum.html takes key **61**; app.js keeps both `S.perf.frame` and
-   #188's lines), then a delta check by a run that did not re-sync, then green. Not before #188 is on `main`.
-2. (build loop, not this loop) merge #188 per item; it qualifies now.
+1. **Delta check of #189's re-sync** (`ee7ffc76..f206d61a`, the merge resolution only) by a run that did not re-sync
+   (the 22:35 run did; any later run qualifies). Then GitHub green on `f206d61a` incl. Lighthouse; then the build loop
+   merges #189 per item.
+2. (build loop, not this loop) merge #189 per item once 1 holds; then #190 (after its review) — #190 touches only
+   `tools/` + `audits/`, so it needs no re-sync unless `main` changes those files.
 3. **Independent review of #190** (a run that wrote none of it; `tools/` + `audits/` only), filed on `review-log`.
 4. **Ground culling bounds (fix 1 of the report), buildable now:** give the living ground's plant scatters
    (`world.js` 781) real bounding spheres, plus a margin for any sway, and turn culling back on. Give the creatures
@@ -61,16 +62,12 @@ naming a model). The graphify CLI installs with `bash tools/graphify-session.sh`
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#188 (tap a relic to read its label):** nothing more needed; the build loop puts it live.
-- **#190 (draw ledger, a measuring tool and report; no site change):** nothing yet. It is asked once its review and
-  checks pass.
-- **#189 (frame-budget readout in the headset):** Carter's yes is on file (`decisions-2026-11-22-pr189-yes.md`,
-  repeated live in the VR-loop session ~22:00 UTC). Nothing more needed from him. **#188 is now LIVE** (`main`
-  `f12dc09d`), so Next 1 (re-sync #189 onto it, delta check by a run that did not re-sync, green) is unblocked; then
-  the build loop merges #189 per item.
+- **#189 (frame-budget readout in the headset):** nothing more needed; your yes is on file. Re-synced; waits on a delta
+  check by another run and green checks, then the build loop puts it live.
+- **#190 (draw ledger):** your yes is on file. It waits on its independent review, then goes live after #189.
 - On your next headset visit:
   - once #189 is live, open `getconexto.com/museum.html?vrfps=1`, enter VR, and walk each pilot room for about a
     minute. The plate in the lower view says WITHIN or OVER and names what is over. Send a photo or the words;
   - try a snap turn while walking, and say if it feels off;
   - say if anything "pops in" at a doorway;
-  - once #188 is live, say if the label plaques are easy to read and to point at.
+  - say if the relic label plaques (#188, live now) are easy to read and to point at.
