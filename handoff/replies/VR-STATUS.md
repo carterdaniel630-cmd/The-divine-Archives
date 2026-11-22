@@ -1,24 +1,25 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~12:10 UTC. **PR #188 opened: point at a relic in a pilot room and tap to read its label**
-(answers "relics not clickable"). All local checks pass (xr-entry-check 135 ok / 0 fail). It now needs an independent
-review by a run that wrote none of it. Reply: `vr/2026-11-22-1130-select-plaques.md`.
+**As of:** 2026-11-22 ~12:10 UTC. **#188 (tap a relic to read its label) passed its independent review, 0 findings**, and
+GitHub is 7/7 green incl. Lighthouse. It now needs only Carter's per-item yes (then a re-sync after #187). #185 is live.
+Reply: `vr/2026-11-22-1205-review-188.md`.
 
 ## Done
-- #188 `loop/vr-controllers` `1fef4276`: built and verified this run (details in the reply and the PR).
+- #188 `loop/vr-controllers` `1fef4276`: independent review PASS 0 (`review-log` `afc6f30c`); GitHub 7/7 green.
+  Waiting on Carter's per-item yes.
 - #187 `loop/vr-portal-cull` `758056a4`: review PASS 0. Carter's yes is on file (`decisions-2026-11-22-carter-pr187-yes.md`).
-- #185 `loop/vr-static-zones` `23d312d5`: review PASS 0 and delta check PASS 0. Carter's yes is on file. It waits on
-  Lighthouse, then the build loop merges it.
-- LIVE on `main`: #183 stick walking, #182 light rig, #181 harness, the living-ground stack, #166 height check.
+  Now owes a re-sync onto `main` `23d312d5`.
+- LIVE on `main`: #185 static zones (`23d312d5`, deploy 311), #183 stick walking, #182 light rig, #181 harness, the
+  living-ground stack, #166 height check.
 
 ## In progress
-- Nothing held. The 08:10Z lock was left by a run that stopped mid-way with no branch; this run overwrote it as stale.
+- Nothing held.
 
 ## Next (in order)
-1. **Independent review of #188** by a VR run that wrote none of it (LOOP.md Merging 1). State the GPU numbers (#181
-   harness, and xr-entry-check §9's call counts). File it on `review-log`.
-2. Once #185 is on `main`: re-sync #187 onto it (merge only) and re-run checks, including `xr-portal-check.js`. A
-   different run does the delta check. Then #188 re-syncs after #187 (cache keys conflict: keep the higher).
+1. **Re-sync #187 onto `main` `23d312d5`** (#185 is live; merge only, keep the higher cache keys) and re-run checks
+   including `xr-portal-check.js`. A different run does the delta check; then the build loop merges it (yes on file).
+2. Then #188 re-syncs after #187: conflicts in `museum.html` (keep the higher key) and the `app.js` tick() headset line
+   (keep BOTH `cullUpdate` and `xrRead.update`). Delta check by a run that did not re-sync.
 3. In-headset overlay `?vrfps=1` (§7), so Carter's walk can certify frame time.
 4. Wing II corridor: about 736k triangles (over the hard line) and 200 calls, even with #185 and #187. Measure what the
    corridor draws before choosing a fix (§4a LOD).
@@ -42,14 +43,14 @@ Note for runs: commit with one plain `git commit -F <file>`, no `--amend`, no mo
 
 ## Carter's field report (`field-report-2026-11-16-vr-walk.md`), against the VR pilot
 - 2 ground below the glass, 3 birds below the glass, 7 analog stick walking: **live**.
-- 5 relics not clickable: **built, PR #188** (pilot rooms only), waiting on review and Carter's yes.
+- 5 relics not clickable: **built, PR #188** (pilot rooms only), review passed; waiting on Carter's yes.
 - 1 hallway walls glitching, 4 multiplayer, 6 portals / arcade door / pilgrimages, 8 sound levels: outside the three
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
 - **#187 (portal culling):** your yes is on file. Nothing more is needed from you; it goes live after #185.
-- **#188 (tap a relic to read its label):** no question yet. You will be asked for a yes once it has passed review and
-  every check is green.
+- **#188 (tap a relic to read its label): merge it?** a) Yes (recommended): review passed with 0 findings, every check
+  green; it goes live after #187, once re-synced and re-checked. b) Not yet.
 - On your next headset visit:
   - try a snap turn while walking, and say if it feels off;
   - say if anything "pops in" at a doorway;

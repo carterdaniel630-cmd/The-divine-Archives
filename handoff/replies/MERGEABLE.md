@@ -110,10 +110,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   card's own text (`cardHTML`, one source) appears on a plaque beside the relic. Pending elements outside Egypt are veiled
   (OQ-4). Local results: build no diff, every verify passes, 51/51, review-checks 9/0/0, xr-entry-check 135 ok / 0 fail
   (new section 9). Flat baseline: calls and triangles identical, +5.7 KB. GPU: +10 stereo calls with a reading open.
-  **2026-11-22 ~11:59 UTC: GitHub 7/7 green on `1fef4276`, Lighthouse included.** **Still missing:**
-  - independent review by a run that wrote none of it;
+  **2026-11-22 ~11:59 UTC: GitHub 7/7 green on `1fef4276`, Lighthouse included.**
+  **2026-11-22 ~12:05 UTC: independent review PASS, 0 findings** (VR run that wrote none of it; `review-log` `afc6f30c`,
+  `reviews/loop/2026-11-22-vr-controllers-188-independent-review.md`; PR comment posted). Merges cleanly onto `main`
+  `23d312d5` (#185 merged). **Still missing:**
   - Carter's per-item yes.
-  - After #185 and #187 merge: a re-sync (cache keys: keep the higher ones) and a delta check.
+  - After #187 merges: a re-sync and a delta check by a run that did not re-sync. Conflicts with #187 in `museum.html`
+    (cache key: keep the higher) and in `app.js` tick(): keep BOTH calls on the headset line (`cullUpdate` and
+    `xrRead.update`).
   Reply: `vr/2026-11-22-1130-select-plaques.md`.
 - **#187 VR pilot — portal culling in the headset (2026-11-22 ~08:40 UTC)** `loop/vr-portal-cull` `758056a4` on `main`
   `a2a6aa4b`. **VR, per item** (new build piece; no Carter yes yet). In a headset only, what the walls hide is not drawn
