@@ -933,7 +933,8 @@ export function createWorld(opt) {
     if (A.waterMat && A.waterBase) { const W = A.waterMat.uniforms; W.uDeep.value.copy(A.waterBase.uDeep).multiplyScalar(M.lit); W.uShallow.value.copy(A.waterBase.uShallow).multiplyScalar(M.lit); W.uSky.value.copy(M.hor).multiplyScalar(M.lit); }
   }
   function skip(secs) { time += secs; }
-  function update(dt, pos, inRoom, reduce) {
+  // seen(id), when given (the headset's portal culling, app.js), says whether the area's cell can be seen at all
+  function update(dt, pos, inRoom, reduce, seen) {
     if (!reduce) time += dt;
     builtThisFrame = 0; flashNow = 0;
     let animating = false;
@@ -945,7 +946,7 @@ export function createWorld(opt) {
       if (near && !A.pit && !A.failed && builtThisFrame === 0) { builtThisFrame++; try { A.pit = buildPit(A, q, opt.fauna); opt.scene.add(A.pit); } catch (e) { A.failed = true; console.error("world: " + A.id + ": " + (e && e.stack || e)); } }
       else if (!near && A.pit && d > (A.kind === "room" ? 18 : 36)) dropPit(A);
       // what can be seen: inside a room only that room (and the corridor through its door)
-      const see = inRoom ? (A.id === inRoom || (A.kind === "corridor" && d < 6)) : (A.kind === "room" ? d < 9 : d < 30);
+      const see = (inRoom ? (A.id === inRoom || (A.kind === "corridor" && d < 6)) : (A.kind === "room" ? d < 9 : d < 30)) && (!seen || seen(A.id));
       A.skyG.visible = see; if (A.pit) A.pit.visible = see;
       if (!see) continue;
       animating = animating || !reduce;
