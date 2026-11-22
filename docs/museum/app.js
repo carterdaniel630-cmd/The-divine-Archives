@@ -578,18 +578,22 @@ function lod(obj, far) { LOD.push({ obj, far: far || SIGN_FAR }); return obj; }
 // signs and exhibits that need no wing detail (entrance, spine, wing doors)
 function buildStatic() {
   const g = new THREE.Group(); scene.add(g);
+  // what stands inside the entrance hall or the Rotunda rides in that zone's own group, so it is drawn exactly when the
+  // walls round it are (manageZones: within SHOW_FAR). Hung on the museum-wide group it was drawn from every wing,
+  // behind the walls: from ch02/ch03 the Pilgrimage portal alone cost ~75 of a headset's draw calls (VR budget §4b/§5)
+  const hallG = ZONES.hall.group, rotG = ZONES.rotunda.group;
   // entrance: title over the north door, orientation plaque, trails board
   const title = plane(9, 1.6, new THREE.MeshBasicMaterial({ map: textTex(["The Museum", "of the Divine Archives"], { w: 1024, h: 192, size: 78, frame: false, bg: "#140d07" }) }));
-  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); g.add(lod(title, 34));
+  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); hallG.add(lod(title, 34));
   const plaque = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["About this museum", "how to read the exhibits"], { w: 512, h: 320, size: 40 }) }));
-  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); g.add(plaque);
-  addExhibit(g, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
+  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); hallG.add(plaque);
+  addExhibit(hallG, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
-  addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
+  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); hallG.add(trails);
+  addExhibit(hallG, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
   const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
-  addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
+  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); hallG.add(dir);
+  addExhibit(hallG, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
   S.manifest.eras.forEach((e) => {
     const E = S.eras[e.slug], s = E.side;
@@ -606,8 +610,8 @@ function buildStatic() {
   if (S.reservedBay) {
     const { f, t } = S.reservedBay; const [x, z] = W(f, 0, 0);
     const p = plane(2.6, 1.6, new THREE.MeshLambertMaterial({ map: textTex([t.name, "in preparation"], { w: 512, h: 320, size: 40 }) }));
-    placeOnWall(p, x, 2.4, z, f.fx, f.fz); g.add(lod(p, 24));
-    addExhibit(g, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
+    placeOnWall(p, x, 2.4, z, f.fx, f.fz); rotG.add(lod(p, 24));
+    addExhibit(rotG, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
   }
   // the planetarium's star projector at the centre of the Rotunda
   const proj = new THREE.Group(); proj.position.set(ROT.cx, 0, ROT.cz);
@@ -615,8 +619,8 @@ function buildStatic() {
   proj.add(new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 16).translate(0, 1.4, 0), MAT.darkstone));
   const holes = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 6, 4), MAT.flame, 60), mt = new THREE.Matrix4();
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
-  proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
-  addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
+  proj.add(holes); rotG.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
+  addExhibit(rotG, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
   // statues in their rooms (docs/museum/statues.js; Carter's change of plans 2026-11-09: none in the Rotunda): a pedestal
   // and plaque for each placed statue in its room's centre aisle, facing the door; the statue itself is fetched only when
   // the visitor comes near (statueTick) and drawn only while its room is shown. They are built here, once, not with the
@@ -650,11 +654,11 @@ function buildStatic() {
   const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = portalPose().ry;
   const pPlaque = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.34), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 512, h: 128, size: 40, bg: "#2a1c10" }) }));
   pPlaque.position.set(0, 3.95, 0.14); portal.add(pPlaque);
-  g.add(portal);
+  hallG.add(portal);
   const pq = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), portal.rotation.y), side = new THREE.Vector3(1, 0, 0).applyQuaternion(pq);
   for (const sx of [-1, 1]) addBox(px + side.x * sx * 0.83, pz + side.z * sx * 0.83, 0.16);   // only the pillars block; the opening is open
   S.portalFx = { fx, pos: new THREE.Vector3(px, 0, pz), inv: pq.clone().invert(), fired: !!S.portalArrived };
-  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
+  const hit = hitBoxFor(portal, 0.3); addExhibit(hallG, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
   // room door signs are built with each wing's exhibits
 }
 // where the Pilgrimage portal stands, and which way it faces (also used to arrive back through it): against the
