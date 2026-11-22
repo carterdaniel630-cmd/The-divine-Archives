@@ -1,0 +1,9122 @@
+{
+ "root": "docs",
+ "place": "@02-bronze-age",
+ "where": "Corridor|Wing II · The Bronze Age",
+ "head": [
+  5.47,
+  -60
+ ],
+ "cull": [
+  "ch02",
+  "ch03",
+  "ch04",
+  "ch05",
+  "ch57",
+  "ch67",
+  "ch76",
+  "cor:01-prehistory",
+  "cor:02-bronze-age",
+  "cor:03-early-iron-age",
+  "spine"
+ ],
+ "errors": [],
+ "device": "stand-in Quest 2 (floor tier), SwiftShader; same headset model as tools/vr-frame-budget.js",
+ "perHeading": [
+  {
+   "heading": 0,
+   "calls": 192,
+   "tris": 736156,
+   "drawsRecorded": 192,
+   "trisRecorded": 736156,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 45,
+   "calls": 184,
+   "tris": 706248,
+   "drawsRecorded": 184,
+   "trisRecorded": 706248,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.8,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 90,
+   "calls": 196,
+   "tris": 704976,
+   "drawsRecorded": 196,
+   "trisRecorded": 704976,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.8,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 24.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 135,
+   "calls": 178,
+   "tris": 699924,
+   "drawsRecorded": 178,
+   "trisRecorded": 699924,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.8,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 24.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 180,
+   "calls": 152,
+   "tris": 654988,
+   "drawsRecorded": 152,
+   "trisRecorded": 654988,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 24.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 16464,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 11.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 225,
+   "calls": 176,
+   "tris": 698800,
+   "drawsRecorded": 176,
+   "trisRecorded": 698800,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 270,
+   "calls": 170,
+   "tris": 695884,
+   "drawsRecorded": 170,
+   "trisRecorded": 695884,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  },
+  {
+   "heading": 315,
+   "calls": 166,
+   "tris": 696248,
+   "drawsRecorded": 166,
+   "trisRecorded": 696248,
+   "top": [
+    {
+     "tris": 123552,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.9,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 88560,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.3,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 37296,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.4,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 35280,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 28800,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 46.5,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25232,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.6,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #124",
+     "cell": "ch02",
+     "cellSeen": true,
+     "dist": 10.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 25000,
+     "calls": 2,
+     "zone": "Group #125",
+     "cell": "ch03",
+     "cellSeen": true,
+     "dist": 10.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    },
+    {
+     "tris": 24120,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 45.7,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 23040,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 47.1,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18864,
+     "calls": 2,
+     "zone": "Group #119",
+     "cell": "cor:02-bronze-age",
+     "cellSeen": true,
+     "dist": 25.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshBasicMaterial"
+    },
+    {
+     "tris": 18216,
+     "calls": 2,
+     "zone": "Group #123",
+     "cell": "spine",
+     "cellSeen": true,
+     "dist": 39.2,
+     "type": "Mesh",
+     "name": "",
+     "group": "(no named parent)",
+     "material": "MeshPhongMaterial"
+    }
+   ]
+  }
+ ],
+ "worstHeading": 0,
+ "atWorst": {
+  "byZone": [
+   {
+    "key": "Group #125",
+    "tris": 202798,
+    "calls": 18,
+    "draws": 9
+   },
+   {
+    "key": "Group #123",
+    "tris": 199960,
+    "calls": 22,
+    "draws": 11
+   },
+   {
+    "key": "Group #124",
+    "tris": 166846,
+    "calls": 32,
+    "draws": 16
+   },
+   {
+    "key": "Group #119",
+    "tris": 91916,
+    "calls": 16,
+    "draws": 8
+   },
+   {
+    "key": "exhibits-02-bronze-age #121",
+    "tris": 25648,
+    "calls": 44,
+    "draws": 22
+   },
+   {
+    "key": "02-bronze-age",
+    "tris": 25048,
+    "calls": 20,
+    "draws": 10
+   },
+   {
+    "key": "Mesh #109",
+    "tris": 14720,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "Mesh #108",
+    "tris": 3824,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "spine",
+    "tris": 2468,
+    "calls": 10,
+    "draws": 5
+   },
+   {
+    "key": "Group #20",
+    "tris": 1684,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #27",
+    "tris": 604,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #29",
+    "tris": 292,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #28",
+    "tris": 292,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "xr-posture #116",
+    "tris": 28,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "xr-walk #117",
+    "tris": 28,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Points #107",
+    "tris": 0,
+    "calls": 2,
+    "draws": 1
+   }
+  ],
+  "byCell": [
+   {
+    "key": "ch03",
+    "tris": 222978,
+    "calls": 44,
+    "draws": 22
+   },
+   {
+    "key": "spine",
+    "tris": 204112,
+    "calls": 36,
+    "draws": 18
+   },
+   {
+    "key": "ch02",
+    "tris": 187858,
+    "calls": 54,
+    "draws": 27
+   },
+   {
+    "key": "cor:02-bronze-age",
+    "tris": 102664,
+    "calls": 52,
+    "draws": 26
+   },
+   {
+    "key": "ch06",
+    "tris": 14720,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "(outside every cell)",
+    "tris": 3824,
+    "calls": 2,
+    "draws": 1
+   }
+  ],
+  "byGroup": [
+   {
+    "key": "Group #125 / (no named parent)",
+    "tris": 202798,
+    "calls": 18,
+    "draws": 9
+   },
+   {
+    "key": "Group #123 / (no named parent)",
+    "tris": 199960,
+    "calls": 22,
+    "draws": 11
+   },
+   {
+    "key": "Group #124 / (no named parent)",
+    "tris": 166846,
+    "calls": 32,
+    "draws": 16
+   },
+   {
+    "key": "Group #119 / (no named parent)",
+    "tris": 91916,
+    "calls": 16,
+    "draws": 8
+   },
+   {
+    "key": "Mesh #109 / (no named parent)",
+    "tris": 14720,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "exhibits-02-bronze-age #121 / room-ch02",
+    "tris": 13232,
+    "calls": 16,
+    "draws": 8
+   },
+   {
+    "key": "exhibits-02-bronze-age #121 / room-ch03",
+    "tris": 12400,
+    "calls": 20,
+    "draws": 10
+   },
+   {
+    "key": "02-bronze-age / (no named parent)",
+    "tris": 9340,
+    "calls": 12,
+    "draws": 6
+   },
+   {
+    "key": "02-bronze-age / decor-ch03",
+    "tris": 7488,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "02-bronze-age / decor-ch02",
+    "tris": 7488,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "Mesh #108 / (no named parent)",
+    "tris": 3824,
+    "calls": 2,
+    "draws": 1
+   },
+   {
+    "key": "spine / (no named parent)",
+    "tris": 2468,
+    "calls": 10,
+    "draws": 5
+   },
+   {
+    "key": "Group #20 / (no named parent)",
+    "tris": 1684,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "02-bronze-age / decor-02-bronze-age",
+    "tris": 732,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #27 / (no named parent)",
+    "tris": 604,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #29 / (no named parent)",
+    "tris": 292,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "Group #28 / (no named parent)",
+    "tris": 292,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "xr-posture #116 / xr-posture",
+    "tris": 28,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "xr-walk #117 / xr-walk",
+    "tris": 28,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "exhibits-02-bronze-age #121 / exhibits-02-bronze-age",
+    "tris": 16,
+    "calls": 8,
+    "draws": 4
+   },
+   {
+    "key": "Points #107 / (no named parent)",
+    "tris": 0,
+    "calls": 2,
+    "draws": 1
+   }
+  ],
+  "byType": [
+   {
+    "key": "Mesh (instanced)",
+    "tris": 467904,
+    "calls": 48,
+    "draws": 24
+   },
+   {
+    "key": "Mesh",
+    "tris": 217200,
+    "calls": 128,
+    "draws": 64
+   },
+   {
+    "key": "SkinnedMesh",
+    "tris": 51052,
+    "calls": 14,
+    "draws": 7
+   },
+   {
+    "key": "Points",
+    "tris": 0,
+    "calls": 2,
+    "draws": 1
+   }
+  ],
+  "byCellSeen": [
+   {
+    "key": "cell in the seen set",
+    "tris": 717612,
+    "calls": 186,
+    "draws": 93
+   },
+   {
+    "key": "cell NOT in the seen set",
+    "tris": 14720,
+    "calls": 4,
+    "draws": 2
+   },
+   {
+    "key": "no cell / no cull",
+    "tris": 3824,
+    "calls": 2,
+    "draws": 1
+   }
+  ]
+ },
+ "objects": [
+  {
+   "key": "726da1fa-7be5-4dd1-a60b-e5a079f0a10d",
+   "materialIndex": null,
+   "tris": 123552,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     11.32,
+     0.39,
+     -50.01
+    ],
+    "r": 6.67
+   },
+   "instances": 429,
+   "centre": [
+    11.04,
+    0.65,
+    -50.68
+   ],
+   "size": [
+    10.41,
+    1.57,
+    10.96
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.9,
+   "geometryTris": 144,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "b82af4c1-c05d-4576-8944-bb886c9c2132",
+   "materialIndex": null,
+   "tris": 88560,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 123,
+   "path": "123.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     -0.89,
+     -105
+    ],
+    "r": 77.51
+   },
+   "instances": null,
+   "centre": [
+    0,
+    -0.89,
+    -105
+   ],
+   "size": [
+    2.8,
+    0.48,
+    155
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 44280,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "effebda4-8f6d-4e92-8243-bc555cf9aa8b",
+   "materialIndex": null,
+   "tris": 37296,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.49,
+     0.35,
+     -69
+    ],
+    "r": 6.22
+   },
+   "instances": 111,
+   "centre": [
+    10.58,
+    0.59,
+    -69.09
+   ],
+   "size": [
+    7.34,
+    1.48,
+    11.55
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.4,
+   "geometryTris": 168,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "b1d3646e-48fb-453e-8f4e-27798f74c896",
+   "materialIndex": null,
+   "tris": 35280,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "IcosahedronGeometry",
+   "sceneChild": 119,
+   "path": "119.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     30.47,
+     -0.11,
+     -60.11
+    ],
+    "r": 25.31
+   },
+   "instances": 98,
+   "centre": [
+    30.47,
+    -0.11,
+    -60.01
+   ],
+   "size": [
+    50.64,
+    0.25,
+    1.41
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 180,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "a2c07c13-a069-45ee-8300-d829994bb52a",
+   "materialIndex": null,
+   "tris": 28800,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     0.11,
+     -0.44,
+     -106.23
+    ],
+    "r": 76.68
+   },
+   "instances": 100,
+   "centre": [
+    -0.05,
+    -0.21,
+    -106.21
+   ],
+   "size": [
+    1.68,
+    1.52,
+    152.45
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 46.5,
+   "geometryTris": 144,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "25ecfe20-9994-4147-9aa3-7089e88c2af6",
+   "materialIndex": null,
+   "tris": 25232,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 124,
+   "path": "124.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.15,
+     -69
+    ],
+    "r": 7.86
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.15,
+    -69
+   ],
+   "size": [
+    10.6,
+    0.29,
+    11.6
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 12616,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "b2dd02da-49cd-4b0c-8ca0-823c8b9dd484",
+   "materialIndex": null,
+   "tris": 25232,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 125,
+   "path": "125.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.18,
+     -51
+    ],
+    "r": 7.86
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.18,
+    -51
+   ],
+   "size": [
+    10.6,
+    0.34,
+    11.6
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 12616,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "9fa4fc68-a24a-4adf-9af6-46e642e74d54",
+   "materialIndex": null,
+   "tris": 25000,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.6",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     9.95,
+     -0.17,
+     -68.8
+    ],
+    "r": 4.91
+   },
+   "instances": 10,
+   "centre": [
+    10.79,
+    -0.17,
+    -68.76
+   ],
+   "size": [
+    5.05,
+    0.23,
+    9.19
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.2,
+   "geometryTris": 1250,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "74a770a9-389b-4763-b3c1-06780154ac77",
+   "materialIndex": null,
+   "tris": 25000,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.5.1",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     11.74,
+     -0.17,
+     -51.07
+    ],
+    "r": 5.16
+   },
+   "instances": 10,
+   "centre": [
+    11.26,
+    -0.17,
+    -51.07
+   ],
+   "size": [
+    4.87,
+    0.26,
+    9.97
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 1250,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "92e7fc7a-b080-4483-9183-0ed0feb32a94",
+   "materialIndex": null,
+   "tris": 24120,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "IcosahedronGeometry",
+   "sceneChild": 123,
+   "path": "123.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     0.17,
+     -0.92,
+     -105.39
+    ],
+    "r": 73.91
+   },
+   "instances": 67,
+   "centre": [
+    -0.01,
+    -0.89,
+    -105.39
+   ],
+   "size": [
+    2.55,
+    0.49,
+    147.83
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.7,
+   "geometryTris": 180,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "c21c6a63-fda2-47a2-9844-db1f4cdc0bfe",
+   "materialIndex": null,
+   "tris": 23040,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     0.17,
+     -0.55,
+     -106.82
+    ],
+    "r": 75.6
+   },
+   "instances": 160,
+   "centre": [
+    0.02,
+    -0.59,
+    -106.82
+   ],
+   "size": [
+    2.64,
+    0.58,
+    150.98
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 47.1,
+   "geometryTris": 72,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "fc4faa04-d21d-4a5b-85e7-9e585ac8eade",
+   "materialIndex": null,
+   "tris": 18864,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 119,
+   "path": "119.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     30.65,
+     0.14,
+     -59.95
+    ],
+    "r": 25.14
+   },
+   "instances": 131,
+   "centre": [
+    30.65,
+    0.16,
+    -60
+   ],
+   "size": [
+    50.07,
+    0.4,
+    1.45
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25.2,
+   "geometryTris": 72,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "667925e3-9068-43cc-adcf-2c1d15a07d8b",
+   "materialIndex": null,
+   "tris": 18216,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.9.1",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     0.8,
+     6.3,
+     -96.15
+    ],
+    "r": 59.2
+   },
+   "instances": 6,
+   "centre": [
+    0.09,
+    6.35,
+    -98.9
+   ],
+   "size": [
+    5.23,
+    1.06,
+    117.87
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 39.3,
+   "geometryTris": 1518,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "b8cd0b65-2c0b-42ec-800b-196cc7ead390",
+   "materialIndex": null,
+   "tris": 16464,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.81,
+     0.34,
+     -49.14
+    ],
+    "r": 6.42
+   },
+   "instances": 49,
+   "centre": [
+    11.21,
+    0.57,
+    -50.18
+   ],
+   "size": [
+    10.12,
+    1.44,
+    10.34
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 11.4,
+   "geometryTris": 168,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "f5c2c695-fe77-4911-ad4e-acfe232f09ed",
+   "materialIndex": null,
+   "tris": 16016,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 119,
+   "path": "119.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     -0.12,
+     -60
+    ],
+    "r": 25.51
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    -0.12,
+    -60
+   ],
+   "size": [
+    51,
+    0.21,
+    1.6
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 8008,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "044a0a63-25a0-4dd3-a6ea-567294c848cc",
+   "materialIndex": null,
+   "tris": 14720,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Mesh #109",
+   "material": "MeshBasicMaterial",
+   "geometry": "SphereGeometry",
+   "sceneChild": 109,
+   "path": "109",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -5.1,
+     5.94,
+     -92.68
+    ],
+    "r": 105.71
+   },
+   "instances": 92,
+   "centre": [
+    -12,
+    5.15,
+    -87.5
+   ],
+   "size": [
+    136.18,
+    2.68,
+    189.18
+   ],
+   "cell": "ch06",
+   "cellSeen": false,
+   "spans": [
+    "rotunda",
+    "hall",
+    "passage",
+    "spine",
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75",
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76",
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77",
+    "cor:04-axial-age",
+    "ch10",
+    "ch11",
+    "ch12",
+    "ch13",
+    "ch14",
+    "ch15",
+    "ch52",
+    "ch69",
+    "cor:05-late-antiquity",
+    "ch16",
+    "ch17",
+    "ch18",
+    "ch19",
+    "ch20",
+    "ch45",
+    "ch55",
+    "ch70",
+    "ch79",
+    "cor:06-early-medieval",
+    "ch21",
+    "ch22",
+    "ch23",
+    "ch24",
+    "ch25",
+    "ch53",
+    "ch54",
+    "ch60",
+    "cor:07-high-medieval",
+    "ch26",
+    "ch27",
+    "ch28",
+    "ch29",
+    "ch30",
+    "ch43",
+    "ch44",
+    "ch56",
+    "ch59",
+    "ch62",
+    "ch72",
+    "ch81",
+    "cor:08-early-modern",
+    "ch31",
+    "ch32",
+    "ch33",
+    "ch34",
+    "ch63",
+    "ch73",
+    "ch82",
+    "ch84",
+    "cor:09-modern",
+    "ch35",
+    "ch36",
+    "ch37",
+    "ch38",
+    "ch39",
+    "ch40",
+    "ch64",
+    "ch65",
+    "ch74",
+    "ch83"
+   ],
+   "dist": 32.6,
+   "geometryTris": 80,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "6394b47d-6cd5-413f-a538-ff0f0cc1e7f9",
+   "materialIndex": null,
+   "tris": 13536,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.08,
+     0.38,
+     -68.93
+    ],
+    "r": 6.57
+   },
+   "instances": 47,
+   "centre": [
+    10.61,
+    0.62,
+    -68.89
+   ],
+   "size": [
+    6.84,
+    1.51,
+    11.22
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.3,
+   "geometryTris": 144,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "3865376d-5392-4688-8b1a-6f7e4e9c60c0",
+   "materialIndex": null,
+   "tris": 12520,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 119,
+   "path": "119.7.0",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     12.22,
+     -0.17,
+     -60.03
+    ],
+    "r": 6.73
+   },
+   "instances": 5,
+   "centre": [
+    12.07,
+    -0.15,
+    -59.97
+   ],
+   "size": [
+    12.95,
+    0.16,
+    0.59
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 6.6,
+   "geometryTris": 1252,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "6d32cda0-8053-4a75-a794-8b9cca937de6",
+   "materialIndex": null,
+   "tris": 12520,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.9.0",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     -0.26,
+     -1.01,
+     -126.45
+    ],
+    "r": 46.02
+   },
+   "instances": 5,
+   "centre": [
+    -0.03,
+    -1.02,
+    -126.41
+   ],
+   "size": [
+    0.9,
+    0.18,
+    91.76
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 66.6,
+   "geometryTris": 1252,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "81f1ad98-a40c-4489-97e4-0b32d9d7ec79",
+   "materialIndex": null,
+   "tris": 11856,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.31",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.16,
+     -69.99
+    ],
+    "r": 8.56
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.16,
+    -69.99
+   ],
+   "size": [
+    12.98,
+    4.32,
+    12.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02",
+    "ch11"
+   ],
+   "dist": 11.4,
+   "geometryTris": 5928,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "c8732892-9db8-4871-b1f0-d5dec1ab343c",
+   "materialIndex": null,
+   "tris": 11728,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.0",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    7.44,
+    0.17,
+    -72.87
+   ],
+   "size": [
+    0.78,
+    0.37,
+    0.22
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 13,
+   "geometryTris": 5864,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "68861121-9937-4389-99e3-dd4c050d1f8e",
+   "materialIndex": null,
+   "tris": 11728,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.1",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    10.48,
+    0.17,
+    -66.22
+   ],
+   "size": [
+    0.57,
+    0.37,
+    0.73
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 8,
+   "geometryTris": 5864,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "a67f1dd3-6945-4ff6-8732-583f66b4a10d",
+   "materialIndex": null,
+   "tris": 10656,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.81,
+     0.15,
+     -69.28
+    ],
+    "r": 7.52
+   },
+   "instances": 74,
+   "centre": [
+    10.94,
+    0.15,
+    -69.02
+   ],
+   "size": [
+    10.27,
+    0.41,
+    11.21
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 72,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "df2f60ca-b37f-435f-a5c2-5da5173cbb9f",
+   "materialIndex": null,
+   "tris": 10456,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.27",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.16,
+     -50.98
+    ],
+    "r": 9.23
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.16,
+    -50.98
+   ],
+   "size": [
+    12.98,
+    4.32,
+    14.02
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 5228,
+   "worstHeading": 0,
+   "seenIn": 5
+  },
+  {
+   "key": "653a2c5c-6f3f-46a5-ac5e-ef5bace84aee",
+   "materialIndex": null,
+   "tris": 8272,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.6,
+     1.47,
+     -60
+    ],
+    "r": 25.67
+   },
+   "instances": null,
+   "centre": [
+    30.6,
+    1.47,
+    -60
+   ],
+   "size": [
+    51.25,
+    2.94,
+    4.01
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25.1,
+   "geometryTris": 4136,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "70f42378-cb1d-47e2-a32a-af2dbb76ab45",
+   "materialIndex": null,
+   "tris": 8272,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.6,
+     1.47,
+     -76
+    ],
+    "r": 25.67
+   },
+   "instances": null,
+   "centre": [
+    -30.6,
+    1.47,
+    -76
+   ],
+   "size": [
+    51.25,
+    2.94,
+    4.01
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.5,
+   "geometryTris": 4136,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "9491a508-8c1f-4e47-86d9-c108fb42990b",
+   "materialIndex": null,
+   "tris": 7488,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "decor-ch03 < decor-02-bronze-age",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.4.10.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.04,
+     -51
+    ],
+    "r": 9.01
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.04,
+    -51
+   ],
+   "size": [
+    13.01,
+    4.1,
+    13
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03",
+    "ch05"
+   ],
+   "dist": 10.6,
+   "geometryTris": 3744,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "565b17f7-1e7c-412d-8baf-8c82f68e3645",
+   "materialIndex": null,
+   "tris": 7488,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "decor-ch02 < decor-02-bronze-age",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.4.9.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.04,
+     -69
+    ],
+    "r": 9.01
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.04,
+    -69
+   ],
+   "size": [
+    13.01,
+    4.1,
+    13
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02",
+    "ch04"
+   ],
+   "dist": 10.6,
+   "geometryTris": 3744,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "bf64e116-0b65-4173-a18e-99bc387d2ed3",
+   "materialIndex": null,
+   "tris": 6144,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.6.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.13,
+     -53
+    ],
+    "r": 0.37
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.13,
+    -53
+   ],
+   "size": [
+    0.7,
+    0.32,
+    0.32
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 7.8,
+   "geometryTris": 3072,
+   "worstHeading": 270,
+   "seenIn": 2
+  },
+  {
+   "key": "f62e60a9-993a-4f7a-a6b5-184e5e6f5b22",
+   "materialIndex": null,
+   "tris": 6072,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.7",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     9.32,
+     0.67,
+     -70.85
+    ],
+    "r": 4.64
+   },
+   "instances": 2,
+   "centre": [
+    10.39,
+    0.78,
+    -69.52
+   ],
+   "size": [
+    7.67,
+    0.64,
+    6.28
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.7,
+   "geometryTris": 1518,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "a2dddeb6-ac72-4f74-aeb3-0794e6d840c9",
+   "materialIndex": null,
+   "tris": 6072,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.5.2",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     8.65,
+     0.92,
+     -51.34
+    ],
+    "r": 1.73
+   },
+   "instances": 2,
+   "centre": [
+    9.81,
+    0.88,
+    -50.63
+   ],
+   "size": [
+    1.51,
+    0.58,
+    3.16
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.3,
+   "geometryTris": 1518,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "912545eb-fb0d-464a-bc71-eda000780559",
+   "materialIndex": null,
+   "tris": 5768,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.2",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    6.34,
+    0.03,
+    -70.96
+   ],
+   "size": [
+    0.32,
+    0.08,
+    0.77
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 11,
+   "geometryTris": 2884,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "8377991e-8595-40a1-a38b-df4494e5c166",
+   "materialIndex": null,
+   "tris": 5768,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.3",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    15.77,
+    0.03,
+    -73.16
+   ],
+   "size": [
+    0.75,
+    0.07,
+    0.37
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 16.7,
+   "geometryTris": 2884,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "edc59785-f901-45e3-86d9-ed741302c19e",
+   "materialIndex": null,
+   "tris": 5768,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.4",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    9.86,
+    0.02,
+    -72.29
+   ],
+   "size": [
+    0.58,
+    0.06,
+    0.4
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 13.1,
+   "geometryTris": 2884,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "752a4f75-0801-44e2-a4b5-b9305f049cca",
+   "materialIndex": null,
+   "tris": 5616,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 119,
+   "path": "119.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     32.02,
+     0.09,
+     -60.12
+    ],
+    "r": 21.42
+   },
+   "instances": 13,
+   "centre": [
+    32.04,
+    0.13,
+    -59.95
+   ],
+   "size": [
+    42.87,
+    0.35,
+    2.02
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 26.6,
+   "geometryTris": 216,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "dc62a57e-1d5c-4814-838e-ed033d2d05e1",
+   "materialIndex": null,
+   "tris": 5194,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.5",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    12.65,
+    0.23,
+    -66.99
+   ],
+   "size": [
+    0.15,
+    0.49,
+    0.41
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10,
+   "geometryTris": 2597,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "cdf9c9d8-5cf7-4e24-bec6-53362900e5bf",
+   "materialIndex": null,
+   "tris": 5098,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "SkinnedMesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.5.0",
+   "userData": "shy",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": null,
+   "instances": null,
+   "centre": [
+    10.65,
+    0.17,
+    -56.06
+   ],
+   "size": [
+    0.19,
+    0.65,
+    0.52
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 6.5,
+   "geometryTris": 2549,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "715ba804-4e40-4e50-9a30-1e73aeca79f9",
+   "materialIndex": null,
+   "tris": 3824,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Mesh #108",
+   "material": "ShaderMaterial",
+   "geometry": "InstancedBufferGeometry",
+   "sceneChild": 108,
+   "path": "108",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 5,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     0,
+     0.5,
+     0
+    ],
+    "r": 0.71
+   },
+   "instances": null,
+   "centre": [
+    0,
+    0.5,
+    0
+   ],
+   "size": [
+    1,
+    1,
+    0
+   ],
+   "cell": null,
+   "cellSeen": null,
+   "spans": [],
+   "dist": 60.2,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "fe8823e1-3dd2-46b6-b47a-4d55361968bf",
+   "materialIndex": null,
+   "tris": 3600,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "IcosahedronGeometry",
+   "sceneChild": 119,
+   "path": "119.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     34.78,
+     -0.04,
+     -60.16
+    ],
+    "r": 19.98
+   },
+   "instances": 10,
+   "centre": [
+    34.78,
+    -0.04,
+    -60
+   ],
+   "size": [
+    39.99,
+    0.29,
+    1.63
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 29.3,
+   "geometryTris": 180,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "7622a451-5e32-4da0-aa84-b294b78bab45",
+   "materialIndex": null,
+   "tris": 2520,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "IcosahedronGeometry",
+   "sceneChild": 123,
+   "path": "123.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     -0.49,
+     -0.71,
+     -105.11
+    ],
+    "r": 72.95
+   },
+   "instances": 7,
+   "centre": [
+    -0.22,
+    -0.7,
+    -105.11
+   ],
+   "size": [
+    2.46,
+    0.18,
+    145.88
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.5,
+   "geometryTris": 180,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "3434d671-8fbb-4dce-b1b1-87872e47dae0",
+   "materialIndex": null,
+   "tris": 2304,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "spine",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 9,
+   "path": "9.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     3.8,
+     -105
+    ],
+    "r": 76.45
+   },
+   "instances": null,
+   "centre": [
+    0,
+    3.8,
+    -105
+   ],
+   "size": [
+    8.42,
+    7.6,
+    152.5
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine",
+    "cor:01-prehistory",
+    "cor:02-bronze-age",
+    "cor:03-early-iron-age",
+    "cor:04-axial-age",
+    "cor:05-late-antiquity",
+    "cor:06-early-medieval",
+    "cor:07-high-medieval",
+    "cor:08-early-modern",
+    "cor:09-modern"
+   ],
+   "dist": 45.3,
+   "geometryTris": 1152,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "6b63dd65-1916-4f50-9ac3-1f1907558dcd",
+   "materialIndex": null,
+   "tris": 2160,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.8",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     0,
+     -105
+    ],
+    "r": 77.56
+   },
+   "instances": null,
+   "centre": [
+    0,
+    0,
+    -105
+   ],
+   "size": [
+    2.9,
+    0.01,
+    155.1
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 1080,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "ce652ac1-090e-4008-b4a0-614fbbcd2c23",
+   "materialIndex": null,
+   "tris": 1960,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 124,
+   "path": "124.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.23,
+     -0.06,
+     -69.29
+    ],
+    "r": 5.78
+   },
+   "instances": 49,
+   "centre": [
+    10.67,
+    -0.06,
+    -69.21
+   ],
+   "size": [
+    5.93,
+    0,
+    11.33
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 20,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "0b6a3ec6-20b4-4440-9c36-84f4d7bba9c4",
+   "materialIndex": null,
+   "tris": 1680,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #20",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 20,
+   "path": "20.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     7.55,
+     -105
+    ],
+    "r": 78.14
+   },
+   "instances": null,
+   "centre": [
+    0,
+    7.55,
+    -105
+   ],
+   "size": [
+    6.54,
+    0.08,
+    156.14
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 840,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "60e738dd-7cd4-4638-9747-82ac28c369b2",
+   "materialIndex": null,
+   "tris": 1600,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.8.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.29,
+     -70.2
+    ],
+    "r": 0.35
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.29,
+    -70.2
+   ],
+   "size": [
+    0.33,
+    0.62,
+    0.06
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.7,
+   "geometryTris": 800,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "7aa46280-ad16-4c99-a6ad-db57a0bc1817",
+   "materialIndex": null,
+   "tris": 1444,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.4.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.27,
+     -53
+    ],
+    "r": 0.47
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.27,
+    -53
+   ],
+   "size": [
+    0.7,
+    0.59,
+    0.16
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.5,
+   "geometryTris": 722,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "d069ecd8-a0b0-4575-9228-d6a469c1a07f",
+   "materialIndex": null,
+   "tris": 1444,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.4.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.24,
+     -67.14
+    ],
+    "r": 0.43
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.24,
+    -67.14
+   ],
+   "size": [
+    0.68,
+    0.53,
+    0.06
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 7.8,
+   "geometryTris": 722,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "e40ae535-8b94-405b-b0a6-ceab98afbb09",
+   "materialIndex": null,
+   "tris": 1360,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.5.3",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     10.27,
+     0.25,
+     -51.86
+    ],
+    "r": 6.07
+   },
+   "instances": 5,
+   "centre": [
+    10.57,
+    0.43,
+    -51.66
+   ],
+   "size": [
+    5.38,
+    0.4,
+    9.42
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 9.8,
+   "geometryTris": 136,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "864402f2-6de1-426e-9a24-9418decef360",
+   "materialIndex": null,
+   "tris": 1332,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.10.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.29,
+     -70.2
+    ],
+    "r": 0.38
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.29,
+    -70.2
+   ],
+   "size": [
+    0.43,
+    0.62,
+    0.15
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 12.9,
+   "geometryTris": 666,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "0def509f-40c6-4fcb-9199-60136f885028",
+   "materialIndex": null,
+   "tris": 1120,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.7.8",
+   "userData": "kind",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": false,
+   "cullSphere": {
+    "centre": [
+     11.34,
+     0.3,
+     -68.71
+    ],
+    "r": 7.12
+   },
+   "instances": 8,
+   "centre": [
+    10.98,
+    0.49,
+    -68.96
+   ],
+   "size": [
+    9.21,
+    0.39,
+    10.13
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.5,
+   "geometryTris": 70,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "c368306a-96ab-4abc-926e-1170d97138e8",
+   "materialIndex": null,
+   "tris": 656,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "decor-02-bronze-age",
+   "zone": "02-bronze-age",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.4.8",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 2,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     2.43,
+     -60
+    ],
+    "r": 32.56
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    2.43,
+    -60
+   ],
+   "size": [
+    54.9,
+    4.84,
+    34.7
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "spine",
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76",
+    "ch11",
+    "ch13",
+    "ch15",
+    "ch69"
+   ],
+   "dist": 25,
+   "geometryTris": 328,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "8b26877b-12b9-46cb-8509-b399fa872e60",
+   "materialIndex": null,
+   "tris": 640,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.6.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.03,
+     -67
+    ],
+    "r": 0.37
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.03,
+    -67
+   ],
+   "size": [
+    0.7,
+    0.12,
+    0.2
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.5,
+   "geometryTris": 320,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "44e98f3b-05d2-4ca1-8d32-f783e743a9d7",
+   "materialIndex": null,
+   "tris": 600,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #27",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 27,
+   "path": "27.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     4.55,
+     -60
+    ],
+    "r": 26.01
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    4.55,
+    -60
+   ],
+   "size": [
+    51.94,
+    0.08,
+    2.94
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 300,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "e4e2ef52-1578-4f56-aa7f-3e35c40c98eb",
+   "materialIndex": null,
+   "tris": 600,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #35",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 35,
+   "path": "35.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     4.55,
+     -76
+    ],
+    "r": 26.01
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    4.55,
+    -76
+   ],
+   "size": [
+    51.94,
+    0.08,
+    2.94
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age"
+   ],
+   "dist": 39.4,
+   "geometryTris": 300,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "ff18a9b1-dbb0-4a38-ba3f-22077e780340",
+   "materialIndex": null,
+   "tris": 504,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     1.69,
+     -60
+    ],
+    "r": 21.06
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    1.69,
+    -60
+   ],
+   "size": [
+    41.76,
+    3.38,
+    4.42
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25,
+   "geometryTris": 252,
+   "worstHeading": 0,
+   "seenIn": 5
+  },
+  {
+   "key": "3a70d1a0-e389-4ff9-9262-1e3db1d917d2",
+   "materialIndex": null,
+   "tris": 504,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     1.69,
+     -76
+    ],
+    "r": 21.06
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    1.69,
+    -76
+   ],
+   "size": [
+    41.76,
+    3.38,
+    4.42
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.4,
+   "geometryTris": 252,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "67ca209c-2834-40d9-9249-8b899b028a7a",
+   "materialIndex": null,
+   "tris": 456,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #21",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 21,
+   "path": "21.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     4.55,
+     -44
+    ],
+    "r": 19.52
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    4.55,
+    -44
+   ],
+   "size": [
+    38.94,
+    0.08,
+    2.94
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory"
+   ],
+   "dist": 33.6,
+   "geometryTris": 228,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "a89ea7f8-1367-427c-aeaf-cf1ed4b336cc",
+   "materialIndex": null,
+   "tris": 360,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "01-prehistory",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 10,
+   "path": "10.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     1.69,
+     -44
+    ],
+    "r": 14.65
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    1.69,
+    -44
+   ],
+   "size": [
+    28.76,
+    3.38,
+    4.42
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75"
+   ],
+   "dist": 33.6,
+   "geometryTris": 180,
+   "worstHeading": 180,
+   "seenIn": 3
+  },
+  {
+   "key": "743b5706-921a-4d04-aa99-53402807e6e4",
+   "materialIndex": null,
+   "tris": 288,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #29",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 29,
+   "path": "29.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     5.35,
+     -51
+    ],
+    "r": 8.33
+   },
+   "instances": null,
+   "centre": [
+    11,
+    5.35,
+    -51
+   ],
+   "size": [
+    11.34,
+    0.08,
+    12.34
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 144,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "fde3ce1d-247b-4f8b-bda4-036f1992c66e",
+   "materialIndex": null,
+   "tris": 288,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #28",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 28,
+   "path": "28.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     5.35,
+     -69
+    ],
+    "r": 8.33
+   },
+   "instances": null,
+   "centre": [
+    11,
+    5.35,
+    -69
+   ],
+   "size": [
+    11.34,
+    0.08,
+    12.34
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 144,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "10bfdfbb-e20f-4812-b38c-6ddf31b1809a",
+   "materialIndex": null,
+   "tris": 256,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     0,
+     -60
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    0,
+    -60
+   ],
+   "size": [
+    53,
+    0.01,
+    32
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25,
+   "geometryTris": 128,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "dfcf14da-5776-4482-8a57-fdb7db9996a9",
+   "materialIndex": null,
+   "tris": 256,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.6.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.03,
+     -67
+    ],
+    "r": 0.35
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.03,
+    -67
+   ],
+   "size": [
+    0.66,
+    0.09,
+    0.19
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.5,
+   "geometryTris": 128,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "906d48c2-fbeb-4aab-a876-08d1b26f1633",
+   "materialIndex": null,
+   "tris": 256,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     0,
+     -76
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    0,
+    -76
+   ],
+   "size": [
+    53,
+    0.01,
+    32
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.4,
+   "geometryTris": 128,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "859e58fc-027c-4521-b699-3168bbce7a45",
+   "materialIndex": null,
+   "tris": 160,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.6.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.13,
+     -53
+    ],
+    "r": 0.37
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.13,
+    -53
+   ],
+   "size": [
+    0.7,
+    0.27,
+    0.27
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 7.8,
+   "geometryTris": 80,
+   "worstHeading": 270,
+   "seenIn": 2
+  },
+  {
+   "key": "24a843f7-f0da-4b89-ad10-fe6b346bc459",
+   "materialIndex": null,
+   "tris": 152,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     2.7,
+     -60
+    ],
+    "r": 30.65
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    2.7,
+    -60
+   ],
+   "size": [
+    53,
+    5.4,
+    32
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25,
+   "geometryTris": 76,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "e463a1c5-2571-4df9-9f01-fb6460bdebdd",
+   "materialIndex": null,
+   "tris": 152,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     2.7,
+     -76
+    ],
+    "r": 30.65
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    2.7,
+    -76
+   ],
+   "size": [
+    53,
+    5.4,
+    32
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.4,
+   "geometryTris": 76,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "6eebf65c-c58a-4a06-acf4-07e13f1b9f35",
+   "materialIndex": null,
+   "tris": 144,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.30",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     10.59,
+     0.61,
+     -67.31
+    ],
+    "r": 4.64
+   },
+   "instances": null,
+   "centre": [
+    10.59,
+    0.61,
+    -67.31
+   ],
+   "size": [
+    6.32,
+    1.23,
+    6.68
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 8.9,
+   "geometryTris": 72,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "2af0c1e6-1cfc-4ff3-a3e2-a1eea4b775ce",
+   "materialIndex": null,
+   "tris": 130,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.8.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.28,
+     -70.17
+    ],
+    "r": 0.34
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.28,
+    -70.17
+   ],
+   "size": [
+    0.31,
+    0.61,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.7,
+   "geometryTris": 65,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "f100f56d-6dc5-401c-919a-7f3738b9ebd3",
+   "materialIndex": null,
+   "tris": 130,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.8.0.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.28,
+     -70.23
+    ],
+    "r": 0.34
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.28,
+    -70.23
+   ],
+   "size": [
+    0.31,
+    0.61,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.7,
+   "geometryTris": 65,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "a7c80132-b8f4-481f-9a47-d7586e91315d",
+   "materialIndex": null,
+   "tris": 124,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     0.47,
+     -60
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    0.47,
+    -60
+   ],
+   "size": [
+    53,
+    0.95,
+    32
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25,
+   "geometryTris": 62,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "3dfc349d-0453-413a-9195-b7fc46005b40",
+   "materialIndex": null,
+   "tris": 124,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     0.47,
+     -76
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    0.47,
+    -76
+   ],
+   "size": [
+    53,
+    0.95,
+    32
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.4,
+   "geometryTris": 62,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "b2fa5f45-0723-4d3d-b0fb-9b23335ae261",
+   "materialIndex": null,
+   "tris": 112,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "01-prehistory",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 10,
+   "path": "10.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     2.7,
+     -44
+    ],
+    "r": 25.37
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    2.7,
+    -44
+   ],
+   "size": [
+    40,
+    5.4,
+    32
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75"
+   ],
+   "dist": 33.6,
+   "geometryTris": 56,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "074c4f1a-6142-4341-8b5a-c12279f48fd2",
+   "materialIndex": null,
+   "tris": 108,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.4.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.27,
+     -53.08
+    ],
+    "r": 0.45
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.27,
+    -53.08
+   ],
+   "size": [
+    0.69,
+    0.58,
+    0
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.5,
+   "geometryTris": 54,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "3f68efef-cf7d-4543-ac46-be34882f93e9",
+   "materialIndex": null,
+   "tris": 108,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.4.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.24,
+     -67.11
+    ],
+    "r": 0.42
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.24,
+    -67.11
+   ],
+   "size": [
+    0.66,
+    0.52,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 7.8,
+   "geometryTris": 54,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "c84894d7-7fd3-45eb-bc41-f4b6ef8aa78b",
+   "materialIndex": null,
+   "tris": 106,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.10.0.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.28,
+     -70.13
+    ],
+    "r": 0.35
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.28,
+    -70.13
+   ],
+   "size": [
+    0.4,
+    0.58,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 12.8,
+   "geometryTris": 53,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "49cef906-7242-4bee-b2e8-f9bd08b28711",
+   "materialIndex": null,
+   "tris": 106,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.10.0.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     13.3,
+     1.28,
+     -70.27
+    ],
+    "r": 0.35
+   },
+   "instances": null,
+   "centre": [
+    13.3,
+    1.28,
+    -70.27
+   ],
+   "size": [
+    0.4,
+    0.58,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 12.9,
+   "geometryTris": 53,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "251fdf63-27af-42dc-9d45-8aad59553f65",
+   "materialIndex": null,
+   "tris": 96,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.26",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11.41,
+     0.61,
+     -54.29
+    ],
+    "r": 3.66
+   },
+   "instances": null,
+   "centre": [
+    11.41,
+    0.61,
+    -54.29
+   ],
+   "size": [
+    6.32,
+    1.23,
+    3.48
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 8.2,
+   "geometryTris": 48,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "dd49b29e-9d51-475e-a0d2-278f4035f9fe",
+   "materialIndex": null,
+   "tris": 96,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.32",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 2,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     1.34,
+     -68.6
+    ],
+    "r": 3.42
+   },
+   "instances": null,
+   "centre": [
+    11,
+    1.34,
+    -68.6
+   ],
+   "size": [
+    5.46,
+    0.72,
+    4.06
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.2,
+   "geometryTris": 48,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "2490d439-e20f-4b72-9210-544f4705ec08",
+   "materialIndex": null,
+   "tris": 96,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "01-prehistory",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 10,
+   "path": "10.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     0,
+     -44
+    ],
+    "r": 25.22
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    0,
+    -44
+   ],
+   "size": [
+    40,
+    0,
+    32
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75"
+   ],
+   "dist": 33.6,
+   "geometryTris": 48,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "0c56cb27-bcb9-48e3-848f-f2c1199a597f",
+   "materialIndex": null,
+   "tris": 92,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "spine",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 9,
+   "path": "9.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     3.8,
+     -104.91
+    ],
+    "r": 79.28
+   },
+   "instances": null,
+   "centre": [
+    0,
+    3.8,
+    -104.91
+   ],
+   "size": [
+    8,
+    7.6,
+    158.19
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "rotunda",
+    "spine"
+   ],
+   "dist": 45.2,
+   "geometryTris": 46,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "19c7a993-2538-43ff-ab95-a0d8b8741af6",
+   "materialIndex": null,
+   "tris": 92,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "01-prehistory",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 10,
+   "path": "10.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     0.47,
+     -44
+    ],
+    "r": 25.23
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    0.47,
+    -44
+   ],
+   "size": [
+    40,
+    0.95,
+    32
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75"
+   ],
+   "dist": 33.6,
+   "geometryTris": 46,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "2029c9d7-c2e7-4e02-ac29-6f9953587e78",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.14.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -65.4
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -65.4
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 13.1,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "5031a938-1c0f-4c6b-bc5c-b9da01f2461d",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.18.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -67.8
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -67.8
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 14.3,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "75c86c99-8c10-4bf1-b6a1-b32053872fee",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.22.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -70.2
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -70.2
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 15.7,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "8814fd87-ddf6-47cd-95f6-2f8ab52d2a72",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.8.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -54.6
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -54.6
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 13.1,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "17038feb-b279-489c-9529-023debc2717a",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.12.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -51.4
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -51.4
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 14.7,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "86d603a7-f6ff-4adf-81f2-01f4f1dfb730",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.16.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -48.2
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -48.2
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 16.8,
+   "geometryTris": 40,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "4c2dd9e5-803e-46db-95a1-0b9f8f1f9a84",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.26.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -72.6
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -72.6
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 17.4,
+   "geometryTris": 40,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "7c0c199a-6881-4602-8b4d-dc28fbd4b5e2",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.12.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -65.4
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -65.4
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 5.5,
+   "geometryTris": 40,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "ed40d8d9-eb7f-4884-a4d4-3c312f16d55a",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.16.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -67.8
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -67.8
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 7.9,
+   "geometryTris": 40,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "5ea44ce6-fa01-4f8f-a822-ad5bb3662ed8",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.20.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -70.2
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -70.2
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.2,
+   "geometryTris": 40,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "ea7571b7-41f0-43e5-bd07-f1050231cb03",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.24.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -72.6
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -72.6
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 12.6,
+   "geometryTris": 40,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "fc310bb6-7f65-4fe9-b8e7-f930b7e72707",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.0.28.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -75
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -75
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 15,
+   "geometryTris": 40,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "e7960bf8-a7a0-4bf7-b389-4c8b2f4f4e68",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.10.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -54.6
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -54.6
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 5.6,
+   "geometryTris": 40,
+   "worstHeading": 225,
+   "seenIn": 2
+  },
+  {
+   "key": "e77ec89d-6790-4b79-a26a-46578e5c6e18",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.14.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -51.4
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -51.4
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 8.7,
+   "geometryTris": 40,
+   "worstHeading": 225,
+   "seenIn": 2
+  },
+  {
+   "key": "ba4b1f7a-86c7-473d-8ed7-73e37225526c",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.18.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -48.2
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -48.2
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 11.9,
+   "geometryTris": 40,
+   "worstHeading": 225,
+   "seenIn": 2
+  },
+  {
+   "key": "1f20c628-4715-4fbd-9529-c68415cc402b",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.22.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     4.58,
+     2.1,
+     -45
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    4.58,
+    2.1,
+    -45
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 15.1,
+   "geometryTris": 40,
+   "worstHeading": 225,
+   "seenIn": 2
+  },
+  {
+   "key": "c811895a-9136-4645-aea5-ab8f5f22aef2",
+   "materialIndex": null,
+   "tris": 80,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "CircleGeometry",
+   "sceneChild": 121,
+   "path": "121.2.20.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     17.42,
+     2.1,
+     -45
+    ],
+    "r": 0.54
+   },
+   "instances": null,
+   "centre": [
+    17.42,
+    2.1,
+    -45
+   ],
+   "size": [
+    0,
+    1.08,
+    1.08
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 19.2,
+   "geometryTris": 40,
+   "worstHeading": 270,
+   "seenIn": 2
+  },
+  {
+   "key": "e54274ed-3afa-4f9c-a4bf-5d3a29dade86",
+   "materialIndex": null,
+   "tris": 76,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "decor-02-bronze-age",
+   "zone": "02-bronze-age",
+   "material": "ShaderMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.4.7.0",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 3,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.55,
+     2.77,
+     -60
+    ],
+    "r": 25.79
+   },
+   "instances": null,
+   "centre": [
+    30.55,
+    2.77,
+    -60
+   ],
+   "size": [
+    51.3,
+    3.57,
+    3.98
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25.1,
+   "geometryTris": 38,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "f629db6b-c4b1-4de4-bdab-e874ade0056e",
+   "materialIndex": null,
+   "tris": 48,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "spine",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 9,
+   "path": "9.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     0.47,
+     -105
+    ],
+    "r": 79.1
+   },
+   "instances": null,
+   "centre": [
+    0,
+    0.47,
+    -105
+   ],
+   "size": [
+    8,
+    0.95,
+    158
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 24,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "ad8283b1-8553-4fcb-ba9e-8ab02e0758a4",
+   "materialIndex": null,
+   "tris": 48,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshPhongMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.2.28",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 2,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     1.34,
+     -53
+    ],
+    "r": 2.79
+   },
+   "instances": null,
+   "centre": [
+    11,
+    1.34,
+    -53
+   ],
+   "size": [
+    5.46,
+    0.72,
+    0.86
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 8.9,
+   "geometryTris": 24,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "95722862-6a8f-4628-9caf-083a4f512fc8",
+   "materialIndex": null,
+   "tris": 32,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "02-bronze-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 11,
+   "path": "11.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     5,
+     -60
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    5,
+    -60
+   ],
+   "size": [
+    53,
+    0.8,
+    32
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76"
+   ],
+   "dist": 25,
+   "geometryTris": 16,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "595d05c2-23b1-4520-b32d-443c7aedc4a8",
+   "materialIndex": null,
+   "tris": 32,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "03-early-iron-age",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 12,
+   "path": "12.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     5,
+     -76
+    ],
+    "r": 30.53
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    5,
+    -76
+   ],
+   "size": [
+    53,
+    0.8,
+    32
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77"
+   ],
+   "dist": 39.4,
+   "geometryTris": 16,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "d80b1e16-8242-4c5c-82ee-d93870792e29",
+   "materialIndex": null,
+   "tris": 24,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "xr-posture",
+   "zone": "xr-posture #116",
+   "material": "MeshBasicMaterial",
+   "geometry": "BoxGeometry",
+   "sceneChild": 116,
+   "path": "116.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     7.49,
+     1.35,
+     -60
+    ],
+    "r": 0.86
+   },
+   "instances": null,
+   "centre": [
+    7.49,
+    1.35,
+    -60
+   ],
+   "size": [
+    0.14,
+    0.72,
+    1.56
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 2,
+   "geometryTris": 12,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "ade66b2e-d654-4b9e-8a28-9a54ca06f829",
+   "materialIndex": null,
+   "tris": 24,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "xr-walk",
+   "zone": "xr-walk #117",
+   "material": "MeshBasicMaterial",
+   "geometry": "BoxGeometry",
+   "sceneChild": 117,
+   "path": "117.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     6.88,
+     1.35,
+     -61.45
+    ],
+    "r": 0.86
+   },
+   "instances": null,
+   "centre": [
+    6.88,
+    1.35,
+    -61.45
+   ],
+   "size": [
+    1.22,
+    0.72,
+    1.19
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age",
+    "ch02"
+   ],
+   "dist": 2,
+   "geometryTris": 12,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "6161e81e-9359-44c8-88ed-b45856968b76",
+   "materialIndex": null,
+   "tris": 24,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.4.0.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.52,
+     -67.13
+    ],
+    "r": 0.34
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.52,
+    -67.13
+   ],
+   "size": [
+    0.67,
+    0.02,
+    0.06
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 7.8,
+   "geometryTris": 12,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "270bd99f-44e9-4ddd-9007-00d28a3a7495",
+   "materialIndex": null,
+   "tris": 24,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "01-prehistory",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 10,
+   "path": "10.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     5,
+     -44
+    ],
+    "r": 25.23
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    5,
+    -44
+   ],
+   "size": [
+    40,
+    0.8,
+    32
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75"
+   ],
+   "dist": 33.6,
+   "geometryTris": 12,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "2748c500-d379-40f8-8c6a-58e3427e15da",
+   "materialIndex": null,
+   "tris": 20,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "spine",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 9,
+   "path": "9.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     0,
+     -104.75
+    ],
+    "r": 79.35
+   },
+   "instances": null,
+   "centre": [
+    0,
+    0,
+    -104.75
+   ],
+   "size": [
+    8,
+    0,
+    158.5
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "rotunda",
+    "spine"
+   ],
+   "dist": 45.1,
+   "geometryTris": 10,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "c426edc7-fec5-4492-81cf-afa30d712a13",
+   "materialIndex": null,
+   "tris": 16,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 119,
+   "path": "119.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     -0.3,
+     -60
+    ],
+    "r": 25.51
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    -0.3,
+    -60
+   ],
+   "size": [
+    51,
+    0.6,
+    1.6
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 8,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "555b744a-50dc-440f-be3e-0238a7363250",
+   "materialIndex": null,
+   "tris": 16,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 123,
+   "path": "123.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     -0.68,
+     -105
+    ],
+    "r": 77.52
+   },
+   "instances": null,
+   "centre": [
+    0,
+    -0.68,
+    -105
+   ],
+   "size": [
+    2.8,
+    1.35,
+    155
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 8,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "2d406208-6547-44d3-a9b0-3be2d3d19123",
+   "materialIndex": null,
+   "tris": 16,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 124,
+   "path": "124.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.3,
+     -69
+    ],
+    "r": 7.86
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.3,
+    -69
+   ],
+   "size": [
+    10.6,
+    0.6,
+    11.6
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 8,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "43bed878-71e0-4769-96f8-c10f5758326d",
+   "materialIndex": null,
+   "tris": 16,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "MeshBasicMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 125,
+   "path": "125.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.3,
+     -51
+    ],
+    "r": 7.86
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.3,
+    -51
+   ],
+   "size": [
+    10.6,
+    0.6,
+    11.6
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 8,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "cff0caaf-2864-45b6-aa45-da2e47ab6283",
+   "materialIndex": null,
+   "tris": 8,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshStandardMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 121,
+   "path": "121.0.4.0.2",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     8.7,
+     1.56,
+     -67
+    ],
+    "r": 0.37
+   },
+   "instances": null,
+   "centre": [
+    8.7,
+    1.56,
+    -67
+   ],
+   "size": [
+    0.66,
+    0.08,
+    0.33
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 7.7,
+   "geometryTris": 4,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "f5890e75-40da-4979-bb80-fcfe4a161565",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "spine",
+   "material": "MeshLambertMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 9,
+   "path": "9.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     7.6,
+     -105
+    ],
+    "r": 79.1
+   },
+   "instances": null,
+   "centre": [
+    0,
+    7.6,
+    -105
+   ],
+   "size": [
+    8,
+    0,
+    158
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "ec6aec50-45db-439d-bf16-6ad68e6f2564",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #20",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 20,
+   "path": "20.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     7.58,
+     -105
+    ],
+    "r": 78.07
+   },
+   "instances": null,
+   "centre": [
+    0,
+    7.58,
+    -105
+   ],
+   "size": [
+    6.4,
+    0,
+    156
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "59fa4b96-af38-4294-ac5e-2223cafc23c6",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #27",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 27,
+   "path": "27.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     4.58,
+     -60
+    ],
+    "r": 25.94
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    4.58,
+    -60
+   ],
+   "size": [
+    51.8,
+    0,
+    2.8
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "6f6aeffb-88da-4553-b298-862f2caaab16",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #28",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 28,
+   "path": "28.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     5.38,
+     -69
+    ],
+    "r": 8.28
+   },
+   "instances": null,
+   "centre": [
+    11,
+    5.38,
+    -69
+   ],
+   "size": [
+    11.2,
+    0,
+    12.2
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "5394ff09-3a33-4a3a-9029-f679aece68a2",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #29",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 29,
+   "path": "29.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     5.38,
+     -51
+    ],
+    "r": 8.28
+   },
+   "instances": null,
+   "centre": [
+    11,
+    5.38,
+    -51
+   ],
+   "size": [
+    11.2,
+    0,
+    12.2
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "16db36fc-3129-4dae-b97b-7a27d10d930d",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     3.9,
+     -61.96
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    11,
+    3.9,
+    -61.96
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 5.9,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "b5b889f6-167d-4a88-85fb-9035e2005b40",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     3.9,
+     -58.04
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    11,
+    3.9,
+    -58.04
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 5.9,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "5a623e5b-b664-4faa-8fa7-e05cd8d8b016",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.2.0.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     14.2,
+     1.08,
+     -55.81
+    ],
+    "r": 0.43
+   },
+   "instances": null,
+   "centre": [
+    14.2,
+    1.08,
+    -55.81
+   ],
+   "size": [
+    0.7,
+    0.28,
+    0.41
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 9.7,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "b0aa0653-23dd-43e3-a076-51791b75a904",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.2.24.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     7.4,
+     2.1,
+     -57.94
+    ],
+    "r": 1.24
+   },
+   "instances": null,
+   "centre": [
+    7.4,
+    2.1,
+    -57.94
+   ],
+   "size": [
+    1.6,
+    1.9,
+    0
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 2.8,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "c1530041-a0d1-49e7-b679-3a03fe59fd50",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.5",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     24,
+     3.9,
+     -61.96
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    24,
+    3.9,
+    -61.96
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 18.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "eedab7ff-bdbf-435e-bd9f-3ce601804165",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.7",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     24,
+     3.9,
+     -58.04
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    24,
+    3.9,
+    -58.04
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 18.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 2
+  },
+  {
+   "key": "97aacc39-ae2b-4363-9b51-fe6507a3b3aa",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "xr-posture",
+   "zone": "xr-posture #116",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 116,
+   "path": "116.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     7.47,
+     1.35,
+     -60
+    ],
+    "r": 0.82
+   },
+   "instances": null,
+   "centre": [
+    7.47,
+    1.35,
+    -60
+   ],
+   "size": [
+    0.09,
+    0.65,
+    1.5
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 2,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "2b5a2608-9b3e-4105-b6fe-b3f4abf7c33f",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "xr-walk",
+   "zone": "xr-walk #117",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 117,
+   "path": "117.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     6.86,
+     1.35,
+     -61.43
+    ],
+    "r": 0.82
+   },
+   "instances": null,
+   "centre": [
+    6.86,
+    1.35,
+    -61.43
+   ],
+   "size": [
+    1.14,
+    0.65,
+    1.11
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 2,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 3
+  },
+  {
+   "key": "ec01acaf-1c8c-4d3c-ba40-cd98e57c248e",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #119",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 119,
+   "path": "119.2",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 1,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     30.5,
+     -0.06,
+     -60
+    ],
+    "r": 25.5
+   },
+   "instances": null,
+   "centre": [
+    30.5,
+    -0.06,
+    -60
+   ],
+   "size": [
+    50.98,
+    0,
+    1.58
+   ],
+   "cell": "cor:02-bronze-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:02-bronze-age"
+   ],
+   "dist": 25,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "564c7797-0600-45dd-b2e9-9d1dee67873f",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #124",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 124,
+   "path": "124.2",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 1,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.06,
+     -69
+    ],
+    "r": 7.84
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.06,
+    -69
+   ],
+   "size": [
+    10.58,
+    0,
+    11.58
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 10.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "f327e2a1-b708-4332-a8c4-ca3a1204df3b",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #125",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 125,
+   "path": "125.2",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 1,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     -0.06,
+     -51
+    ],
+    "r": 7.84
+   },
+   "instances": null,
+   "centre": [
+    11,
+    -0.06,
+    -51
+   ],
+   "size": [
+    10.58,
+    0,
+    11.58
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 10.6,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 4
+  },
+  {
+   "key": "8b8b08f3-8c6c-4907-9606-c75b2892f18a",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 123,
+   "path": "123.2",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 1,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     -0.9,
+     -105
+    ],
+    "r": 77.5
+   },
+   "instances": null,
+   "centre": [
+    0,
+    -0.9,
+    -105
+   ],
+   "size": [
+    2.78,
+    0,
+    154.98
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "9196d5dd-5dd0-4d85-a87b-6c620cc55431",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "pit-glass",
+   "chain": "",
+   "zone": "Group #123",
+   "material": "MeshPhongMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 123,
+   "path": "123.7",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 3,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     0,
+     0,
+     -105
+    ],
+    "r": 77.51
+   },
+   "instances": null,
+   "centre": [
+    0,
+    0,
+    -105
+   ],
+   "size": [
+    2.8,
+    0,
+    155
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 45.3,
+   "geometryTris": 2,
+   "worstHeading": 0,
+   "seenIn": 8
+  },
+  {
+   "key": "f51b2b7b-e194-443f-a83d-83c606dfba01",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.0.0.0.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     7.8,
+     1.08,
+     -64.19
+    ],
+    "r": 0.43
+   },
+   "instances": null,
+   "centre": [
+    7.8,
+    1.08,
+    -64.19
+   ],
+   "size": [
+    0.7,
+    0.28,
+    0.41
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 4.8,
+   "geometryTris": 2,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "97f2269d-d7b4-4d3c-8178-40eb2536d11d",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch02 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.0.2.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.7,
+     -75.94
+    ],
+    "r": 2.12
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.7,
+    -75.94
+   ],
+   "size": [
+    3,
+    3,
+    0
+   ],
+   "cell": "ch02",
+   "cellSeen": true,
+   "spans": [
+    "ch02"
+   ],
+   "dist": 16.9,
+   "geometryTris": 2,
+   "worstHeading": 45,
+   "seenIn": 2
+  },
+  {
+   "key": "fa0f4843-134e-46b0-802f-ba6b636aceaf",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #35",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 35,
+   "path": "35.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -30.5,
+     4.58,
+     -76
+    ],
+    "r": 25.94
+   },
+   "instances": null,
+   "centre": [
+    -30.5,
+    4.58,
+    -76
+   ],
+   "size": [
+    51.8,
+    0,
+    2.8
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age"
+   ],
+   "dist": 39.4,
+   "geometryTris": 2,
+   "worstHeading": 90,
+   "seenIn": 4
+  },
+  {
+   "key": "8c5c183d-0321-4dc0-9cf7-3abc56f97379",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.6",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -3.96,
+     4.95,
+     -76
+    ],
+    "r": 1.94
+   },
+   "instances": null,
+   "centre": [
+    -3.96,
+    4.95,
+    -76
+   ],
+   "size": [
+    0,
+    0.75,
+    3.8
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 18.6,
+   "geometryTris": 2,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "1b568106-95cf-4f99-8081-e996efbf8dc8",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.7",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     3.96,
+     3.1,
+     -76
+    ],
+    "r": 2.14
+   },
+   "instances": null,
+   "centre": [
+    3.96,
+    3.1,
+    -76
+   ],
+   "size": [
+    0,
+    3.4,
+    2.6
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 16.1,
+   "geometryTris": 2,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "4a049bca-a511-4940-8549-73d0652a653c",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.9",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     3.96,
+     4.95,
+     -92
+    ],
+    "r": 1.94
+   },
+   "instances": null,
+   "centre": [
+    3.96,
+    4.95,
+    -92
+   ],
+   "size": [
+    0,
+    0.75,
+    3.8
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 32,
+   "geometryTris": 2,
+   "worstHeading": 90,
+   "seenIn": 2
+  },
+  {
+   "key": "a2e18b24-4303-4937-867e-ffe1b09a574c",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #21",
+   "material": "ShaderMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 21,
+   "path": "21.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -24,
+     4.58,
+     -44
+    ],
+    "r": 19.45
+   },
+   "instances": null,
+   "centre": [
+    -24,
+    4.58,
+    -44
+   ],
+   "size": [
+    38.8,
+    0,
+    2.8
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory"
+   ],
+   "dist": 33.6,
+   "geometryTris": 2,
+   "worstHeading": 135,
+   "seenIn": 4
+  },
+  {
+   "key": "19fddb06-bb3c-4403-8fd9-5868fff87dc6",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     3.96,
+     4.95,
+     -60
+    ],
+    "r": 1.94
+   },
+   "instances": null,
+   "centre": [
+    3.96,
+    4.95,
+    -60
+   ],
+   "size": [
+    0,
+    0.75,
+    3.8
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 1.6,
+   "geometryTris": 2,
+   "worstHeading": 135,
+   "seenIn": 3
+  },
+  {
+   "key": "295403a5-4a06-42a7-ab80-281e6f593f3d",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.4",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -3.96,
+     3.1,
+     -60
+    ],
+    "r": 2.14
+   },
+   "instances": null,
+   "centre": [
+    -3.96,
+    3.1,
+    -60
+   ],
+   "size": [
+    0,
+    3.4,
+    2.6
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 9.5,
+   "geometryTris": 2,
+   "worstHeading": 135,
+   "seenIn": 3
+  },
+  {
+   "key": "82b13d01-34b7-4843-b1d4-de0258ca6e29",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-03-early-iron-age",
+   "zone": "exhibits-03-early-iron-age #122",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 122,
+   "path": "122.3",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -11,
+     3.9,
+     -74.04
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    -11,
+    3.9,
+    -74.04
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:03-early-iron-age",
+   "cellSeen": true,
+   "spans": [
+    "cor:03-early-iron-age"
+   ],
+   "dist": 21.7,
+   "geometryTris": 2,
+   "worstHeading": 135,
+   "seenIn": 2
+  },
+  {
+   "key": "cd21467d-9b60-4a4f-8e81-8acb5a07af2d",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "exhibits-01-prehistory",
+   "zone": "exhibits-01-prehistory #120",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 120,
+   "path": "120.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -11,
+     3.9,
+     -45.96
+    ],
+    "r": 1.73
+   },
+   "instances": null,
+   "centre": [
+    -11,
+    3.9,
+    -45.96
+   ],
+   "size": [
+    3.4,
+    0.62,
+    0
+   ],
+   "cell": "cor:01-prehistory",
+   "cellSeen": true,
+   "spans": [
+    "cor:01-prehistory"
+   ],
+   "dist": 21.7,
+   "geometryTris": 2,
+   "worstHeading": 180,
+   "seenIn": 2
+  },
+  {
+   "key": "5f83a1ec-9046-49a5-a696-8267c997ad08",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshBasicMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -3.96,
+     4.95,
+     -44
+    ],
+    "r": 1.94
+   },
+   "instances": null,
+   "centre": [
+    -3.96,
+    4.95,
+    -44
+   ],
+   "size": [
+    0,
+    0.75,
+    3.8
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 18.7,
+   "geometryTris": 2,
+   "worstHeading": 225,
+   "seenIn": 2
+  },
+  {
+   "key": "cf5df7ab-b29f-4efa-8266-a961379278cd",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "",
+   "zone": "Group #110",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 110,
+   "path": "110.1",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     3.96,
+     3.1,
+     -44
+    ],
+    "r": 2.14
+   },
+   "instances": null,
+   "centre": [
+    3.96,
+    3.1,
+    -44
+   ],
+   "size": [
+    0,
+    3.4,
+    2.6
+   ],
+   "cell": "spine",
+   "cellSeen": true,
+   "spans": [
+    "spine"
+   ],
+   "dist": 16.2,
+   "geometryTris": 2,
+   "worstHeading": 225,
+   "seenIn": 3
+  },
+  {
+   "key": "15ac2026-e4b8-40b2-8d40-1f85b678ca66",
+   "materialIndex": null,
+   "tris": 4,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Mesh",
+   "name": "",
+   "chain": "room-ch03 < exhibits-02-bronze-age",
+   "zone": "exhibits-02-bronze-age #121",
+   "material": "MeshLambertMaterial",
+   "geometry": "PlaneGeometry",
+   "sceneChild": 121,
+   "path": "121.2.2.0",
+   "userData": "",
+   "transparent": false,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     11,
+     2.7,
+     -44.06
+    ],
+    "r": 2.12
+   },
+   "instances": null,
+   "centre": [
+    11,
+    2.7,
+    -44.06
+   ],
+   "size": [
+    3,
+    3,
+    0
+   ],
+   "cell": "ch03",
+   "cellSeen": true,
+   "spans": [
+    "ch03"
+   ],
+   "dist": 16.9,
+   "geometryTris": 2,
+   "worstHeading": 270,
+   "seenIn": 2
+  },
+  {
+   "key": "bdee2cfa-0d3d-4d1a-a259-6a7f9704c4dd",
+   "materialIndex": null,
+   "tris": 0,
+   "calls": 2,
+   "passes": {
+    "eye0": 1,
+    "eye1": 1
+   },
+   "type": "Points",
+   "name": "",
+   "chain": "",
+   "zone": "Points #107",
+   "material": "PointsMaterial",
+   "geometry": "BufferGeometry",
+   "sceneChild": 107,
+   "path": "107",
+   "userData": "",
+   "transparent": true,
+   "renderOrder": 0,
+   "frustumCulled": true,
+   "cullSphere": {
+    "centre": [
+     -12,
+     5.15,
+     -87.5
+    ],
+    "r": 106.51
+   },
+   "instances": null,
+   "centre": [
+    -12,
+    5.15,
+    -87.5
+   ],
+   "size": [
+    136,
+    2.5,
+    189
+   ],
+   "cell": "ch06",
+   "cellSeen": false,
+   "spans": [
+    "rotunda",
+    "hall",
+    "passage",
+    "spine",
+    "cor:01-prehistory",
+    "ch41",
+    "ch42",
+    "ch61",
+    "ch66",
+    "ch75",
+    "cor:02-bronze-age",
+    "ch02",
+    "ch03",
+    "ch04",
+    "ch05",
+    "ch57",
+    "ch67",
+    "ch76",
+    "cor:03-early-iron-age",
+    "ch06",
+    "ch07",
+    "ch08",
+    "ch09",
+    "ch58",
+    "ch68",
+    "ch77",
+    "cor:04-axial-age",
+    "ch10",
+    "ch11",
+    "ch12",
+    "ch13",
+    "ch14",
+    "ch15",
+    "ch52",
+    "ch69",
+    "cor:05-late-antiquity",
+    "ch16",
+    "ch17",
+    "ch18",
+    "ch19",
+    "ch20",
+    "ch45",
+    "ch55",
+    "ch70",
+    "ch79",
+    "cor:06-early-medieval",
+    "ch21",
+    "ch22",
+    "ch23",
+    "ch24",
+    "ch25",
+    "ch53",
+    "ch54",
+    "ch60",
+    "cor:07-high-medieval",
+    "ch26",
+    "ch27",
+    "ch28",
+    "ch29",
+    "ch30",
+    "ch43",
+    "ch44",
+    "ch56",
+    "ch59",
+    "ch62",
+    "ch72",
+    "ch81",
+    "cor:08-early-modern",
+    "ch31",
+    "ch32",
+    "ch33",
+    "ch34",
+    "ch63",
+    "ch73",
+    "ch82",
+    "ch84",
+    "cor:09-modern",
+    "ch35",
+    "ch36",
+    "ch37",
+    "ch38",
+    "ch39",
+    "ch40",
+    "ch64",
+    "ch65",
+    "ch74",
+    "ch83"
+   ],
+   "dist": 32.6,
+   "geometryTris": 31,
+   "worstHeading": 0,
+   "seenIn": 8
+  }
+ ]
+}
