@@ -100,6 +100,7 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 > **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **PR #184 games placement step 1** `loop/games-placement` `62862601` (on `main` `6871e3ca`), built 2026-11-22 ~03:00 UTC by ..01HFWzTknbShcVs1863TNtiD. **Per item** (live game placement; not a class item). Local: build order expected files only, verify 18/18, tests 51/51, review-checks 9/0/0, headless 0 script errors. **Missing:** independent review by another session, GitHub green incl. Lighthouse, Carter's per-item yes.
 - **#183 VR pilot — stick walking, opt-in beside teleport (2026-11-22 ~02:55 UTC)** `loop/vr-stick-walking` `254cf17c` on
   `main` `6871e3ca`. **VR, per item** (new build; Carter's build yes `decisions-2026-11-21-carter-vr-stick-walking-a.md`
   is not a merge yes). Local: build no diff, verify all pass, 51/51, review-checks 9/0/0, xr-entry-check 104/104,
