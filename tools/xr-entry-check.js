@@ -420,10 +420,11 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     // b. turning it on: the request, then two deliberate confirmations
     await tap(); w = await W();
     check(w.state === "ask1" && w.title === "MORE INTENSE" && !(await M()).walk, `press 1: the plaque warns: ${w.title} / ${w.lines.join(" / ")}`);
-    await tap(); w = await W();
-    check(w.state === "ask1", "a press straight after (under half a second) is not taken as a confirmation");
-    await page.waitForTimeout(650); await tap(); w = await W();
-    check(w.state === "ask2" && !(await M()).walk && /\(2 of 2\)$/.test(w.lines[2]), `confirmation 1 of 2: ${w.lines.join(" / ")}`);
+    // a quick double press: the first is confirmation 1, the second (milliseconds later) is not taken as confirmation 2
+    await page.waitForTimeout(650);
+    await page.evaluate(() => { for (let i = 0; i < 2; i++) { window.__fx.press("selectstart"); window.__fx.press("selectend"); } });
+    await frames(2); w = await W();
+    check(w.state === "ask2" && w.presses === 3 && !(await M()).walk && /\(2 of 2\)$/.test(w.lines[2]), `confirmation 1 of 2 (${w.lines.join(" / ")}); a second press under half a second later is not taken as confirmation 2`);
     await page.waitForTimeout(650); await tap(); w = await W(); m = await M();
     const kept = await page.evaluate(() => localStorage.getItem("mu-vr-walk"));
     check(w.state === "on" && m.walk && kept === "on" && w.lines[0] === "On: the left stick walks", `confirmation 2 of 2: on, kept on this device (${kept}); plaque: ${w.lines.join(" / ")}`);
@@ -443,8 +444,8 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     check(dist >= 0.85 && dist <= 1.3, `reaching top speed took about a metre (${dist.toFixed(2)} m: 1.0 m for a 1 s ramp)`);
     check(along > 0.99, `the visitor goes the way the head faces (cos ${along.toFixed(4)})`);
     check(Math.abs(a1.rig[1] - a0.rig[1]) < 1e-9 && Math.abs(a1.rig[3] - a0.rig[3]) < 1e-9, "level: no height change, no turning from walking (horizon lock)");
-    const walked0 = a1.m.walked;
-    await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
+    // let go, reading the distance walked at that same moment
+    const walked0 = await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; return window.__MU.xrMove().walked; });
     await page.waitForFunction(() => window.__MU.xrMove().speed === 0, null, { timeout: 60000 });
     m = await M();
     check(m.walked - walked0 <= 0.55 && m.accelPeak <= 4.0 + 1e-3, `letting go stops within ${(m.walked - walked0).toFixed(2)} m (≤ 0.5 m at 4 m/s²); no drifting on`);
