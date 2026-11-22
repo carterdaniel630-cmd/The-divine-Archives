@@ -1,4 +1,48 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git branch*)",
+      "Bash(git merge*)",
+      "Bash(git worktree*)",
+      "Bash(git restore*)",
+      "Bash(git stash*)",
+      "Bash(git rev-parse*)",
+      "Bash(git merge-base*)",
+      "Bash(git ls-remote*)",
+      "Bash(git ls-tree*)",
+      "Bash(git cat-file*)",
+      "Bash(git rm*)",
+      "Bash(git push*)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(gh api -X GET *)"
+    ],
+    "ask": [
+      "Bash(git push*main*)",
+      "Bash(git push*--force*)",
+      "Bash(git push*-f*)",
+      "Bash(git push*+*)",
+      "Bash(git push*--delete*)",
+      "Bash(git push* :*)",
+      "Bash(git push*--mirror*)",
+      "Bash(git push*--all*)",
+      "Bash(gh api*/merge*)",
+      "Bash(gh api*DELETE*)",
+      "Bash(gh api*default_branch*)",
+      "Bash(git branch*-D*)",
+      "Bash(git branch*--delete*)"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {
