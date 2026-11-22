@@ -1,8 +1,9 @@
 # VR loop STATUS (overwritten every run)
 
-**As of:** 2026-11-22 ~16:50 UTC. **#188 is re-synced onto `main` `1cfb8d9f` → `f12dc09d`**, all local checks pass.
-It needs a delta check by a run that did not re-sync, and GitHub green; then the build loop merges it (Carter's yes on
-file). **#189** (frame-budget overlay) still waits on its independent review. Reply: `vr/2026-11-22-1645-resync-188.md`.
+**As of:** 2026-11-22 ~21:25 UTC. **#188 is mergeable now**: delta check on `f12dc09d` PASS 0 (done twice, by runs that
+did not re-sync), GitHub 7/7 green incl. Lighthouse, Carter's yes on file. The build loop merges it. **#189** still waits
+on its independent review. Reply: `vr/2026-11-22-2125-delta-188-confirm.md`. (The 16:48 run filed its delta check on
+`review-log` but stopped before writing back; its VR-LOCK sat 4h27m, which is why the pulse watch nudged.)
 
 ## Done
 - #189 `loop/vr-perf-overlay` `ee7ffc76`: the §7 overlay (plate in the headset, box on a flat screen,
@@ -10,9 +11,9 @@ file). **#189** (frame-budget overlay) still waits on its independent review. Re
   - an independent review by a run that wrote none of it;
   - GitHub green incl. Lighthouse;
   - Carter's per-item yes.
-- #188 `loop/vr-controllers`, **re-synced to `f12dc09d`** on `main` `1cfb8d9f` (16:45 run). Review PASS 0 on
-  `1fef4276` (`review-log` `afc6f30c`). **Carter's yes is on file** (2026-11-22). Needs a delta check by a run that did
-  not re-sync, and GitHub green. Then the build loop merges it.
+- #188 `loop/vr-controllers` `f12dc09d` on `main` `1cfb8d9f`: **MERGEABLE, per item.** Review PASS 0 on `1fef4276`
+  (`afc6f30c`); delta check PASS 0 (`review-log` `55e1de8b`, confirmed 21:25); GitHub 7/7 green incl. Lighthouse;
+  Carter's yes on file. **The build loop merges it** (the VR loop never merges).
 - LIVE on `main`:
   - #187 portal culling (`1cfb8d9f`, deploy 312);
   - #185 static zones;
@@ -26,14 +27,10 @@ file). **#189** (frame-budget overlay) still waits on its independent review. Re
 - Nothing held.
 
 ## Next (in order)
-1. **#188 delta check on `f12dc09d`** by a run that did NOT re-sync (not the 16:45 run's session).
-   - `origin/main...f12dc09d` must equal the reviewed diff `fa9e526d...1fef4276` except two lines: museum.html key 60,
-     and app.js tick() headset line holding both `xrRead.update` and `cullUpdate`.
-   - Then GitHub green incl. Lighthouse. Then the build loop merges it.
-   - If Lighthouse fails twice on pages the diff cannot reach, put it to Carter (LOOP.md note of 2026-11-01).
-2. **Independent review of #189** by a run that wrote none of it, with GitHub green.
-   - If #188 goes live first, #189 re-syncs onto it: museum.html takes key **61** (both sides will say 60), and app.js
-     keeps both `S.perf.frame` and #188's lines.
+1. **Independent review of #189** (`loop/vr-perf-overlay` `ee7ffc76`) by a run that wrote none of it, with GitHub green.
+   - If #188 goes live first (expected), #189 re-syncs onto it: museum.html takes key **61** (both sides say 60), and
+     app.js keeps both `S.perf.frame` and #188's lines; then a delta check by a run that did not re-sync.
+2. (build loop, not this loop) merge #188 per item; it qualifies now.
 3. Wing II corridor: about 736k triangles (over the hard line) and 198 calls, even with #185 and #187. Measure what the
    corridor draws before choosing a fix (§4a LOD).
 4. Readings, later steps:
@@ -62,8 +59,8 @@ in the 12:30 and 12:40 runs; read `graphify-out/GRAPH_REPORT.md` or the code dir
   pilot rooms or not in the pilot spec. Not built by this loop.
 
 ## Needs Carter
-- **#188 (tap a relic to read its label):** your yes is on file. Nothing more is needed from you. Re-synced; it goes
-  live after one re-check and the GitHub checks.
+- **#188 (tap a relic to read its label):** your yes is on file and every check has passed. Nothing more is needed from
+  you; the build loop puts it live.
 - **#189 (frame-budget readout in the headset): merge it?**
   - a) Yes, once its independent review passes and every check is green (recommended). It is a hidden measuring tool
     that only appears with `?vrfps=1`. Visitors never see or download it. It is how your headset walk can certify
