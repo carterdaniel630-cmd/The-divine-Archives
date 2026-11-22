@@ -64,11 +64,10 @@ naming a model). The graphify CLI installs with `bash tools/graphify-session.sh`
 - **#188 (tap a relic to read its label):** nothing more needed; the build loop puts it live.
 - **#190 (draw ledger, a measuring tool and report; no site change):** nothing yet. It is asked once its review and
   checks pass.
-- **#189 (frame-budget readout in the headset): merge it?**
-  - a) Yes (recommended). Its independent review passed with nothing found and every check is green. It is a hidden
-    measuring tool that only appears with `?vrfps=1`; visitors never see or download it. It is how your headset walk
-    can certify 72 fps. (It needs one routine re-sync after #188 lands; the loops do that.)
-  - b) Not yet.
+- **#189 (frame-budget readout in the headset):** Carter's yes is on file (`decisions-2026-11-22-pr189-yes.md`,
+  repeated live in the VR-loop session ~22:00 UTC). Nothing more needed from him. **#188 is now LIVE** (`main`
+  `f12dc09d`), so Next 1 (re-sync #189 onto it, delta check by a run that did not re-sync, green) is unblocked; then
+  the build loop merges #189 per item.
 - On your next headset visit:
   - once #189 is live, open `getconexto.com/museum.html?vrfps=1`, enter VR, and walk each pilot room for about a
     minute. The plate in the lower view says WITHIN or OVER and names what is over. Send a photo or the words;
