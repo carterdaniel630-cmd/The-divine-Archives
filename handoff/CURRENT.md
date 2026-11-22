@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (03:55 UTC)
+# Handoff — updated 2026-11-22 (05:05 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #182 VR light rig merged (2026-11-22 ~03:46 UTC)
+## Latest: #183 VR stick walking merged (2026-11-22 ~04:58 UTC)
+`main` = `a2a6aa4b` (deploy run 308 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr183-yes.md`). In a VR headset the museum pilot now offers stick walking as an opt-in at a walking plaque (teleport stays the default; turning it on asks three times and warns "MORE INTENSE"). Flat screens and phones unchanged. Next: #184 games placement review; #185 VR static zones review + re-sync.
+
+## Earlier: #182 VR light rig merged (2026-11-22 ~03:46 UTC)
 `main` = `4864a9d2` (deploy run 307 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr170-pr182-yes.md`). In a VR headset session the museum pilot now uses a light rig sized to the headset (5 lights on Quest 2, 6 on Quest 3); flat screens and phones unchanged. Next: #183 stick walking (Carter's yes on file) needs a re-sync onto `4864a9d2`, a delta check and Lighthouse; #184 games placement needs its independent review.
 
 ## Earlier: #179 ch32 + #180 ch33 re-sourcing merged (2026-11-22 ~01:55–02:00 UTC)
