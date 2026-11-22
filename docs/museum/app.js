@@ -1662,7 +1662,7 @@ function tick(now) {
     camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
   }
   updateLights();
-  if (xr) { renderer.render(scene, camera); return; }   // no hover tag or reticle in the headset (they are page elements)
+  if (xr) { renderer.render(scene, camera); if (S.perf) S.perf.frame(now); return; }   // no hover tag or reticle in the headset (they are page elements); S.perf: the ?vrfps=1 overlay
   // hover (centre of view when looking with the mouse)
   const ex = (S.locked || !touch) && $("mu-card-wrap").hidden ? pick(0, 0) : null;
   const near = ex && ex.center.distanceTo(S.pos) < 6 ? ex : null;
@@ -1677,6 +1677,7 @@ function tick(now) {
     if (S.sky && $("mu-card-wrap").hidden) S.sky.highlight(sky && sky.data.what === "cons" ? sky.data.id : null);
   }
   renderer.render(scene, camera);
+  if (S.perf) S.perf.frame(now);
 }
 
 // ---------------------------------------------------------------- VR (xr.js; handoff/vr-architecture.md)
@@ -1818,6 +1819,8 @@ async function start() {
   $("mu-bar").hidden = false;
   initXR();
   // three.js drives the loop (it must, for a VR session); an error in one frame is reported but does not stop the next
+  // the hidden frame-budget overlay (handoff/vr-performance-budget.md §7): only with ?vrfps=1, so no visitor downloads it
+  if (/[?&]vrfps=1(?:&|#|$)/.test(location.search)) import("../assets/vr-perf-overlay.js?v=1").then((m) => { S.perf = m.createVRPerf({ renderer, scene, camera, probe: XRProbe, where: () => S.where }); }).catch(() => { /* a debug aid: the museum runs without it */ });
   renderer.setAnimationLoop((t) => { try { tick(t); } catch (e) { setTimeout(() => { throw e; }); } });
   status.textContent = "";
   $("mu-enter").disabled = false;
@@ -1858,6 +1861,8 @@ window.__MU = {
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
   xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
   xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
+  vrfps: () => S.perf ? { ready: true, plateShown: !!(S.perf.plate && S.perf.plate.visible), plateParent: S.perf.plate && S.perf.plate.parent ? S.perf.plate.parent.name || S.perf.plate.parent.type : null, text: S.perf.text(), stats: window.__vrfps || null } : null,
+  vrfpsImage: () => S.perf && S.perf.image(),
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
   // the water level, and where its creatures stand (ground-check.js)
