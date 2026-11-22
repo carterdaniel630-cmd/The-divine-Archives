@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (08:00 UTC)
+# Handoff — updated 2026-11-22 (11:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #186 save rules merged (2026-11-22 ~07:49 UTC)
+## Latest: #185 VR static zones merged (2026-11-22 ~11:50 UTC)
+`main` = `23d312d5`, fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr184-pr185-yes.md`). In a VR headset the museum pilot draws the hall and Rotunda fittings only when their walls are drawn, cutting headset draw calls (stand-in worst view: ch02 ~202 → ~176, ch03 ~222 → ~155, corridor 270 → 224). Flat screens and phones unchanged. Next: #187 portal culling re-sync onto `23d312d5` + delta check + green; backlog census.
+
+## Earlier: #186 save rules merged (2026-11-22 ~07:49 UTC)
 `main` = `fa9e526d`, fast-forwarded per item on Carter's yes (`decisions-2026-11-22-carter-save-rules-yes.md`). Adds a permissions block to `.claude/settings.json` (routine git/node/npm and read-only `gh api` allowed; pushes to `main`, force pushes, deletes and merges via API still ask). No site file changed. The rules load in new sessions only once Carter switches GitHub's default branch to `main`. Next: #185 VR static zones review + re-sync; backlog census.
 
 ## Earlier: #184 games placement step 1 merged (2026-11-22 ~07:43 UTC)
