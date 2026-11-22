@@ -30,8 +30,9 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=2";
+import { createXRMove } from "./xr-move.js?v=3";
 import { createXRHeight } from "./xr-height.js?v=1";
+import { createXRWalk } from "./xr-walk.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 
@@ -1564,7 +1565,7 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); xrFollow(); }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); xrFollow(); }
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
@@ -1653,12 +1654,14 @@ function initXR() {
       document.body.classList.add("is-xr");
       S.xrMove.attach();
       S.xrHeight.attach({ floor: !seated });
+      S.xrWalk.attach();   // stick walking: off unless this device kept the visitor's confirmed choice
       S.snd.wake(); S.dirty = true;
     },
     onEnd: (at) => {
       document.body.classList.remove("is-xr");
       S.xrMove.detach();
       const said = S.xrHeight.detach();
+      S.xrWalk.detach();
       if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
       S.pitch = 0; S.keys.clear(); S.auto = null;
       resize(); manageZones(); locate(); savePos();
@@ -1667,12 +1670,18 @@ function initXR() {
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) });
   S.xrHeight = createXRHeight({
     camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
     clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
     dip: (cb) => S.xrMove.dip(cb),
     load: () => store.get("mu-vr-posture"), save: (v) => store.set("mu-vr-posture", v)
+  });
+  S.xrWalk = createXRWalk({
+    camera, scene, anchor: S.xrHeight.plaque,
+    clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+    load: () => store.get("mu-vr-walk"), save: (v) => store.set("mu-vr-walk", v),
+    onChange: (on) => S.xrMove.setWalk(on), hasLeft: () => S.xrMove.hasLeft
   });
   let was = false;
   const paint = async () => {
@@ -1751,6 +1760,8 @@ window.__MU = {
   xrHeight: () => S.xrHeight ? Object.assign({}, S.xrHeight.debug, { posture: S.xrHeight.posture, plaqueShown: S.xrHeight.plaque.visible, rigY: S.xr.rig.position.y, rig: [S.xr.rig.position.x, S.xr.rig.position.y, S.xr.rig.position.z, S.xr.rig.rotation.y], plaquePos: S.xrHeight.plaque.position.toArray() }) : null,
   xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
+  xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
+  xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
   // the water level, and where its creatures stand (ground-check.js)
