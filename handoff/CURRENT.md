@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (05:05 UTC)
+# Handoff — updated 2026-11-22 (07:50 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #183 VR stick walking merged (2026-11-22 ~04:58 UTC)
+## Latest: #184 games placement step 1 merged (2026-11-22 ~07:43 UTC)
+`main` = `62b93b99`, fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr184-pr185-yes.md`). Museum chapter rooms no longer show a game kiosk or "Game:" line; all 11 games stay reachable from the Arcade. The rest of the games placement questions (Tomb Robber, chess, symbols-page tags) still wait on Carter. Next: #186 save rules delta check; #185 VR static zones review + re-sync.
+
+## Earlier: #183 VR stick walking merged (2026-11-22 ~04:58 UTC)
 `main` = `a2a6aa4b` (deploy run 308 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr183-yes.md`). In a VR headset the museum pilot now offers stick walking as an opt-in at a walking plaque (teleport stays the default; turning it on asks three times and warns "MORE INTENSE"). Flat screens and phones unchanged. Next: #184 games placement review; #185 VR static zones review + re-sync.
 
 ## Earlier: #182 VR light rig merged (2026-11-22 ~03:46 UTC)
