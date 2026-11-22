@@ -100,6 +100,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 > **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **#183 VR pilot — stick walking, opt-in beside teleport (2026-11-22 ~02:55 UTC)** `loop/vr-stick-walking` `254cf17c` on
+  `main` `6871e3ca`. **VR, per item** (new build; Carter's build yes `decisions-2026-11-21-carter-vr-stick-walking-a.md`
+  is not a merge yes). Local: build no diff, verify all pass, 51/51, review-checks 9/0/0, xr-entry-check 104/104,
+  museum-baseline flat unchanged. **Still missing:** independent review by a session that wrote none of it; GitHub
+  green incl. Lighthouse; Carter's per-item yes. `museum.html` key `v=57` (#182 has 56): on re-sync keep the higher.
 - **#182 VR pilot — light rig per tier in a headset session (2026-11-17 ~06:25 UTC)** `loop/vr-light-rig` `118abdcc` on
   `main` `5570e888`. **VR, per item** (new build). `docs/museum/app.js` + `docs/museum.html` (cache key v=56). In a VR
   session only, lights go 8 → 5 (Quest 2) / 6 (Quest 3); flat museum unchanged. Missing: independent review (by a run that
