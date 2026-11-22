@@ -30,3 +30,6 @@ doing it here would duplicate it. (2) **Games placement fix** (resumption pack I
 ## Merge
 #184 is per item (live game placement). Needs: independent review by another session, GitHub green incl. Lighthouse,
 Carter's yes. Nothing merged this run.
+
+## Chaining
+fire_trigger on the build loop was refused by the session permission guard (not retried another way). The hourly backstop (:41) picks up Next.
