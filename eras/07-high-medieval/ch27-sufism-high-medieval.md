@@ -76,14 +76,9 @@ Sufism is the mystical inner path of the **Islam** of the earlier era (Chapter 2
 ## Sources
 
 - Definition (tasawwuf), origins in Umayyad-era asceticism, Hasan al-Basri, Rabia — "Tasawwuf," Encyclopedia.com. https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/tasawwuf
-- Bayazid Bistami ("drunken") vs. Junayd of Baghdad ("sober") and the sobriety/intoxication typology — "Junayd of Baghdad," Wikipedia. https://en.wikipedia.org/wiki/Junayd_of_Baghdad
 - Al-Hallaj, "Ana al-Haqq," and his execution in 922 — "al-Hallaj," Britannica. https://www.britannica.com/biography/al-Hallaj
-- Al-Ghazali (d. 1111), *Deliverance from Error*, and the *Ihya Ulum al-Din* — "The Revival of the Religious Sciences," Wikipedia. https://en.wikipedia.org/wiki/The_Revival_of_the_Religious_Sciences
 - Ibn Arabi (1165–1240), wahdat al-wujud, the Perfect Man, *Fusus al-Hikam* — Muhyiddin Ibn Arabi Society. https://ibnarabisociety.org/
-- Rumi (1207–1273), the Mathnawi, and the Mevlevi order and sema — "Mevlevi Order," Wikipedia. https://en.wikipedia.org/wiki/Mevlevi_Order
-- The orders: Qadiriyya (Abd al-Qadir al-Jilani, d. 1166), Chishtiyya, Mevlevi, and the Naqshbandiyya with its silent dhikr — "Naqshbandi Order," Wikipedia. https://en.wikipedia.org/wiki/Naqshbandi_Order
 - The stages of the nafs (ammara, lawwama, mutma'inna, …) — "Stages of the Nafs," MTO. https://quran.mto.org/stages-of-the-nafs/
 - Amir Khusrow, qawwali, and the Nizamuddin dargah (Chishti devotional music) — "Amir Khosrow," Britannica. https://www.britannica.com/biography/Amir-Khosrow
 - Wine/tavern/Beloved/Cupbearer symbolism as a system — Nimatullahi Sufi Order, "Sufi Symbolism." https://www.nimatullahi.org/sufi-symbolism
-- Anti-Sufism: Wahhabi/Salafi condemnation of tomb-veneration and organized dhikr as bid'a — "Anti-Sufism," Wikipedia. https://en.wikipedia.org/wiki/Anti-Sufism
 - The de-Islamized Western reception of Rumi — Dar al-Masnavi, "Western Views of Mawlana Rumi's Muslim Identity." https://www.dar-al-masnavi.org/western_views.html

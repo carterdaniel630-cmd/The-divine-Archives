@@ -10,6 +10,7 @@ Per the project sourcing standard, this citation log records the real, checkable
 
 - "Pilate stone", https://en.wikipedia.org/wiki/Pilate_stone
 - Vici.org, "Caesarea Maritima: Pilate Stone", https://vici.org/vici/21598/?lang=en
+- *Corpus Inscriptionum Iudaeae/Palaestinae* II 1277, record in the *Judaism and Rome* database, https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288 (opened again 2026-11-14): 82 cm high, 65 cm wide, 20 cm deep; line 4 keeps only one letter, E. Readings recorded there: G. Alföldy (1999) *[ref]eci[t]*, "restored"; J. E. Taylor (2006) the start of *dedicavit*. This is the source for the page's line 4 and its note (wording fix 2026-11-14; the page earlier printed `[…FE]CIT D[E…]`, which marked letters as surviving that the stone does not show).
 - Ministry Magazine, "Pontius Pilate and the Caesarea Inscription" (1975), https://www.ministrymagazine.org/archive/1975/04/pontius-pilate-and-the-caesarea-inscription
 
 *Interpretation*
@@ -20,3 +21,4 @@ Per the project sourcing standard, this citation log records the real, checkable
 *Museum rendition (inscription texture, 2026-11-08)*
 
 - CIIP II 1277, "Dedication by Pontius Pilate in Judea", as published in the *Judaism and Rome* database, https://heurist.huma-num.fr/heurist/judaism_and_rome/view/288 (opened 2026-11-08): diplomatic text `[---]S TIBERIEVM / [----]NTIVS PILATVS / [-----]ECTVS IVDA[--]E / [-----]E[-------]`; line 4 one letter (a vertical stroke under an apex, read as E); 82 × 65 × 20 cm; letters 6 cm. The museum model's letters follow this diplomatic text. The Epigraphic Database Heidelberg record (HD004074) could not be opened from the drafting environment (access denied).
+- Museum model orientation (2026-11-16, order `handoff/order-2026-11-15-pilate-stone-orientation-fix.md`): the model now stands upright at CIIP II 1277's measurements, 82 cm high × 65 cm wide × 20 cm deep (record re-opened 2026-11-16, *Judaism and Rome* database, same URL as above; it gives Height 82 cm, Width 65 cm, Depth 20 cm). Until then it lay on its side (82 wide × 65 high). Letters unchanged in size (6 cm) and wording. No photograph of the real stone could be opened from the build session (Wikipedia's media API was blocked); the comparison was made against the CIIP record's measurements and description (inscribed block, left side badly damaged, lines running across the face) and the diplomatic text, and says so.

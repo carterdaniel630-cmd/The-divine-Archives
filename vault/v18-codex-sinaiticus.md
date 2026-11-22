@@ -50,7 +50,6 @@ Early Christianity (ch16), Patristic Christianity (ch22, for the formation of th
 
 ## Sources
 
-- "Codex Sinaiticus", https://en.wikipedia.org/wiki/Codex_Sinaiticus
 - Codex Sinaiticus Project, https://www.codexsinaiticus.org/en/project/article.aspx?newsid=15
 - British Library, "Codex Sinaiticus", https://support.bl.uk/page/codex-sinaiticus
 - Leipzig University Library, "Codex Sinaiticus", https://www.ub.uni-leipzig.de/en/about-us/exhibitions/permanent-exhibition/codex-sinaiticus

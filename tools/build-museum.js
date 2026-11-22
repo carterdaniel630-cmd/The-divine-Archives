@@ -49,13 +49,12 @@ const PANTHEON = sandbox.window.PANTHEON;
 const PANTHEON_ART = sandbox.window.PANTHEON_ART;
 
 // ---- curated inputs (the only hand-written museum data) ------------------
-// the chapter-to-game map comes from the games catalog (docs/assets/games/catalog.js), the one list of the games
+// No chapter room carries a game (games placement fix, resumption pack 2026-11-21 Item A): a game's home is the age
+// of its FORM, and no live game's form belongs to the tradition room it was hung in. The games live in the Arcade;
+// the catalog (docs/assets/games/catalog.js) still says which chapter each game draws its facts from. A game whose
+// form does belong to a room (Senet, Mehen, the Royal Game of Ur …) is placed here by its own approved change, by
+// chapter id: { ch02: { id: "senet", title: "Senet" } }. It is never derived from the catalog's hiddenIn.
 const GAME = {};
-{
-  const gctx = { window: {} };
-  vm.runInNewContext(fs.readFileSync(path.join(DOCS, "assets", "games", "catalog.js"), "utf8"), gctx);
-  for (const g of gctx.window.ARCHIVE_GAMES) GAME[g.hiddenIn] = { id: g.id, title: g.fullTitle || g.title };
-}
 // Vault entries that deliberately show no image (see their own entries)
 const NO_IMAGE = { v76: "The Vault shows no image connected with the Báb, out of respect for Bahá'í practice." };
 // living traditions that data.js files in an early wing (PLAN §4 flags; §13 decision 7)
@@ -208,7 +207,8 @@ function directory() {
   let h = `<section class="dir-wing dir-halls"><h3>The halls</h3><ul>` +
     `<li><span class="dir-room">The entrance hall</span><p class="dir-ex"><span>Portal:</span> <a href="pilgrimage.html">The Pilgrimage: walk the sacred sites</a></p></li>` +
     `<li><span class="dir-room">The planetarium</span><p class="dir-ex">The star projector at the centre of the Rotunda.</p></li>` +
-    `<li><span class="dir-room">The ring of statues</span><p class="dir-ex">Under the Rotunda's dome, recently added and pending review: <a href="rotunda/socrates.html">Socrates</a> · <a href="rotunda/shiva.html">Shiva</a> · <a href="rotunda/isis.html">Isis</a> (<a href="rotunda/index.html">the Rotunda Circle</a>).</p></li>` +
+    // statues stand in their rooms, not in the Rotunda (Carter's change of plans, 2026-11-09; docs/museum/statues.js)
+    `<li><span class="dir-room">Statues in the rooms</span><p class="dir-ex">Recently added and pending review: <a href="rotunda/shiva.html">Shiva</a> in Global Hinduism &amp; the Guru Movements · Zeus, from a scan of the Artemision bronze, in <a href="chapters/ch15.html">Classical Greece</a>.</p></li>` +
     `<li><span class="dir-room">The Spine gallery</span><p class="dir-ex">A banner for each of <a href="eras.html">the Nine Ages</a>.</p></li>` +
     `</ul></section>`;
   h += `<section class="dir-wing"><h3>The Rotunda · Comparative themes</h3><ul>${(wingRooms.rotunda || []).map(roomLi).join("")}</ul></section>`;

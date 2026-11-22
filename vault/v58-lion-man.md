@@ -50,7 +50,6 @@ Palaeolithic Prehistory (ch41). Compare the Venus of Willendorf (V59), a little 
 *The figure and its reconstruction*
 
 - Museum Ulm, "The Lion Man", https://museumulm.de/en/sammlungen/archaeologie/
-- "Löwenmensch figurine", https://en.wikipedia.org/wiki/L%C3%B6wenmensch_figurine
 - UNESCO, "Caves and Ice Age Art in the Swabian Jura", https://whc.unesco.org/en/list/1527/
 - C.-J. Kind, N. Ebinger-Rist, S. Wolf, T. Beutelspacher and K. Wehrberger, "The Smile of the Lion Man", *Quartär* 61 (2014)
 

@@ -49,9 +49,7 @@ Jainism (ch52). Compare the Diamond Sutra (V30) for a Buddhist book, and the Boo
 
 *The text*
 
-- "Kalpa Sūtra", https://en.wikipedia.org/wiki/Kalpa_S%C5%ABtra
 - *Jaina Sutras, Part I*, trans. H. Jacobi, Sacred Books of the East 22 (1884), https://sacred-texts.com/jai/sbe22/index.htm
-- "Paryushana", https://en.wikipedia.org/wiki/Paryushana
 
 *The manuscripts*
 

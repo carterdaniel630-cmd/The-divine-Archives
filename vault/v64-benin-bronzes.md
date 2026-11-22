@@ -56,7 +56,6 @@ African Traditional Religion (ch33) and Sacred Kingship (ch49). Compare the Kebr
 
 *The objects and the expedition*
 
-- "Benin Bronzes", https://en.wikipedia.org/wiki/Benin_Bronzes
 - Digital Benin, https://digitalbenin.org/
 - British Museum, "Benin Bronzes", https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes
 - D. Hicks, *The Brutish Museums* (Pluto Press, 2020)

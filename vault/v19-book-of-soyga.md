@@ -46,7 +46,6 @@ Kabbalah and its Christian adaptations (ch26), the Theosophical and occult reviv
 
 ## Sources
 
-- "Book of Soyga", https://en.wikipedia.org/wiki/Book_of_Soyga
 - J. Reeds, "John Dee and the Magic Tables in the Book of Soyga", in S. Clucas (ed.), *John Dee: Interdisciplinary Studies in English Renaissance Thought* (Springer, 2006), https://archive.org/stream/jimreedssoyga/soyga_djvu.txt
 - D. Harkness, *John Dee's Conversations with Angels* (Cambridge University Press, 1999)
 - Bodleian Library, MS Bodley 908; British Library, Sloane MS 8

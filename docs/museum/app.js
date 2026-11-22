@@ -24,13 +24,18 @@ import { createSky } from "./sky.js?v=1";
 import { createInspector } from "./inspect.js?v=11";
 import { buildRelic, hasRelic } from "./relics.js?v=3";
 import { buildReliquary } from "./reliquary.js?v=1";
-import { createWorld } from "./world.js?v=5";
-import { makeFauna } from "./fauna.js?v=4";
+import { createWorld } from "./world.js?v=10";
+import { makeFauna } from "./fauna.js?v=8";
 import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
+import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
+import { createXRMove } from "./xr-move.js?v=4";
+import { createXRHeight } from "./xr-height.js?v=1";
+import { createXRWalk } from "./xr-walk.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
-import { STATUES, RING_R, PEDESTAL_H, loadStatue } from "./statues.js?v=1";
+import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
+import { createPortals } from "./portals.js?v=1";
 
 // ---------------------------------------------------------------- constants
 const EYE = 1.62, RADIUS = 0.3, WALK = 3.0, RUN = 6.0;
@@ -64,10 +69,12 @@ const S = {
 };
 
 // ---------------------------------------------------------------- renderer
-let renderer, scene, camera, lantern, pool = [], lampPoints, flashLight;
+// the museum's sky light and the lightning in its skylights (colour of the sky side, of the ground side, strength)
+const HEMI = { sky: "#8a6a44", ground: "#1a120a", i: 1.3 }, FLASH = { sky: "#c4d2ff", ground: "#262a3a", i: 2.4 };
+let renderer, scene, camera, lantern, pool = [], lit = [], lampPoints, flashLight, hemi;
 function initRenderer() {
   const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance" });
+  const ctx = canvas.getContext("webgl2", { antialias: !touch, powerPreference: "high-performance", xrCompatible: true });   // xrCompatible: ready for a VR session (xr.js) without a context reset
   if (!ctx) throw new Error("WebGL2 is not available");
   renderer = new THREE.WebGLRenderer({ canvas, context: ctx, antialias: !touch });
   // phones draw at 1 pixel per CSS pixel: about half the fill work of 1.5 (advisory briefs 10-15/10-16, Item 9)
@@ -84,12 +91,13 @@ function initRenderer() {
   scene.fog = new THREE.Fog("#0b0704", 10, 52);
   camera = new THREE.PerspectiveCamera(touch ? 70 : 64, 1, 0.05, 140);
   scene.add(camera);
-  scene.add(new THREE.HemisphereLight("#8a6a44", "#1a120a", 1.3));
-  flashLight = new THREE.HemisphereLight("#c4d2ff", "#262a3a", 0); scene.add(flashLight);   // lightning in the skylights
+  hemi = new THREE.HemisphereLight(HEMI.sky, HEMI.ground, HEMI.i); scene.add(hemi);
+  flashLight = new THREE.HemisphereLight(FLASH.sky, FLASH.ground, 0); scene.add(flashLight);   // lightning in the skylights
   scene.add(new THREE.AmbientLight("#40301f", 0.6));
   lantern = new THREE.PointLight("#ffa65a", 2.8, 7, 1.6);   // the visitor's own light: a dim hand-held torch (it flickers, see updateLights)
   camera.add(lantern);
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight("#ffb46a", 0, 22, 1.6); scene.add(l); pool.push(l); }
+  lit = pool;
   resize();
   window.addEventListener("resize", resize);
 }
@@ -297,6 +305,7 @@ function boxAt(w, h, d, x, y, z, rotY) {
 
 // ---------------------------------------------------------------- collision (circle vs wall segments, hashed)
 const SEGS = [], GRID = new Map(), CELL = 8;
+const WALLS = [];      // the building's own walls (no columns, cases or fittings), for tools/xr-portal-check.js
 function addSeg(ax, az, bx, bz, owner) {
   const s = [ax, az, bx, bz]; SEGS.push(s);
   if (owner) owner.push(s);
@@ -336,7 +345,7 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
     if (pts[i + 1] - pts[i] < 0.01) continue;
     z.wall.push(quad(x0, z0, x1, z1, 0, h));
     z.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95));
-    addSeg(x0, z0, x1, z1);
+    addSeg(x0, z0, x1, z1); WALLS.push([x0, z0, x1, z1]);
   }
   for (let i = 1; i < pts.length - 1; i += 2) {
     const [x0, z0] = P(pts[i]), [x1, z1] = P(pts[i + 1]), dh = doorH || DOOR_H;
@@ -350,7 +359,7 @@ function wall(z, ax, az, bx, bz, h, gaps, doorH) {
 function rect(z, x0, x1, z0, z1, h, hole, floorKind) {
   const F = floorKind ? (z.floorBy[floorKind] = z.floorBy[floorKind] || []) : z.floor;   // a period floor (style.js) or the museum's own
   if (!hole) F.push(flat(x0, x1, z0, z1, 0, false));
-  else {                                  // a floor round a glass-covered pit (world.js fills it)
+  else {                                  // a floor round a pit (world.js fills it: under glass, or ground at your feet)
     F.push(flat(x0, x1, z0, hole.z0, 0, false), flat(x0, x1, hole.z1, z1, 0, false), flat(x0, hole.x0, hole.z0, hole.z1, 0, false), flat(hole.x1, x1, hole.z0, hole.z1, 0, false));
   }
   z.ceil.push(flat(x0, x1, z0, z1, h, true, 3));
@@ -421,6 +430,13 @@ function build() {
   rect(zh, -2, 2, ROT.cz + ROT.r, 0, 4.2);
   wall(zh, -2, ROT.cz + ROT.r, -2, 0, 4.2); wall(zh, 2, ROT.cz + ROT.r, 2, 0, 4.2);
   region("hall", "The entrance hall", HALL.x0, HALL.x1, ROT.cz + ROT.r, HALL.z1);
+  // the plan's cells and doors, for culling in the headset (portals.js)
+  const PG = S.portals = createPortals();
+  PG.round("rotunda", "rotunda", ROT.cx, ROT.cz, ROT.r);
+  PG.rect("hall", "hall", HALL.x0, HALL.x1, HALL.z0, HALL.z1);
+  PG.rect("passage", "hall", -2, 2, ROT.cz + ROT.r, HALL.z0);
+  PG.door("hall", "passage", -2, HALL.z0, 2, HALL.z0);
+  PG.door("passage", "rotunda", -2, ROT.cz + ROT.r, 2, ROT.cz + ROT.r);
   lamp(0, 5.6, 7, 1.3); lamp(-6, 4.5, 3); lamp(6, 4.5, 3);
   for (const x of [-5, 5]) for (const zc of [4, 10]) zh.trim.push(new THREE.CylinderGeometry(0.42, 0.5, HALL.h, 12).translate(x, HALL.h / 2, zc));
   for (const x of [-5, 5]) for (const zc of [4, 10]) addBox(x, zc, 0.5);
@@ -436,7 +452,7 @@ function build() {
     const gapS = Math.abs(angDiff(mid, Math.PI / 2)) < gapA, gapN = Math.abs(angDiff(mid, -Math.PI / 2)) < gapA;
     const x0 = ROT.cx + ROT.r * Math.cos(a0), z0 = ROT.cz + ROT.r * Math.sin(a0), x1 = ROT.cx + ROT.r * Math.cos(a1), z1 = ROT.cz + ROT.r * Math.sin(a1);
     if (gapS || gapN) { zr.wall.push(quad(x0, z0, x1, z1, gapS ? 4.2 : WING_DOOR_H, ROT.h)); continue; }
-    zr.wall.push(quad(x0, z0, x1, z1, 0, ROT.h)); zr.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95)); addSeg(x0, z0, x1, z1);
+    zr.wall.push(quad(x0, z0, x1, z1, 0, ROT.h)); zr.dado.push(quad(x0, z0, x1, z1, 0, 0.95, 2, 0.95)); addSeg(x0, z0, x1, z1); WALLS.push([x0, z0, x1, z1]);
   }
   zr.box.set(new THREE.Vector3(-ROT.r, 0, ROT.cz - ROT.r), new THREE.Vector3(ROT.r, ROT.h + ROT.r, ROT.cz + ROT.r));
   region("rotunda", "The Rotunda · Comparative themes", -ROT.r, ROT.r, ROT.cz - ROT.r, ROT.cz + ROT.r, { round: true });
@@ -466,9 +482,11 @@ function build() {
   wall(zs, SPINE_HALF, SPINE_Z0, SPINE_HALF, zEnd, SPINE_H, doorsE, WING_DOOR_H);
   wall(zs, -SPINE_HALF, zEnd, SPINE_HALF, zEnd, SPINE_H);
   // the short joins between the rotunda's round wall and the spine's straight walls
-  for (const sx of [-1, 1]) { const ax = sx * 2.1, az = ROT.cz - Math.sqrt(ROT.r * ROT.r - 2.1 * 2.1); zs.wall.push(quad(ax, az, sx * SPINE_HALF, SPINE_Z0, 0, SPINE_H)); addSeg(ax, az, sx * SPINE_HALF, SPINE_Z0); }
+  for (const sx of [-1, 1]) { const ax = sx * 2.1, az = ROT.cz - Math.sqrt(ROT.r * ROT.r - 2.1 * 2.1); zs.wall.push(quad(ax, az, sx * SPINE_HALF, SPINE_Z0, 0, SPINE_H)); addSeg(ax, az, sx * SPINE_HALF, SPINE_Z0); WALLS.push([ax, az, sx * SPINE_HALF, SPINE_Z0]); }
   zs.floor.push(flat(-2.3, 2.3, SPINE_Z0, SPINE_Z0 + 0.5, -0.004, false));
   region("spine", "The Spine gallery", -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0);
+  PG.rect("spine", "spine", -SPINE_HALF, SPINE_HALF, zEnd, SPINE_Z0);
+  PG.door("spine", "rotunda", -SPINE_HALF, SPINE_Z0, SPINE_HALF, SPINE_Z0);   // the whole end, not only the gap: wider is safe
   for (let zc = SPINE_Z0 - 6; zc > zEnd; zc -= 10) lamp(0, 6.4, zc, 1.1);
   // pilasters along the spine, clear of the wing doors
   for (let zc = SPINE_Z0 - 3; zc > zEnd + 1; zc -= 4) {
@@ -491,6 +509,8 @@ function build() {
     rect(zw, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2, COR_H, corHole, corStyle && corStyle.floor);
     S.areas.push({ id: "cor:" + e.slug, kind: "corridor", axis: "x", hole: corHole, bounds: { x0: cx0, x1: cx1, z0: zk - COR_W / 2, z1: zk + COR_W / 2 }, sky: { x0: cx0 + 0.6, x1: cx1 - 0.6, z0: zk - 1.4, z1: zk + 1.4, y: COR_H }, lamp: [(cx0 + cx1) / 2, 3.9, zk] });
     region("wing-" + e.slug, "Wing " + e.num + " · " + e.name, xa, xb, zk - COR_W / 2, zk + COR_W / 2, { era: e.slug });
+    PG.rect("cor:" + e.slug, e.slug, cx0, cx1, zk - COR_W / 2, zk + COR_W / 2);
+    PG.door("spine", "cor:" + e.slug, xa, zk - WING_DOOR / 2, xa, zk + WING_DOOR / 2);
     const gapsN = [], gapsS = [];
     ids.forEach((id, i) => {
       const j = Math.floor(i / 2), north = i % 2 === 0;
@@ -511,6 +531,8 @@ function build() {
       const r = S.rooms[id];
       Object.assign(r, { frame: f, zone: e.slug, era: e.slug, cx, cz: (ez + bz) / 2 });
       region("room-" + id, r.title, x0, x1, ez, bz, { room: id, era: e.slug });
+      PG.rect(id, e.slug, x0, x1, rz0, rz1);
+      PG.door(id, "cor:" + e.slug, cx - 1.75, ez, cx + 1.75, ez);   // as wide as the door sign over it (3.4 m), not only the 2.6 m door
       if (roomStyle && roomStyle.fittings) decorate(zw, id, { W, f, hole: roomHole, twoRows: Math.ceil((r.homeFigs || []).length / 2) > 6, box: new THREE.Box3(new THREE.Vector3(x0, 0, rz0), new THREE.Vector3(x1, ROOM_H, rz1)) });
       else lamp(cx, 4.4, (ez + bz) / 2, 1);
     });
@@ -575,18 +597,22 @@ function lod(obj, far) { LOD.push({ obj, far: far || SIGN_FAR }); return obj; }
 // signs and exhibits that need no wing detail (entrance, spine, wing doors)
 function buildStatic() {
   const g = new THREE.Group(); scene.add(g);
+  // what stands inside the entrance hall or the Rotunda rides in that zone's own group, so it is drawn exactly when the
+  // walls round it are (manageZones: within SHOW_FAR). Hung on the museum-wide group it was drawn from every wing,
+  // behind the walls: from ch02/ch03 the Pilgrimage portal alone cost ~75 of a headset's draw calls (VR budget §4b/§5)
+  const hallG = ZONES.hall.group, rotG = ZONES.rotunda.group;
   // entrance: title over the north door, orientation plaque, trails board
   const title = plane(9, 1.6, new THREE.MeshBasicMaterial({ map: textTex(["The Museum", "of the Divine Archives"], { w: 1024, h: 192, size: 78, frame: false, bg: "#140d07" }) }));
-  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); g.add(lod(title, 34));
+  placeOnWall(title, 0, 5.4, HALL.z0, 0, 1); hallG.add(lod(title, 34));
   const plaque = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["About this museum", "how to read the exhibits"], { w: 512, h: 320, size: 40 }) }));
-  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); g.add(plaque);
-  addExhibit(g, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
+  placeOnWall(plaque, HALL.x0, 1.9, 7, 1, 0); hallG.add(plaque);
+  addExhibit(hallG, hitBoxFor(plaque, 0.2), { type: "about", name: "About this museum" }, "hall");
   const trails = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Trails", "walk one tradition through the ages"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); g.add(trails);
-  addExhibit(g, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
+  placeOnWall(trails, HALL.x1, 1.9, 7, -1, 0); hallG.add(trails);
+  addExhibit(hallG, hitBoxFor(trails, 0.2), { type: "trails", name: "Tradition trails" }, "hall");
   const dir = plane(2.4, 1.5, new THREE.MeshLambertMaterial({ map: textTex(["Directory", "the halls and the rooms"], { w: 512, h: 320, size: 44 }) }));
-  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); g.add(dir);
-  addExhibit(g, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
+  placeOnWall(dir, HALL.x1, 1.9, 11.5, -1, 0); hallG.add(dir);
+  addExhibit(hallG, hitBoxFor(dir, 0.2), { type: "directory", name: "Museum directory" }, "hall");
   // spine: one banner per Age opposite its wing door, and a sign over the door
   S.manifest.eras.forEach((e) => {
     const E = S.eras[e.slug], s = E.side;
@@ -603,8 +629,8 @@ function buildStatic() {
   if (S.reservedBay) {
     const { f, t } = S.reservedBay; const [x, z] = W(f, 0, 0);
     const p = plane(2.6, 1.6, new THREE.MeshLambertMaterial({ map: textTex([t.name, "in preparation"], { w: 512, h: 320, size: 40 }) }));
-    placeOnWall(p, x, 2.4, z, f.fx, f.fz); g.add(lod(p, 24));
-    addExhibit(g, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
+    placeOnWall(p, x, 2.4, z, f.fx, f.fz); rotG.add(lod(p, 24));
+    addExhibit(rotG, hitBoxFor(p, 0.2), { type: "reserved", name: t.name }, "rotunda");
   }
   // the planetarium's star projector at the centre of the Rotunda
   const proj = new THREE.Group(); proj.position.set(ROT.cx, 0, ROT.cz);
@@ -612,13 +638,15 @@ function buildStatic() {
   proj.add(new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 16).translate(0, 1.4, 0), MAT.darkstone));
   const holes = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 6, 4), MAT.flame, 60), mt = new THREE.Matrix4();
   for (let i = 0; i < 60; i++) { const y = 1 - (i + 0.5) / 30, r = Math.sqrt(Math.max(0, 1 - y * y)), a = i * 2.39996; if (y < -0.3) { mt.makeScale(0, 0, 0); } else mt.makeTranslation(Math.cos(a) * r * 0.42, 1.4 + y * 0.42, Math.sin(a) * r * 0.42); holes.setMatrixAt(i, mt); }
-  proj.add(holes); g.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
-  addExhibit(g, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
-  // the Rotunda ring of statues (docs/museum/statues.js): a pedestal and plaque for each finished statue of the Rotunda
-  // Circle; the statue itself is fetched only when the visitor comes near (statueTick) and drawn only when close
-  S.statues = STATUES.map((st) => {
-    const x = ROT.cx + RING_R * Math.cos(st.angle), z = ROT.cz + RING_R * Math.sin(st.angle);
-    const ry = Math.atan2(ROT.cx - x, ROT.cz - z);          // each statue faces the centre of the ring
+  proj.add(holes); rotG.add(proj); addBox(ROT.cx, ROT.cz, 0.6);
+  addExhibit(rotG, hitBoxFor(proj, 0.2), { type: "sky", what: "about", name: "The planetarium" }, "rotunda");
+  // statues in their rooms (docs/museum/statues.js; Carter's change of plans 2026-11-09: none in the Rotunda): a pedestal
+  // and plaque for each placed statue in its room's centre aisle, facing the door; the statue itself is fetched only when
+  // the visitor comes near (statueTick) and drawn only while its room is shown. They are built here, once, not with the
+  // wing's exhibits, so a wing dropped and rebuilt on the way past does not fetch and remake the statue again.
+  S.statues = STATUES.filter((st) => S.rooms[st.room] && S.rooms[st.room].frame && !S.rooms[st.room].bay).map((st) => {
+    const r = S.rooms[st.room], f = r.frame, [x, z] = W(f, st.u, st.v);
+    const ry = faceYaw(-f.fx, -f.fz);                       // facing the door
     const ped = new THREE.Group(); ped.position.set(x, 0, z); ped.rotation.y = ry;
     ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.72, 0.78, 0.08, 40).translate(0, 0.04, 0), MAT.darkstone));
     ped.add(new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.64, PEDESTAL_H - 0.12, 40).translate(0, 0.08 + (PEDESTAL_H - 0.12) / 2, 0), MAT.darkstone));
@@ -627,10 +655,15 @@ function buildStatic() {
     plaque.position.set(0, 0.3, 0.655); plaque.rotation.x = -0.12; ped.add(plaque);
     const holder = new THREE.Group(); holder.position.y = PEDESTAL_H; ped.add(holder);
     g.add(ped); addBox(x, z, 0.85);
-    lamp(x - 0.9 * Math.cos(st.angle), 4.4, z - 0.9 * Math.sin(st.angle), 0.75);
-    const hit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.9, 1.6), MAT.hit); hit.position.set(x, 1.45, z);
-    addExhibit(g, hit, { type: "statue", id: st.id, name: st.name }, "rotunda");
-    return { st, ped, holder, state: "idle", tris: 0 };
+    const reg = S.regions.find((q) => q.room === st.room);
+    const box = new THREE.Box3(new THREE.Vector3(reg.x0, 0, reg.z0), new THREE.Vector3(reg.x1, ROOM_H, reg.z1));
+    // the tap target rides in the pedestal group, so it is hidden with it (taps look only at shown exhibits)
+    const hit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.9, 1.6), MAT.hit); hit.position.set(0, 1.45, 0);
+    ped.updateMatrixWorld(true);
+    // zone "statues", not the wing's: dropping a wing clears that wing's exhibits, and these stand for the whole visit
+    addExhibit(ped, hit, { type: "statue", id: st.id, name: st.name, room: st.room }, "statues");
+    ped.visible = false;
+    return { st, ped, holder, box, state: "idle", tris: 0 };
   });
   // the portal to the Pilgrimage: a golden arch against the entrance hall's north wall, beside the way into the Rotunda
   const { px, pz } = portalPose();
@@ -640,11 +673,11 @@ function buildStatic() {
   const portal = fx.group; portal.position.set(px, 0, pz); portal.rotation.y = portalPose().ry;
   const pPlaque = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 0.34), new THREE.MeshBasicMaterial({ map: textTex(["The Pilgrimage", "walk the sacred sites"], { w: 512, h: 128, size: 40, bg: "#2a1c10" }) }));
   pPlaque.position.set(0, 3.95, 0.14); portal.add(pPlaque);
-  g.add(portal);
+  hallG.add(portal);
   const pq = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), portal.rotation.y), side = new THREE.Vector3(1, 0, 0).applyQuaternion(pq);
   for (const sx of [-1, 1]) addBox(px + side.x * sx * 0.83, pz + side.z * sx * 0.83, 0.16);   // only the pillars block; the opening is open
   S.portalFx = { fx, pos: new THREE.Vector3(px, 0, pz), inv: pq.clone().invert(), fired: !!S.portalArrived };
-  const hit = hitBoxFor(portal, 0.3); addExhibit(g, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
+  const hit = hitBoxFor(portal, 0.3); addExhibit(hallG, hit, { type: "pilgrimage", name: "The Pilgrimage: walk the sacred sites" }, "hall");
   // room door signs are built with each wing's exhibits
 }
 // where the Pilgrimage portal stands, and which way it faces (also used to arrive back through it): against the
@@ -940,29 +973,50 @@ async function loadDetail(zoneId) {
 function distToBox(b, p) { const dx = Math.max(b.min.x - p.x, 0, p.x - b.max.x), dz = Math.max(b.min.z - p.z, 0, p.z - b.max.z); return Math.hypot(dx, dz); }
 // inside a room only that room's exhibits are drawn; from a corridor, the rooms whose doors are near
 function roomVisibility(z, d) {
-  z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR;
-  z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW; });
+  z.exGroup.visible = (d == null ? distToBox(z.box, S.pos) : d) < SHOW_FAR && zoneSeen(z.id);
+  z.exGroup.children.forEach((rg) => { if (rg.userData.box) rg.visible = (S.inRoom ? rg.name === "room-" + S.inRoom : distToBox(rg.userData.box, S.pos) < ROOM_SHOW) && cellSeen(rg.name.slice(5)); });
 }
-// the Rotunda's statues: fetched once the visitor is within STATUE_FETCH of the ring's centre, drawn within STATUE_SHOW
-const STATUE_FETCH = 22, STATUE_SHOW = 18;
+// In the headset only (handoff/vr-performance-budget.md §5): what the plan's doors let the visitor see (portals.js).
+// S.cull is the set of cells seen from the head; null on the flat screen, or when the head is outside every cell, and
+// then nothing is culled, so the flat museum is exactly as before. A zone is seen when any of its cells is; an id that
+// is not a cell (a Rotunda bay, say) is never culled by this.
+function cullUpdate() {
+  const on = renderer.xr.isPresenting && S.portals;
+  const set = on ? S.portals.visible(S.pos.x, S.pos.z) : null;
+  const key = set ? [...set].sort().join(",") : "";
+  if (key === S.cullKey) return false;
+  S.cullKey = key; S.cull = set;
+  S.cullZones = set ? new Set([...set].map((id) => S.portals.zoneOf(id))) : null;
+  S.cullCor = !!set && [...set].some((id) => id.indexOf("cor:") === 0);
+  return true;
+}
+function cellSeen(id) { return !S.cull || !S.portals.cells.has(id) || S.cull.has(id); }
+// the Spine's door frames stand 0.21 m out into each wing's corridor, so the Spine's shell is kept whenever a corridor is seen
+function zoneSeen(id) { return !S.cullZones || S.cullZones.has(id) || (id === "spine" && S.cullCor); }
+// the statues in their rooms: each fetched once the visitor is within STATUE_FETCH of its room, and shown (pedestal,
+// statue, tap target) exactly when its room's exhibits are: from inside the room, or within ROOM_SHOW of it while not
+// inside another room (roomVisibility), so a statue is never drawn behind the walls of a neighbouring room
+const STATUE_FETCH = 22;
 function statueTick() {
   if (!S.statues) return;
-  const d = Math.hypot(S.pos.x - ROT.cx, S.pos.z - ROT.cz);
   for (const s of S.statues) {
+    const d = distToBox(s.box, S.pos);
     if (s.state === "idle" && d < STATUE_FETCH) {
       s.state = "loading";
       loadStatue(s.st, s.holder).then((t) => { s.state = "ready"; s.tris = t.tris; s.nearTris = t.nearTris; s.midTris = t.midTris; s.farTris = t.farTris; S.dirty = true; })
         .catch((e) => { s.state = "failed"; console.warn("The " + s.st.name + " statue could not be loaded.", e); });
     }
-    s.ped.visible = d < STATUE_FETCH;                     // pedestals too: nothing of the ring is drawn from the far end of the hall
-    s.holder.visible = d < STATUE_SHOW;
+    const vis = (S.inRoom ? S.inRoom === s.st.room : d < ROOM_SHOW) && cellSeen(s.st.room);
+    if (s.ped.visible !== vis) { s.ped.visible = vis; S.dirty = true; }
   }
 }
 function manageZones() {
+  cullUpdate();
   for (let i = LOD.length - 1; i >= 0; i--) {
     const l = LOD[i];
     if (!l.obj.parent) { LOD.splice(i, 1); continue; }
-    l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far;
+    if (S.cull && l.cell === undefined) { l.obj.updateWorldMatrix(true, false); const p = new THREE.Vector3().setFromMatrixPosition(l.obj.matrixWorld), c = S.portals.cellAt(p.x, p.z); l.cell = c ? c.id : null; }   // the cell a sign hangs in
+    l.obj.visible = l.obj.position.distanceTo(S.pos) < l.far && (!l.cell || cellSeen(l.cell));
   }
   if (S.sky) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
   statueTick();
@@ -970,14 +1024,14 @@ function manageZones() {
   S.inRoom = inside ? inside.room : null;
   for (const z of Object.values(ZONES)) {
     const d = distToBox(z.box, S.pos);
-    z.group.visible = d < SHOW_FAR || z.id === "spine";
+    z.group.visible = (d < SHOW_FAR || z.id === "spine") && zoneSeen(z.id);
     if (z.decorGroup) {
       const E = S.eras[z.id], here = S.regions.find((r) => r.era === z.id && S.pos.x >= r.x0 - 0.3 && S.pos.x <= r.x1 + 0.3 && S.pos.z >= r.z0 - 0.3 && S.pos.z <= r.z1 + 0.3);
       const bySpine = E && Math.abs(S.pos.x) < SPINE_HALF + 0.3 && Math.abs(S.pos.z - E.zk) < 14;
       z.decorGroup.visible = !!(here || bySpine);
     }
     for (const r of z.decorRooms || []) {                    // a room's fittings and flames: only in or near it (as its exhibits)
-      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10);
+      const vis = z.group.visible && z.decorGroup.visible && (S.inRoom ? r.id === S.inRoom : distToBox(r.box, S.pos) < 10) && cellSeen(r.id);
       if (vis !== r.group.visible || r.flamesShown !== vis) { r.group.visible = vis; r.flamesShown = vis; S.style.setAreaVisible(r.id, vis); S.dirty = true; }
     }
     if (z.id === "hall" || z.id === "spine") continue;
@@ -987,6 +1041,8 @@ function manageZones() {
     if (z.exGroup && !z.exGroup.parent) z.exGroup = null;
     if (z.exGroup) roomVisibility(z, d);
   }
+  // in the headset the planetarium follows the Rotunda's shell in the same check, so it never appears a check late
+  if (S.sky && S.cull) S.sky.root.visible = !!(ZONES.rotunda && ZONES.rotunda.group.visible);
 }
 
 // ---------------------------------------------------------------- lights: pooled onto the nearest lamps
@@ -996,10 +1052,10 @@ const PLAIN_PAGES = new Set(["v28", "v29"]);
 const BULB = new THREE.Color("#ffb46a"), FLAME = new THREE.Color("#ffa860");
 function updateLights() {
   const p = S.pos;
-  const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, pool.length);
+  const near = S.lampAnchors.map((l) => [l, l.p.distanceToSquared(p)]).sort((a, b) => a[1] - b[1]).slice(0, lit.length);
   // among flames, only the nearest three are real lights (plans/museum-visual-pass.md §4); the rest are glow and painted light
-  const flames = near.length && near[0][0].flame, n = flames ? 3 : pool.length;
-  pool.forEach((L, i) => {
+  const flames = near.length && near[0][0].flame, n = flames ? Math.min(3, lit.length) : lit.length;
+  lit.forEach((L, i) => {
     const e = near[i];
     if (!e || i >= n) { L.intensity = 0; return; }
     const l = e[0]; L.position.copy(l.p); L.color.copy(l.flame ? FLAME : BULB);
@@ -1009,6 +1065,37 @@ function updateLights() {
     L.intensity = 26 * l.s * f;
   });
   lantern.intensity = 2.8 * (0.9 + 0.07 * Math.sin(flick * 8.7) * Math.sin(flick * 3.1) + 0.03 * Math.sin(flick * 21));
+}
+
+// ---------------------------------------------------------------- the light rig in a headset
+// handoff/vr-performance-budget.md §2 as settled in AM-PER-01: at most 5 lights on the floor tier (Quest 2 and unknown
+// headsets) and 6 on Quest 3, counted in the scene graph. three.js evaluates every switched-on light in every lit pixel,
+// even at intensity 0, so the cut is made by switching lights off (visible = false), not by dimming them. In a session:
+// 1 hemisphere (the lightning one is folded into it) + ambient + the visitor's lantern + 2 pooled lamp lights (3 on
+// Quest 3). The flat museum keeps its rig exactly as before. The rig changes only when a session starts or ends, so
+// three.js rebuilds its shaders for the new light count once, not during a lightning flash.
+const XR_POOL = { floor: 2, q3: 3 };
+let hemiMerged = false;
+const flashTmp = new THREE.Color();
+function lightRig(tier) {   // tier: null for the flat museum, else xr.js's tier ("floor" / "q3")
+  const k = tier ? Math.min(pool.length, XR_POOL[tier] || XR_POOL.floor) : pool.length;
+  lit = pool.slice(0, k);
+  pool.forEach((L, i) => { L.visible = i < k; if (i >= k) L.intensity = 0; });
+  hemiMerged = !!tier; flashLight.visible = !tier; flashLight.intensity = 0;
+  setFlash(0);
+}
+// the lightning in the skylights (world.flash, 0..1). Flat: its own hemisphere light, as before. In a headset: added
+// into the one hemisphere. three.js sums each hemisphere's colour × intensity, so one light with the summed colours
+// lights every surface the same as the two did.
+function setFlash(f) {
+  if (!hemiMerged) {
+    flashLight.intensity = f * FLASH.i;
+    if (hemi.intensity !== HEMI.i) { hemi.color.set(HEMI.sky); hemi.groundColor.set(HEMI.ground); hemi.intensity = HEMI.i; }
+    return;
+  }
+  hemi.intensity = 1;
+  hemi.color.set(HEMI.sky).multiplyScalar(HEMI.i).add(flashTmp.set(FLASH.sky).multiplyScalar(f * FLASH.i));
+  hemi.groundColor.set(HEMI.ground).multiplyScalar(HEMI.i).add(flashTmp.set(FLASH.ground).multiplyScalar(f * FLASH.i));
 }
 
 // ---------------------------------------------------------------- where am I
@@ -1049,9 +1136,9 @@ function clearHover() {
   S.hover = null; S.skyHover = null;
   $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on");
 }
-function openCard(ex) {
-  const d = ex.data, b = $("mu-card-body");
-  clearHover();
+// The card's HTML for an exhibit's data: one source for the flat card (openCard) and the headset's reading plaque
+// (xr-read.js), so the two can never say different things. null when the exhibit has no card of its own.
+function cardHTML(d) {
   let h = "";
   const zoneOf = (id) => (S.rooms[id] ? S.rooms[id].zone : null);
   const detailFor = (id) => S.detail[zoneOf(id)];
@@ -1117,7 +1204,7 @@ function openCard(ex) {
     h = `<p class="mu-cat">The Museum</p><h2 id="mu-card-h">About this museum</h2>` +
       `<p>The building is generated from the archive itself: one room per chapter, arranged by the Nine Ages, with the comparative themes in the Rotunda. A room holds the Vault objects and Pantheon figures whose home is that chapter; items that belong to several chapters are displayed once, in their home room, and listed on the other rooms' "See also" boards.</p>` +
       `<p>The objects in the cases are <strong>modelled renditions</strong> built from the descriptions in their Vault entries, never replicas: none is modelled from measurements or scans, and any writing on them is illustrative marks, not the text, and the figures appear as the Pantheon's <strong>interpretive emblems</strong>, never as likenesses. Figures whose tradition does not depict them appear as calligraphy. Objects that the Vault shows without images are marked by plaques.</p>` +
-      `<p>The exception is the ring of <strong>statues</strong> in the Rotunda: each card says what comes from a real scan of a real statue, what was made for it here, and whose work it rests on; none is presented as a likeness of a person or god.</p>` +
+      `<p>The exception is the <strong>statues</strong> that stand in some rooms (Shiva in Global Hinduism, Zeus in Classical Greece): each card says what comes from a real scan of a real statue, what was made for it here, and whose work it rests on; none is presented as a likeness of a person or god.</p>` +
       `<p>Each room has its own <strong>sky</strong> in a skylight and its own <strong>ground</strong> under the glass floor, chosen to suit the room: a storm over the witch trials, a brook for the Buddha. These are <strong>atmosphere</strong>, not reconstructions of any real place. Animals live in them, and each room has its own sound (Sound button to turn it off). "Reduce motion" stills them and turns off the lightning.</p>` +
       `<p>Every label keeps belief and evidence apart and links to the archive's page, where the sources and the evidence verdict live. Chapters marked "pending review" have new material not yet cleared in the keeper's review.</p>` +
       `<div class="mu-actions">${btn("methodology.html", "The methodology")}${btn("index.html", "The archive", true)}</div>`;
@@ -1125,33 +1212,47 @@ function openCard(ex) {
     h = `<p class="mu-cat">Trails</p><h2 id="mu-card-h">Walk one tradition through the ages</h2><p>The museum is arranged by time, so a single tradition's rooms are spread across the wings. A trail takes you through them in order.</p><ul class="mu-list">` +
       S.manifest.trails.map((t) => `<li><strong>${esc(t.name)}</strong><small>${t.rooms.map((id) => esc(roomTitle(id))).join(" → ")} · <button type="button" data-trail="${t.id}">start</button></small></li>`).join("") + `</ul>`;
   } else if (d.type === "sky") {
-    if (!S.sky || !S.sky.state.data) return;
+    if (!S.sky || !S.sky.state.data) return null;
     h = S.sky.card(d, (id) => roomTitle(id));
-    S.sky.highlight(d.what === "cons" ? d.id : null);
-  } else if (d.type === "directory") { showDirectory(); return; }
+  } else if (d.type === "directory") return null;
   else if (d.type === "statue") {
     const st = STATUES.find((x) => x.id === d.id), s = S.statues && S.statues.find((x) => x.st.id === d.id);
-    h = `<p class="mu-cat">The Rotunda Circle · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
-      `<p>${esc(st.made)}</p>` +
-      `<p class="mu-meta">Recently added, pending full review. The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D.</p>` +
-      (s && s.state === "failed" ? `<p class="mu-meta">This statue could not be loaded here; its page may still show it.</p>` : "") +
-      `<div class="mu-actions">${btn("rotunda/" + st.id + ".html", "Turn it in 3D")}${btn("rotunda/index.html", "The Rotunda Circle", true)}</div>`;
+    h = `<p class="mu-cat">${esc(roomTitle(st.room))} · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
+      `<p>${esc(st.made)}</p>` + (st.open ? `<p>${esc(st.open)}</p>` : "") +
+      `<p class="mu-meta">Recently added, pending full review.${st.page.startsWith("rotunda/") ? " The full plaque, the credits and licences are on the statue's own page, where you can turn it in 3D." : ""}</p>` +
+      (s && s.state === "failed" ? `<p class="mu-meta">This statue could not be loaded here.</p>` : "") +
+      `<div class="mu-actions">${btn(st.page, st.pageLabel)}${st.id === "zeus" ? btn("pantheon.html#zeus", "Zeus in the Pantheon", true) : btn("rotunda/index.html", "The Rotunda Circle", true)}</div>`;
   }
   else if (d.type === "reserved") {
     h = `<p class="mu-cat">Comparative theme</p><h2 id="mu-card-h">${esc(d.name)}</h2><p>This alcove is reserved for a theme chapter that has not been written yet. It will open when the chapter is published.</p><div class="mu-actions">${btn("themes.html", "All themes")}</div>`;
   } else if (d.type === "end") {
     h = `<p class="mu-cat">The Spine gallery</p><h2 id="mu-card-h">Here the Nine Ages end, for now</h2><p>The archive is still being written; new chapters open new rooms, and the museum is rebuilt from the archive each time.</p><div class="mu-actions">${btn("index.html", "Back to the archive")}</div>`;
   }
+  return h;
+}
+// what the inspector says under a Vault object that has a stand-in (null: it has none, the plain card shows instead)
+function inspectNote(id) {
+  const v = findVaultItem(id);
+  if (!v || !v.prop || (v.floor && !hasRelic(id))) return null;
+  return v.rendition
+    ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
+    : PLAIN_PAGES.has(id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
+    : hasRelic(id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
+    : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.";
+}
+function openCard(ex) {
+  const d = ex.data, b = $("mu-card-body");
+  clearHover();
+  if (d.type === "directory") { showDirectory(); return; }
+  const h = cardHTML(d);
+  if (h == null) return;
+  if (d.type === "sky") S.sky.highlight(d.what === "cons" ? d.id : null);
   // a Vault object with a stand-in comes out of its case: turn it, zoom it, open it, beside its label
   if (d.type === "vault" && S.insp) {
-    const v = findVaultItem(d.id);
-    if (v && v.prop && (!v.floor || hasRelic(d.id))) {
+    const note = inspectNote(d.id);
+    if (note) {
       S.cardAt = performance.now(); unlock();
-      S.insp.open(v.prop, h, v.rendition
-        ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
-        : PLAIN_PAGES.has(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
-        : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
-        : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.", d.id);
+      S.insp.open(findVaultItem(d.id).prop, h, note, d.id);
       return;
     }
   }
@@ -1294,7 +1395,7 @@ function guideRituals(room) {
 function guideItems(room) {
   const r = S.rooms[room]; if (!r) return { here: [], missing: [] };
   const want = { vault: r.homeVault || [], fig: r.homeFigs || [] }, N = S.manifest.names;
-  const own = S.exhibits.filter((e) => e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig");
+  const own = S.exhibits.filter((e) => (e.data.id === room && e.data.type !== "vault" && e.data.type !== "fig") || (e.data.type === "statue" && e.data.room === room));
   const items = [], missing = [];
   for (const type of ["vault", "fig"]) for (const id of want[type]) {
     const all = S.exhibits.filter((e) => e.data.type === type && e.data.id === id);
@@ -1314,7 +1415,7 @@ function roomOfExhibit(e) {
   if (e.zone === "rotunda") return e.data.id;
   return null;
 }
-function typeLabel(t) { return { vault: "Vault object", fig: "Pantheon figure", room: "Chapter lectern", plate: "Chapter symbol", see: "See also board", game: "Game", living: "Note" }[t] || ""; }
+function typeLabel(t) { return { vault: "Vault object", fig: "Pantheon figure", room: "Chapter lectern", plate: "Chapter symbol", see: "See also board", game: "Game", living: "Note", statue: "Statue" }[t] || ""; }
 
 // ---------------------------------------------------------------- movement, teleport
 function teleport(target, instant) {
@@ -1526,12 +1627,13 @@ function enter3d() {
 
 // ---------------------------------------------------------------- the golden portal to the Pilgrimage
 const pLocal = new THREE.Vector3();
-function portalTick(dt) {
+function portalTick(dt, xr) {
   const P = S.portalFx, d = P.pos.distanceTo(pLocal.set(S.pos.x, 0, S.pos.z));
   if (d < 22 && P.fx.group.parent && P.fx.group.parent.visible !== false) { if (P.fx.update(dt)) S.dirty = true; }
   // inside the opening: within its width, and within a hand's breadth of its plane
   pLocal.set(S.pos.x - P.pos.x, 0, S.pos.z - P.pos.z).applyQuaternion(P.inv);
-  if (!P.fired && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
+  // not from a VR headset: the Pilgrimage has no VR yet (a later phase), and leaving the page would drop the session
+  if (!P.fired && !xr && Math.abs(pLocal.x) < 0.62 && Math.abs(pLocal.z) < 0.22) { P.fired = true; stepThroughPortal(); }
   if (P.fired && Math.abs(pLocal.z) > 1.2) P.fired = false;
 }
 function stepThroughPortal(href) {
@@ -1545,31 +1647,36 @@ function stepThroughPortal(href) {
 // ---------------------------------------------------------------- loop
 let last = performance.now(), idleT = 0, locT = 0, zoneT = 0;
 function tick(now) {
-  requestAnimationFrame(tick);
   if (S.paused || document.hidden) { last = now; return; }
+  const xr = renderer.xr.isPresenting;   // in a VR headset (xr.js): the head moves the view, and every frame is drawn
   const dt = Math.min(0.05, (now - last) / 1000); last = now;
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
-  if (S.insp && S.insp.active) { S.insp.render(dt); return; }
-  if ($("mu-card-wrap").hidden) step(dt);
+  if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); if (S.xrRead) S.xrRead.update(dt, S.xrMove.inputs); xrFollow(); if (cullUpdate()) { zoneT = 0; manageZones(); } }   // a door comes into view: show it now, not at the next check
+  else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
   flick += dt; idleT += dt;
   if (S.sky && S.sky.root.visible && S.sky.tick(dt, now, false)) S.dirty = true;
   if (S.world) {
-    if (S.world.update(dt, S.pos, S.inRoom, false)) S.dirty = true; flashLight.intensity = S.world.flash * 2.4;
+    if (S.world.update(dt, S.pos, S.inRoom, false, S.cull ? cellSeen : null)) S.dirty = true; setFlash(S.world.flash);
     const here = S.world.areaAt(S.pos); S.snd.update(dt, here);
     S.world.events.forEach((e) => S.snd.event(e, here)); S.world.events.length = 0;
   }
-  if (S.portalFx) portalTick(dt);
+  if (S.portalFx) portalTick(dt, xr);
   if (S.secret && S.secret.update(dt, S.pos)) S.dirty = true;
   const styled = S.style.update(dt) && S.styledHere;
   if (idleT > (styled ? 0.033 : 0.12)) { idleT = 0; S.dirty = true; }
+  if (xr) S.dirty = true;                // a headset needs a fresh frame every time; a skipped one reads as a freeze
   if (!S.dirty) return;
   S.dirty = false;
-  camera.position.copy(S.pos);
-  camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
+  if (!xr) {
+    camera.position.copy(S.pos);
+    camera.rotation.set(S.pitch, S.yaw, 0, "YXZ");
+  }
   updateLights();
+  if (xr) { renderer.render(scene, camera); return; }   // no hover tag or reticle in the headset (they are page elements)
   // hover (centre of view when looking with the mouse)
   const ex = (S.locked || !touch) && $("mu-card-wrap").hidden ? pick(0, 0) : null;
   const near = ex && ex.center.distanceTo(S.pos) < 6 ? ex : null;
@@ -1584,6 +1691,167 @@ function tick(now) {
     if (S.sky && $("mu-card-wrap").hidden) S.sky.highlight(sky && sky.data.what === "cons" ? sky.data.id : null);
   }
   renderer.render(scene, camera);
+}
+
+// ---------------------------------------------------------------- VR (xr.js; handoff/vr-architecture.md)
+// The "Enter VR" button exists only where the browser offers an immersive VR session; everywhere else the museum is
+// exactly the flat museum. Leaving VR puts the visitor down where they stood in the headset.
+const xrTmp = new THREE.Vector3(), xrDir = new THREE.Vector3();
+function xrFollow() {
+  // the world (rooms shown, sound, the room name) follows the visitor's head
+  camera.getWorldPosition(xrTmp); S.pos.x = xrTmp.x; S.pos.z = xrTmp.z;
+  camera.getWorldDirection(xrDir); if (Math.hypot(xrDir.x, xrDir.z) > 0.1) S.yaw = Math.atan2(-xrDir.x, -xrDir.z);
+}
+// may a visitor in the headset stand at (x, z), reached from (fx, fz)? The same rules as walking: not inside a wall's
+// reach, and no wall between (a teleport never passes through a wall into a closed room)
+function xrCanStand(x, z, fx, fz) {
+  const p = new THREE.Vector3(x, EYE, z); collide(p);
+  if (Math.hypot(p.x - x, p.z - z) > 0.01) return false;
+  return !wallBetween(fx, fz, x, z);
+}
+function wallBetween(ax, az, bx, bz) {
+  const x0 = Math.floor(Math.min(ax, bx) / CELL) - 1, x1 = Math.floor(Math.max(ax, bx) / CELL) + 1;
+  const z0 = Math.floor(Math.min(az, bz) / CELL) - 1, z1 = Math.floor(Math.max(az, bz) / CELL) + 1;
+  const rx = bx - ax, rz = bz - az, seen = new Set();
+  for (let i = x0; i <= x1; i++) for (let j = z0; j <= z1; j++) {
+    const list = GRID.get(i + "," + j); if (!list) continue;
+    for (const g of list) {
+      if (seen.has(g)) continue; seen.add(g);
+      const sx = g[2] - g[0], sz = g[3] - g[1], den = rx * sz - rz * sx;
+      if (Math.abs(den) < 1e-9) continue;
+      const qx = g[0] - ax, qz = g[1] - az, t = (qx * sz - qz * sx) / den, u = (qx * rz - qz * rx) / den;
+      if (t >= 0 && t <= 1 && u >= 0 && u <= 1) return true;
+    }
+  }
+  return false;
+}
+function xrNote(text) {
+  const n = $("mu-xr-note"); if (!n) return;
+  n.textContent = text; n.hidden = false;
+  clearTimeout(xrNote.t); xrNote.t = setTimeout(() => { n.hidden = true; }, 9000);
+}
+// Reading in the headset (xr-read.js): only in the VR pilot's three rooms (VR-LOOP.md: the Rotunda, ch02 Egypt, ch03
+// Mesopotamia). Pending review stays veiled in VR until its walkthrough (Carter's OQ-4,
+// decisions-2026-11-01-vr-questions.md); Egypt is open by his ruling of 2026-11-16 (decisions-2026-11-16-carter-egypt-vr-open.md).
+const XR_PILOT_ROOMS = new Set(["ch02", "ch03"]), XR_OPEN = new Set(["ch02"]);
+// the room an exhibit stands in, strictly inside its walls first (roomOfExhibit's 0.2 m margin would also claim the
+// next room's wall exhibits, hung a few centimetres the other side of a shared wall)
+function xrRoomOf(e) {
+  const r = S.regions.find((g) => g.room && e.center.x > g.x0 && e.center.x < g.x1 && e.center.z > g.z0 && e.center.z < g.z1);
+  return r ? r.room : roomOfExhibit(e);
+}
+function xrPilot(e) {
+  if (e.vrPilot === undefined) e.vrPilot = e.zone === "rotunda" || XR_PILOT_ROOMS.has(xrRoomOf(e));
+  return e.vrPilot;
+}
+function roomPending(id) {
+  if (!id || XR_OPEN.has(id)) return false;
+  const z = S.rooms[id] && S.rooms[id].zone, D = z && S.detail[z], R = D && D.rooms && D.rooms[id];
+  return !!(R && R.pending);
+}
+function xrHeld(d) {
+  if (d.type === "statue") return true;   // every statue card says "Recently added, pending full review"
+  if (d.type === "vault") { const v = findVaultItem(d.id); return !!(v && (v.pending || roomPending(v.home))); }
+  if (d.type === "fig") { const f = findFig(d.id); return !!(f && roomPending(f.home)); }
+  if (["room", "plate", "see", "game", "living"].includes(d.type)) return roomPending(d.id);
+  return false;
+}
+const xrRay = new THREE.Raycaster();
+// the pilot-room exhibit a hand's ray meets first, not through a wall
+function xrPick(o, dir, far) {
+  xrRay.set(o, dir); xrRay.far = far;
+  const cand = [];
+  for (const e of S.exhibits) if (e.center.distanceTo(o) < far + 2 && e.mesh.parent && e.mesh.parent.visible !== false && (!e.mesh.parent.parent || e.mesh.parent.parent.visible !== false) && xrPilot(e)) cand.push(e.mesh);
+  if (!cand.length) return null;
+  const hit = xrRay.intersectObjects(cand, false)[0];
+  if (!hit) return null;
+  const w = xrRay.intersectObjects(wallMeshes(), false)[0];
+  if (w && w.distance < hit.distance - 0.3) return null;
+  return { ex: S.exhibits.find((e) => e.mesh === hit.object) || null, dist: hit.distance };
+}
+// what the reading plaque shows: the flat card's own text, or for a pending element its name and that it is veiled
+function xrReading(ex) {
+  if (!xrPilot(ex)) return null;
+  const d = ex.data, h = cardHTML(d);
+  if (h == null) return null;
+  if (!S.xrBlocks) return null;
+  const { blocks, links } = S.xrBlocks(h);
+  if (xrHeld(d)) {
+    const keep = blocks.filter((b) => b.k === "cat" || b.k === "title");
+    keep.push({ k: "flag", t: "Recently added · pending review" });
+    keep.push({ k: "body", t: "Its text stays veiled in VR until its walkthrough, as the archive does with all material pending review. Its card, marked pending, is in the museum on a flat screen." });
+    return { blocks: keep, links: false, held: true };
+  }
+  return { blocks, links, held: false, note: d.type === "vault" ? inspectNote(d.id) : null };
+}
+function initXR() {
+  const btn = $("mu-vr-btn"); if (!btn) return;
+  S.xr = createXR({
+    renderer, camera, scene, floorY: 0,
+    onStart: ({ seated }) => {
+      unlock(); clearHover(); S.keys.clear(); S.auto = null;
+      if (!$("mu-card-wrap").hidden) closeCard();
+      if (S.insp && S.insp.active) S.insp.close();
+      if (!$("mu-guide").hidden) toggleGuide(false);
+      document.body.classList.add("is-xr");
+      lightRig(XRProbe.tier || "floor");
+      S.xrMove.attach();
+      S.xrHeight.attach({ floor: !seated });
+      S.xrWalk.attach();   // stick walking: off unless this device kept the visitor's confirmed choice
+      if (S.xrRead) S.xrRead.attach(S.xrMove.all);   // pointing at a relic and reading its label (pilot rooms); if still loading, it attaches on arrival
+      S.snd.wake(); S.dirty = true;
+    },
+    onEnd: (at) => {
+      document.body.classList.remove("is-xr");
+      lightRig(null);
+      S.xrMove.detach();
+      const said = S.xrHeight.detach();
+      S.xrWalk.detach();
+      if (S.xrRead) S.xrRead.detach();
+      if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
+      S.pitch = 0; S.keys.clear(); S.auto = null;
+      resize(); manageZones(); locate(); savePos();
+      if (said) xrNote(said);   // the posture and eye height the visitor had in the headset (Carter: "too low")
+      S.dirty = true;
+    },
+    onMessage: xrNote
+  });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false) });
+  S.xrHeight = createXRHeight({
+    camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
+    clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+    dip: (cb) => S.xrMove.dip(cb),
+    load: () => store.get("mu-vr-posture"), save: (v) => store.set("mu-vr-posture", v)
+  });
+  S.xrWalk = createXRWalk({
+    camera, scene, anchor: S.xrHeight.plaque,
+    clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+    load: () => store.get("mu-vr-walk"), save: (v) => store.set("mu-vr-walk", v),
+    onChange: (on) => S.xrMove.setWalk(on), hasLeft: () => S.xrMove.hasLeft
+  });
+  // the reading module is fetched only on a device that offers VR (Carter 2026-11-22: performance is a critical gate),
+  // so a phone or a computer without a headset never downloads it
+  let readLoad = null;
+  const loadRead = () => readLoad || (readLoad = import("./xr-read.js?v=1").then((m) => {
+    S.xrBlocks = m.blocksFromHTML;
+    S.xrRead = m.createXRRead({
+      camera, rig: S.xr.rig, scene, floorY: 0, pick: xrPick, reading: xrReading,
+      clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+      posture: () => S.xrHeight.posture, eye: () => S.xrHeight.debug.eye
+    });
+    if (renderer.xr.isPresenting) S.xrRead.attach(S.xrMove.all);
+  }).catch(() => { readLoad = null; }));
+  let was = false;
+  const paint = async () => {
+    await probeXR();
+    btn.hidden = !XRProbe.vrSupported;
+    if (XRProbe.vrSupported) loadRead();
+    if (was && !XRProbe.vrSupported) xrNote("This device does not offer a VR session; the museum remains open in 3D.");
+    was = XRProbe.vrSupported;
+  };
+  paint();
+  if (navigator.xr && navigator.xr.addEventListener) navigator.xr.addEventListener("devicechange", paint);
+  btn.addEventListener("click", () => { S.xr.enter({ x: S.pos.x, z: S.pos.z, yaw: S.yaw }); });
 }
 
 // ---------------------------------------------------------------- start
@@ -1631,7 +1899,9 @@ async function start() {
   manageZones(); locate();
   S.started = true;
   $("mu-bar").hidden = false;
-  requestAnimationFrame(tick);
+  initXR();
+  // three.js drives the loop (it must, for a VR session); an error in one frame is reported but does not stop the next
+  renderer.setAnimationLoop((t) => { try { tick(t); } catch (e) { setTimeout(() => { throw e; }); } });
   status.textContent = "";
   $("mu-enter").disabled = false;
   $("mu-enter").addEventListener("click", () => { $("mu-intro").hidden = true; store.set("mu-seen", "1"); renderer.domElement.focus(); if (!touch) lock(); S.dirty = true; });
@@ -1643,7 +1913,63 @@ async function start() {
 
 // test hook for automated checks (read-only state + teleport)
 window.__MU = {
-  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, shown: s.holder.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
+  // the headset's portal culling (portals.js): the plan's cells and doors, the walls, and the set seen now (null: none culled)
+  portals: () => S.portals ? { cells: S.portals.list(), walls: WALLS.map((w) => w.slice()), cull: S.cull ? [...S.cull].sort() : null } : null,
+  // where each drawn thing of each zone stands in plan (zone shell; wing exhibits by room): up to `n` triangle centres
+  // (points, for a Points object) per object, world x/z, for the check's containment test
+  portalOwners: (n) => { const out = [], v = new THREE.Vector3(), lim = n || 1500;
+    const walk = (root, zone, part) => root.traverse((o) => { if (!(o.isMesh || o.isPoints) || o.userData.exhibit || !o.geometry || !o.geometry.attributes.position) return;
+      let room = null; for (let p = o; p && p !== root; p = p.parent) if (p.name && p.name.indexOf("room-") === 0) { room = p.name.slice(5); break; }
+      o.updateWorldMatrix(true, false);
+      if (o.isInstancedMesh) { const m4 = new THREE.Matrix4(), pts = []; for (let k = 0; k < o.count; k++) { o.getMatrixAt(k, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); pts.push(+v.x.toFixed(3), +v.z.toFixed(3)); } out.push({ zone, part, room, name: o.name || "instanced", pts }); return; }
+      const P = o.geometry.attributes.position, I = o.geometry.index, pts = [], count = o.isPoints ? P.count : (I ? I.count : P.count) / 3, step = Math.max(1, Math.floor(count / lim));
+      const at = (k) => (I ? I.getX(k) : k);
+      for (let t = 0; t < count; t += step) {
+        if (o.isPoints) { v.fromBufferAttribute(P, t).applyMatrix4(o.matrixWorld); pts.push(+v.x.toFixed(3), +v.z.toFixed(3)); continue; }
+        let x = 0, z = 0; for (let c = 0; c < 3; c++) { v.fromBufferAttribute(P, at(t * 3 + c)).applyMatrix4(o.matrixWorld); x += v.x; z += v.z; }
+        pts.push(+(x / 3).toFixed(3), +(z / 3).toFixed(3));
+      }
+      out.push({ zone, part, room, name: o.name || o.type, pts }); });
+    for (const z of Object.values(ZONES)) { walk(z.group, z.id, "shell"); if (z.exGroup) walk(z.exGroup, z.id, "exhibits"); }
+    return out; },
+  xr: () => Object.assign({}, XRProbe, { presenting: !!(renderer && renderer.xr.isPresenting), button: !!$("mu-vr-btn") && !$("mu-vr-btn").hidden, rigShown: !!(S.xr && S.xr.rig.visible), cameraParent: camera && camera.parent ? camera.parent.name || camera.parent.type : null, eyeY: camera ? camera.getWorldPosition(new THREE.Vector3()).y : null, cameraChildren: camera ? camera.children.length : null }),
+  xrExit: () => S.xr && S.xr.exit(),
+  lights: () => { const on = []; scene.traverseVisible((o) => { if (o.isLight) on.push(o.type); }); return { on, pooled: lit.length, merged: hemiMerged, flashOn: flashLight.visible, hemi: [hemi.color.r * hemi.intensity, hemi.color.g * hemi.intensity, hemi.color.b * hemi.intensity], hemiGround: [hemi.groundColor.r * hemi.intensity, hemi.groundColor.g * hemi.intensity, hemi.groundColor.b * hemi.intensity], flash: flashLight.intensity }; },   // the light rig (VR loop: light rig per tier)
+  xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
+  xrHeight: () => S.xrHeight ? Object.assign({}, S.xrHeight.debug, { posture: S.xrHeight.posture, plaqueShown: S.xrHeight.plaque.visible, rigY: S.xr.rig.position.y, rig: [S.xr.rig.position.x, S.xr.rig.position.y, S.xr.rig.position.z, S.xr.rig.rotation.y], plaquePos: S.xrHeight.plaque.position.toArray() }) : null,
+  xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+  xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
+  xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
+  xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
+  xrRead: () => S.xrRead ? Object.assign({}, S.xrRead.debug, { shown: S.xrRead.panel.visible, pos: S.xrRead.panel.position.toArray(), rot: [S.xrRead.panel.rotation.x, S.xrRead.panel.rotation.y] }) : null,
+  xrReadImage: () => S.xrRead && S.xrRead.image(),
+  xrExhibits: () => S.exhibits.filter((e) => xrPilot(e)).map((e) => ({ id: e.data.id || null, type: e.data.type, zone: e.zone, room: xrRoomOf(e), held: xrHeld(e.data), c: e.center.toArray() })),
+  xrReading: (i) => { const e = S.exhibits.filter((x) => xrPilot(x))[i]; const r = e && xrReading(e); return r ? { id: e.data.id || null, type: e.data.type, held: r.held, blocks: r.blocks, note: r.note || null, flat: e.data.type === "directory" ? null : cardHTML(e.data) } : null; },
+  xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
+  // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
+  // the water level, and where its creatures stand (ground-check.js)
+  ground: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.pit) return null; const h = A.hole; let lo = 9, hi = -9, n = 0;
+    for (let x = h.x0 + 0.05; x < h.x1; x += 0.2) for (let z = h.z0 + 0.05; z < h.z1; z += 0.2) { const y = A.groundH(x, z); lo = Math.min(lo, y); hi = Math.max(hi, y); n++; }
+    let glass = false, plants = 0; A.pit.traverse((o) => { if (o.name === "pit-glass") glass = true; if (o.isInstancedMesh && o.parent === A.pit) plants += o.count; });
+    const fauna = []; if (A.fauna) A.fauna.group.children.forEach((o) => { if (o.isInstancedMesh) { const m = new THREE.Matrix4(), v = new THREE.Vector3(); for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m); v.setFromMatrixPosition(m); fauna.push([+v.x.toFixed(2), +v.y.toFixed(3), +v.z.toFixed(2), +A.groundH(v.x, v.z).toFixed(3)]); } } else fauna.push([+o.position.x.toFixed(2), +o.position.y.toFixed(3), +o.position.z.toFixed(2), +A.groundH(o.position.x, o.position.z).toFixed(3)]); });
+    return { feet: !!A.feet, glass, lo: +lo.toFixed(3), hi: +hi.toFixed(3), samples: n, waterY: A.waterY, plants, fauna, hole: [h.x0, h.x1, h.z0, h.z1] }; },
+  // React to you (world.js feel, fauna.js SHY): where the area thinks the visitor is, the plants' lean (x, z,
+  // strength), the visitor's two ripple slots, a point over its water, and its creatures (fish or not, y)
+  react: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.pit) return null; const h = A.hole; let wet = null;
+    if (A.waterY != null) { let lo = A.waterY - 0.02; for (let x = h.x0 + 0.3; x < h.x1 - 0.3; x += 0.1) for (let z = h.z0 + 0.3; z < h.z1 - 0.3; z += 0.1) { const s = A.toL(x, z)[0]; if (s < 1.6 || s > A.L - 1.6) continue; const y = A.groundH(x, z); if (y < lo) { lo = y; wet = [+x.toFixed(2), +z.toFixed(2)]; } } }
+    const fauna = []; if (A.fauna) A.fauna.group.children.forEach((o) => { if (o.isInstancedMesh) { const m = new THREE.Matrix4(), v = new THREE.Vector3(); for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m); v.setFromMatrixPosition(m); fauna.push({ fish: o.userData.kind !== "air", air: o.userData.kind === "air", x: v.x, y: v.y, z: v.z }); } } else if (o.visible) fauna.push({ fish: false, air: false, x: o.position.x, y: o.position.y, z: o.position.z, shy: o.userData.shy || 0 }); });
+    return { feet: !!A.feet, me: Object.assign({}, A.me), plantsMe: S.world.plantsMe(), rip: A.splash.slice(4).map((s) => s.slice()), waterY: A.waterY, wet, axis: A.axis, hole: [h.x0, h.x1, h.z0, h.z1], bounds: A.bounds, fauna }; },
+  // run the world (creatures, plants, water) for `secs` of world time at 1/60 s steps without drawing, sampling
+  // react(id) every `every` s: the headless browser draws a pilot room at well under 1 fps, too slow to watch live
+  reactSim: (id, secs, every) => { const out = [], dt = 1 / 60, n = Math.round(secs / dt), k = Math.max(1, Math.round((every || 0.1) / dt));
+    for (let i = 1; i <= n; i++) { S.world.update(dt, S.pos, S.inRoom, false); if (i % k === 0) out.push(Object.assign({ t: +(i * dt).toFixed(2) }, window.__MU.react(id))); }
+    S.world.events.length = 0; return out; },
+  // Day and weather (world.js DAY): a `day` area's hour now (w 0..1 between its own sky and day.to, the sun's
+  // height, light, wind gust, horizon colour), its ground's light as drawn, and a jump of world time (day-check.js)
+  day: (id) => { const A = S.world && S.world.areas.find((a) => a.id === id); if (!A || !A.dayNow) return null;
+    return Object.assign({}, A.dayNow, { pit: !!A.pit, amb: A.pit ? A.LU.uAmb.value.toArray() : null, sunLight: A.pit ? A.LU.uSun.value.toArray() : null, sunDir: A.skyMat.uniforms.uSunDir.value.toArray(), groundSunDir: A.pit ? A.LU.uSunDir.value.toArray() : null, gustU: A.pit ? A.LU.uGust.value : null, water: A.waterMat ? A.waterMat.uniforms.uSky.value.toArray() : null }); },
+  daySkip: (secs) => { S.world.skip(secs); S.world.update(0, S.pos, S.inRoom, false); S.dirty = true; },
+  statues: () => (S.statues || []).map((s) => ({ id: s.st.id, state: s.state, tris: s.tris, nearTris: s.nearTris, midTris: s.midTris, farTris: s.farTris, room: s.st.room, shown: s.ped.visible, level: s.holder.children[0] && s.holder.children[0].isLOD ? s.holder.children[0].getCurrentLevel() : null })),
   state: () => ({ x: S.pos.x, z: S.pos.z, yaw: S.yaw, where: S.where, room: S.room, exhibits: S.exhibits.length, built: Object.values(ZONES).filter((z) => z.built).map((z) => z.id), calls: renderer ? renderer.info.render.calls : 0, tris: renderer ? renderer.info.render.triangles : 0, textures: renderer ? renderer.info.memory.textures : 0, geometries: renderer ? renderer.info.memory.geometries : 0 }),
   teleport: (id) => teleport(id, true),
   segsNear: (x, z, r) => { const out = new Set(); for (const arr of GRID.values()) for (const g of arr) { const dx = g[2] - g[0], dz = g[3] - g[1], L2 = dx * dx + dz * dz; let t = L2 ? ((x - g[0]) * dx + (z - g[1]) * dz) / L2 : 0; t = Math.max(0, Math.min(1, t)); if (Math.hypot(x - g[0] - t * dx, z - g[1] - t * dz) < r) out.add(g.slice(0, 4).map((v) => +v.toFixed(2)).join(",")); } return [...out]; },

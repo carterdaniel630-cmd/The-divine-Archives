@@ -4,7 +4,7 @@ Built 2026-11-08 from atlas's research report `handoff/rok/report.md` on `stagin
 
 ## Sources, as the report read them (all via web index, 2026-11-06)
 1. Rundata (Scandinavian Runic-text Database) via Runkartan: transliteration and standard translation of Ög 136. https://runkartan.se/english/rune-stone-rokstenen-og136-l2011-9303-rok-1-1-in-odeshog-ostergotland.html
-2. Holmberg, Gräslund, Sundqvist & Williams, "The Rök Runestone and the End of the World", *Futhark* 9–10: 7–38, DOI 10.33063/diva-401040 (CC BY). https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf
+2. Holmberg, Gräslund, Sundqvist & Williams, "The Rök Runestone and the End of the World", *Futhark* 9–10: 7–38, DOI 10.33063/diva-401040 (CC BY). https://doi.org/10.33063/diva-401040 (DOI confirmed on the DOAJ record, https://doaj.org/article/a6d392620fa84bd88301e4114bdb749a, 2026-11-14. The full text was read at https://archaeology.org/wp-content/uploads/2020/04/FULLTEXT01.pdf; the /2020/06/ path cited before could not be confirmed and was replaced by the DOI, audit 2026-11-14.)
 3. University of Gothenburg, English translation of the Rök stone text (CC BY). https://www.gu.se/en/news/english-translation-of-the-rok-stone-text
 4. University of Gothenburg, Rök Runestone Revisited. https://www.gu.se/en/research/rok-runestone-revisited
 5. Uppsala University (2022). https://www.uu.se/en/news/2022/2022-01-25-deciphering-ancient-runic-messages
@@ -13,7 +13,7 @@ Built 2026-11-08 from atlas's research report `handoff/rok/report.md` on `stagin
 8. RAÄ board text, as reproduced by Swedish Nomad. https://www.swedishnomad.com/sv/rokstenen/
 9. Harris (2010), *New Perspectives on Myth* ch. 6. http://www.quest-journal.net/PIP/New_Perspectives_On_Myth_2010/New_Perspectives_on_Myth_Chapter6.pdf
 10. Källström (2021), K-blogg, read via search index. https://k-blogg.se/2021/12/31/att-tolka-rokstenen/
-11. Welin, BBC Future. https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones
+11. Welin, "'Do you love me?': The Viking messages unearthed on Sweden's rune stones", BBC Future, 2 February 2026. https://www.bbc.com/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones (Changed 2026-11-14, audit follow-up: this was cited before through an unofficial mirror at www-bbc-com.pages.dev. The bbc.com address is the same article path, but it could not be opened from the build session; the title and date come from search results and mirror copies. The quoted content was confirmed on a mirror copy by the 2026-11-14 audit. A reviewer should open the bbc.com address.)
 
 Wikipedia is 1 of 11 sources, under the 20% flag.
 
@@ -23,6 +23,7 @@ Wikipedia is 1 of 11 sources, under the 20% flag.
 - The cipher family:place pairs are given only as the sources print them. No full table was extrapolated.
 - Poster row numbers and scholarly line numbers differ. The page avoids line numbers for the cipher passages.
 - Counts vary by source (700+ / c. 750 / c. 760; 2.4 vs 2.5 m above ground). The page gives the range.
+- Total length including the buried part: the page used to say 3.82 m, but no source opened by the 2026-11-14 audit or by the fix gives that figure. The page now says only that more of the stone is buried below ground, with no number.
 - The 2025 *Futhark* exchange on *sakumukmini* is reported only by a low-authority site. It is **not** used on the page.
 
 ## Images — NOT YET ON THE PAGE

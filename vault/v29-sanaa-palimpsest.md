@@ -55,7 +55,6 @@ Islam (ch21), the Birmingham Qur'an (V28), and the Codex Sinaiticus (V18), anoth
 
 *The find and the manuscript*
 
-- "Sanaa manuscript", https://en.wikipedia.org/wiki/Sanaa_manuscript
 - History of Information, "The Sana'a Palimpsest", https://www.historyofinformation.com/detail.php?id=180
 - UNESCO, "Preserving a treasure: the Sana'a manuscripts", https://unesdoc.unesco.org/ark:/48223/pf0000116843
 

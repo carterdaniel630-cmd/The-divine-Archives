@@ -48,7 +48,6 @@ The Nag Hammadi Codices (V08), the forged Dead Sea Scroll fragments (V02), the J
 
 ## Sources
 
-- "Gospel of Jesus' Wife", https://en.wikipedia.org/wiki/Gospel_of_Jesus%27_Wife
 - Biblical Archaeology Society, "Timeline of the Gospel of Jesus' Wife Saga", https://www.biblicalarchaeology.org/daily/biblical-artifacts/inscriptions/timeline-of-the-gospel-of-jesus-wife-saga/
 - "How a mysterious man fooled a Harvard scholar…", CNN (2020), https://www.cnn.com/2020/09/13/us/jesus-wife-gospel-forgery-sabar
 - A. Sabar, *Veritas: A Harvard Professor, a Con Man and the Gospel of Jesus's Wife* (Doubleday, 2020)

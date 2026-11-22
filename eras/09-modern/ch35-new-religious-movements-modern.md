@@ -77,7 +77,7 @@ The new religious movements are the direct heirs of everything before them, reco
 ## Sources
 
 - Definition of NRMs, the shift away from "cult," and the innovation/counterculture/charisma markers — "New religious movement," Britannica. https://www.britannica.com/topic/new-religious-movement
-- The Millerite Great Disappointment of 22 October 1844, Ellen G. White's reinterpretation, and the origin of the Seventh-day Adventist Church — "Great Disappointment," Wikipedia; Christian History Institute, "American Adventism: The Great Disappointment." https://en.wikipedia.org/wiki/Great_Disappointment
+- The Millerite Great Disappointment of 22 October 1844, Ellen G. White's reinterpretation, and the origin of the Seventh-day Adventist Church — Christian History Institute, "American Adventism: The Great Disappointment."
 - L. Ron Hubbard, *Dianetics* (1950), auditing and the E-Meter, the thetan and Operating Thetan levels, and the 1993 IRS tax exemption — "Scientology," Britannica. https://www.britannica.com/topic/Scientology
 - The Bahá'í Faith: the Báb's declaration (1844) and Bahá'u'lláh (1817–1892) as founder — "Baha'i Faith," Britannica. https://www.britannica.com/topic/Bahai-Faith
 - The Nation of Islam: Wallace D. Fard, 1930 Detroit founding, and Elijah Muhammad — "Nation of Islam," Britannica. https://www.britannica.com/topic/Nation-of-Islam
@@ -86,5 +86,5 @@ The new religious movements are the direct heirs of everything before them, reco
 - The Waco siege of the Branch Davidians (28 Feb – 19 Apr 1993) and David Koresh — "Waco siege," Britannica. https://www.britannica.com/event/Waco-siege
 - The Aum Shinrikyo Tokyo subway sarin attack of 20 March 1995 and Shoko Asahara — "Tokyo subway attack of 1995," Britannica. https://www.britannica.com/event/Tokyo-subway-attack-of-1995
 - Heaven's Gate, Marshall Applewhite, and the March 1997 mass suicide tied to Comet Hale-Bopp — "Heaven's Gate," Britannica. https://www.britannica.com/topic/Heavens-Gate-religious-group
-- The brainwashing controversy: the APA board's 1987 refusal to endorse the DIMPAC report, and Eileen Barker's *The Making of a Moonie* (1984) on conversion — "Eileen Barker," Wikipedia; CESNUR, "DIMPAC Report." https://en.wikipedia.org/wiki/Eileen_Barker
-- Melanesian cargo cults as responses to colonial contact: the Vailala Madness (1919) and the John Frum movement (Tanna) — "Vailala Madness," Britannica; "John Frum," Wikipedia. https://www.britannica.com/topic/Vailala-Madness
+- The brainwashing controversy: the APA board's 1987 refusal to endorse the DIMPAC report, and Eileen Barker's *The Making of a Moonie* (1984) on conversion — CESNUR, "DIMPAC Report."
+- Melanesian cargo cults as responses to colonial contact: the Vailala Madness (1919) and the John Frum movement (Tanna) — "Vailala Madness," Britannica. https://www.britannica.com/topic/Vailala-Madness

@@ -45,12 +45,6 @@ The Holy Lance (V05) and the Crown of Thorns (V06), which are other instruments 
 
 ## Sources
 
-- "Holy Grail", https://en.wikipedia.org/wiki/Holy_Grail
-- "Holy Chalice", https://en.wikipedia.org/wiki/Holy_Chalice
-- "Sacro Catino", https://en.wikipedia.org/wiki/Sacro_Catino
-- "Chalice of Doña Urraca", https://en.wikipedia.org/wiki/Chalice_of_Do%C3%B1a_Urraca
 - "Perceval, ou le conte du Graal", *Britannica*, https://www.britannica.com/topic/Perceval-ou-le-conte-du-Graal
-- "Robert de Boron", https://en.wikipedia.org/wiki/Robert_de_Boron
 - "The Holy Grail: Many places say they have it. So who's right?", CNN, https://www.cnn.com/holy-grail-leon-spain-valencia-genoa
 - "Spain's So-Called Holy Grail Is Fake, Experts Say", Artnet News, https://news.artnet.com/art-world/spains-so-called-holy-grail-is-fake-experts-say-8941
-- "Priory of Sion", https://en.wikipedia.org/wiki/Priory_of_Sion

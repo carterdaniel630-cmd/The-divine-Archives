@@ -49,7 +49,6 @@ Pre-exilic Israel (ch07), Canaanite and Phoenician religion (ch58), the Tel Dan 
 
 ## Sources
 
-- "Mesha Stele", https://en.wikipedia.org/wiki/Mesha_Stele
 - Musée du Louvre, *Stèle de Mésha*, https://collections.louvre.fr/en/ark:/53355/cl010120339
 - "Moabite Stone (Mesha Stele)", World History Encyclopedia, https://www.worldhistory.org/Moabite_Stone_[Mesha_Stele]/
 - A. Lemaire, "'House of David' Restored in Moabite Inscription", *Biblical Archaeology Review* 20.3 (1994)

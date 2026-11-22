@@ -57,7 +57,6 @@ Shinto (ch25) and Creation (ch46), with Sacred Kingship (ch49) for the divine de
 
 *The book and the manuscript*
 
-- "Kojiki", https://en.wikipedia.org/wiki/Kojiki
 - Ōsu Kannon, "Shinpukuji-bon Kojiki", https://www.osu-kannon.jp/
 - Kokugakuin University, *Encyclopedia of Shinto*, "Kojiki", https://d-museum.kokugakuin.ac.jp/eos/
 - Cultural Heritage Online (Japan), "古事記 (真福寺本)", https://bunka.nii.ac.jp/
@@ -66,4 +65,3 @@ Shinto (ch25) and Creation (ch46), with Sacred Kingship (ch49) for the divine de
 
 - *Kojiki*, trans. D. L. Philippi (University of Tokyo Press, 1968)
 - *The Kojiki: An Account of Ancient Matters*, trans. G. Heldt (Columbia University Press, 2014)
-- "Motoori Norinaga", https://en.wikipedia.org/wiki/Motoori_Norinaga

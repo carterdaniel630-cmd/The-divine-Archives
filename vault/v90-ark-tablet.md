@@ -66,7 +66,6 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 - "An ark story before Noah", *Maclean's* (Finkel's translation of the circular-plan and "two by two" lines; size compared with a football pitch), https://www.macleans.ca/culture/books/an-ark-story-before-noah/
 - "How to Build Noah's Ark", *Archaeology Wiki*, 28 January 2014 (Leonard and Douglas Simmons; 3,600 square metres; ribs and two kinds of bitumen; display beside the Map of the World; Finkel's "107%" and "most important human documents" remarks), https://www.archaeology.wiki/blog/2014/01/28/how-to-build-noahs-ark/
 - "Babylonian tale of round ark draws ire from some Christian circles", NBC News (the round base about 70 metres across), https://www.nbcnews.com/science/science-news/babylonian-tale-round-ark-draws-wrath-some-christian-circles-flna2D12035655
-- "Irving Finkel", https://en.wikipedia.org/wiki/Irving_Finkel
 - "Irving Finkel and the ark", *Historia* magazine (Finkel's account: first shown the tablet in 1985, the owner took it away again; "another 14 years" before they met again), https://historiamag.com/irving-finkel-and-the-ark/
 - "The tablet that altered the story of Noah's ark", *Jewish Chronicle* (first came across it in 1985; the owner left it with him in 2009), https://thejc.com/life/the-tablet-that-altered-the-story-of-noahs-ark-k3x6gkoe
 - "Discovery of the 'Ark Tablet'", historyofinformation.com (received in 2009; sixty lines; 1900–1700 BCE; 11.5 x 6.0 cm), https://historyofinformation.com/detail.php?id=4060
@@ -76,7 +75,6 @@ The Flood (ch01) and Mesopotamia (ch03). Compare the Flood Tablet (V89), the sam
 *The 2014 build*
 
 - PBS NOVA, *Secrets of Noah's Ark* (programme text), https://dipsy.pbs.org/wgbh/nova/ancient/secrets-noahs-ark.html
-- "Finkel's replica of Babylonian ark" (also: Finkel first encountered the tablet in 1985, translated it fully in 2009), https://en.wikipedia.org/wiki/Finkel's_replica_of_Babylonian_ark
 - Channel 4, *The Real Noah's Ark* (press release), https://www.channel4.com/press/news/real-noahs-ark
 
 *Note on sources:* the account of the 2014 build follows the source log of this archive's Flood chapter (sources/ch01-the-flood.md), which records which reports were opened and where they disagree. On size: historyofinformation.com gives the tablet as 11.5 x 6.0 cm; no museum record states it, because the tablet is privately owned. The *Historia* and *Jewish Chronicle* pages were read through a fetch tool's summary with short verbatim quotes, twice by separate checks. *Historia* gives no year for when the tablet was left with Finkel; the 2009 date is the *Jewish Chronicle*'s.

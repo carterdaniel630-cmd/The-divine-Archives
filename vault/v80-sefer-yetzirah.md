@@ -52,7 +52,6 @@ Kabbalah (ch26), with Rabbinic Judaism (ch19) and Theosophy & the Occult Revival
 - Sefaria, *Sefer Yetzirah* (Hebrew and English), https://www.sefaria.org/Sefer_Yetzirah
 - A. P. Hayman, *Sefer Yeṣira: Edition, Translation and Text-Critical Commentary* (Mohr Siebeck, 2004)
 - My Jewish Learning, "Sefer Yetzirah: The Book of Creation", https://www.myjewishlearning.com/article/sefer-yetzirah-the-book-of-creation/
-- "Sefer Yetzirah", https://en.wikipedia.org/wiki/Sefer_Yetzirah
 
 *Dating and commentary*
 

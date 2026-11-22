@@ -51,10 +51,6 @@ Aztec religion (ch43), the Great Goddess (ch48), where Guadalupe and the Aztec m
 
 ## Sources
 
-- "Our Lady of Guadalupe", https://en.wikipedia.org/wiki/Our_Lady_of_Guadalupe
-- "Juan Diego", https://en.wikipedia.org/wiki/Juan_Diego
-- "Marcos Cipac de Aquino", https://en.wikipedia.org/wiki/Marcos_Cipac_de_Aquino
-- "Luis Lasso de la Vega", https://en.wikipedia.org/wiki/Luis_Lasso_de_la_Vega and "Antonio Valeriano", https://en.wikipedia.org/wiki/Antonio_Valeriano
 - D. K. Jordan, *Readings in Classical Nahuatl: Nican Mopohua*, UC San Diego, https://pages.ucsd.edu/~dkjordan/nahuatl/nican/NicanMopohua.html
 - Knights of Columbus, "Claims about the Tilma and the Image" (1921 bomb), https://www.kofc.org/en/news-room/our-lady-of-guadalupe/truths/9bomb.html
 - "Has NASA Called the Image of the Virgin of Guadalupe 'Living'?", Snopes, https://www.snopes.com/fact-check/is-virgin-of-guadalupe-living/

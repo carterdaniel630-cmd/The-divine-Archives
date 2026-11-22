@@ -56,9 +56,7 @@ African Diaspora Religions (ch40) and African Traditional Religion (ch33). Compa
 
 *The vèvè*
 
-- "Veve", https://en.wikipedia.org/wiki/Veve
 - Visit Haiti, "A Visual Guide to Vèvè: Vodou Symbols & Cosmograms", https://visithaiti.com/art-culture/veve-vodou-symbols-cosmograms/
-- "Potomitan", https://en.wikipedia.org/wiki/Potomitan
 - M. Rigaud, *Vè-Vè: Diagrammes rituels du Voudou* (French and European Publications, 1974)
 
 *Studies*
@@ -66,4 +64,3 @@ African Diaspora Religions (ch40) and African Traditional Religion (ch33). Compa
 - R. F. Thompson, *Flash of the Spirit: African and Afro-American Art and Philosophy* (Random House, 1983)
 - M. Deren, *Divine Horsemen: The Living Gods of Haiti* (Thames & Hudson, 1953)
 - K. McCarthy Brown, *Mama Lola: A Vodou Priestess in Brooklyn* (University of California Press, 1991)
-- "Kongo cosmogram", https://en.wikipedia.org/wiki/Kongo_cosmogram

@@ -52,7 +52,6 @@ The Inca (ch44). Compare the Dresden Codex (V31) and the Codex Mendoza (V51), a 
 
 *The khipus*
 
-- "Quipu", https://en.wikipedia.org/wiki/Quipu
 - Harvard Khipu Database Project, https://khipukamayuq.fas.harvard.edu/
 - L. L. Locke, "The Ancient Quipu, a Peruvian Knot Record", *American Anthropologist* 14.2 (1912)
 - M. Ascher and R. Ascher, *Code of the Quipu* (University of Michigan Press, 1981)

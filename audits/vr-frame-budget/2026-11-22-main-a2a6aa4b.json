@@ -1,0 +1,747 @@
+{
+ "root": "docs",
+ "device": "stand-in Quest 2 (floor tier), SwiftShader; per-eye projection 1.6 rad vertical, aspect 0.9 (an approximation of the headset's field, not a Meta figure)",
+ "ceilings": {
+  "calls": {
+   "q2": 160,
+   "q3": 240,
+   "hard": 320
+  },
+  "tris": {
+   "q2": 350000,
+   "q3": 600000,
+   "hard": 500000
+  },
+  "lights": {
+   "q2": 5,
+   "q3": 6,
+   "hard": 8
+  },
+  "points": {
+   "q2": 4000,
+   "q3": 8000,
+   "hard": 15000
+  },
+  "canvasTex": {
+   "q2": 14,
+   "q3": 20,
+   "hard": 28
+  },
+  "texMB": {
+   "q2": 16,
+   "q3": 24,
+   "hard": 40
+  },
+  "sessionMB": {
+   "q2": 128,
+   "q3": 256,
+   "hard": null
+  }
+ },
+ "places": [
+  {
+   "label": "Rotunda — arrival",
+   "target": "@rotunda",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "The Rotunda · Comparative themes|The Flood",
+   "worst": {
+    "calls": 156,
+    "tris": 262848,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 5206,
+    "textures": 51,
+    "texMB": 65.8,
+    "canvasTex": 49,
+    "sessionMB": 138.5,
+    "sessionCanvasTex": 84,
+    "programs": 47,
+    "msPerFrameSwiftShader": 109
+   },
+   "verdict": {
+    "calls": "within Q2",
+    "tris": "within Q2",
+    "lights": "within Q2",
+    "points": "over Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 148,
+     "tris": 262848,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 144,
+     "tris": 262772,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 120,
+     "tris": 257388,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 76,
+     "tris": 166332,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 96,
+     "tris": 166726,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 132,
+     "tris": 169910,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 156,
+     "tris": 260198,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 122,
+     "tris": 261932,
+     "lights": 5,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "Rotunda — centre",
+   "target": "@rotunda",
+   "inward": 8,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "The Rotunda · Comparative themes|The Rotunda",
+   "worst": {
+    "calls": 148,
+    "tris": 271804,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 5206,
+    "textures": 57,
+    "texMB": 74.3,
+    "canvasTex": 52,
+    "sessionMB": 138.9,
+    "sessionCanvasTex": 85,
+    "programs": 56,
+    "msPerFrameSwiftShader": 114
+   },
+   "verdict": {
+    "calls": "within Q2",
+    "tris": "within Q2",
+    "lights": "within Q2",
+    "points": "over Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 126,
+     "tris": 271804,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 116,
+     "tris": 262420,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 108,
+     "tris": 256528,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 98,
+     "tris": 172564,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 148,
+     "tris": 176066,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 146,
+     "tris": 176062,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 102,
+     "tris": 265128,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 120,
+     "tris": 271416,
+     "lights": 5,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "ch02 Egypt — doorway",
+   "target": "ch02",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Egypt",
+   "worst": {
+    "calls": 202,
+    "tris": 353854,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 162,
+    "textures": 120,
+    "texMB": 105.7,
+    "canvasTex": 68,
+    "sessionMB": 285,
+    "sessionCanvasTex": 284,
+    "programs": 72,
+    "msPerFrameSwiftShader": 190
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "over Q2",
+    "lights": "within Q2",
+    "points": "within Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 184,
+     "tris": 353854,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 45,
+     "calls": 184,
+     "tris": 352222,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 90,
+     "calls": 150,
+     "tris": 334698,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 135,
+     "calls": 202,
+     "tris": 329832,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 180,
+     "calls": 186,
+     "tris": 320484,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 225,
+     "calls": 114,
+     "tris": 323754,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 270,
+     "calls": 120,
+     "tris": 324638,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 315,
+     "calls": 138,
+     "tris": 327302,
+     "lights": 5,
+     "points": 162
+    }
+   ]
+  },
+  {
+   "label": "ch02 Egypt — mid-room",
+   "target": "ch02",
+   "inward": 3,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Egypt",
+   "worst": {
+    "calls": 214,
+    "tris": 352114,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 162,
+    "textures": 127,
+    "texMB": 106.7,
+    "canvasTex": 69,
+    "sessionMB": 285,
+    "sessionCanvasTex": 284,
+    "programs": 73,
+    "msPerFrameSwiftShader": 153
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "over Q2",
+    "lights": "within Q2",
+    "points": "within Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 162,
+     "tris": 351030,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 45,
+     "calls": 178,
+     "tris": 352114,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 90,
+     "calls": 164,
+     "tris": 336650,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 135,
+     "calls": 214,
+     "tris": 330044,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 180,
+     "calls": 196,
+     "tris": 320616,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 225,
+     "calls": 120,
+     "tris": 324578,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 270,
+     "calls": 126,
+     "tris": 325706,
+     "lights": 5,
+     "points": 162
+    },
+    {
+     "heading": 315,
+     "calls": 136,
+     "tris": 327222,
+     "lights": 5,
+     "points": 162
+    }
+   ]
+  },
+  {
+   "label": "ch03 Mesopotamia — doorway",
+   "target": "ch03",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Mesopotamia",
+   "worst": {
+    "calls": 224,
+    "tris": 377436,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 5206,
+    "textures": 151,
+    "texMB": 93.1,
+    "canvasTex": 55,
+    "sessionMB": 285,
+    "sessionCanvasTex": 284,
+    "programs": 71,
+    "msPerFrameSwiftShader": 202
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "over Q2",
+    "lights": "within Q2",
+    "points": "over Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 218,
+     "tris": 369816,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 116,
+     "tris": 353294,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 116,
+     "tris": 359510,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 106,
+     "tris": 359274,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 120,
+     "tris": 368618,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 136,
+     "tris": 369314,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 124,
+     "tris": 355354,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 224,
+     "tris": 377436,
+     "lights": 5,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "ch03 Mesopotamia — mid-room",
+   "target": "ch03",
+   "inward": 3,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Wing II · The Bronze Age|Mesopotamia",
+   "worst": {
+    "calls": 222,
+    "tris": 377356,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 5206,
+    "textures": 152,
+    "texMB": 93.1,
+    "canvasTex": 55,
+    "sessionMB": 285,
+    "sessionCanvasTex": 284,
+    "programs": 71,
+    "msPerFrameSwiftShader": 176
+   },
+   "verdict": {
+    "calls": "over Q2",
+    "tris": "over Q2",
+    "lights": "within Q2",
+    "points": "over Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 202,
+     "tris": 361772,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 108,
+     "tris": 353182,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 120,
+     "tris": 361138,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 120,
+     "tris": 360986,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 130,
+     "tris": 368702,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 140,
+     "tris": 369442,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 130,
+     "tris": 361738,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 222,
+     "tris": 377356,
+     "lights": 5,
+     "points": 5206
+    }
+   ]
+  },
+  {
+   "label": "Wing II corridor (sightline into ch02/ch03)",
+   "target": "@02-bronze-age",
+   "inward": 0,
+   "tier": "floor",
+   "foveation": 1,
+   "scale": 0.8,
+   "where": "Corridor|Wing II · The Bronze Age",
+   "worst": {
+    "calls": 270,
+    "tris": 750680,
+    "lights": 5,
+    "lightsAt0": 0,
+    "lightTypes": {
+     "HemisphereLight": 1,
+     "AmbientLight": 1,
+     "PointLight": 3
+    },
+    "points": 5206,
+    "textures": 167,
+    "texMB": 134.5,
+    "canvasTex": 93,
+    "sessionMB": 376.3,
+    "sessionCanvasTex": 410,
+    "programs": 70,
+    "msPerFrameSwiftShader": 282
+   },
+   "verdict": {
+    "calls": "over Q2 and Q3",
+    "tris": "HARD FAIL",
+    "lights": "within Q2",
+    "points": "over Q2",
+    "canvasTex": "upper bound over Q2 (per-room ledger not built yet)",
+    "texMB": "upper bound over Q2 (per-room ledger not built yet)",
+    "sessionMB": "over Q2 and Q3"
+   },
+   "views": [
+    {
+     "heading": 0,
+     "calls": 210,
+     "tris": 750680,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 45,
+     "calls": 206,
+     "tris": 720800,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 90,
+     "calls": 230,
+     "tris": 733684,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 135,
+     "calls": 204,
+     "tris": 715156,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 180,
+     "calls": 170,
+     "tris": 669512,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 225,
+     "calls": 212,
+     "tris": 711588,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 270,
+     "calls": 270,
+     "tris": 712354,
+     "lights": 5,
+     "points": 5206
+    },
+    {
+     "heading": 315,
+     "calls": 206,
+     "tris": 703880,
+     "lights": 5,
+     "points": 5206
+    }
+   ]
+  }
+ ],
+ "errors": [],
+ "overQuest2": [
+  "Rotunda — arrival: points 5206 (over Q2)",
+  "Rotunda — arrival: canvasTex 49 (upper bound over Q2 (per-room ledger not built yet))",
+  "Rotunda — arrival: texMB 65.8 (upper bound over Q2 (per-room ledger not built yet))",
+  "Rotunda — arrival: sessionMB 138.5 (over Q2)",
+  "Rotunda — centre: points 5206 (over Q2)",
+  "Rotunda — centre: canvasTex 52 (upper bound over Q2 (per-room ledger not built yet))",
+  "Rotunda — centre: texMB 74.3 (upper bound over Q2 (per-room ledger not built yet))",
+  "Rotunda — centre: sessionMB 138.9 (over Q2)",
+  "ch02 Egypt — doorway: calls 202 (over Q2)",
+  "ch02 Egypt — doorway: tris 353854 (over Q2)",
+  "ch02 Egypt — doorway: canvasTex 68 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch02 Egypt — doorway: texMB 105.7 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch02 Egypt — doorway: sessionMB 285 (over Q2 and Q3)",
+  "ch02 Egypt — mid-room: calls 214 (over Q2)",
+  "ch02 Egypt — mid-room: tris 352114 (over Q2)",
+  "ch02 Egypt — mid-room: canvasTex 69 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch02 Egypt — mid-room: texMB 106.7 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch02 Egypt — mid-room: sessionMB 285 (over Q2 and Q3)",
+  "ch03 Mesopotamia — doorway: calls 224 (over Q2)",
+  "ch03 Mesopotamia — doorway: tris 377436 (over Q2)",
+  "ch03 Mesopotamia — doorway: points 5206 (over Q2)",
+  "ch03 Mesopotamia — doorway: canvasTex 55 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch03 Mesopotamia — doorway: texMB 93.1 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch03 Mesopotamia — doorway: sessionMB 285 (over Q2 and Q3)",
+  "ch03 Mesopotamia — mid-room: calls 222 (over Q2)",
+  "ch03 Mesopotamia — mid-room: tris 377356 (over Q2)",
+  "ch03 Mesopotamia — mid-room: points 5206 (over Q2)",
+  "ch03 Mesopotamia — mid-room: canvasTex 55 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch03 Mesopotamia — mid-room: texMB 93.1 (upper bound over Q2 (per-room ledger not built yet))",
+  "ch03 Mesopotamia — mid-room: sessionMB 285 (over Q2 and Q3)",
+  "Wing II corridor (sightline into ch02/ch03): calls 270 (over Q2 and Q3)",
+  "Wing II corridor (sightline into ch02/ch03): tris 750680 (HARD FAIL)",
+  "Wing II corridor (sightline into ch02/ch03): points 5206 (over Q2)",
+  "Wing II corridor (sightline into ch02/ch03): canvasTex 93 (upper bound over Q2 (per-room ledger not built yet))",
+  "Wing II corridor (sightline into ch02/ch03): texMB 134.5 (upper bound over Q2 (per-room ledger not built yet))",
+  "Wing II corridor (sightline into ch02/ch03): sessionMB 376.3 (over Q2 and Q3)"
+ ]
+}

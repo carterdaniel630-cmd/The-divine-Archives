@@ -58,7 +58,6 @@ Gnosticism (ch17), Early Christianity (ch16) and Pistis Sophia (ch45). Compare t
 
 *The codex*
 
-- "Codex Tchacos", https://en.wikipedia.org/wiki/Codex_Tchacos
 - National Geographic, "Gospel of Judas Pages Endured Long, Strange Journey", https://www.nationalgeographic.com/science/article/gospel-judas-pages-long-strange-journey
 - R. Kasser and G. Wurst (eds.), *The Gospel of Judas, Critical Edition* (National Geographic, 2007)
 - BYU Studies, "The Manuscript of the Gospel of Judas", https://byustudies.byu.edu/article/the-manuscript-of-the-gospel-of-judas
@@ -68,7 +67,6 @@ Gnosticism (ch17), Early Christianity (ch16) and Pistis Sophia (ch45). Compare t
 
 - A. D. DeConick, *The Thirteenth Apostle: What the Gospel of Judas Really Says* (Continuum, 2007)
 - *The Chronicle of Higher Education*, "The 'Daimon' Is in the Details of the Gospel of Judas", https://www.chronicle.com/article/the-daimon-is-in-the-details-of-the-gospel-of-judas/
-- "Gospel of Judas", https://en.wikipedia.org/wiki/Gospel_of_Judas
 
 *Irenaeus*
 

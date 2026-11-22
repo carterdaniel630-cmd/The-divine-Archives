@@ -68,14 +68,10 @@ African traditional religion belongs, in its deep structures — a High God, spi
 
 ## Sources
 
-- Yoruba religion: Olodumare/Olorun, àṣẹ, the orishas (Obatala, Eshu, Ogun, Shango), ori, Ifá and Orunmila, the babalawo — "Yoruba religion" and "Ifá," Wikipedia; Mythopedia, "Orishas." https://en.wikipedia.org/wiki/Yoruba_religion · https://en.wikipedia.org/wiki/If%E1%BA%B9
-- Ile-Ife and Oduduwa as the mythic origin of the world — "Oduduwa," Wikipedia. https://en.wikipedia.org/wiki/Oduduwa
-- Akan religion, the Golden Stool (Sika Dwa Kofi), and Okomfo Anokye — "Golden Stool" and "Okomfo Anokye," Wikipedia; BlackPast. https://en.wikipedia.org/wiki/Golden_Stool
-- Kongo religion: Nzambi a Mpungu, the Kongo cosmogram (dikenga/yowa), Kalûnga, minkisi and the nkisi nkondi — "Kongo cosmogram" and "Nkisi," Wikipedia. https://en.wikipedia.org/wiki/Kongo_cosmogram · https://en.wikipedia.org/wiki/Nkisi
-- The Dogon (Amma, Nommo) and the Sirius controversy: Griaule/Dieterlen, Robert Temple's claim, and Walter van Beek's refutation — "Nommo," Wikipedia. https://en.wikipedia.org/wiki/Nommo
+- Yoruba religion: Olodumare/Olorun, àṣẹ, the orishas (Obatala, Eshu, Ogun, Shango), ori, Ifá and Orunmila, the babalawo — Mythopedia, "Orishas."
+- Akan religion, the Golden Stool (Sika Dwa Kofi), and Okomfo Anokye — BlackPast.
 - San trance-dance religion, the eland, and rock art (David Lewis-Williams) — "San rock art: evidence and argument," Antiquity; South African History Online, "Rock Art." https://sahistory.org.za/article/rock-art
-- The Nuer and Kwoth (E. E. Evans-Pritchard, *Nuer Religion*, 1956) — "The Nuer," Wikipedia. https://en.wikipedia.org/wiki/The_Nuer
-- The category of "African traditional religion," John Mbiti's *African Religions and Philosophy* (1969), and p'Bitek's critique — "John Mbiti," Wikipedia. https://en.wikipedia.org/wiki/John_Mbiti
 - The transatlantic slave trade (~12.5 million) and syncretism with Catholic saints — "African diaspora religions," reference overviews. https://iep.utm.edu/african-diaspora/
-- Ifá as a 256-figure (odu) system and UNESCO recognition; Adinkra and Nsibidi as indigenous sacred encodings — "Ifá" / "Adinkra symbols" / "Nsibidi," Wikipedia. https://en.wikipedia.org/wiki/Adinkra_symbols
-- Azande witchcraft, oracles, and the poison oracle (benge); misfortune as caused, not chance — E. E. Evans-Pritchard, *Witchcraft, Oracles and Magic Among the Azande* (1937). https://en.wikipedia.org/wiki/Witchcraft,_Oracles_and_Magic_Among_the_Azande
+- Azande witchcraft, oracles, and the poison oracle (benge); misfortune as caused, not chance — E. E. Evans-Pritchard, *Witchcraft, Oracles and Magic Among the Azande* (1937).
+- The Dogon–Sirius controversy: Robert Temple's *The Sirius Mystery* and its claim of "visitations five thousand or more years ago from inhabitants of the Sirius star system"; Griaule and Dieterlen's fieldwork (1931–1952) as "the sole source" of the Dogon astronomy; van Beek's finding that no Dogon outside Griaule's circle of informants had heard of *sigui tolo* or *po tolo*, and none within it knew Sirius as a double star; and his view that Griaule "probably reinterpreted statements from his informant in the light of his own knowledge" — B. R. Ortiz de Montellano, "The Dogon People Revisited," *Skeptical Inquirer* (November/December 1996), 39–42. https://cdn.centerforinquiry.org/wp-content/uploads/sites/29/1996/11/22165027/p39.pdf
+- The restudy itself: Griaule's monographs on Dogon religion (*Dieu d'eau*, *Le renard pâle*) could not be corroborated in the field, and the Dogon interviewed do not give the water spirit Nommo, the fox or Sirius anything like the significance Griaule did — W. E. A. van Beek, "Dogon Restudied: A Field Evaluation of the Work of Marcel Griaule," *Current Anthropology* 32, no. 2 (1991), 139–167 (abstract read). https://scholarlypublications.universiteitleiden.nl/handle/1887/9039

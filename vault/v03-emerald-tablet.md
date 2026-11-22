@@ -121,8 +121,6 @@ The Tablet is a hinge between the archive's chapters on the **late-antique myste
 ## Sources
 
 *Text and history*
-- "Emerald Tablet" (Arabic sources, Latin transmission, vulgate text, Newton), https://en.wikipedia.org/wiki/Emerald_Tablet
-- "Hugo of Santalla", https://en.wikipedia.org/wiki/Hugo_of_Santalla
 - The Cabinet, University of Oxford, "The Emerald Tablet of Hermes Trismegistus", https://www.cabinet.ox.ac.uk/emerald-tablet-hermes-trismegistus
 - J. Ruska, *Tabula Smaragdina: Ein Beitrag zur Geschichte der hermetischen Literatur* (Heidelberg, 1926): the standard critical study of the Arabic and Latin versions
 - E. J. Holmyard, "The Emerald Table", *Nature* 112 (1923): English translation of the Jābirian Arabic version
@@ -132,7 +130,3 @@ The Tablet is a hinge between the archive's chapters on the **late-antique myste
 *Images and later reception*
 - Science History Institute Digital Collections, Khunrath, *Amphitheatrum Sapientiae Aeternae* (1609), https://digital.sciencehistory.org/works/dodh36q
 - Princeton University Library, Digital PUL: Khunrath, *Amphitheatrum* (1609), https://dpul.princeton.edu/alchemy/catalog/wm117v989
-
-*Doreal*
-- "Emerald Tablets of Thoth the Atlantean", https://en.wikipedia.org/wiki/Emerald_Tablets_of_Thoth_the_Atlantean
-- "Maurice Doreal", https://en.wikipedia.org/wiki/Maurice_Doreal

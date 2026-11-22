@@ -69,8 +69,6 @@ Sikhism grew directly from the meeting this book has been tracing: the **nirguna
 
 - Founding by Guru Nanak (1469–1539); Kartarpur; core beliefs (Ik Onkar, Waheguru, honest living, sharing, remembrance); rejection of caste and idolatry — "Sikhism," Britannica. https://www.britannica.com/topic/Sikhism
 - The ten Gurus and the line to Guru Gobind Singh (1708); the Guru Granth as eternal Guru; martyrdoms of Arjan (1606) and Tegh Bahadur (1675); miri-piri — Golden Temple Amritsar, "10 Sikh Gurus"; Britannica, "Sikhism." https://www.goldentempleamritsar.org/sikh-gurus/
-- The Guru Granth Sahib: 1,430 angs, 31 ragas, the Mul Mantar and Japji Sahib, the bhagat bani (Kabir, Ravidas, Farid) — "Guru Granth Sahib" and "Mul Mantar," Wikipedia. https://en.wikipedia.org/wiki/Guru_Granth_Sahib · https://en.wikipedia.org/wiki/Mul_Mantar
-- The Khalsa (1699), the Panj Pyare, the amrit sanchar initiation, the Five Ks, Singh and Kaur — "Khalsa," Britannica; "Panj Pyare," Wikipedia. https://www.britannica.com/topic/Khalsa
-- Sikh theology: Waheguru, hukam, haumai, and the five thieves (kaam, krodh, lobh, moh, ahankar) — "Five thieves" and "Haumai," Wikipedia. https://en.wikipedia.org/wiki/Five_thieves · https://en.wikipedia.org/wiki/Haumai
+- The Khalsa (1699), the Panj Pyare, the amrit sanchar initiation, the Five Ks, Singh and Kaur — "Khalsa," Britannica. https://www.britannica.com/topic/Khalsa
 - Maharaja Ranjit Singh and the Sikh Empire (1799–1839) — "Ranjit Singh," Britannica. https://www.britannica.com/biography/Ranjit-Singh-Sikh-maharaja
 - Operation Blue Star (1984) at the Golden Temple and its aftermath — "Operation Blue Star," Britannica. https://www.britannica.com/topic/Operation-Blue-Star

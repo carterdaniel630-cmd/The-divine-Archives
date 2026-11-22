@@ -1,7 +1,13 @@
 {
  "type": "source",
- "count": 2018,
+ "count": 2037,
  "entities": [
+  {
+   "id": "source:3dgo-app/94d72cec62",
+   "type": "source",
+   "label": "https://3dgo.app/models/thingiverse/3689465",
+   "from": "sources/rotunda-tray1.md"
+  },
   {
    "id": "source:abc-net-au/ace7d215b0",
    "type": "source",
@@ -616,6 +622,12 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:archaeology-org/7ad7ff72a9",
+   "type": "source",
+   "label": "https://archaeology.org/wp-content/uploads/2020/04/FULLTEXT01.pdf",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:archaeology-org/98e4cd559b",
    "type": "source",
    "label": "https://archaeology.org/news/2020/12/16/201217-egypt-great-pyramid/",
@@ -641,12 +653,6 @@
     "chapter:ch01"
    ],
    "from": "sources/ch01-the-flood.md"
-  },
-  {
-   "id": "source:archaeology-org/e1f7d293cc",
-   "type": "source",
-   "label": "https://archaeology.org/wp-content/uploads/2020/06/FULLTEXT01.pdf",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:archaeology-org/f47c1c222d",
@@ -692,6 +698,12 @@
     "chapter:ch77"
    ],
    "from": "sources/ch77-etruscans.md"
+  },
+  {
+   "id": "source:archive-aramcoworld-com/444274f5f4",
+   "type": "source",
+   "label": "https://archive.aramcoworld.com/issue/199405/butterflies.of.egypt.htm",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:archive-archaeology-org/e81af6a05a",
@@ -1142,6 +1154,12 @@
     "site:delphi"
    ],
    "from": "sources/pilgrimage-delphi.md"
+  },
+  {
+   "id": "source:bbc-com/4a11627550",
+   "type": "source",
+   "label": "https://www.bbc.com/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:beinecke-library-yale-edu/157431f830",
@@ -3423,6 +3441,12 @@
    "from": "sources/ch67-minoan-crete.md"
   },
   {
+   "id": "source:cambridge-org/e23fa3a273",
+   "type": "source",
+   "label": "https://www.cambridge.org/core/product/A4C4E5C0EDEF5B8C57FE1556BD75F798",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:cambridge-org/ebb2323a01",
    "type": "source",
    "label": "https://www.cambridge.org/core/journals/journal-of-the-royal-asiatic-society/article/abs/new-interpretation-of-akbars-infallibility-decree-of-15791/0DC1BE9F648EC16A790CF8DAE48E6806",
@@ -4131,6 +4155,12 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:czasopisma-bg-ug-edu-pl/64b2612697",
+   "type": "source",
+   "label": "https://czasopisma.bg.ug.edu.pl/index.php/oandhs/article/view/13500",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:d-museum-kokugakuin-ac-jp/bc17dcf4dc",
    "type": "source",
    "label": "https://d-museum.kokugakuin.ac.jp/eos/",
@@ -4700,6 +4730,12 @@
    "from": "sources/pilgrimage-great-pyramid.md"
   },
   {
+   "id": "source:doaj-org/7d95bad580",
+   "type": "source",
+   "label": "https://doaj.org/article/a6d392620fa84bd88301e4114bdb749a",
+   "from": "sources/rok-runestone-decoded.md"
+  },
+  {
    "id": "source:doaks-org/4fd406f590",
    "type": "source",
    "label": "https://doaks.org/research/publications/books/twin-tollans-chicha-c-n-itza-tula-and-the",
@@ -4745,6 +4781,15 @@
    "from": "sources/ch66-san-rock-art.md"
   },
   {
+   "id": "source:doi-org/0e452e8780",
+   "type": "source",
+   "label": "https://doi.org/10.1093/jaarel/lfab109",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
+  },
+  {
    "id": "source:doi-org/26160de2be",
    "type": "source",
    "label": "https://doi.org/10.1080/13530194.2022.2057279",
@@ -4772,6 +4817,15 @@
    "from": "sources/ch75-siberian-arctic-shamanism.md"
   },
   {
+   "id": "source:doi-org/4f30735d8e",
+   "type": "source",
+   "label": "https://doi.org/10.1525/nr.2008.11.3.37",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
+  },
+  {
    "id": "source:doi-org/61efcc8130",
    "type": "source",
    "label": "https://doi.org/10.1080/02634930701517433",
@@ -4797,6 +4851,12 @@
     "chapter:ch66"
    ],
    "from": "sources/ch66-san-rock-art.md"
+  },
+  {
+   "id": "source:doi-org/ab18d732d5",
+   "type": "source",
+   "label": "https://doi.org/10.33063/diva-401040",
+   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:doi-org/be409d6a40",
@@ -5086,6 +5146,12 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:ejabf-journals-ekb-eg/3192c728dc",
+   "type": "source",
+   "label": "https://ejabf.journals.ekb.eg/article_241691.html",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:ejournal-brin-go-id/92af4dcbd3",
@@ -6618,6 +6684,12 @@
     "relic:v17"
    ],
    "from": "sources/v17-gospel-of-jesus-wife.md"
+  },
+  {
+   "id": "source:en-wikipedia-org/6a9bdf9234",
+   "type": "source",
+   "label": "https://en.wikipedia.org/wiki/Pied_kingfisher",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:en-wikipedia-org/6b92d57cf4",
@@ -9228,6 +9300,12 @@
    "from": "sources/ch76-olmec.md"
   },
   {
+   "id": "source:feow-org/28f36b750a",
+   "type": "source",
+   "label": "https://feow.org/ecoregions/details/441",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:fgh-perseids-org/01a5d0f5e3",
    "type": "source",
    "label": "https://fgh.perseids.org/read/greekLit/tlg0007/tlg084b/perseus-eng4/3-21",
@@ -9280,6 +9358,12 @@
     "chapter:ch46"
    ],
    "from": "sources/ch46-creation.md"
+  },
+  {
+   "id": "source:fishbase-se/459b4aa4d2",
+   "type": "source",
+   "label": "https://fishbase.se/summary/54811",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:fiveable-me/6efa83fc68",
@@ -9433,6 +9517,12 @@
     "site:great-pyramid"
    ],
    "from": "sources/pilgrimage-great-pyramid.md"
+  },
+  {
+   "id": "source:gizmodo-com/a70e31348c",
+   "type": "source",
+   "label": "https://gizmodo.com/ancient-egyptian-murals-show-lifelike-doves-kingfisher-1849923985",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:globalfreedomofexpression-columbia-edu/d8344306b8",
@@ -11109,6 +11199,12 @@
    "from": "sources/ch19-rabbinic-judaism.md"
   },
   {
+   "id": "source:jnhm-uobaghdad-edu-iq/68cdc23221",
+   "type": "source",
+   "label": "https://jnhm.uobaghdad.edu.iq/index.php/BINHM/article/view/627",
+   "from": "sources/museum-fauna-pilot.md"
+  },
+  {
    "id": "source:johnwoodruff-com/66dd79091c",
    "type": "source",
    "label": "https://www.johnwoodruff.com/research/scholarship/rethinking-the-context-of-popol-vuh",
@@ -11546,6 +11642,12 @@
     "chapter:ch74"
    ],
    "from": "sources/ch74-secularism-nonreligion.md"
+  },
+  {
+   "id": "source:kuwaitbirds-org/3ee9e5f049",
+   "type": "source",
+   "label": "https://kuwaitbirds.org/node/639",
+   "from": "sources/museum-fauna-pilot.md"
   },
   {
    "id": "source:larryhurtado-wordpress-com/c1ab9874b9",
@@ -14408,6 +14510,15 @@
    "from": "sources/v49-book-of-enoch.md"
   },
   {
+   "id": "source:psi-encyclopedia-spr-ac-uk/7edaec21b8",
+   "type": "source",
+   "label": "https://psi-encyclopedia.spr.ac.uk/articles/hodgson-report-theosophy/",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
+  },
+  {
    "id": "source:publications-dainst-org/2925843ff2",
    "type": "source",
    "label": "https://publications.dainst.org/journals/efb/article/view/2596",
@@ -15000,6 +15111,15 @@
    "type": "source",
    "label": "https://sacred-texts.com/book/the-book-of-the-dead/plates-xxix-and-xxx",
    "from": "sources/ritual-weighing-of-the-heart.md"
+  },
+  {
+   "id": "source:sacred-texts-com/14ba49c68a",
+   "type": "source",
+   "label": "https://sacred-texts.com/the/sd/sd2-3-09.htm",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
   },
   {
    "id": "source:sacred-texts-com/2a4e0f40a7",
@@ -15669,6 +15789,12 @@
     "relic:v57"
    ],
    "from": "sources/v57-holy-mandylion.md"
+  },
+  {
+   "id": "source:sketchfab-com/7aec9759f5",
+   "type": "source",
+   "label": "https://sketchfab.com/models/d4876aa609304682945145debedfc77e",
+   "from": "sources/museum-statues-in-rooms.md"
   },
   {
    "id": "source:slub-dresden-de/102bf679f6",
@@ -16576,6 +16702,15 @@
     "chapter:ch60"
    ],
    "from": "sources/ch60-eastern-orthodoxy-byzantium.md"
+  },
+  {
+   "id": "source:theosociety-org/9ff0191926",
+   "type": "source",
+   "label": "https://theosociety.org/pasadena/sd/sd-hp.htm",
+   "links": [
+    "chapter:ch37"
+   ],
+   "from": "sources/ch37-theosophy-occult-revival.md"
   },
   {
    "id": "source:theosophical-org/deb7bf79a8",
@@ -18001,12 +18136,6 @@
     "relic:v72"
    ],
    "from": "sources/v72-book-of-shadows.md"
-  },
-  {
-   "id": "source:www-bbc-com-pages-dev/eedaa5823b",
-   "type": "source",
-   "label": "https://www-bbc-com.pages.dev/future/article/20260202-the-viking-secrets-revealed-by-swedens-rune-stones",
-   "from": "sources/rok-runestone-decoded.md"
   },
   {
    "id": "source:www-current-chs-harvard-edu/6cbfeb8169",

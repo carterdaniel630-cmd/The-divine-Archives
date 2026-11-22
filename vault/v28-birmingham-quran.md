@@ -62,11 +62,9 @@ Islam (ch21) and the Sana'a Palimpsest (V29), a very different early Qur'an manu
 
 - University of Birmingham, "Birmingham Qur'an manuscript dated among the oldest in the world" (2015), https://www.birmingham.ac.uk/news-archive/2015/birmingham-quran-manuscript-dated-among-the-oldest-in-the-world
 - University of Birmingham, *The Birmingham Qur'an*, https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/birmingham-quran
-- "Birmingham Quran manuscript", https://en.wikipedia.org/wiki/Birmingham_Quran_manuscript
 
 *The Paris codex and the debate*
 
 - Bibliothèque nationale de France, *Arabe 328*, https://archivesetmanuscrits.bnf.fr/ark:/12148/cc386200
 - Digital Mushaf (University of Oxford), "The Birmingham Qur'an: Too Many Options" (2015), https://digitalmushaf.bodleian.ox.ac.uk/2015/12/04/the-birmingham-quran-too-many-options/
-- "Codex Parisino-petropolitanus", https://en.wikipedia.org/wiki/Codex_Parisino-petropolitanus
 - University of Birmingham, *History of the Mingana Collection*, https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/mingana-collection/history

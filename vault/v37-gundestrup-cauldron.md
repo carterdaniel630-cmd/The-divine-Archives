@@ -62,7 +62,6 @@ Celtic & Germanic (ch14), Sacrifice & the Scapegoat (ch51), and Journeys to the 
 
 - National Museum of Denmark, *The Gundestrup Cauldron*, https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-early-iron-age/the-gundestrup-cauldron/
 - National Museum of Denmark, *The pictures on the Gundestrup Cauldron*, https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-early-iron-age/the-gundestrup-cauldron/the-pictures-on-the-gundestrup-cauldron/
-- "Gundestrup cauldron", https://en.wikipedia.org/wiki/Gundestrup_cauldron
 - World History Encyclopedia, "Gundestrup Cauldron", https://www.worldhistory.org/Gundestrup_Cauldron/
 - Harvard, *The Celts* (Celtic 103), "The Gundestrup Cauldron", https://harvardcelts.omeka.fas.harvard.edu/items/show/11
 
@@ -71,7 +70,3 @@ Celtic & Germanic (ch14), Sacrifice & the Scapegoat (ch51), and Journeys to the 
 - G. S. Olmsted, *The Gundestrup Cauldron* (Brussels: Latomus, 1979)
 - T. Taylor, "The Gundestrup Cauldron", *Scientific American* 266.3 (1992)
 - "The Gundestrup Cauldron: Metallurgy and Manufacturing Techniques", https://www.researchgate.net/publication/233432061_The_Gundestrup_Cauldron_Metallurgy_and_Manufacturing_Techniques
-
-*Comparisons*
-
-- "Cernunnos", https://en.wikipedia.org/wiki/Cernunnos

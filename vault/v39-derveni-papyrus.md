@@ -59,7 +59,6 @@ Early Greece (ch08), Classical Greece (ch15), Roman Mystery Cults (ch18) and Jou
 
 - UNESCO, "The Derveni Papyrus: the oldest 'book' of Europe", https://www.unesco.org/en/memory-world/derveni-papyrus-oldest-book-europe
 - UNESCO Memory of the World nomination form, https://media.unesco.org/sites/default/files/webform/mow001/greece_derveni_papyrus_en.pdf
-- "Derveni papyrus", https://en.wikipedia.org/wiki/Derveni_papyrus
 - Center for Hellenic Studies, "Derveni Papyrus, Introduction", https://www-current.chs.harvard.edu/derveni-papyrus-introduction/
 
 *Editions and studies*

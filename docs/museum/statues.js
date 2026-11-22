@@ -1,55 +1,58 @@
 /* ==========================================================================
-   THE DIVINE ARCHIVES — the Virtual Museum: the Rotunda ring of statues
+   THE DIVINE ARCHIVES — the Virtual Museum: statues in their rooms
 
-   The finished statues of the Rotunda Circle (docs/rotunda/, Tray 1: Socrates,
-   Shiva, Isis) stand on pedestals in a ring under the planetarium dome. Each
-   one is the same mesh as its statue page (docs/assets/rotunda/<id>.glb), shown
-   with the museum's own lighting; tapping it opens a card that says plainly
-   what is scanned and what was made here, and links to the page where it can be
-   turned in 3D. Like those pages, the statues are recently added and pending
-   full review.
+   Carter's change of plans (handoff/order-2026-11-09-rotunda-statue-change.md, with
+   handoff/correction-2026-11-09-zeus-figure-exists.md): the Rotunda stands empty of statues, and each
+   placed statue stands in its own room. Shiva (the Rotunda Circle's statue, docs/rotunda/shiva.html)
+   stands in a Hindu room, and Zeus (atlas's figure from SMK's CC0 scan of the Artemision bronze's
+   cast, handoff/rotunda/zeus/zeus-figure.html, approved by Carter 2026-10-26) in a Greek room. The museum is
+   arranged by time, so each goes to the room of the age its statue was made in: the Artemision bronze
+   (c. 460-450 BCE) to Classical Greece; the modern Murudeshwar statue to Global Hinduism. Socrates and
+   Isis are not placed (their pages are unchanged); all other statue work is parked.
+   Each statue stands on a pedestal in its room's centre aisle, facing the door, and is the same mesh
+   as its figure (docs/assets/rotunda/<id>.glb), shown with the museum's own lighting; tapping it opens
+   a card that says plainly what is scanned and what was made here. Like the figures, the statues are
+   recently added and pending full review.
 
-   The meshes are heavy (about 3.8 MB together), so nothing is fetched until the
-   visitor comes near the Rotunda, and each statue is drawn only when close.
-   To keep every view of the Rotunda inside the museum's phone budget
-   (plans/museum-visual-pass.md: at most 220k triangles per view), each statue
-   is drawn at three levels of detail by its own distance to the visitor: the
-   full mesh within NEAR metres; a middle copy of about 28k triangles from NEAR
-   to FAR, where the statue still fills much of a phone screen and its face,
-   hands and attributes must still read; and past FAR a far copy of about 8k.
+   The meshes are heavy (about 1.3 and 2 MB), so nothing is fetched until the visitor comes near the
+   statue's room, and each statue is drawn only while its room is shown.
+   To keep every view inside the museum's phone budget (plans/museum-visual-pass.md: at most 220k
+   triangles per view), each statue is drawn at three levels of detail by its own distance to the
+   visitor: the full mesh within NEAR metres; a middle copy of about 28k triangles from NEAR
+   to FAR, where the statue still fills much of a phone screen and its face, hands and attributes must
+   still read; and past FAR a far copy of about 8k.
    The copies are made in the browser from the same mesh by merging the points
    that fall in one small grid cell (vertex clustering, each merged point placed
    to keep the surfaces around it). They are the same statue seen from further
    off, not a different object; the full mesh is the one that comes back as the
    visitor walks up to it. A statue whose full mesh would push a close view past
-   the budget (over NEAR_MAX triangles; in Tray 1 Shiva, 107k, and Socrates,
-   132k) is drawn close up from a lightly thinned copy made the same way on a
-   grid of a few millimetres, below what the eye can tell apart at arm's
-   length; its statue page still turns the full mesh.
+   the budget (over NEAR_MAX triangles; Shiva, 107k, and Zeus, 141k) is drawn close up from a lightly
+   thinned copy made the same way on a grid of a few millimetres, below what the eye can tell apart at
+   arm's length; Shiva's page still turns the full mesh.
    GLTFLoader (three.js r160 example, MIT, docs/assets/rotunda/lib/) is loaded
    on demand; its one relative import is pointed at its sibling file, and its
    "three" import resolves through the museum's import map to the museum's own
-   three.js, so there is one THREE in the page.
+   three.js, so there is one THREE in the page. It reads Zeus's quantized mesh (KHR_mesh_quantization).
    ========================================================================== */
 import * as THREE from "three";
 
 const LIB = new URL("../assets/rotunda/lib/", import.meta.url);
 const GLB = new URL("../assets/rotunda/", import.meta.url);
 
-// the ring: slots between the theme bays (whose centres sit at 22.5° + k·45°), never on the north–south walkway
-export const RING_R = 6.4;
+// each statue's room (a chapter id), and its place there in the room's own frame: u across (0 = the centre aisle), v in
+// from the door. v 9.7 is the aisle between the second and third pairs of case slots (cases stand at u ±2.3), so the
+// statue is the centrepiece seen down the aisle from the door and leaves the cases, lectern and kiosk clear.
 export const STATUES = [
-  { id: "shiva", name: "Shiva", angle: -Math.PI / 4,
+  { id: "shiva", name: "Shiva", room: "ch83", u: 0, v: 9.7,
     sub: "Dark bronze · India · the great god in meditation",
     made: "A real scan of the modern statue at Murudeshwar, Karnataka, by Boris3D Studio (CC BY 3.0). The dark bronze finish is ours.",
+    page: "rotunda/shiva.html", pageLabel: "Turn it in 3D",
     lift: 0.0 },
-  { id: "isis", name: "Isis", angle: -3 * Math.PI / 4,
-    sub: "Black stone and gold · Egypt and Rome · the throne-bearer",
-    made: "A modelled rendition built to the tradition, not a scan of an ancient statue. Her face follows a Roman bronze bust of Isis in the Mount Holyoke College Art Museum.",
-    lift: 0.0 },
-  { id: "socrates", name: "Socrates", angle: Math.PI,
-    sub: "Marble · Athens · the philosopher",
-    made: "The head is from a museum scan of the ancient portrait type. No likeness of his body survives, so the robed body was made for this statue.",
+  { id: "zeus", name: "Zeus", room: "ch15", u: 0, v: 9.7,
+    sub: "Dark bronze · Greece · c. 460–450 BCE · Zeus or Poseidon",
+    made: "A real 3D scan by SMK, the National Gallery of Denmark, of the full-size plaster cast (KAS2100) in its Royal Cast Collection of the bronze raised from the sea off Cape Artemision, now in the National Archaeological Museum, Athens; SMK released the scan into the public domain (CC0 1.0). The Archives lightened the body's mesh for phones (the head keeps the scan's full detail), added the drape, and dressed it in one dark bronze, the metal of the original where the scanned cast is plaster: that finish and the drape are ours.",
+    open: "Scholars still disagree on who he is: if the lost weapon in the raised hand was a thunderbolt he is Zeus, if a trident, Poseidon. The hand is empty, and the question is open.",
+    page: "chapters/ch15.html", pageLabel: "Classical Greece",
     lift: 0.0 }
 ];
 
@@ -81,22 +84,11 @@ function gltfLoader() {
   return loaderP;
 }
 
-// the museum's own finishes for each statue (the pages light theirs with an environment map the museum does not have)
-function finish(id) {
-  if (id === "shiva") {
-    const bronze = new THREE.MeshPhongMaterial({ color: "#4a3019", specular: "#9a7448", shininess: 34, emissive: "#0c0703" });
-    return () => bronze;
-  }
-  if (id === "isis") {
-    const stone = new THREE.MeshPhongMaterial({ color: "#1b1714", specular: "#4a4238", shininess: 22, emissive: "#050403" });
-    const gold = new THREE.MeshPhongMaterial({ color: "#c9a04c", specular: "#fff0c0", shininess: 80, emissive: "#2a1a06" });
-    return (o) => (o.material && o.material.name === "gold") || o.name === "gold" ? gold : stone;
-  }
-  // Socrates: white marble; the robed parts carry baked fold shading in their vertex colours; his own small plinth is darker stone
-  const marble = new THREE.MeshLambertMaterial({ color: "#e9e2d4" });
-  const marbleVC = new THREE.MeshLambertMaterial({ color: "#e9e2d4", vertexColors: true });
-  const base = new THREE.MeshLambertMaterial({ color: "#35302a" });
-  return (o) => o.name === "pedestal" ? base : o.name === "head" ? marble : (o.geometry.attributes.color ? marbleVC : marble);
+// the museum's own finish for the statues (the figure pages light theirs with an environment map the museum does not
+// have): one dark bronze, on Shiva and on Zeus alike, as on their figures (atlas: Zeus wears "the approved Shiva recipe")
+function finish() {
+  const bronze = new THREE.MeshPhongMaterial({ color: "#4a3019", specular: "#9a7448", shininess: 34, emissive: "#0c0703" });
+  return () => bronze;
 }
 
 // vertex clustering: snap every point to a grid of cell `c` (metres) and merge the points in one cell, dropping the
@@ -238,7 +230,6 @@ export async function loadStatue(st, holder) {
   gltf.scene.traverse((o) => { if (o.isMesh) meshes.push(o); });
   let tris = 0;
   for (const o of meshes) {
-    if (st.id === "socrates") o.geometry.computeVertexNormals();
     o.material = pick(o);
     tris += triCount(o.geometry);
   }
