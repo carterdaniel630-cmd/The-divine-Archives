@@ -1,1 +1,8 @@
 2026-11-22T03:11:12Z VR loop run — portal culling (VR-STATUS Next 1)
+STOPPED ~04:35Z: the session's permission guard refused every git commit of the finished piece (loop/vr-portal-cull,
+not pushed, no PR). Built and verified locally on main 6871e3ca: docs/museum/portals.js (new), app.js / world.js /
+fauna.js / museum.html (app.js?v=59, world.js?v=10), tools/xr-portal-check.js (new). All checks passed (build order no
+diff, verify-*, framework 51/51, review-checks 9/0/0, xr-entry-check, flat baseline identical, sweep of 3.3 million rays:
+no seen cell culled). Measured worst-view stereo calls: ch02 202-210 -> 178-180, ch03 222-224 -> 170-184 (points/eye
+5,206 -> 162); stacked on #185: ch02 122-144, ch03 96-110. The code lived only in that session and is not in the repo:
+the next run rebuilds it from this note. Lock left per the run's own rule (stopped by an error); stale after 90 min.
