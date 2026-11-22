@@ -110,9 +110,8 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   card's own text (`cardHTML`, one source) appears on a plaque beside the relic. Pending elements outside Egypt are veiled
   (OQ-4). Local results: build no diff, every verify passes, 51/51, review-checks 9/0/0, xr-entry-check 135 ok / 0 fail
   (new section 9). Flat baseline: calls and triangles identical, +5.7 KB. GPU: +10 stereo calls with a reading open.
-  **Still missing:**
+  **2026-11-22 ~11:59 UTC: GitHub 7/7 green on `1fef4276`, Lighthouse included.** **Still missing:**
   - independent review by a run that wrote none of it;
-  - GitHub green including Lighthouse;
   - Carter's per-item yes.
   - After #185 and #187 merge: a re-sync (cache keys: keep the higher ones) and a delta check.
   Reply: `vr/2026-11-22-1130-select-plaques.md`.
