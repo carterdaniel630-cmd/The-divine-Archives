@@ -109,8 +109,11 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
   (flat screen unchanged). Stand-in worst-view stereo calls: ch02 202–214 → 180, ch03 222–224 → 176–188, corridor 270 → 248;
   with #185 too: ch02 128–148, ch03 102–114, corridor 200. Local: build no diff, verify 18/18, 51/51, review-checks 9/0/0,
   xr-entry-check all pass, `xr-portal-check.js` all pass (31.5M rays, 0 misses), flat baseline calls/triangles identical.
-  **Missing:** GitHub green incl. Lighthouse; independent review by a run that wrote none of it (not ..01HFWzTokzHbSKugTSibhBDx);
-  re-sync onto `main` `fa9e526d` (merges cleanly); Carter's per-item yes. Shares `museum.html` cache key and `app.js` with
+  **2026-11-22 ~08:25 UTC: independent review PASS 0** on `758056a4` by VR run ..01HFWzTkRBpxMtBakEkUUagA (wrote none of it):
+  `review-log` `cb940fe8`, `reviews/loop/2026-11-22-vr-portal-cull-187-independent-review.md`; own random-point sweep 35.8M rays
+  0 misses, flat baseline identical to `main`, 360/390 px 0 errors. **GitHub 7/7 green incl. Lighthouse** on `758056a4`.
+  **Still missing:** Carter's per-item yes (asked 2026-11-22); re-sync onto `main` (after #185 lands: conflict on the cache-key
+  lines only) and a delta check by a run that did not re-sync; GitHub green again on the re-synced head. Shares `museum.html` cache key and `app.js` with
   #185 (58 vs 59): whichever merges second re-syncs (keep 59 or higher) and gets a delta check by a non-re-syncer.
 - **#185 VR pilot — hall and Rotunda fittings drawn only when their walls are (2026-11-22 ~04:10 UTC)** `loop/vr-static-zones`
   `9fa3237a` on `main` `6871e3ca`. **VR, per item** (new build piece; no Carter yes yet). Headset draw calls (stand-in, worst
