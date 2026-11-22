@@ -21,7 +21,10 @@ It is not GitHub branch protection and not the files themselves.
 
 The rules let sessions save, commit and push to working branches without asking, but **still stop and ask** for
 anything that touches the live site or can't be undone: any push naming `main`, force pushes, branch deletions,
-and merges through the GitHub API. So your merge gate stays exactly as it is.
+and merges through the GitHub API. These rules stop direct pushes to `main`; the merge gate in LOOP.md and the
+run's own hard limits remain the real guard (a script run through `node` is not checked by them).
+**Changed 2026-11-22 after review (PR #186 F1):** `gh api` is allowed for reads only (`"Bash(gh api -X GET *)"`),
+because a plain `gh api` write could move `main` or change repo settings without asking.
 
 ```json
 "permissions": {
@@ -30,7 +33,7 @@ and merges through the GitHub API. So your merge gate stays exactly as it is.
     "Bash(git pull*)", "Bash(git add*)", "Bash(git commit*)", "Bash(git checkout*)", "Bash(git switch*)",
     "Bash(git branch*)", "Bash(git merge*)", "Bash(git worktree*)", "Bash(git restore*)", "Bash(git stash*)",
     "Bash(git rev-parse*)", "Bash(git merge-base*)", "Bash(git ls-remote*)", "Bash(git ls-tree*)",
-    "Bash(git cat-file*)", "Bash(git rm*)", "Bash(git push*)", "Bash(node *)", "Bash(npm *)", "Bash(gh api *)"
+    "Bash(git cat-file*)", "Bash(git rm*)", "Bash(git push*)", "Bash(node *)", "Bash(npm *)", "Bash(gh api -X GET *)"
   ],
   "ask": [
     "Bash(git push*main*)", "Bash(git push*--force*)", "Bash(git push*-f*)", "Bash(git push*+*)",
