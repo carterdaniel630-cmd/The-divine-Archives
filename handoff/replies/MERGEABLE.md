@@ -102,6 +102,14 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 > **Note 2026-11-01 ~14:20 UTC (session ..pNYSq7BmWdg5BE1NX):** Lighthouse on stacked head `5299aaa` FAILED once (The Reliquary 86 → 80; whole run slow, base chapters down 10–25 too). The stack's diff cannot reach Reliquary. A local headless measurement (4× CPU, 5 runs) shows PR ≤ base on blocking time and 0 layout shift for Reliquary and Ziggurat (PR #100 comment 6559155123). Failed job re-run once (run 41313185763). **Do not merge #100/#96/#101 until that re-run is green.** If it fails again on a page the diff cannot reach, put it to Carter rather than re-running again.
 
 ## Waiting to qualify (not mergeable, and what is still missing)
+- **#187 VR pilot — portal culling in the headset (2026-11-22 ~08:40 UTC)** `loop/vr-portal-cull` `758056a4` on `main`
+  `a2a6aa4b`. **VR, per item** (new build piece; no Carter yes yet). In a headset only, what the walls hide is not drawn
+  (flat screen unchanged). Stand-in worst-view stereo calls: ch02 202–214 → 180, ch03 222–224 → 176–188, corridor 270 → 248;
+  with #185 too: ch02 128–148, ch03 102–114, corridor 200. Local: build no diff, verify 18/18, 51/51, review-checks 9/0/0,
+  xr-entry-check all pass, `xr-portal-check.js` all pass (31.5M rays, 0 misses), flat baseline calls/triangles identical.
+  **Missing:** GitHub green incl. Lighthouse; independent review by a run that wrote none of it (not ..01HFWzTokzHbSKugTSibhBDx);
+  re-sync onto `main` `fa9e526d` (merges cleanly); Carter's per-item yes. Shares `museum.html` cache key and `app.js` with
+  #185 (58 vs 59): whichever merges second re-syncs (keep 59 or higher) and gets a delta check by a non-re-syncer.
 - **#185 VR pilot — hall and Rotunda fittings drawn only when their walls are (2026-11-22 ~04:10 UTC)** `loop/vr-static-zones`
   `9fa3237a` on `main` `6871e3ca`. **VR, per item** (new build piece; no Carter yes yet). Headset draw calls (stand-in, worst
   view): ch02 202–210 → 176–178, ch03 222–224 → 154–156, corridor 270 → 224. Local: build no diff, verify all pass, 51/51,
