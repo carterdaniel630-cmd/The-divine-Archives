@@ -12,7 +12,12 @@
 //  6. moving (teleport, snap turn, vignette);
 //  7. standing or seated (xr-height.js): the posture plaque, measured or set eye height, the switch, the note on leaving;
 //  8. stick walking (xr-walk.js, xr-move.js): off by default, the walking plaque and its two confirmations, the
-//     Warden's speed and ramp, level travel along the head's facing, the vignette, stopping, walls, kept on the device.
+//     Warden's speed and ramp, level travel along the head's facing, the vignette, stopping, walls, kept on the device;
+//  9. pointing and reading (xr-read.js): the ray shows only with a raised hand, a tap on a pilot-room relic opens its
+//     reading plaque with the flat card's own text and flags, at a readable size and distance, beside the relic, no wall
+//     between; paging and closing (tap the plaque, tap at nothing, B, walking away); a held press aims a teleport and
+//     never opens a reading; seated re-anchors its height; pending elements outside Egypt are veiled; outside the pilot
+//     rooms nothing opens; the flat card still opens the same way.
 // SHOTS=<dir> also saves the headset's two-eye view while aiming (open floor, then a wall).
 // A stand-in device proves the museum's side of the contract only. Certification is on a real Quest 2 (the floor
 // device), which a build session cannot wear.
@@ -57,6 +62,8 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     check(await drawsFlat(page), `${label}: the render loop draws`);
     const noOverflow = await page.evaluate(() => document.getElementById("mu-bar").scrollWidth <= window.innerWidth + 1);
     check(noOverflow, `${label}: the top bar fits the screen`);
+    const readJs = await page.evaluate(() => performance.getEntriesByType("resource").some((r) => /xr-read\.js/.test(r.name)));
+    check(!readJs, `${label}: the VR reading module is not downloaded`);
     check(errors.length === 0, `${label}: 0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
     await ctx.close();
   }
@@ -520,6 +527,135 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     await u.exit();
     check(u.errors.length === 0, `0 script errors${u.errors.length ? " — " + u.errors.join(" | ") : ""}`);
     await u.ctx.close();
+  }
+
+  console.log("9. pointing and reading: tap a relic in a pilot room, read its plaque (simulated Quest 2, one controller)");
+  {
+    const { ctx, page, errors } = await open(b, { width: 400, height: 300, ua: Q2, xr: { controller: true } });
+    const frames = (n) => page.evaluate((n) => new Promise((ok) => { const f0 = window.__fx.frames; const w = () => (window.__fx.frames - f0 >= n ? ok() : setTimeout(w, 30)); w(); }), n);
+    const R = () => page.evaluate(() => window.__MU.xrRead());
+    await page.evaluate(() => localStorage.removeItem("mu-vr-posture"));
+    // every pilot room built (the Rotunda and the Bronze Age wing), then the flat parity of each reading
+    await page.evaluate(() => Promise.all([window.__MU.load("rotunda"), window.__MU.load("02-bronze-age")]));
+    await page.evaluate(() => window.__MU.teleport("ch03")); await page.waitForTimeout(800);
+    await page.waitForFunction(() => window.__MU.state().built.includes("02-bronze-age"), null, { timeout: 120000 });
+    await page.waitForFunction(() => !!window.__MU.xrRead(), null, { timeout: 30000 });
+    check(await page.evaluate(() => performance.getEntriesByType("resource").some((r) => /xr-read\.js/.test(r.name))), "a device that offers VR fetches the reading module");
+    const all = await page.evaluate(() => { const L = window.__MU.xrExhibits(); return L.map((e, i) => Object.assign(e, { r: window.__MU.xrReading(i) })); });
+    const rooms = new Set(all.map((e) => e.room));
+    check(all.length > 0 && all.every((e) => e.zone === "rotunda" || e.room === "ch02" || e.room === "ch03"), `${all.length} readable exhibits, all in the pilot rooms (zones/rooms: ${[...new Set(all.map((e) => e.zone === "rotunda" ? "rotunda" : e.room))].join(", ")})`);
+    const stray = all.filter((e) => e.zone !== "rotunda" && ["room", "plate", "see", "game", "living"].includes(e.type) && e.id !== e.room);
+    check(stray.length === 0, `no exhibit of a neighbouring room is claimed through a shared wall${stray.length ? " — " + stray.map((e) => e.type + ":" + e.id + " in " + e.room).join(", ") : ""}`);
+    // parity: an open reading carries every flag, meta, contested and body line of the flat card (the same text, one source)
+    const parity = await page.evaluate((all) => all.filter((e) => e.r && !e.r.held).map((e) => {
+      const box = document.createElement("div"); box.innerHTML = e.r.flat; box.querySelectorAll(".mu-actions, a, button, .mu-art, [data-rituals-for]").forEach((x) => x.remove());
+      const need = Array.from(box.querySelectorAll(".mu-flag, .mu-contested, h2")).map((x) => x.textContent.replace(/\s+/g, " ").trim()).filter(Boolean);
+      const got = e.r.blocks.map((b) => b.t).join(" ");
+      return need.filter((t) => !got.includes(t)).map((t) => e.type + ":" + e.id + " " + t);
+    }).flat(), all);
+    const opened = all.filter((e) => e.r && !e.r.held), held = all.filter((e) => e.r && e.r.held);
+    check(parity.length === 0, `${opened.length} open readings carry every title, flag and contested line of their flat card${parity.length ? " — missing: " + parity.slice(0, 5).join(" | ") : ""}`);
+    const leak = held.filter((e) => e.r.blocks.some((b) => b.k === "body" && !/veiled in VR until its walkthrough/.test(b.t)) || !e.r.blocks.some((b) => b.k === "flag" && /pending review/.test(b.t)));
+    check(held.length > 0 && leak.length === 0 && held.every((e) => e.room !== "ch02"), `${held.length} pending elements outside Egypt are veiled (name and "pending review" only): ${held.map((e) => e.type + ":" + e.id).slice(0, 12).join(", ")}`);
+    check(!held.some((e) => e.room === "ch02") && all.some((e) => e.room === "ch02" && e.r && !e.r.held), "Egypt (open in VR by Carter's 2026-11-16 ruling) reads in full");
+
+    // a vault relic in Mesopotamia, and a standing spot 1.8–2.8 m from it with nothing between
+    const target = all.find((e) => e.room === "ch03" && e.type === "vault" && e.r && !e.r.held) || all.find((e) => e.room === "ch03" && e.r && !e.r.held);
+    const spot = await page.evaluate((c) => {
+      for (const r of [2.2, 1.9, 2.6, 2.9]) for (let k = 0; k < 32; k++) { const a = k * Math.PI / 16, x = c[0] + Math.sin(a) * r, z = c[2] + Math.cos(a) * r;
+        const ex = c[0] + Math.sin(a) * 1.0, ez = c[2] + Math.cos(a) * 1.0;   // a metre in front of it (a case or a wall stands at its centre)
+        if (window.__MU.xrCanStand(x, z, x, z) && window.__MU.xrClear(x, z, ex, ez)) return { x, z, yaw: Math.atan2(-(c[0] - x), -(c[2] - z)) }; }
+      return null; }, target.c);
+    check(!!spot, `test setup: ${target.type}:${target.id} in ch03, a clear spot ${spot ? Math.hypot(spot.x - target.c[0], spot.z - target.c[2]).toFixed(2) : "?"} m away`);
+    await page.evaluate(([s]) => { window.__MU.place(s.x, s.z, s.yaw, 0); window.__fx.head = { x: 0, z: 0, yaw: 0 }; window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; window.__fx.source.gamepad = { axes: [0, 0, 0, 0], buttons: [] }; }, [spot]);
+    await page.evaluate(() => document.exitPointerLock && document.exitPointerLock()); await page.click("#mu-vr-btn", { force: true });
+    await page.waitForFunction(() => window.__MU.xr().presenting && window.__MU.xrMove().controllers === 1 && window.__MU.xrHeight().plaqueShown, null, { timeout: 30000 });
+    await frames(3);
+    // aim the right controller (play space) at a world point
+    const aimAt = (p) => page.evaluate((p) => {
+      const h = window.__MU.xrHeight(), [rx, ry, rz, th] = h.rig, k = window.__fx.ctrl, fy = window.__fx.session.floor ? 0 : 1.6;
+      const c = Math.cos(th), s = Math.sin(th), wx = rx + k.x * c + k.z * s, wy = ry + k.y - fy, wz = rz - k.x * s + k.z * c;
+      let dx = p[0] - wx, dy = p[1] - wy, dz = p[2] - wz; const L = Math.hypot(dx, dy, dz); dx /= L; dy /= L; dz /= L;
+      const lx = dx * c - dz * s, lz = dx * s + dz * c;
+      k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
+    }, p);
+    const tap = async () => { await frames(2); await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); await frames(2); };
+    // a. the ray: hidden with the hand lowered, shown raised; it finds the relic
+    await page.evaluate(() => { window.__fx.ctrl.y = 0.6; }); await aimAt(target.c); await frames(3);
+    check((await R()).rays === 0, "hand lowered below the waist: no ray");
+    const calls = async () => { await frames(4); return page.evaluate(() => window.__MU.state().calls); };
+    const cost = { closed: await calls() };
+    await page.evaluate(() => { window.__fx.ctrl.y = 1.3; }); await aimAt(target.c); await frames(3);
+    let r = await R();
+    cost.pointing = await calls();
+    check(r.rays === 1 && r.hover === (target.id || target.type) && !r.open, `hand raised and pointing at ${target.type}:${target.id}: the ray shows and meets it (hover ${r.hover})`);
+    // b. a held press aims a teleport and opens nothing
+    await page.evaluate(() => window.__fx.press("selectstart"));
+    await page.waitForFunction(() => window.__MU.xrMove().aiming, null, { timeout: 20000 });
+    await page.evaluate(() => { window.__fx.ctrl.pitch = 0.9; window.__fx.press("selectend"); }); await frames(4);   // released aimed at the ceiling: an invalid arc, cancelled
+    check(!(await R()).open && (await R()).opens === 0, "a press held past 200 ms became the teleport arc and opened no reading");
+    // c. a tap opens the reading
+    await aimAt(target.c); await tap();
+    r = await R();
+    const h = await page.evaluate(() => window.__MU.xrHeight());
+    const headD = Math.hypot(r.pos[0] - h.rig[0] - 0, r.pos[2] - h.rig[2] - 0);
+    const wallFree = await page.evaluate(([a, b2]) => window.__MU.xrClear(a[0], a[2], b2[0], b2[2]), [[h.rig[0], 0, h.rig[2]], r.pos]);
+    const tr = target.r.blocks.find((x) => x.k === "title");
+    cost.open = await calls();
+    // GPU (Carter's 2026-11-22 order): the ray and the open plaque, in stereo draw calls, against the Quest 2 line of 160
+    // expected: ray 2 + bead 2 (stereo) when pointing, plus the hand's own rod coming into view as it is raised; plaque 4
+    check(cost.open - cost.pointing <= 4 && cost.open - cost.closed <= 10 && cost.open <= 160, `GPU: stereo draw calls ${cost.closed} with the hand down, ${cost.pointing} pointing, ${cost.open} with the reading open (+${cost.open - cost.closed} in all; plaque ≤ 4, total ≤ 10, under Quest 2's 160)`);
+    check(r.open && r.shown && r.title === (tr && tr.t) && r.type === target.type, `tap: the reading opens: "${r.title}" (${r.lines.length} lines on page 1 of ${r.pages})`);
+    check(r.dist >= 0.8 && r.dist <= 2.5 && r.minDist >= 0.8 && wallFree, `beside the relic, ${r.dist} m from the eyes (nearest edge ${r.minDist} m; Comfort 0.8–2.5 m), no wall between`);
+    check(r.bodyDeg >= 1.3 && r.titleDeg >= 1.8 && !r.overflow, `text at ${1.4} m: body ${r.bodyDeg}°, title ${r.titleDeg}°, every line fits`);
+    check(r.posture === "standing" && r.y >= 1.35 && r.y <= 1.55 && r.rot[0] < 0, `standing: centre ${r.y} m (band 1.35–1.55), tilted back`);
+    const inFlat = target.r.blocks.filter((x) => x.k === "flag" || x.k === "meta").map((x) => x.t);
+    const page1 = r.lines.join(" ");
+    check(inFlat.every((t) => page1.replace(/^◆ /, "").includes(t.split(" ").slice(0, 3).join(" "))), `page 1 shows the card's flags and dated/held lines: ${inFlat.join(" / ") || "(none)"}`);
+    if (process.env.SHOTS) { fs.writeFileSync(path.join(process.env.SHOTS, "xr-read-plaque.png"), Buffer.from((await page.evaluate(() => window.__MU.xrReadImage())).split(",")[1], "base64")); await page.screenshot({ path: path.join(process.env.SHOTS, "xr-read-view.png"), timeout: 120000 }); }
+    // d. seated: the open plaque re-anchors to the seated band (the posture plaque's switch, its own dip)
+    await aimAt(h.plaquePos); await tap();
+    await page.waitForFunction(() => window.__MU.xrHeight().posture === "seated", null, { timeout: 30000 }); await frames(4);
+    r = await R();
+    check(r.open && r.posture === "seated" && r.y >= 0.9 && r.y <= 1.1 && r.reanchors >= 1, `seated: the open reading re-anchors to ${r.y} m (band 0.9–1.1)`);
+    await aimAt((await page.evaluate(() => window.__MU.xrHeight())).plaquePos); await tap();
+    await page.waitForFunction(() => window.__MU.xrHeight().posture === "standing", null, { timeout: 30000 }); await frames(4);
+    r = await R();
+    check(r.y >= 1.35 && r.y <= 1.55, `standing again: ${r.y} m`);
+    // e. paging: tapping the plaque turns the pages, and on the last one closes it
+    let turns = 0; const pages = r.pages;
+    for (let i = 0; i < 12 && (await R()).open; i++) { const q = await R(); await aimAt([q.pos[0], q.pos[1], q.pos[2]]); await tap(); turns++; }
+    r = await R();
+    check(!r.open && turns === pages, `tapping the plaque: ${pages} page(s), closed after ${turns} tap(s)`);
+    // f. tap at nothing closes; B closes
+    await aimAt(target.c); await tap(); check((await R()).open, "reopened by a tap on the relic");
+    await page.evaluate(() => { window.__fx.ctrl.pitch = -1.45; }); await tap();   // at the floor: nothing readable
+    check(!(await R()).open, "a tap at nothing closes it");
+    await aimAt(target.c); await tap();
+    await page.evaluate(() => { window.__fx.source.gamepad.buttons = [, , , , , { pressed: true, value: 1 }]; }); await frames(3);
+    await page.evaluate(() => { window.__fx.source.gamepad.buttons = []; }); await frames(2);
+    check(!(await R()).open, "B (right hand) closes it");
+    // g. walking away closes it
+    await aimAt(target.c); await tap();
+    const away = await page.evaluate(() => { const r = window.__MU.xrRead(), h = window.__MU.xrHeight(); for (let k = 0; k < 64; k++) { const a = k * Math.PI / 32, x = r.pos[0] + Math.sin(a) * 4.2, z = r.pos[2] + Math.cos(a) * 4.2; if (window.__MU.xrCanStand(x, z, x, z)) return [x - h.rig[0] + window.__fx.head.x * 0, z - h.rig[2]]; } return null; });
+    if (away) { await page.evaluate((a) => { window.__fx.head = { x: a[0], z: a[1], yaw: 0 }; }, away); await frames(4); }
+    check(away && !(await R()).open, "stepping more than 3.5 m away closes it");
+    await page.evaluate(() => { window.__fx.head = { x: 0, z: 0, yaw: 0 }; }); await frames(2);
+    await page.evaluate(() => window.__MU.xrExit()); await page.waitForFunction(() => !window.__MU.xr().presenting, null, { timeout: 15000 }); await page.waitForTimeout(200);
+    const gone = await page.evaluate(() => ({ x: window.__MU.xr(), r: window.__MU.xrRead() }));
+    check(!gone.r.shown && !gone.r.open && gone.x.cameraParent === "Scene" && gone.x.cameraChildren === 1, "after exit the reading plaque is put away; nothing left on the camera");
+    // h. outside the pilot rooms: nothing is readable (ch04 Early Vedic, same wing)
+    const other = await page.evaluate(() => { window.__MU.teleport("ch04"); const s = window.__MU.state(); const L = window.__MU.exhibits().filter((e) => e.type === "vault" || e.type === "room"); let best = null; for (const e of L) { const d = Math.hypot(e.x - s.x, e.z - s.z); if (!best || d < best.d) best = { e, d }; } return { s, best }; });
+    await page.waitForTimeout(500);
+    const inPilot = await page.evaluate(() => window.__MU.xrExhibits().length);
+    const otherIds = new Set((await page.evaluate(() => window.__MU.xrExhibits())).map((e) => e.type + ":" + e.id));
+    check(other.best && !otherIds.has(other.best.e.type + ":" + other.best.e.id), `outside the pilot rooms: ${other.best ? other.best.e.type + ":" + other.best.e.id : "?"} (${other.s.room}) is not readable in VR (${inPilot} readable in all)`);
+    // i. the flat card still opens from the same text (cardHTML), for a vault relic and a room lectern
+    const flat = await page.evaluate(() => { const L = window.__MU.exhibits(); const iv = L.findIndex((e) => e.type === "room" && e.id === "ch03"); window.__MU.open(iv); const ok1 = !document.getElementById("mu-card-wrap").hidden && /Mesopotamia|Sumer|Babylon/i.test(document.getElementById("mu-card-h").textContent); return { ok1, h: document.getElementById("mu-card-h").textContent }; });
+    check(flat.ok1, `flat screen: the ch03 lectern card opens as before ("${flat.h}")`);
+    check(await drawsFlat(page), "flat render loop draws after the reading checks");
+    check(errors.length === 0, `0 script errors${errors.length ? " — " + errors.join(" | ") : ""}`);
+    await ctx.close();
   }
 
   await b.close(); srv.close();

@@ -15,7 +15,7 @@
 import * as THREE from "three";
 
 export const MOVE = {
-  HOLD: 0.2,                 // s of trigger hold before the arc shows (a shorter press is a "select", for a later piece)
+  HOLD: 0.2,                 // s of trigger hold before the arc shows (a shorter press is a "select": xr-read.js, xr-height.js, xr-walk.js)
   RANGE: 8,                  // m, every posture
   SPEED: 7,                  // m/s launch speed of the aiming arc (sets how far a given hand angle reaches)
   FADE_OUT: 0.09, FADE_IN: 0.11, FADE_MAX: 0.9,   // 200 ms dip, to the museum's own dark, never a pure black frame
@@ -238,5 +238,5 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
   // stick walking on or off (xr-walk.js decides, after the visitor's confirmations)
   function setWalk(on) { walkOn = !!on; dbg.walk = walkOn; if (!walkOn) { vx = vz = 0; dbg.speed = 0; } }
 
-  return { update, attach, detach, dip, setWalk, debug: dbg, get walk() { return walkOn; }, get hasLeft() { return hands.some((h) => h.source && h.source.handedness === "left"); }, get busy() { return !!(aim || fade); }, get controllers() { return hands.filter((h) => h.source).map((h) => h.ctrl); } };
+  return { update, attach, detach, dip, setWalk, debug: dbg, get walk() { return walkOn; }, get hasLeft() { return hands.some((h) => h.source && h.source.handedness === "left"); }, get busy() { return !!(aim || fade); }, get controllers() { return hands.filter((h) => h.source).map((h) => h.ctrl); }, get inputs() { return hands.filter((h) => h.source).map((h) => ({ ctrl: h.ctrl, source: h.source })); }, get all() { return hands.map((h) => h.ctrl); } };
 }
