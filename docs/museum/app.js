@@ -30,7 +30,7 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=3";
+import { createXRMove } from "./xr-move.js?v=4";
 import { createXRHeight } from "./xr-height.js?v=1";
 import { createXRWalk } from "./xr-walk.js?v=1";
 import { createStyle, styleOf } from "./style.js?v=16";
@@ -1096,9 +1096,9 @@ function clearHover() {
   S.hover = null; S.skyHover = null;
   $("mu-tag").hidden = true; $("mu-reticle").classList.remove("on");
 }
-function openCard(ex) {
-  const d = ex.data, b = $("mu-card-body");
-  clearHover();
+// The card's HTML for an exhibit's data: one source for the flat card (openCard) and the headset's reading plaque
+// (xr-read.js), so the two can never say different things. null when the exhibit has no card of its own.
+function cardHTML(d) {
   let h = "";
   const zoneOf = (id) => (S.rooms[id] ? S.rooms[id].zone : null);
   const detailFor = (id) => S.detail[zoneOf(id)];
@@ -1172,10 +1172,9 @@ function openCard(ex) {
     h = `<p class="mu-cat">Trails</p><h2 id="mu-card-h">Walk one tradition through the ages</h2><p>The museum is arranged by time, so a single tradition's rooms are spread across the wings. A trail takes you through them in order.</p><ul class="mu-list">` +
       S.manifest.trails.map((t) => `<li><strong>${esc(t.name)}</strong><small>${t.rooms.map((id) => esc(roomTitle(id))).join(" → ")} · <button type="button" data-trail="${t.id}">start</button></small></li>`).join("") + `</ul>`;
   } else if (d.type === "sky") {
-    if (!S.sky || !S.sky.state.data) return;
+    if (!S.sky || !S.sky.state.data) return null;
     h = S.sky.card(d, (id) => roomTitle(id));
-    S.sky.highlight(d.what === "cons" ? d.id : null);
-  } else if (d.type === "directory") { showDirectory(); return; }
+  } else if (d.type === "directory") return null;
   else if (d.type === "statue") {
     const st = STATUES.find((x) => x.id === d.id), s = S.statues && S.statues.find((x) => x.st.id === d.id);
     h = `<p class="mu-cat">${esc(roomTitle(st.room))} · a statue</p><h2 id="mu-card-h">${esc(st.name)}</h2><p class="mu-meta">${esc(st.sub)}</p>` +
@@ -1189,16 +1188,31 @@ function openCard(ex) {
   } else if (d.type === "end") {
     h = `<p class="mu-cat">The Spine gallery</p><h2 id="mu-card-h">Here the Nine Ages end, for now</h2><p>The archive is still being written; new chapters open new rooms, and the museum is rebuilt from the archive each time.</p><div class="mu-actions">${btn("index.html", "Back to the archive")}</div>`;
   }
+  return h;
+}
+// what the inspector says under a Vault object that has a stand-in (null: it has none, the plain card shows instead)
+function inspectNote(id) {
+  const v = findVaultItem(id);
+  if (!v || !v.prop || (v.floor && !hasRelic(id))) return null;
+  return v.rendition
+    ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
+    : PLAIN_PAGES.has(id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
+    : hasRelic(id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
+    : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.";
+}
+function openCard(ex) {
+  const d = ex.data, b = $("mu-card-body");
+  clearHover();
+  if (d.type === "directory") { showDirectory(); return; }
+  const h = cardHTML(d);
+  if (h == null) return;
+  if (d.type === "sky") S.sky.highlight(d.what === "cons" ? d.id : null);
   // a Vault object with a stand-in comes out of its case: turn it, zoom it, open it, beside its label
   if (d.type === "vault" && S.insp) {
-    const v = findVaultItem(d.id);
-    if (v && v.prop && (!v.floor || hasRelic(d.id))) {
+    const note = inspectNote(d.id);
+    if (note) {
       S.cardAt = performance.now(); unlock();
-      S.insp.open(v.prop, h, v.rendition
-        ? "A modelled rendition, after published descriptions and a photograph of the reliquary; not a replica of the object."
-        : PLAIN_PAGES.has(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its pages are left plain: the archive does not draw imitation Qur'anic script. Read it in English gives what the real leaves contain."
-        : hasRelic(d.id) ? "A modelled rendition, after the description in its Vault entry; not a replica. Its writing is illustrative marks; Read it in English gives what the real object says."
-        : "A generic stand-in for this kind of object, not a replica of it. Its writing is illustrative marks; Read it in English gives what the real object says.", d.id);
+      S.insp.open(findVaultItem(d.id).prop, h, note, d.id);
       return;
     }
   }
@@ -1599,7 +1613,7 @@ function tick(now) {
   if (S.snd) S.snd.duck(S.insp && S.insp.active ? 0.35 : 1);
   if (S.relicQ.length && !(S.insp && S.insp.active)) buildQueuedRelic();
   if (S.insp && S.insp.active && !xr) { S.insp.render(dt); return; }
-  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); xrFollow(); }
+  if (xr) { S.xrMove.update(dt); S.xrHeight.update(dt, S.xrMove.controllers); S.xrWalk.update(dt, S.xrMove.controllers); if (S.xrRead) S.xrRead.update(dt, S.xrMove.inputs); xrFollow(); }
   else if ($("mu-card-wrap").hidden) step(dt);
   zoneT += dt; if (zoneT > 0.25) { zoneT = 0; manageZones(); }
   locT += dt; if (locT > 0.2) { locT = 0; locate(); }
@@ -1676,6 +1690,60 @@ function xrNote(text) {
   n.textContent = text; n.hidden = false;
   clearTimeout(xrNote.t); xrNote.t = setTimeout(() => { n.hidden = true; }, 9000);
 }
+// Reading in the headset (xr-read.js): only in the VR pilot's three rooms (VR-LOOP.md: the Rotunda, ch02 Egypt, ch03
+// Mesopotamia). Pending review stays veiled in VR until its walkthrough (Carter's OQ-4,
+// decisions-2026-11-01-vr-questions.md); Egypt is open by his ruling of 2026-11-16 (decisions-2026-11-16-carter-egypt-vr-open.md).
+const XR_PILOT_ROOMS = new Set(["ch02", "ch03"]), XR_OPEN = new Set(["ch02"]);
+// the room an exhibit stands in, strictly inside its walls first (roomOfExhibit's 0.2 m margin would also claim the
+// next room's wall exhibits, hung a few centimetres the other side of a shared wall)
+function xrRoomOf(e) {
+  const r = S.regions.find((g) => g.room && e.center.x > g.x0 && e.center.x < g.x1 && e.center.z > g.z0 && e.center.z < g.z1);
+  return r ? r.room : roomOfExhibit(e);
+}
+function xrPilot(e) {
+  if (e.vrPilot === undefined) e.vrPilot = e.zone === "rotunda" || XR_PILOT_ROOMS.has(xrRoomOf(e));
+  return e.vrPilot;
+}
+function roomPending(id) {
+  if (!id || XR_OPEN.has(id)) return false;
+  const z = S.rooms[id] && S.rooms[id].zone, D = z && S.detail[z], R = D && D.rooms && D.rooms[id];
+  return !!(R && R.pending);
+}
+function xrHeld(d) {
+  if (d.type === "statue") return true;   // every statue card says "Recently added, pending full review"
+  if (d.type === "vault") { const v = findVaultItem(d.id); return !!(v && (v.pending || roomPending(v.home))); }
+  if (d.type === "fig") { const f = findFig(d.id); return !!(f && roomPending(f.home)); }
+  if (["room", "plate", "see", "game", "living"].includes(d.type)) return roomPending(d.id);
+  return false;
+}
+const xrRay = new THREE.Raycaster();
+// the pilot-room exhibit a hand's ray meets first, not through a wall
+function xrPick(o, dir, far) {
+  xrRay.set(o, dir); xrRay.far = far;
+  const cand = [];
+  for (const e of S.exhibits) if (e.center.distanceTo(o) < far + 2 && e.mesh.parent && e.mesh.parent.visible !== false && (!e.mesh.parent.parent || e.mesh.parent.parent.visible !== false) && xrPilot(e)) cand.push(e.mesh);
+  if (!cand.length) return null;
+  const hit = xrRay.intersectObjects(cand, false)[0];
+  if (!hit) return null;
+  const w = xrRay.intersectObjects(wallMeshes(), false)[0];
+  if (w && w.distance < hit.distance - 0.3) return null;
+  return { ex: S.exhibits.find((e) => e.mesh === hit.object) || null, dist: hit.distance };
+}
+// what the reading plaque shows: the flat card's own text, or for a pending element its name and that it is veiled
+function xrReading(ex) {
+  if (!xrPilot(ex)) return null;
+  const d = ex.data, h = cardHTML(d);
+  if (h == null) return null;
+  if (!S.xrBlocks) return null;
+  const { blocks, links } = S.xrBlocks(h);
+  if (xrHeld(d)) {
+    const keep = blocks.filter((b) => b.k === "cat" || b.k === "title");
+    keep.push({ k: "flag", t: "Recently added · pending review" });
+    keep.push({ k: "body", t: "Its text stays veiled in VR until its walkthrough, as the archive does with all material pending review. Its card, marked pending, is in the museum on a flat screen." });
+    return { blocks: keep, links: false, held: true };
+  }
+  return { blocks, links, held: false, note: d.type === "vault" ? inspectNote(d.id) : null };
+}
 function initXR() {
   const btn = $("mu-vr-btn"); if (!btn) return;
   S.xr = createXR({
@@ -1690,6 +1758,7 @@ function initXR() {
       S.xrMove.attach();
       S.xrHeight.attach({ floor: !seated });
       S.xrWalk.attach();   // stick walking: off unless this device kept the visitor's confirmed choice
+      if (S.xrRead) S.xrRead.attach(S.xrMove.all);   // pointing at a relic and reading its label (pilot rooms); if still loading, it attaches on arrival
       S.snd.wake(); S.dirty = true;
     },
     onEnd: (at) => {
@@ -1698,6 +1767,7 @@ function initXR() {
       S.xrMove.detach();
       const said = S.xrHeight.detach();
       S.xrWalk.detach();
+      if (S.xrRead) S.xrRead.detach();
       if (at) { S.pos.set(at.x, EYE, at.z); S.yaw = at.yaw; }
       S.pitch = 0; S.keys.clear(); S.auto = null;
       resize(); manageZones(); locate(); savePos();
@@ -1706,7 +1776,7 @@ function initXR() {
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false) });
   S.xrHeight = createXRHeight({
     camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
     clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
@@ -1719,10 +1789,23 @@ function initXR() {
     load: () => store.get("mu-vr-walk"), save: (v) => store.set("mu-vr-walk", v),
     onChange: (on) => S.xrMove.setWalk(on), hasLeft: () => S.xrMove.hasLeft
   });
+  // the reading module is fetched only on a device that offers VR (Carter 2026-11-22: performance is a critical gate),
+  // so a phone or a computer without a headset never downloads it
+  let readLoad = null;
+  const loadRead = () => readLoad || (readLoad = import("./xr-read.js?v=1").then((m) => {
+    S.xrBlocks = m.blocksFromHTML;
+    S.xrRead = m.createXRRead({
+      camera, rig: S.xr.rig, scene, floorY: 0, pick: xrPick, reading: xrReading,
+      clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+      posture: () => S.xrHeight.posture, eye: () => S.xrHeight.debug.eye
+    });
+    if (renderer.xr.isPresenting) S.xrRead.attach(S.xrMove.all);
+  }).catch(() => { readLoad = null; }));
   let was = false;
   const paint = async () => {
     await probeXR();
     btn.hidden = !XRProbe.vrSupported;
+    if (XRProbe.vrSupported) loadRead();
     if (was && !XRProbe.vrSupported) xrNote("This device does not offer a VR session; the museum remains open in 3D.");
     was = XRProbe.vrSupported;
   };
@@ -1799,6 +1882,10 @@ window.__MU = {
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
   xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
   xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
+  xrRead: () => S.xrRead ? Object.assign({}, S.xrRead.debug, { shown: S.xrRead.panel.visible, pos: S.xrRead.panel.position.toArray(), rot: [S.xrRead.panel.rotation.x, S.xrRead.panel.rotation.y] }) : null,
+  xrReadImage: () => S.xrRead && S.xrRead.image(),
+  xrExhibits: () => S.exhibits.filter((e) => xrPilot(e)).map((e) => ({ id: e.data.id || null, type: e.data.type, zone: e.zone, room: xrRoomOf(e), held: xrHeld(e.data), c: e.center.toArray() })),
+  xrReading: (i) => { const e = S.exhibits.filter((x) => xrPilot(x))[i]; const r = e && xrReading(e); return r ? { id: e.data.id || null, type: e.data.type, held: r.held, blocks: r.blocks, note: r.note || null, flat: e.data.type === "directory" ? null : cardHTML(e.data) } : null; },
   xrCanStand: (x, z, fx, fz) => xrCanStand(x, z, fx, fz),
   // one area's ground (world.js): raised to the floor or under glass, its height range sampled on a 0.2 m grid,
   // the water level, and where its creatures stand (ground-check.js)
