@@ -1,11 +1,14 @@
-# Handoff — updated 2026-11-22 (02:05 UTC)
+# Handoff — updated 2026-11-22 (03:55 UTC)
 
 **Live site:** www.getconexto.com (bare getconexto.com redirects to it), confirmed by Carter 2026-10-24
 (`decisions-2026-10-25-domain-and-kadesh.md` 1). Cloudflare Pages deploys `main` to the-divine-archives.pages.dev,
 the deploy target behind it. Older sections below that say "not pointed" or "not public" are dated records of the
 time and are kept as written. Build sessions still cannot open the live address; Carter's phone or Muse's crawler is the live check.
 
-## Latest: #179 ch32 + #180 ch33 re-sourcing merged (2026-11-22 ~01:55–02:00 UTC)
+## Latest: #182 VR light rig merged (2026-11-22 ~03:46 UTC)
+`main` = `4864a9d2` (deploy run 307 green), fast-forwarded per item on Carter's yes (`decisions-2026-11-21-pr170-pr182-yes.md`). In a VR headset session the museum pilot now uses a light rig sized to the headset (5 lights on Quest 2, 6 on Quest 3); flat screens and phones unchanged. Next: #183 stick walking (Carter's yes on file) needs a re-sync onto `4864a9d2`, a delta check and Lighthouse; #184 games placement needs its independent review.
+
+## Earlier: #179 ch32 + #180 ch33 re-sourcing merged (2026-11-22 ~01:55–02:00 UTC)
 `main` = `6871e3ca` (deploy runs 305–306 green), fast-forwarded per item on Carter's yeses. The Witch Trials chapter's Murray "witch-cult" and "nine million" claims and the African Traditional Religion chapter's Dogon–Sirius claim now cite checked scholarly sources instead of nothing (Wikipedia removed earlier). Both stay cleared (sources-only). Next: #182 VR light rig re-synced `4864a9d2`, waiting on delta check + Lighthouse.
 
 ## Earlier: VR stack #169/#170/#174/#178 merged (2026-11-21 ~22:45–23:00 UTC)
