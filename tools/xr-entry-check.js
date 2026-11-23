@@ -392,6 +392,7 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
         k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
       });
       const tap = async () => { await pointAtWalk(); await frames(2); await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); await frames(2); };
+      tap.point = pointAtWalk;
       return { ctx, page, errors, frames, W, M, enterAt, exit, tap };
     };
     const t = await openWalk({ controller: true, left: true });
@@ -422,11 +423,46 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; });
     const p1 = await page.evaluate(() => window.__MU.state()); m = await M();
     check(m.walked === 0 && Math.hypot(p1.x - p0.x, p1.z - p0.z) < 0.01 && m.snaps === 0, "with it off, pushing the left stick forward moves nothing (teleport is the way to move)");
+    // Carter's walk 2026-11-22, fault 2: that push brings the walking plaque to the visitor, in front, in the world
+    {
+      const w1 = await W(), h1 = await page.evaluate(() => window.__MU.xrHeight()), face = await page.evaluate(() => window.__MU.xrFace());
+      const dx = w1.pos[0] - face.x, dz = w1.pos[2] - face.z, d1 = Math.hypot(dx, dz);
+      let off = Math.atan2(dx, dz) - face.yaw; off = Math.atan2(Math.sin(off), Math.cos(off));
+      const free1 = await page.evaluate(([a, b]) => window.__MU.xrClear(a.x, a.z, b[0], b[2]), [face, w1.pos]);
+      // in view (Quest 2 sees about ±45° to the side) and clear of the posture plaque, so a ray meets one plaque only
+      const ax = h1.plaquePos[0] - face.x, az = h1.plaquePos[2] - face.z;
+      let sep = Math.atan2(dx, dz) - Math.atan2(ax, az); sep = Math.abs(Math.atan2(Math.sin(sep), Math.cos(sep)));
+      const need = Math.atan(0.75 / d1) + Math.atan(0.75 / Math.hypot(ax, az));
+      check(sep > need, `the summoned plaque leaves a gap beside the posture plaque (${(sep * 180 / Math.PI).toFixed(0)}° apart, panels need ${(need * 180 / Math.PI).toFixed(0)}°)`);
+      check(m.wishes === 1 && w1.summons === 1 && w1.lit && Math.abs(off) <= 0.8 + 1e-6 && d1 >= 0.8 && d1 <= 2.5 && free1 && Math.abs(w1.pos[1] - h1.plaquePos[1]) < 1e-6 && w1.state === "off",
+        `pushing the stick with walking off brings the walking plaque in front (${(off * 180 / Math.PI).toFixed(0)}° off the gaze, ${d1.toFixed(2)} m, no wall between, same height), border lit; still off (moved: ${w1.moved})`);
+      // two quick pushes, once 4 s have passed since that summon (frames are slow here, so time is read, not assumed):
+      // the first may summon again, the second (well inside 4 s of it) never does
+      await page.waitForFunction(() => performance.now() / 1000 - window.__MU.xrWalk().calledAt >= 4.05, null, { timeout: 30000 });
+      const push = async () => { await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, -1]; }); await frames(3); await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; }); await frames(2); };
+      await push(); const wa = await W(); await push(); const wb = await W();
+      const gap = await page.evaluate(() => performance.now() / 1000) - wa.calledAt;
+      check((await M()).wishes === 3 && wa.summons === 2 && wb.summons === 2 && wb.pos.every((v, i) => Math.abs(v - wa.pos[i]) < 1e-9) && gap < 4,
+        `a push straight after a summon (${gap.toFixed(1)} s later) does not move it again (no chasing); summons ${wa.summons}, ${wb.summons}`);
+      await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 1, 0]; }); await frames(6);
+      await page.evaluate(() => { window.__fx.lsource.gamepad.axes = [0, 0, 0, 0]; }); await frames(18);
+      check((await M()).wishes === 3, "a sideways push (a snap turn) is not taken as a wish to walk");
+    }
     if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-walk-off.png"), timeout: 120000 });
 
-    // b. turning it on: the request, then two deliberate confirmations
-    await tap(); w = await W();
-    check(w.state === "ask1" && w.title === "MORE INTENSE" && !(await M()).walk, `press 1: the plaque warns: ${w.title} / ${w.lines.join(" / ")}`);
+    // b. turning it on: the request, then two deliberate confirmations. Press 1 is a slow press (held 0.45 s, past the
+    // 0.2 s teleport hold): on a plaque it is still a tap, and no teleport arc appears (fault 2, Carter's walk)
+    {
+      const tp0 = (await M()).teleports;
+      await tap.point(); await frames(2);
+      await page.evaluate(() => window.__fx.press("selectstart")); await page.waitForTimeout(450); await frames(3);
+      const mid = await M();
+      await page.evaluate(() => window.__fx.press("selectend")); await frames(3);
+      const after = await M();
+      w = await W();
+      check(!mid.aiming && mid.uiHoldFrames > 0 && after.teleports === tp0 && after.cancelled === mid.cancelled, `a slow press on the plaque (0.45 s) shows no teleport arc and moves nobody (${mid.uiHoldFrames} held frames on the plaque)`);
+    }
+    check(w.state === "ask1" && w.title === "MORE INTENSE" && !(await M()).walk, `press 1 (the slow one): the plaque warns: ${w.title} / ${w.lines.join(" / ")}`);
     // a quick double press: the first is confirmation 1, the second (milliseconds later) is not taken as confirmation 2
     await page.waitForTimeout(650);
     await page.evaluate(() => { for (let i = 0; i < 2; i++) { window.__fx.press("selectstart"); window.__fx.press("selectend"); } });

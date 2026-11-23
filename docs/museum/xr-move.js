@@ -40,14 +40,18 @@ function canvasTexture(w, h, draw) {
 // canStand(x, z, fromX, fromZ): may the visitor stand at (x, z), reached from (fromX, fromZ) without passing a wall?
 // onMoved(): called after a teleport or a turn. onTap(ctrl): a short trigger press (under HOLD), with that hand's
 // target-ray space, for whatever the hand points at (the posture plaque, xr-height.js).
-export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap }) {
-  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0, walk: false, speed: 0, speedPeak: 0, accelPeak: 0, walked: 0, blocked: 0 };
+// onUI(ctrl): is this hand's ray resting on the walking plaque? A press held there never becomes a teleport aim, so a
+// slow press on it still counts as a tap (the posture plaque keeps the 0.2 s rule: nothing reported against it) (Carter's walk 2026-11-22: stick walking "could not make it work").
+// onWish(): a stick pushed forward or back by a hand that does not walk (stick walking off, or the right hand): the
+// visitor is trying to walk, so the walking plaque comes to them (xr-walk.js summon()).
+export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap, onUI, onWish }) {
+  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, uiHoldFrames: 0, wishes: 0, controllers: 0, walk: false, speed: 0, speedPeak: 0, accelPeak: 0, walked: 0, blocked: 0 };
 
   // ---- controllers: target-ray and grip spaces live in the rig, so they move with it
   const hands = [0, 1].map((i) => {
     const ctrl = renderer.xr.getController(i), grip = renderer.xr.getControllerGrip(i);
     rig.add(ctrl); rig.add(grip);
-    const h = { i, ctrl, grip, source: null, held: null, armed: true };
+    const h = { i, ctrl, grip, source: null, held: null, armed: true, wishArmed: true };
     ctrl.addEventListener("connected", (e) => { h.source = e.data; dbg.controllers = hands.filter((x) => x.source).length; });
     ctrl.addEventListener("disconnected", () => { h.source = null; if (aim === h) stopAim(false); dbg.controllers = hands.filter((x) => x.source).length; });
     ctrl.addEventListener("selectstart", () => { if (!aim && !fade) h.held = 0; });
@@ -107,7 +111,7 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     aim = null; fade = null; arc.visible = false; marker.visible = false; vig.visible = false; veil.visible = false;
     vigOn = false; vigT = 0; dbg.aiming = false; dbg.fade = 0; dbg.vignette = 0;
     walkOn = false; vx = vz = 0; dbg.walk = false; dbg.speed = 0;
-    hands.forEach((h) => { h.held = null; h.armed = true; });
+    hands.forEach((h) => { h.held = null; h.armed = true; h.wishArmed = true; });
   }
 
   function stopAim(release) {
@@ -216,9 +220,12 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     const wh = walkHand();
     for (const h of hands) {
       if (!h.source) continue;
-      if (h === wh) { if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; } continue; }   // its stick walks
-      if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; }
-      const x = stickX(h.source);
+      if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD && !(onUI && onUI(h.ctrl))) aim = h; else if (h.held >= MOVE.HOLD) dbg.uiHoldFrames++; }
+      if (h === wh) continue;   // its stick walks
+      const [x, y] = stick(h.source);
+      // pushed forward or back, not sideways: a wish to walk this hand cannot grant; once per push
+      if (!h.wishArmed && Math.abs(y) < MOVE.STICK_OFF) h.wishArmed = true;
+      if (h.wishArmed && Math.abs(y) > MOVE.STICK_ON && Math.abs(y) > Math.abs(x) && !fade) { h.wishArmed = false; dbg.wishes++; if (onWish) onWish(); }
       if (!h.armed && Math.abs(x) < MOVE.STICK_OFF) h.armed = true;
       if (h.armed && Math.abs(x) > MOVE.STICK_ON && cool === 0 && !fade) { h.armed = false; snap(Math.sign(x)); }
     }

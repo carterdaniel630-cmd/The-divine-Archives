@@ -12,6 +12,12 @@
 // "more intense" and needs two more presses, each at least half a second after the one before, to turn it on (the
 // request, then confirmation 1 of 2, then 2 of 2). Doing nothing for 10 seconds drops the request. Turning it off is
 // one press: the comfortable direction never needs confirming.
+//
+// Carter's headset walk, 2026-11-22 (handoff/vr-fix-order-2026-11-22-carters-walk.md, fault 2): he could not make stick
+// walking work. The plaque stood only where he entered, so after a teleport it was behind him or rooms away, and
+// pushing a stick did nothing visible. Now pushing a stick forward or back without stick walking on brings the plaque
+// to the visitor (summon()): it is placed again in front of them, in the world (never head-locked), on a line no wall
+// crosses, and its border lights for a few seconds. Opt-in and the two confirmations are unchanged.
 import * as THREE from "three";
 
 export const WALK = {
@@ -21,7 +27,12 @@ export const WALK = {
   TILT: 8 * Math.PI / 180,      // tilted back when below eye level (§c.14: 5–10°)
   GAP: 0.5,                     // s: a press sooner than this after the last one is not a deliberate confirmation
   TIMEOUT: 10,                  // s: an unanswered request falls back to off
-  SIDE: [0.8, -0.8, 1.2, -1.2, 1.6, -1.6, 2.4, -2.4]   // rad from the posture plaque's direction, tried in order
+  SIDE: [0.8, -0.8, 1.2, -1.2, 1.6, -1.6, 2.4, -2.4],  // rad from the posture plaque's direction, tried in order
+  FRONT: [0.3, -0.3, 0, 0.45, -0.45, 0.6, -0.6, 0.8, -0.8, 1.0, -1.0],   // rad from where the head faces, tried in order, when summoned
+  APART: 0.05,                  // rad of clear sky between this plaque and the posture plaque, seen from the head
+  VIEW: 0.6,                    // rad: a plaque this close to where the head faces, within reading distance, is in view already
+  CALL: 3,                      // s the border stays lit after a summon
+  AGAIN: 4                      // s: a second summon sooner than this is ignored (no chasing the visitor around)
 };
 
 // What the plaque says. state: "off" | "ask1" | "ask2" | "on"; left: is there a left-hand controller to walk with?
@@ -47,8 +58,8 @@ export function walkPress(state, t) {
 // clear(ax, az, bx, bz): is the line between two floor points free of walls? load()/save(v): this device's choice;
 // onChange(on): stick walking switched on or off; hasLeft(): is a left-hand controller connected?
 export function createXRWalk({ camera, scene, anchor, clear, load, save, onChange, hasLeft }) {
-  const dbg = { state: "off", on: false, placed: null, dist: null, hover: false, presses: 0, title: null, lines: null, overflow: null, bodyDeg: null, titleDeg: null, y: null };
-  let live = false, state = "off", since = null, idle = 0, shown = null, left = null;
+  const dbg = { state: "off", on: false, placed: null, dist: null, hover: false, presses: 0, summons: 0, moved: 0, lit: false, title: null, lines: null, overflow: null, bodyDeg: null, titleDeg: null, y: null };
+  let live = false, state = "off", since = null, idle = 0, shown = null, left = null, lit = 0, lastCall = -1e9;
   const W = Math.round(WALK.W * WALK.PX), Hh = Math.round(WALK.H * WALK.PX);
   // the posture plaque's sizes: body ≥ 1.3°, title ≥ 1.8° at the farthest placement (2 m); cap height ≈ 0.7 em
   const capPx = (deg) => 2 * WALK.DIST * Math.tan(deg / 2 * Math.PI / 180) * WALK.PX;
@@ -74,7 +85,8 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
     const g = canvas.getContext("2d");
     const warn = state === "ask1" || state === "ask2";
     g.fillStyle = "#140c07"; g.fillRect(0, 0, W, Hh);
-    g.strokeStyle = dbg.hover ? "#e0b252" : warn ? "#c0703a" : "#6b5230"; g.lineWidth = dbg.hover ? 10 : 6; g.strokeRect(8, 8, W - 16, Hh - 16);
+    const hot = dbg.hover || lit > 0;
+    g.strokeStyle = hot ? "#e0b252" : warn ? "#c0703a" : "#6b5230"; g.lineWidth = hot ? 10 : 6; g.strokeRect(8, 8, W - 16, Hh - 16);
     g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = "#f3e6c8";
     const pad = 54;
     g.font = `600 ${titlePx}px Cinzel, Georgia, serif`;
@@ -88,25 +100,38 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
     }
     tex.needsUpdate = true;
     dbg.title = t.title; dbg.lines = t.lines; dbg.state = state; dbg.on = state === "on";
-    shown = state + t.lines.join("|") + dbg.hover;
+    shown = state + t.lines.join("|") + dbg.hover; dbg.lit = lit > 0;
   }
 
   const head = new THREE.Vector3(), dir = new THREE.Vector3(), ray = new THREE.Raycaster(), o = new THREE.Vector3(), q = new THREE.Quaternion();
 
-  // beside the posture plaque, around the head, on lines no wall crosses (centre and both edges)
-  function place() {
+  // where the head faces, as a yaw on the floor (the same convention as place(): +z is yaw 0)
+  function faceYaw() { camera.getWorldDirection(dir); return Math.atan2(dir.x, dir.z); }
+
+  // seen from the head, does a plaque at (yaw, d) leave a gap beside the posture plaque (if that is up)?
+  function apart(yaw, d) {
+    if (!anchor.visible) return true;
+    const ax = anchor.position.x - head.x, az = anchor.position.z - head.z, da = Math.max(0.3, Math.hypot(ax, az));
+    let sep = yaw - Math.atan2(ax, az); sep = Math.abs(Math.atan2(Math.sin(sep), Math.cos(sep)));
+    return sep >= Math.atan(WALK.W / 2 / d) + Math.atan(WALK.W / 2 / da) + WALK.APART;
+  }
+
+  // around the head, on lines no wall crosses (centre and both edges): beside the posture plaque on entry, or in front
+  // of the visitor when summoned
+  function place(front) {
     camera.getWorldPosition(head);
-    const yawP = Math.atan2(anchor.position.x - head.x, anchor.position.z - head.z);
+    const yawP = front ? faceYaw() : Math.atan2(anchor.position.x - head.x, anchor.position.z - head.z);
     let pick = null;
     for (const d of [WALK.DIST, WALK.NEAR]) {
-      for (const a of WALK.SIDE) {
+      for (const a of (front ? WALK.FRONT : WALK.SIDE)) {
         const yaw = yawP + a, x = head.x + Math.sin(yaw) * d, z = head.z + Math.cos(yaw) * d;
         const ex = Math.cos(yaw) * WALK.W / 2, ez = -Math.sin(yaw) * WALK.W / 2;
+        if (front && !apart(yaw, d)) continue;   // never in front of or behind the posture plaque: one ray, one plaque
         if (!clear || (clear(head.x, head.z, x, z) && clear(head.x, head.z, x + ex, z + ez) && clear(head.x, head.z, x - ex, z - ez))) { pick = [d, a]; break; }
       }
       if (pick) break;
     }
-    if (!pick) pick = [WALK.NEAR, WALK.SIDE[0]];
+    if (!pick) pick = [WALK.NEAR, front ? 0 : WALK.SIDE[0]];
     const yaw = yawP + pick[1];
     plaque.position.set(head.x + Math.sin(yaw) * pick[0], anchor.position.y, head.z + Math.cos(yaw) * pick[0]);
     plaque.rotation.set(0, 0, 0, "YXZ");
@@ -126,7 +151,7 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
   function attach() {
     build();
     let saved = null; try { saved = load ? load() : null; } catch (e) { saved = null; }
-    live = true; since = null; idle = 0; dbg.hover = false; dbg.overflow = null; dbg.placed = null; plaque.visible = false;
+    live = true; since = null; idle = 0; lit = 0; lastCall = -1e9; dbg.hover = false; dbg.overflow = null; dbg.placed = null; plaque.visible = false;
     state = saved === "on" ? "on" : "off";   // a first session is the most comfortable one (Comfort §f.25)
     if (onChange) onChange(state === "on");
     draw();
@@ -144,6 +169,21 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
     ray.set(o, dir.set(0, 0, -1).applyQuaternion(q)); ray.far = 6;
     return ray.intersectObject(face, false).length > 0;
   }
+  // the visitor pushed a stick to walk: bring the plaque into view, unless it is already there; light its border
+  function summon() {
+    if (!live || !plaque.visible) return false;
+    const now = performance.now() / 1000;
+    if (now - lastCall < WALK.AGAIN) return false;
+    lastCall = now; dbg.summons++; dbg.calledAt = now;
+    camera.getWorldPosition(head);
+    const dx = plaque.position.x - head.x, dz = plaque.position.z - head.z, dist = Math.hypot(dx, dz);
+    let off = Math.atan2(dx, dz) - faceYaw(); off = Math.atan2(Math.sin(off), Math.cos(off));
+    const inView = dist >= WALK.NEAR - 0.05 && dist <= WALK.DIST + 0.5 && Math.abs(off) <= WALK.VIEW && (!clear || clear(head.x, head.z, plaque.position.x, plaque.position.z));
+    if (!inView) { place(true); dbg.moved++; }
+    lit = WALK.CALL; draw();
+    return true;
+  }
+
   // a short trigger press from a hand: does its ray meet this plaque?
   function tap(ctrl) {
     if (!live || !hits(ctrl)) return false;
@@ -164,10 +204,11 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
     if (plaque.position.y !== anchor.position.y) plaque.position.y = anchor.position.y;   // follows a posture change
     dbg.y = +plaque.position.y.toFixed(3);
     if (state === "ask1" || state === "ask2") { idle += dt; if (idle >= WALK.TIMEOUT) { since = null; set("off"); } }
+    if (lit > 0) { lit -= dt; if (lit <= 0) { lit = 0; draw(); } }
     const hov = !!(ctrls && ctrls.some((c) => c && hits(c))), l = hasLeft ? hasLeft() : true;
     if (hov !== dbg.hover || l !== left) { dbg.hover = hov; left = l; draw(); }
     else if (shown === null) draw();
   }
 
-  return { attach, detach, update, tap, plaque, debug: dbg, get state() { return state; }, redraw: draw, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
+  return { attach, detach, update, tap, summon, hits, plaque, debug: dbg, get state() { return state; }, redraw: draw, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
 }

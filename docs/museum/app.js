@@ -30,9 +30,9 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=4";
+import { createXRMove } from "./xr-move.js?v=5";
 import { createXRHeight } from "./xr-height.js?v=1";
-import { createXRWalk } from "./xr-walk.js?v=1";
+import { createXRWalk } from "./xr-walk.js?v=2";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 import { createPortals } from "./portals.js?v=1";
@@ -1816,7 +1816,9 @@ function initXR() {
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false) });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false),
+    onUI: (ctrl) => S.xrWalk.hits(ctrl),   // a slow press on the walking plaque is still a tap, never a teleport
+    onWish: () => S.xrWalk.summon() });   // a stick pushed to walk brings the walking plaque to the visitor
   S.xrHeight = createXRHeight({
     camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
     clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
@@ -1938,6 +1940,7 @@ window.__MU = {
   xrMove: () => S.xrMove ? Object.assign({}, S.xrMove.debug) : null,
   xrHeight: () => S.xrHeight ? Object.assign({}, S.xrHeight.debug, { posture: S.xrHeight.posture, plaqueShown: S.xrHeight.plaque.visible, rigY: S.xr.rig.position.y, rig: [S.xr.rig.position.x, S.xr.rig.position.y, S.xr.rig.position.z, S.xr.rig.rotation.y], plaquePos: S.xrHeight.plaque.position.toArray() }) : null,
   xrClear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
+  xrFace: () => { const p = camera.getWorldPosition(new THREE.Vector3()), d = camera.getWorldDirection(new THREE.Vector3()); return { x: p.x, z: p.z, yaw: Math.atan2(d.x, d.z) }; },
   xrPlaqueImage: () => S.xrHeight && S.xrHeight.image(),
   xrWalk: () => S.xrWalk ? Object.assign({}, S.xrWalk.debug, { state: S.xrWalk.state, shown: S.xrWalk.plaque.visible, pos: S.xrWalk.plaque.position.toArray() }) : null,
   xrWalkImage: () => S.xrWalk && S.xrWalk.image(),
