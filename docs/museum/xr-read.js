@@ -289,5 +289,5 @@ export function createXRRead({ camera, rig, scene, floorY = 0, pick, reading, cl
     if (hovPanel !== dbg.hoverPanel) { dbg.hoverPanel = hovPanel; draw(); }
   }
 
-  return { attach, detach, update, tap, open, close, panel, debug: dbg, get rays() { return rays; }, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
+  return { attach, detach, update, tap, onPanel: (c) => live && panelHit(c) != null, open, close, panel, debug: dbg, get rays() { return rays; }, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
 }

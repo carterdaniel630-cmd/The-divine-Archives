@@ -30,9 +30,9 @@ import { createSound } from "./sound.js?v=2";
 import { portal as goldenPortal } from "../pilgrimage/portal.js?v=1";
 import { createSecret } from "./secret.js?v=4";
 import { createXR, probeXR, XRProbe } from "./xr.js?v=1";
-import { createXRMove } from "./xr-move.js?v=4";
-import { createXRHeight } from "./xr-height.js?v=1";
-import { createXRWalk } from "./xr-walk.js?v=1";
+import { createXRMove } from "./xr-move.js?v=5";
+import { createXRHeight } from "./xr-height.js?v=2";
+import { createXRWalk } from "./xr-walk.js?v=2";
 import { createStyle, styleOf } from "./style.js?v=16";
 import { STATUES, PEDESTAL_H, loadStatue } from "./statues.js?v=2";
 import { createPortals } from "./portals.js?v=1";
@@ -1816,7 +1816,8 @@ function initXR() {
     },
     onMessage: xrNote
   });
-  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false) });
+  S.xrMove = createXRMove({ renderer, camera, rig: S.xr.rig, floorY: 0, canStand: xrCanStand, onMoved: () => { xrFollow(); manageZones(); locate(); }, onTap: (ctrl) => S.xrHeight.tap(ctrl) || S.xrWalk.tap(ctrl) || (S.xrRead ? S.xrRead.tap(ctrl) : false),
+    onPanel: (ctrl) => S.xrHeight.hits(ctrl) || S.xrWalk.hits(ctrl) || (S.xrRead ? S.xrRead.onPanel(ctrl) : false) });
   S.xrHeight = createXRHeight({
     camera, rig: S.xr.rig, scene, floorY: 0, standEye: EYE, seatedEye: 1.2,
     clear: (ax, az, bx, bz) => !wallBetween(ax, az, bx, bz),
@@ -1832,7 +1833,7 @@ function initXR() {
   // the reading module is fetched only on a device that offers VR (Carter 2026-11-22: performance is a critical gate),
   // so a phone or a computer without a headset never downloads it
   let readLoad = null;
-  const loadRead = () => readLoad || (readLoad = import("./xr-read.js?v=1").then((m) => {
+  const loadRead = () => readLoad || (readLoad = import("./xr-read.js?v=2").then((m) => {
     S.xrBlocks = m.blocksFromHTML;
     S.xrRead = m.createXRRead({
       camera, rig: S.xr.rig, scene, floorY: 0, pick: xrPick, reading: xrReading,

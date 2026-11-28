@@ -169,5 +169,5 @@ export function createXRWalk({ camera, scene, anchor, clear, load, save, onChang
     else if (shown === null) draw();
   }
 
-  return { attach, detach, update, tap, plaque, debug: dbg, get state() { return state; }, redraw: draw, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
+  return { attach, detach, update, tap, hits, plaque, debug: dbg, get state() { return state; }, redraw: draw, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
 }
