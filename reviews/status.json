@@ -1,5 +1,5 @@
 {
-  "autoPass": true,
-  "reason": "audit 2026-11-14: 16 of 17 re-reviewed items agreed (1 disagreement: site:pr127 citation links, fixable, queued); rolling accuracy over the last 3 counted runs 43/47 (91%); latest scored batch review-test/2026-10 missed no fake source or sensitivity error (no newer batch scored). Thin margin.",
-  "updated": "2026-11-14"
+  "autoPass": false,
+  "reason": "audit 2026-11-28 (also completing the 2026-11-22 audit): 2026-11-22 sample 29 of 47 agreed (18 disagreements, still open on main: Wikipedia lines left in source logs after the strip, #143 licence unconfirmed, #144 Zeus scan wording, #167, #176, #180, #183, #186); 2026-11-28 sample 3 of 3. Rolling accuracy over the last 3 counted runs 48/67 (72%), below 90%. Comes back only when a fresh test batch, scored after the cause is fixed, reaches 90% with no missed fake source or sensitivity error.",
+  "updated": "2026-11-28"
 }

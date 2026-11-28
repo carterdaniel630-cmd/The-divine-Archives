@@ -11,6 +11,8 @@ Kept by the auditor (`reviews/AUDITOR.md` §4). One row per audit run; earlier r
 | 2026-10-31 | 10 (10 site items from 10 reports) | 10 | 0 (no batch this run; the loop does not plant or score) | — | 100% |
 | 2026-11-07 | 20 counted of 21 drawn (site items from 21 reports; pr113 not counted, source unreachable) | 17 | 0 (no batch this run; the loop does not plant or score) | — | 85% |
 | 2026-11-14 | 17 (site items from 17 drawable reports, 2026-11-08 → 2026-11-14) | 16 | 0 (no batch this run; the loop does not plant or score) | — | 94% |
+| 2026-11-22 | 47 counted of 49 re-reviewed (one per merged PR; #161/#163 had no review). Comparison done 2026-11-28 | 29 | 0 (no batch this run; the loop does not plant or score) | — | 62% |
+| 2026-11-28 | 3 (#189, #190, #191) | 3 | 0 (no batch this run; the loop does not plant or score) | — | 100% |
 
 ## Caught by error type (planted-error test batches)
 
