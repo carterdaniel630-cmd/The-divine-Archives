@@ -121,8 +121,13 @@ specific item. Approval is per item, never blanket. Updated at every checkpoint;
 - **#191 VR — a press on a plaque is always a press (2026-11-28 ~21:30 UTC)** `loop/vr-stick-findable` `37154f55` on `main`
   `f12dc09d`. **VR, per item** (a fix to a built feature, but a VR piece: Carter's yes for this PR). Carter's walk item 2.
   Local checks all pass (build no diff, verify 18/18, tests 51/51, review-checks 9/0/0 `--build`, xr-entry-check 137/137,
-  museum-baseline flat unchanged). **Missing:** independent review by a run that wrote none of it; GitHub green incl.
-  Lighthouse; Carter's per-item yes; a re-sync if #189 lands first (both bump app.js's cache key).
+  museum-baseline flat unchanged). **Carter's per-item yes on file** (`decisions-2026-11-28-carter-vr-walk-answers.md` 4).
+  **2026-11-28 ~20:50 UTC: independent review PASS, 0 findings on `37154f55`** (VR run that wrote none of it; all local
+  checks re-run; the fault reproduces on `main`'s code (5 FAIL) and is gone on the branch; `review-log` `7c6e745d`,
+  `reviews/loop/2026-11-28-vr-stick-findable-191-independent-review.md`; reply `vr/2026-11-28-2050-review-191.md`; PR
+  comment posted). GitHub on `37154f55`: 6 green, Lighthouse running at 20:50. **Still missing:** #189 landed first, so
+  re-sync onto `f206d61a` (app.js cache key: take v=62 over #189's v=61), a delta check by a run that did not re-sync, and
+  GitHub green incl. Lighthouse on the re-synced head.
 - **#190 VR pilot — draw ledger: what the Wing II corridor draws in the headset (2026-11-22 ~21:45 UTC)** `loop/vr-corridor-measure`
   `4436c5d0` on `main` `1cfb8d9f`. **VR, per item.** Adds `tools/vr-draw-ledger.js` and `audits/vr-draw-ledger/2026-11-22-corridor.md`
   (+ JSON); no `docs/` file. Local checks: build no diff, verify 18/18, tests 51/51, review-checks 9/0/0 `--build`, xr-entry-check
