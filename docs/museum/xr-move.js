@@ -40,21 +40,24 @@ function canvasTexture(w, h, draw) {
 // canStand(x, z, fromX, fromZ): may the visitor stand at (x, z), reached from (fromX, fromZ) without passing a wall?
 // onMoved(): called after a teleport or a turn. onTap(ctrl): a short trigger press (under HOLD), with that hand's
 // target-ray space, for whatever the hand points at (the posture plaque, xr-height.js).
-export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap }) {
-  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0, walk: false, speed: 0, speedPeak: 0, accelPeak: 0, walked: 0, blocked: 0 };
+// onPanel(ctrl): does that hand point at a panel it can press (the posture or walking plaque, an open reading)? A press
+// that starts on one is always a press, however long the trigger is held: it never turns into a teleport arc (Carter's
+// headset walk, 2026-11-22, item 2: a natural, unhurried press on the walking plaque passed HOLD and aimed instead).
+export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMoved, onTap, onPanel }) {
+  const dbg = { fadePeak: 0, vignettePeak: 0, aiming: false, valid: false, marker: null, fade: 0, vignette: 0, snaps: 0, teleports: 0, cancelled: 0, taps: 0, controllers: 0, panelPresses: 0, walk: false, speed: 0, speedPeak: 0, accelPeak: 0, walked: 0, blocked: 0 };
 
   // ---- controllers: target-ray and grip spaces live in the rig, so they move with it
   const hands = [0, 1].map((i) => {
     const ctrl = renderer.xr.getController(i), grip = renderer.xr.getControllerGrip(i);
     rig.add(ctrl); rig.add(grip);
-    const h = { i, ctrl, grip, source: null, held: null, armed: true };
+    const h = { i, ctrl, grip, source: null, held: null, armed: true, onPanel: false };
     ctrl.addEventListener("connected", (e) => { h.source = e.data; dbg.controllers = hands.filter((x) => x.source).length; });
     ctrl.addEventListener("disconnected", () => { h.source = null; if (aim === h) stopAim(false); dbg.controllers = hands.filter((x) => x.source).length; });
-    ctrl.addEventListener("selectstart", () => { if (!aim && !fade) h.held = 0; });
+    ctrl.addEventListener("selectstart", () => { if (!aim && !fade) { h.held = 0; h.onPanel = !!(onPanel && onPanel(h.ctrl)); if (h.onPanel) dbg.panelPresses++; } });
     ctrl.addEventListener("selectend", () => {
       if (aim === h) stopAim(true);
       else if (h.held != null) { dbg.taps++; if (onTap) onTap(h.ctrl); }
-      h.held = null;
+      h.held = null; h.onPanel = false;
     });
     return h;
   });
@@ -216,8 +219,8 @@ export function createXRMove({ renderer, camera, rig, floorY = 0, canStand, onMo
     const wh = walkHand();
     for (const h of hands) {
       if (!h.source) continue;
-      if (h === wh) { if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; } continue; }   // its stick walks
-      if (h.held != null && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; }
+      if (h === wh) { if (h.held != null && !h.onPanel && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; } continue; }   // its stick walks
+      if (h.held != null && !h.onPanel && !aim && !fade) { h.held += dt; if (h.held >= MOVE.HOLD) aim = h; }
       const x = stickX(h.source);
       if (!h.armed && Math.abs(x) < MOVE.STICK_OFF) h.armed = true;
       if (h.armed && Math.abs(x) > MOVE.STICK_ON && cool === 0 && !fade) { h.armed = false; snap(Math.sign(x)); }

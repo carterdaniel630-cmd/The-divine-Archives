@@ -392,10 +392,10 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
         k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
       });
       const tap = async () => { await pointAtWalk(); await frames(2); await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); await frames(2); };
-      return { ctx, page, errors, frames, W, M, enterAt, exit, tap };
+      return { ctx, page, errors, frames, W, M, enterAt, exit, tap, pointAtWalk };
     };
     const t = await openWalk({ controller: true, left: true });
-    const { page, errors, frames, W, M, enterAt, exit, tap } = t;
+    const { page, errors, frames, W, M, enterAt, exit, tap, pointAtWalk } = t;
     const st = await page.evaluate(() => window.__MU.state());
     // an open heading with about 4 m of floor ahead, and a walled one with a wall within about 3 m
     const probe = await page.evaluate(([x, z]) => {
@@ -424,9 +424,17 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     check(m.walked === 0 && Math.hypot(p1.x - p0.x, p1.z - p0.z) < 0.01 && m.snaps === 0, "with it off, pushing the left stick forward moves nothing (teleport is the way to move)");
     if (process.env.SHOTS) await page.screenshot({ path: path.join(process.env.SHOTS, "xr-walk-off.png"), timeout: 120000 });
 
-    // b. turning it on: the request, then two deliberate confirmations
-    await tap(); w = await W();
-    check(w.state === "ask1" && w.title === "MORE INTENSE" && !(await M()).walk, `press 1: the plaque warns: ${w.title} / ${w.lines.join(" / ")}`);
+    // b. turning it on: the request, then two deliberate confirmations. Press 1 is an unhurried one, held well past the
+    // 0.2 s that turns a trigger hold into a teleport arc: on a plaque it must still be a press (Carter's walk 2026-11-22, item 2)
+    const tp0 = (await M()).teleports;
+    await pointAtWalk(); await frames(2);
+    await page.evaluate(() => window.__fx.press("selectstart"));
+    await page.waitForTimeout(700); await frames(8);
+    m = await M();
+    check(!m.aiming && m.panelPresses >= 1, `a slow press held ${700} ms on the walking plaque shows no teleport arc (aiming ${m.aiming})`);
+    await page.evaluate(() => window.__fx.press("selectend")); await frames(4);
+    w = await W(); m = await M();
+    check(w.state === "ask1" && w.title === "MORE INTENSE" && !m.walk && m.teleports === tp0, `press 1 (the slow one) counts: the plaque warns: ${w.title} / ${w.lines.join(" / ")}; no teleport`);
     // a quick double press: the first is confirmation 1, the second (milliseconds later) is not taken as confirmation 2
     await page.waitForTimeout(650);
     await page.evaluate(() => { for (let i = 0; i < 2; i++) { window.__fx.press("selectstart"); window.__fx.press("selectend"); } });
@@ -470,10 +478,13 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     await page.waitForFunction((n0) => window.__MU.xrMove().snaps === n0 + 1, n0, { timeout: 20000 });
     await page.evaluate(() => { window.__fx.source.gamepad.axes = [0, 0, 0, 0]; }); await frames(4);
     check(true, "right stick: still a 30° snap turn");
-    await page.evaluate(() => { window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -0.5 }; window.__fx.press("selectstart"); });
+    // aimed at the floor in front, clear of both plaques (a press that starts on a plaque is a press, never an arc)
+    await page.evaluate(() => { window.__fx.ctrl = { x: 0.2, y: 1.3, z: -0.3, yaw: 0, pitch: -1.0 }; }); await frames(3);
+    const onPlaque = (await W()).hover || (await page.evaluate(() => window.__MU.xrHeight())).hover;
+    await page.evaluate(() => window.__fx.press("selectstart"));
     await page.waitForFunction(() => window.__MU.xrMove().aiming, null, { timeout: 20000 });
     await page.evaluate(() => window.__fx.press("selectend")); await frames(6);
-    check(!(await M()).aiming, "trigger: teleport aiming still works beside stick walking");
+    check(!onPlaque && !(await M()).aiming, "trigger: teleport aiming still works beside stick walking");
     await exit();
 
     // e. a remembered choice comes back; walking into a wall stops at it (or slides along it), never through
@@ -580,6 +591,7 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
       k.pitch = Math.asin(dy); k.yaw = Math.atan2(-lx, -lz);
     }, p);
     const tap = async () => { await frames(2); await page.evaluate(() => { window.__fx.press("selectstart"); window.__fx.press("selectend"); }); await frames(2); };
+    const M9 = () => page.evaluate(() => window.__MU.xrMove());
     // a. the ray: hidden with the hand lowered, shown raised; it finds the relic
     await page.evaluate(() => { window.__fx.ctrl.y = 0.6; }); await aimAt(target.c); await frames(3);
     check((await R()).rays === 0, "hand lowered below the waist: no ray");
@@ -613,8 +625,14 @@ const drawsFlat = (page) => page.evaluate(() => new Promise((ok) => { const a = 
     const page1 = r.lines.join(" ");
     check(inFlat.every((t) => page1.replace(/^◆ /, "").includes(t.split(" ").slice(0, 3).join(" "))), `page 1 shows the card's flags and dated/held lines: ${inFlat.join(" / ") || "(none)"}`);
     if (process.env.SHOTS) { fs.writeFileSync(path.join(process.env.SHOTS, "xr-read-plaque.png"), Buffer.from((await page.evaluate(() => window.__MU.xrReadImage())).split(",")[1], "base64")); await page.screenshot({ path: path.join(process.env.SHOTS, "xr-read-view.png"), timeout: 120000 }); }
-    // d. seated: the open plaque re-anchors to the seated band (the posture plaque's switch, its own dip)
-    await aimAt(h.plaquePos); await tap();
+    // d. seated: the open plaque re-anchors to the seated band (the posture plaque's switch, its own dip). The press on the
+    // posture plaque is a slow one, held past the 0.2 s teleport threshold: on a plaque it is still a press, not an arc
+    const tp9 = (await M9()).teleports;
+    await aimAt(h.plaquePos); await frames(2);
+    await page.evaluate(() => window.__fx.press("selectstart")); await page.waitForTimeout(700); await frames(8);
+    const held9 = await M9();
+    await page.evaluate(() => window.__fx.press("selectend")); await frames(2);
+    check(!held9.aiming && (await M9()).teleports === tp9, `a slow press held 700 ms on the posture plaque shows no teleport arc and moves nothing (aiming ${held9.aiming})`);
     await page.waitForFunction(() => window.__MU.xrHeight().posture === "seated", null, { timeout: 30000 }); await frames(4);
     r = await R();
     check(r.open && r.posture === "seated" && r.y >= 0.9 && r.y <= 1.1 && r.reanchors >= 1, `seated: the open reading re-anchors to ${r.y} m (band 0.9–1.1)`);

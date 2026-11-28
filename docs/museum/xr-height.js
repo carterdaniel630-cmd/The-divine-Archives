@@ -204,5 +204,5 @@ export function createXRHeight({ camera, rig, scene, floorY = 0, standEye = 1.62
     else if (shown === null) draw();
   }
 
-  return { attach, detach, update, tap, change, plaque, debug: dbg, get posture() { return posture; }, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
+  return { attach, detach, update, tap, hits, change, plaque, debug: dbg, get posture() { return posture; }, image: () => (canvas ? canvas.toDataURL("image/png") : null) };
 }
